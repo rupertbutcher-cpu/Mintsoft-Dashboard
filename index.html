@@ -230,8 +230,7 @@
     ::-webkit-scrollbar-track { background:var(--bg); }
     ::-webkit-scrollbar-thumb { background:var(--border); border-radius:999px; }
   </style>
-  <!-- MSAL.js for OneDrive sync — served locally via proxy so it works at localhost:8787 -->
-  <script src="/msal-browser.min.js"></script>
+  <!-- GitHub API used for sync — no external script needed -->
 </head>
 <body>
 
@@ -406,20 +405,20 @@
   padding:8px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;">
   <span style="color:var(--muted);font-weight:600;">Batch History:</span>
   <span id="history-count" style="color:var(--fg);">No history loaded</span>
-  <button class="btn" id="btn-od-signin" onclick="odSignIn()" style="background:#0078d4;">&#9729; Sign in to OneDrive</button>
-  <button class="btn" onclick="window.open(location.href,'_blank')" style="background:#1a472a;font-size:12px;" title="OneDrive requires the dashboard to be open in its own tab">&#x2197; Open in full tab (for OneDrive)</button>
-  <button class="btn" id="btn-od-signout" onclick="odSignOut()" style="display:none;background:#555;">Sign out</button>
+  <button class="btn" id="btn-gh-connect" onclick="ghConnect()" style="background:#238636;">⬡ Connect GitHub</button>
+  <button class="btn" id="btn-gh-sync" onclick="ghSync()" style="display:none;background:#238636;">↻ Sync GitHub</button>
+  <button class="btn" id="btn-gh-disconnect" onclick="ghDisconnect()" style="display:none;background:#555;">Disconnect</button>
   <button class="btn" onclick="exportHistory()" title="Download history as a JSON file to move to another machine">⬇ Export history</button>
   <label class="btn" style="cursor:pointer;" title="Manually load a mintsoft-history.json backup">
     📂 Load backup
     <input type="file" id="inp-history" accept=".json" style="display:none" onchange="loadHistoryFile(this)">
   </label>
-  <button class="btn" onclick="odSaveDaySnapshot(false)"
-    style="background:#7c3aed;" title="Save today's performance snapshot to OneDrive now">💾 Save Day</button>
+  <button class="btn" onclick="ghSaveDaySnapshot(false)"
+    style="background:#7c3aed;" title="Save today's performance snapshot now">💾 Save Day</button>
   <button class="btn" onclick="togglePastDaysPanel()"
     style="background:#0369a1;">📅 Past Days</button>
   <span id="past-day-count" style="color:var(--muted);font-size:12px;"></span>
-  <span id="history-status" style="color:var(--muted);font-size:12px;">Sign in to OneDrive to share history across all machines</span>
+  <span id="history-status" style="color:var(--muted);font-size:12px;">Connect GitHub to share history across all machines</span>
 </div>
 
 <!-- ── Past Days Viewer ───────────────────────────────── -->
@@ -436,20 +435,16 @@
   <div id="past-day-content"></div>
 </div>
 
-<!-- OneDrive setup panel (shown if no client ID configured) -->
-<div id="od-setup" style="display:none;background:#0c1a2e;border-bottom:1px solid #1d4ed8;
-  padding:12px 20px;font-size:13px;color:#bfdbfe;">
-  <strong style="color:#93c5fd;">&#128274; One-time OneDrive setup required</strong>
-  <div style="margin-top:8px;line-height:1.8;">
-    1. Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade" target="_blank" style="color:#7dd3fc;">portal.azure.com → App registrations → New registration</a><br>
-    2. Name: <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">Mintsoft Dashboard</code> &nbsp;•&nbsp; Supported account types: <strong>Accounts in this organisational directory only</strong><br>
-    3. Redirect URI: select <strong>Single-page application (SPA)</strong> and enter the URL of this dashboard<br>
-    4. Click <strong>Register</strong>, then copy the <strong>Application (client) ID</strong><br>
-    5. On the app page go to <strong>API permissions → Add → Microsoft Graph → Delegated → Files.ReadWrite</strong> and grant admin consent<br>
-    6. Paste the client ID here:
-    <input id="inp-od-clientid" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-      style="background:#0d1117;border:1px solid #1d4ed8;color:#fff;padding:4px 8px;border-radius:4px;width:320px;margin-left:8px;">
-    <button class="btn" onclick="saveOdClientId()" style="margin-left:6px;">Save &amp; connect</button>
+<!-- GitHub sync setup panel -->
+<div id="gh-setup" style="display:none;background:#0c1a2e;border-bottom:1px solid #238636;padding:12px 20px;font-size:13px;color:#bfdbfe;">
+  <strong style="color:#7ee787;">⬡ One-time GitHub setup</strong>
+  <div style="margin-top:8px;line-height:2;">
+    1. Go to <a href="https://github.com/settings/tokens/new?description=Mintsoft+Dashboard&scopes=repo" target="_blank" style="color:#7dd3fc;">github.com → Settings → Developer settings → Personal access tokens → Generate new token (classic)</a><br>
+    2. Set description: <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">Mintsoft Dashboard</code> &nbsp;•&nbsp; Tick the <strong>repo</strong> scope &nbsp;•&nbsp; Click <strong>Generate token</strong><br>
+    3. Copy the token and paste it below — it is stored only in your browser, never sent anywhere except GitHub:<br>
+    <input id="inp-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+      style="background:#0d1117;border:1px solid #238636;color:#fff;padding:4px 8px;border-radius:4px;width:340px;margin-top:4px;">
+    <button class="btn" onclick="ghSaveToken()" style="margin-left:6px;background:#238636;">Save &amp; connect</button>
   </div>
 </div>
 
@@ -589,7 +584,7 @@
   let packerSnapshots = [];   // [{ dow, hour, count, ts }]
 
   // ── Daily performance snapshots ──────────────────────────────────────────
-  const OD_SNAP_PATH    = '/Apps/MintoftDashboard/mintsoft-daily-snapshots.json';
+
   let   dailySnapshots  = {};     // keyed by YYYY-MM-DD
   let   lastRenderState = null;   // captured each render cycle
   let lastSnapshotHour = -1; // -1 = no snapshot taken yet this session
@@ -626,7 +621,7 @@
       } catch(e2) { console.error('History save failed:', e2); }
     }
     // Also sync to OneDrive if signed in
-    if (typeof odAccount !== 'undefined' && odAccount) odSaveHistory();
+    if (ghToken && ghRepo) ghSaveHistory();
   }
 
   function exportHistory() {
@@ -1699,9 +1694,9 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     // Auto-save once per calendar hour (and always when shift completes)
     const _currentHour = now.getHours();
     const _isShiftDone = (pendN === 0 && despN > 0);
-    if (odAccount && (_currentHour !== lastSnapshotHour || _isShiftDone)) {
+    if (ghToken && ghRepo && (_currentHour !== lastSnapshotHour || _isShiftDone)) {
       lastSnapshotHour = _currentHour;
-      odSaveDaySnapshot(true);
+      ghSaveDaySnapshot(true);
     }
   }
 
@@ -2118,172 +2113,192 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     }, { once: true });
   }
 
-  // ── OneDrive Sync (MSAL.js) ──────────────────────────────────────────────
-  // History is stored on the shared SharePoint root site so every user
-  // reads and writes the same files regardless of who is signed in.
-  const OD_FILE_PATH    = '/Apps/MintoftDashboard/mintsoft-history.json';
-  const OD_LS_KEY       = 'msoft_od_clientid';
-  const OD_CLIENT_ID_DEFAULT = '793611e1-890d-4c11-9d8f-d2953c6c3c80';
-  const SP_HOSTNAME     = 'haulandstorecouk.sharepoint.com';
-  let   msalInstance    = null;
-  let   odAccount       = null;
-  let   spDriveBase     = null;
+  // ── GitHub Sync ───────────────────────────────────────────────────────────
+  // All users read/write the same files in the GitHub repo via the API.
+  // Each user stores their own token in localStorage — it never leaves the browser.
+  const GH_LS_TOKEN   = 'msoft_gh_token';
+  const GH_LS_REPO    = 'msoft_gh_repo';    // owner/repo e.g. "rupert/mintsoft-dashboard"
+  const GH_HIST_PATH  = 'mintsoft-history.json';
+  const GH_SNAP_PATH  = 'mintsoft-daily-snapshots.json';
+  let   ghToken       = null;
+  let   ghRepo        = null;  // "owner/repo"
 
-  // Discover the SharePoint root site drive URL once after sign-in.
-  async function getSpDriveBase() {
-    if (spDriveBase) return spDriveBase;
-    const token = await getOdToken();
-    const res   = await fetch(
-      `https://graph.microsoft.com/v1.0/sites/${SP_HOSTNAME}:/`,
-      { headers: { Authorization: 'Bearer ' + token } }
-    );
-    if (!res.ok) throw new Error('SP site lookup failed: HTTP ' + res.status);
-    const site  = await res.json();
-    spDriveBase = `https://graph.microsoft.com/v1.0/sites/${site.id}/drive/root:`;
-    console.log('SharePoint drive base:', spDriveBase);
-    return spDriveBase;
+  function ghGetCreds() {
+    ghToken = lsGet(GH_LS_TOKEN) || null;
+    ghRepo  = lsGet(GH_LS_REPO)  || null;
+    // Auto-detect repo from the URL the proxy is serving index.html from
+    if (!ghRepo) {
+      // Try to extract owner/repo from a raw.githubusercontent.com URL stored in session
+      const stored = sessionStorage.getItem('msoft_gh_repo_auto');
+      if (stored) ghRepo = stored;
+    }
+    return !!(ghToken && ghRepo);
   }
 
-  function getOdClientId() {
-    return lsGet(OD_LS_KEY) || hashGet('od') || OD_CLIENT_ID_DEFAULT;
+  function ghSaveToken() {
+    const tok = $('inp-gh-token').value.trim();
+    if (!tok) return;
+    lsSet(GH_LS_TOKEN, tok);
+    $('gh-setup').style.display = 'none';
+    ghToken = tok;
+    ghConnectWithToken();
   }
 
-  function saveOdClientId() {
-    const v = $('inp-od-clientid').value.trim();
-    if (!v) return;
-    lsSet(OD_LS_KEY, v); hashSet('od', v);
-    $('od-setup').style.display = 'none';
-    initMsal(v);
+  async function ghConnectWithToken() {
+    if (!ghToken) { $('gh-setup').style.display = 'block'; return; }
+    // Discover the repo by reading the raw URL from the proxy's OneDriveUrl hint
+    // or fall back to asking. For now auto-detect from known token.
+    if (!ghRepo) {
+      // Ask user for repo if not already known
+      const r = prompt('Enter your GitHub repo (owner/reponame):\ne.g.  rupert-haulandstore/mintsoft-dashboard');
+      if (!r) return;
+      ghRepo = r.trim();
+      lsSet(GH_LS_REPO, ghRepo);
+    }
+    await ghSync();
+    setInterval(ghSaveHistory, AUTO_SAVE_MS);
   }
 
-  function initMsal(clientId) {
-    if (!window.msal) { console.warn('MSAL not loaded'); return; }
-    msalInstance = new msal.PublicClientApplication({
-      auth: {
-        clientId,
-        authority: 'https://login.microsoftonline.com/75f1e93a-19be-4e6e-aaed-379a2b80572f',
-        redirectUri: location.href.split('#')[0]
-      },
-      cache: { cacheLocation: 'localStorage', storeAuthStateInCookie: true }
+  function ghConnect() {
+    if (ghGetCreds()) {
+      ghConnectWithToken();
+    } else {
+      $('gh-setup').style.display = 'block';
+    }
+  }
+
+  function ghDisconnect() {
+    ghToken = null; ghRepo = null;
+    lsSet(GH_LS_TOKEN, ''); lsSet(GH_LS_REPO, '');
+    updateGhUI(false);
+  }
+
+  function updateGhUI(connected) {
+    $('btn-gh-connect').style.display    = connected ? 'none' : '';
+    $('btn-gh-sync').style.display       = connected ? ''     : 'none';
+    $('btn-gh-disconnect').style.display = connected ? ''     : 'none';
+    if (!connected) setHistoryStatus('Connect GitHub to share history across all machines');
+  }
+
+  // ── GitHub API helpers ────────────────────────────────────────────────────
+  async function ghGetFile(path) {
+    const res = await fetch(`https://api.github.com/repos/${ghRepo}/contents/${path}`, {
+      headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json' }
     });
-    // Handle redirect after login
-    msalInstance.handleRedirectPromise().then(resp => {
-      if (resp) {
-        odAccount = resp.account;
-        onOdSignedIn();
-      } else {
-        const accounts = msalInstance.getAllAccounts();
-        if (accounts.length > 0) { odAccount = accounts[0]; onOdSignedIn(); }
-        else { updateOdUI(false); }
-      }
-    }).catch(e => { console.warn('MSAL redirect error:', e); updateOdUI(false); });
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error('GitHub GET ' + path + ': HTTP ' + res.status);
+    const meta = await res.json();
+    const content = JSON.parse(atob(meta.content.replace(/\n/g, '')));
+    return { data: content, sha: meta.sha };
   }
 
-  async function odSignIn() {
-    const clientId = getOdClientId();
-    if (!clientId) { $('od-setup').style.display = 'block'; return; }
-    if (!msalInstance) initMsal(clientId);
+  async function ghPutFile(path, data, existingSha) {
+    const body = { message: 'Dashboard sync ' + new Date().toISOString(),
+                   content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))) };
+    if (existingSha) body.sha = existingSha;
+    const res = await fetch(`https://api.github.com/repos/${ghRepo}/contents/${path}`, {
+      method: 'PUT',
+      headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json',
+                 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error('GitHub PUT ' + path + ': ' + (err.message || 'HTTP ' + res.status));
+    }
+    return (await res.json()).content.sha;
+  }
+
+  // ── Sync: load then save ──────────────────────────────────────────────────
+  async function ghSync() {
+    if (!ghToken || !ghRepo) return;
+    setHistoryStatus('GitHub: syncing…');
     try {
-      const resp = await msalInstance.loginPopup({ scopes: ['Files.ReadWrite', 'Sites.ReadWrite.All', 'User.Read'] });
-      odAccount = resp.account;
-      onOdSignedIn();
+      await ghLoadHistory();
+      await ghLoadDaySnapshots();
+      await ghSaveHistory();
+      updateGhUI(true);
     } catch(e) {
-      if (e.errorCode !== 'user_cancelled') console.warn('OneDrive sign-in error:', e);
+      console.warn('GitHub sync error:', e);
+      setHistoryStatus('GitHub: sync error — ' + e.message);
+      updateGhUI(true);
     }
   }
 
-  async function odSignOut() {
-    if (msalInstance && odAccount) {
-      await msalInstance.logoutPopup({ account: odAccount });
+  async function ghLoadHistory() {
+    const file = await ghGetFile(GH_HIST_PATH);
+    if (!file) { setHistoryStatus('GitHub: no history file yet — will create on first save'); return; }
+    const data    = file.data;
+    const batches = Array.isArray(data) ? data : (data.batches || []);
+    const existing = new Set(batchHistory.map(h => h.batchId));
+    let added = 0;
+    for (const b of batches) {
+      if (b.batchId && b.actualSecOrd && !existing.has(b.batchId)) {
+        batchHistory.push(b); existing.add(b.batchId); added++;
+      }
     }
-    odAccount = null;
-    updateOdUI(false);
+    if (added) updateHistoryUI();
+
+    const cloudSnaps = data.packerSnaps || [];
+    const snapKey = s => s.dow + '-' + s.hour + '-' + s.ts.slice(0, 13);
+    const existingSnaps = new Set(packerSnapshots.map(snapKey));
+    let snapsAdded = 0;
+    for (const s of cloudSnaps) {
+      if (s.dow != null && s.hour != null && s.ts && !existingSnaps.has(snapKey(s))) {
+        packerSnapshots.push(s); existingSnaps.add(snapKey(s)); snapsAdded++;
+      }
+    }
+    if (snapsAdded > 0) savePackerSnapshots();
+    console.log('GitHub: loaded', added, 'new batches,', snapsAdded, 'new packer snaps');
   }
 
-  function updateOdUI(signedIn) {
-    $('btn-od-signin').style.display  = signedIn ? 'none'  : '';
-    $('btn-od-signout').style.display = signedIn ? ''      : 'none';
-    if (!signedIn) setHistoryStatus('Sign in to OneDrive to share history across all machines');
-  }
-
-  async function onOdSignedIn() {
-    updateOdUI(true);
-    const name = odAccount.name || odAccount.username;
-    setHistoryStatus('OneDrive: signed in as ' + name + ' — syncing history…');
-    await odLoadHistory();
-    await odLoadDaySnapshots();
-    // Schedule auto-sync every 2 hours
-    setInterval(odSaveHistory, AUTO_SAVE_MS);
-  }
-
-  async function getOdToken() {
-    const r = await msalInstance.acquireTokenSilent({
-      scopes: ['Files.ReadWrite', 'Sites.ReadWrite.All'],
-      account: odAccount
-    });
-    return r.accessToken;
-  }
-
-  async function odLoadHistory() {
+  async function ghSaveHistory() {
+    if (!ghToken || !ghRepo) return;
     try {
-      const base  = await getSpDriveBase();
-      const token = await getOdToken();
-      const res   = await fetch(
-        base + OD_FILE_PATH + ':/content',
-        { headers: { Authorization: 'Bearer ' + token } }
-      );
-      if (res.status === 404) {
-        setHistoryStatus('OneDrive: no history file yet — will create on next save');
-        return;
-      }
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data    = await res.json();
-      const batches = Array.isArray(data) ? data : (data.batches || []);
-      const before  = batchHistory.length;
-      const existing = new Set(batchHistory.map(h => h.batchId));
-      let added = 0;
-      for (const b of batches) {
-        if (b.batchId && b.actualSecOrd && !existing.has(b.batchId)) {
-          batchHistory.push(b); existing.add(b.batchId); added++;
-        }
-      }
-      updateHistoryUI();
-
-      // ── Merge packer snapshots from OneDrive ───────────────────────────────
-      const cloudSnaps = data.packerSnaps || [];
-      const snapKey = s => s.dow + '-' + s.hour + '-' + s.ts.slice(0, 13);
-      const existingSnaps = new Set(packerSnapshots.map(snapKey));
-      let snapsAdded = 0;
-      for (const s of cloudSnaps) {
-        if (s.dow != null && s.hour != null && s.ts && !existingSnaps.has(snapKey(s))) {
-          packerSnapshots.push(s); existingSnaps.add(snapKey(s)); snapsAdded++;
-        }
-      }
-      if (snapsAdded > 0) savePackerSnapshots();
-
-      setHistoryStatus('OneDrive: synced — ' + batchHistory.length + ' batches (' + added + ' new), ' + packerSnapshots.length + ' packer snaps (' + snapsAdded + ' new)');
-      console.log('OneDrive: loaded', added, 'new batches, total=', batchHistory.length, '| packer snaps added:', snapsAdded);
-    } catch(e) { console.warn('OneDrive load error:', e); setHistoryStatus('OneDrive: load error — ' + e.message); }
+      const existing = await ghGetFile(GH_HIST_PATH);
+      const sha = await ghPutFile(GH_HIST_PATH,
+        { version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots },
+        existing ? existing.sha : null);
+      setHistoryStatus('GitHub: saved ' + new Date().toLocaleTimeString('en-GB') + ' — ' + batchHistory.length + ' batches');
+      console.log('GitHub: saved', batchHistory.length, 'batches');
+    } catch(e) { console.warn('GitHub save error:', e); setHistoryStatus('GitHub: save error — ' + e.message); }
   }
 
-  async function odSaveHistory() {
-    if (!odAccount || !msalInstance) return;
+  async function ghLoadDaySnapshots() {
+    const file = await ghGetFile(GH_SNAP_PATH);
+    if (!file) return;
+    const incoming = file.data.days || {};
+    for (const [d, snap] of Object.entries(incoming)) {
+      if (!dailySnapshots[d] || new Date(snap.savedAt) > new Date((dailySnapshots[d]||{}).savedAt||0)) {
+        dailySnapshots[d] = snap;
+      }
+    }
+    updateDaySnapshotUI();
+  }
+
+  async function ghSaveDaySnapshot(silent) {
+    if (!ghToken || !ghRepo) {
+      if (!silent) { $('gh-setup').style.display = 'block'; } return;
+    }
+    const snap = captureDaySnapshot();
+    if (!snap || snap.despatched === 0) {
+      if (!silent) alert('No despatch data to save yet — wait until some orders are despatched.');
+      return;
+    }
     try {
-      const base  = await getSpDriveBase();
-      const token = await getOdToken();
-      const json  = JSON.stringify({ version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots }, null, 2);
-      const res   = await fetch(
-        base + OD_FILE_PATH + ':/content',
-        { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
-      );
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      setHistoryStatus('OneDrive: saved ' + new Date().toLocaleTimeString('en-GB') + ' — ' + batchHistory.length + ' batches, ' + packerSnapshots.length + ' packer snaps');
-      console.log('OneDrive: saved', batchHistory.length, 'batches');
-    } catch(e) { console.warn('OneDrive save error:', e); setHistoryStatus('OneDrive: save error — ' + e.message); }
+      const _snapKey = snap.hour ? `${snap.date}T${snap.hour}` : snap.date;
+      dailySnapshots[_snapKey] = snap;
+      const existing = await ghGetFile(GH_SNAP_PATH);
+      await ghPutFile(GH_SNAP_PATH,
+        { version: 1, saved: new Date().toISOString(), days: dailySnapshots },
+        existing ? existing.sha : null);
+      setHistoryStatus('📅 Day snapshot saved — ' + snap.date + ' (' + snap.despatched + ' orders despatched)');
+      updateDaySnapshotUI();
+    } catch(e) {
+      console.warn('GitHub snapshot save error:', e);
+      if (!silent) setHistoryStatus('Snapshot error: ' + e.message);
+    }
   }
-
-  // After local save, also push to OneDrive if signed in
-  // (wired directly into saveHistory body below — no wrapper needed)
 
   // ── Daily Performance Snapshot ───────────────────────────────────────────
 
@@ -2310,58 +2325,6 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       packers:         r.packers,
       batchRows:       r.batchRows
     };
-  }
-
-  async function odSaveDaySnapshot(silent) {
-    if (!odAccount || !msalInstance) {
-      if (!silent) alert('Sign in to OneDrive first to save day snapshots.');
-      return;
-    }
-    const snap = captureDaySnapshot();
-    if (!snap || snap.despatched === 0) {
-      if (!silent) alert('No despatch data to save yet — wait until some orders are despatched.');
-      return;
-    }
-    try {
-      const base  = await getSpDriveBase();
-      const token = await getOdToken();
-      const _snapKey = snap.hour ? `${snap.date}T${snap.hour}` : snap.date;
-    dailySnapshots[_snapKey] = snap;
-      const json  = JSON.stringify({ version: 1, saved: new Date().toISOString(), days: dailySnapshots }, null, 2);
-      const res   = await fetch(
-        base + OD_SNAP_PATH + ':/content',
-        { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
-      );
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      setHistoryStatus('📅 Day snapshot saved — ' + snap.date + ' (' + snap.despatched + ' orders despatched)');
-      updateDaySnapshotUI();
-    } catch(e) {
-      console.warn('Day snapshot save error:', e);
-      if (!silent) setHistoryStatus('Day snapshot error: ' + e.message);
-    }
-  }
-
-  async function odLoadDaySnapshots() {
-    if (!odAccount || !msalInstance) return;
-    try {
-      const base  = await getSpDriveBase();
-      const token = await getOdToken();
-      const res   = await fetch(
-        base + OD_SNAP_PATH + ':/content',
-        { headers: { Authorization: 'Bearer ' + token } }
-      );
-      if (res.status === 404) return;
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data     = await res.json();
-      const incoming = data.days || {};
-      for (const [d, snap] of Object.entries(incoming)) {
-        if (!dailySnapshots[d] || new Date(snap.savedAt) > new Date((dailySnapshots[d]||{}).savedAt||0)) {
-          dailySnapshots[d] = snap;
-        }
-      }
-      updateDaySnapshotUI();
-      console.log('Day snapshots loaded:', Object.keys(dailySnapshots).length, 'days');
-    } catch(e) { console.warn('Day snapshots load error:', e); }
   }
 
   function updateDaySnapshotUI() {
@@ -2425,8 +2388,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   // Init MSAL on load — client ID is baked in so always initialises
   (function() {
-    $('od-setup').style.display = 'none';  // setup panel not needed, ID is pre-configured
-    initMsal(getOdClientId());
+    // Auto-connect GitHub if token already saved
+    if (ghGetCreds()) ghConnectWithToken();
   })();
 
 </script>
