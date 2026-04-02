@@ -10,7 +10,2438 @@
     :root {
       --bg:      #0d1117;
       --surface: #161b22;
+      --surf2:   #1c2333;<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mintsoft Despatch KPI Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
       --surf2:   #1c2333;
+      --border:  #30363d;
+      --blue:    #2563eb;
+      --green:   #10b981;
+      --amber:   #f59e0b;
+      --red:     #ef4444;
+      --text:    #e6edf3;
+      --muted:   #8b949e;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      min-height: 100%;
+    }
+
+    /* ── Config bar ────────────────────────────────────── */
+    #config-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    #config-bar label { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    #config-bar input[type="password"],
+    #config-bar input[type="text"] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+    #config-bar input[type="password"] { width: 210px; }
+    #config-bar input[type="text"]     { width: 210px; }
+    #config-bar input[type="number"],
+    #config-bar input[type="time"] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 13px;
+      width: 80px;
+    }
+    #config-bar input[type="number"] { width: 68px; }
+    .btn {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .btn:hover { filter: brightness(1.15); }
+    .btn.ghost {
+      background: var(--surf2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    #status-pill {
+      font-size: 12px;
+      padding: 3px 12px;
+      border-radius: 999px;
+      background: var(--surf2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 120px;
+      text-align: center;
+    }
+    #status-pill.ok   { background:#052e16; border-color:#166534; color:#4ade80; }
+    #status-pill.err  { background:#450a0a; border-color:#7f1d1d; color:#fca5a5; }
+    #status-pill.warn { background:#1c1a02; border-color:#713f12; color:#fde047; }
+    #next-refresh { font-size:11px; color:var(--muted); white-space:nowrap; }
+
+    /* ── Header ────────────────────────────────────────── */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px 8px;
+    }
+    #header h1 { font-size: 18px; font-weight: 700; }
+    #clock { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; text-align:right; line-height:1.1; }
+    #date-str { font-size: 12px; color: var(--muted); text-align: right; margin-top:2px; }
+
+    /* ── Shift progress ────────────────────────────────── */
+    #shift-wrap { padding: 0 20px 14px; }
+    .prog-labels { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-bottom:4px; }
+    .prog-track  { background:var(--surf2); border-radius:999px; height:8px; overflow:hidden; }
+    .prog-fill   { height:100%; border-radius:999px; background:linear-gradient(90deg,var(--blue),var(--green)); transition:width .4s; }
+
+    /* ── KPI cards ─────────────────────────────────────── */
+    #kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 12px;
+      padding: 0 20px 14px;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .kpi-lbl { font-size: 10px; color: var(--muted); text-transform:uppercase; letter-spacing:.6px; margin-bottom:6px; }
+    .kpi-val { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; line-height:1; }
+    .kpi-sub { font-size: 11px; color: var(--muted); margin-top:5px; }
+    .c-green .kpi-val { color: var(--green); }
+    .c-blue  .kpi-val { color: #60a5fa; }
+    .c-amber .kpi-val { color: var(--amber); }
+    .c-red   .kpi-val { color: var(--red); }
+
+    /* ── Chart row ─────────────────────────────────────── */
+    #chart-row {
+      display: flex;
+      gap: 12px;
+      padding: 0 20px 14px;
+      flex-wrap: wrap;
+    }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      flex: 1;
+      min-width: 230px;
+    }
+    .chart-card h3 {
+      font-size:11px; color:var(--muted); text-transform:uppercase;
+      letter-spacing:.5px; margin-bottom:10px;
+    }
+    .bar-row  { display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+    .bar-lbl  { font-size:12px; color:var(--muted); width:108px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .bar-track{ flex:1; background:var(--surf2); border-radius:999px; height:9px; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:999px; background:var(--blue); transition:width .4s; }
+    .bar-fill.green { background:var(--green); }
+    .bar-fill.amber { background:var(--amber); }
+    .bar-fill.red   { background:var(--red); }
+    .bar-val  { font-size:12px; font-variant-numeric:tabular-nums; width:46px; text-align:right; color:var(--text); }
+    .empty-msg { color:var(--muted); font-size:12px; font-style:italic; }
+
+    /* ── Batch table ───────────────────────────────────── */
+    #batch-section  { padding: 0 20px 14px; }
+    #picker-section { padding: 0 20px 20px; }
+    .section-title {
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing:.5px; margin-bottom:10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    thead th {
+      padding: 9px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--muted);
+      background: var(--surf2);
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--surf2); }
+    tbody td { padding: 9px 12px; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .badge {
+      display:inline-block; padding:2px 8px; border-radius:999px;
+      font-size:11px; font-weight:600;
+    }
+    .badge-fast  { background:#052e16; color:#4ade80; border:1px solid #166534; }
+    .badge-avg   { background:#1c1a02; color:#fde047; border:1px solid #713f12; }
+    .badge-slow  { background:#450a0a; color:#fca5a5; border:1px solid #7f1d1d; }
+    .badge-done  { background:#0c1a3a; color:#93c5fd; border:1px solid #1d4ed8; }
+    .badge-pend  { background:var(--surf2); color:var(--muted); border:1px solid var(--border); }
+    .msg-row td  { color:var(--muted); font-style:italic; }
+
+    /* ── Progress spinner overlay ──────────────────────── */
+    #loading-overlay {
+      display:none; position:fixed; inset:0;
+      background:rgba(13,17,23,.6); z-index:999;
+      align-items:center; justify-content:center; flex-direction:column; gap:14px;
+    }
+    #loading-overlay.show { display:flex; }
+    .spinner {
+      width:40px; height:40px; border:4px solid var(--border);
+      border-top-color:var(--blue); border-radius:50%;
+      animation:spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    #loading-msg { color:var(--text); font-size:14px; }
+
+    /* ── Footer ────────────────────────────────────────── */
+    #footer {
+      padding: 10px 20px;
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ::-webkit-scrollbar { width:6px; height:6px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--border); border-radius:999px; }
+  </style>
+  <!-- MSAL.js for OneDrive sync — served locally via proxy so it works at localhost:8787 -->
+  <script src="/msal-browser.min.js"></script>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <div id="loading-msg">Loading batches…</div>
+</div>
+
+<!-- ── Config bar ──────────────────────────────────────── -->
+<div id="config-bar">
+  <label>API Key</label>
+  <input type="password" id="inp-apikey" placeholder="Paste ms-apikey here" />
+  <label>Base URL</label>
+  <input type="text"     id="inp-baseurl" value="http://localhost:8787" />
+  <label>Shift</label>
+  <input type="time"     id="inp-start"   value="07:15" />
+  <span style="color:var(--muted);font-size:12px">→</span>
+  <input type="time"     id="inp-end"     value="17:00" />
+  <label>Secs×</label>
+  <input type="number"   id="inp-mult"    value="6" min="1" max="60" title="Seconds per order = batch_type × this" />
+  <label>Packers</label>
+  <input type="number"   id="inp-packers"  value="0" min="0" max="100" title="Expected packer count. Set to 0 to use historical average automatically." />
+  <label>Refresh (min)</label>
+  <input type="number"   id="inp-interval" value="15" min="1" max="120" />
+  <button class="btn" id="btn-refresh">↻ Refresh Now</button>
+  <span id="status-pill">Not loaded</span>
+  <span id="next-refresh"></span>
+</div>
+
+
+<!-- ── Setup notice ───────────────────────────────────────── -->
+<div id="setup-banner" style="
+  background:#0c1a3a; border-bottom:1px solid #1d4ed8;
+  padding:10px 20px; font-size:13px; display:none;
+  align-items:flex-start; gap:16px; flex-wrap:wrap;
+">
+  <div style="flex:1;min-width:300px;">
+    <strong style="color:#93c5fd;">⚡ One-time setup required — run the local proxy</strong>
+    <div style="color:#bfdbfe;margin-top:4px;line-height:1.6;">
+      Mintsoft's API blocks browser requests (CORS). A tiny local proxy fixes this in seconds:
+    </div>
+    <ol style="color:#bfdbfe;margin-top:6px;padding-left:18px;line-height:1.8;font-size:12px;">
+      <li>Download <strong>mintsoft-proxy.ps1</strong> (link below) and save it anywhere on your PC</li>
+      <li>Right-click it → <em>Run with PowerShell</em> &nbsp;(or: open PowerShell, run <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">.\mintsoft-proxy.ps1</code>)</li>
+      <li>Leave that window open — the proxy runs silently in the background</li>
+      <li>Come back here, paste your API key, click <strong>Refresh Now</strong></li>
+    </ol>
+    <div style="margin-top:6px;font-size:12px;color:#7dd3fc;">
+      The proxy only runs on your machine and only forwards requests to <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">api.mintsoft.co.uk</code>. Nothing is stored or sent anywhere else.
+    </div>
+    <div style="margin-top:6px;font-size:12px;color:#7dd3fc;">
+      <strong>Bake your API key in:</strong> run as
+      <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">.\mintsoft-proxy.ps1 -ApiKey "YOUR_KEY"</code>
+      and leave the API Key field in the dashboard blank.
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px;min-width:160px;">
+    <a id="proxy-download-link" href="#" download="mintsoft-proxy.ps1"
+       style="background:#2563eb;color:#fff;padding:8px 14px;border-radius:6px;
+              text-decoration:none;font-weight:600;font-size:13px;text-align:center;">
+      ⬇ Download mintsoft-proxy.ps1
+    </a>
+    <button onclick="document.getElementById('setup-banner').style.display='none'"
+       style="background:transparent;border:1px solid #1d4ed8;color:#93c5fd;
+              padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px;">
+      Dismiss
+    </button>
+  </div>
+</div>
+
+<!-- ── Benchmark alert banner ──────────────────────────── -->
+<div id="bench-alert" style="display:none; padding:10px 20px; font-size:13px;
+  border-bottom:1px solid; align-items:center; gap:12px; flex-wrap:wrap;">
+  <span id="bench-alert-icon" style="font-size:18px;"></span>
+  <span id="bench-alert-msg" style="flex:1;"></span>
+  <button onclick="document.getElementById('bench-alert').style.display='none'"
+    style="background:transparent;border:1px solid currentColor;color:inherit;
+           padding:4px 12px;border-radius:4px;cursor:pointer;font-size:12px;">Dismiss</button>
+</div>
+
+<!-- ── Header ─────────────────────────────────────────── -->
+<div id="header">
+  <h1>📦 Mintsoft Despatch KPI Dashboard</h1>
+  <div>
+    <div id="clock">--:--:--</div>
+    <div id="date-str"></div>
+  </div>
+</div>
+
+<!-- ── Shift progress ─────────────────────────────────── -->
+<div id="shift-wrap">
+  <div class="prog-labels">
+    <span id="lbl-start">07:15</span>
+    <span id="lbl-pct">0% of shift elapsed</span>
+    <span id="lbl-end">17:00</span>
+  </div>
+  <div class="prog-track"><div class="prog-fill" id="shift-fill" style="width:0%"></div></div>
+</div>
+
+<!-- ── KPI cards ──────────────────────────────────────── -->
+<div id="kpi-grid">
+  <div class="kpi c-green">
+    <div class="kpi-lbl">Despatched Today</div>
+    <div class="kpi-val" id="v-despatched">—</div>
+    <div class="kpi-sub">orders sent</div>
+  </div>
+  <div class="kpi c-blue">
+    <div class="kpi-lbl">Pending / Open</div>
+    <div class="kpi-val" id="v-pending">—</div>
+    <div class="kpi-sub">orders to despatch</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-lbl">Total Today</div>
+    <div class="kpi-val" id="v-total">—</div>
+    <div class="kpi-sub" id="v-pct-sub">orders this shift</div>
+  </div>
+  <div class="kpi c-green">
+    <div class="kpi-lbl">% Complete</div>
+    <div class="kpi-val" id="v-pct">—</div>
+    <div class="kpi-sub">of today's orders</div>
+  </div>
+  <div class="kpi c-amber">
+    <div class="kpi-lbl">Actual Secs / Order</div>
+    <div class="kpi-val" id="v-actual-secs">—</div>
+    <div class="kpi-sub" id="v-actual-sub">from real despatch times</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-lbl">Target Secs / Order</div>
+    <div class="kpi-val" id="v-target-secs">—</div>
+    <div class="kpi-sub" id="v-target-sub">from batch type × <span id="lbl-mult">6</span>s</div>
+  </div>
+  <div class="kpi c-blue">
+    <div class="kpi-lbl">Despatch Rate</div>
+    <div class="kpi-val" id="v-rate">—</div>
+    <div class="kpi-sub">orders / hour</div>
+  </div>
+  <div class="kpi" id="kpi-eta">
+    <div class="kpi-lbl">Est. Completion</div>
+    <div class="kpi-val" id="v-eta">—</div>
+    <div class="kpi-sub" id="v-eta-sub">at current pace</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-lbl">Remaining Work</div>
+    <div class="kpi-val" id="v-rem">—</div>
+    <div class="kpi-sub" id="v-rem-sub">hours of target time left</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-lbl">Active Batches</div>
+    <div class="kpi-val" id="v-batches">—</div>
+    <div class="kpi-sub">active batches loaded</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-lbl">Active Packers</div>
+    <div class="kpi-val" id="v-packers">—</div>
+    <div class="kpi-sub" id="kpi-packers-sub">despatching today</div>
+  </div>
+  <div class="kpi c-green">
+    <div class="kpi-lbl">On / Under Target</div>
+    <div class="kpi-val" id="v-vs-target">—</div>
+    <div class="kpi-sub" id="v-vs-target-sub">actual vs target pace</div>
+  </div>
+  <div class="kpi c-blue" id="kpi-bench">
+    <div class="kpi-lbl">Historical Best</div>
+    <div class="kpi-val" id="v-bench">—</div>
+    <div class="kpi-sub" id="v-bench-sub">top 20% per reference type</div>
+  </div>
+</div>
+
+<!-- ── History controls ───────────────────────────── -->
+<div id="history-bar" style="background:var(--surface);border-bottom:1px solid var(--border);
+  padding:8px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;">
+  <span style="color:var(--muted);font-weight:600;">Batch History:</span>
+  <span id="history-count" style="color:var(--fg);">No history loaded</span>
+  <button class="btn" id="btn-od-signin" onclick="odSignIn()" style="background:#0078d4;">&#9729; Sign in to OneDrive</button>
+  <button class="btn" onclick="window.open(location.href,'_blank')" style="background:#1a472a;font-size:12px;" title="OneDrive requires the dashboard to be open in its own tab">&#x2197; Open in full tab (for OneDrive)</button>
+  <button class="btn" id="btn-od-signout" onclick="odSignOut()" style="display:none;background:#555;">Sign out</button>
+  <button class="btn" onclick="exportHistory()" title="Download history as a JSON file to move to another machine">⬇ Export history</button>
+  <label class="btn" style="cursor:pointer;" title="Manually load a mintsoft-history.json backup">
+    📂 Load backup
+    <input type="file" id="inp-history" accept=".json" style="display:none" onchange="loadHistoryFile(this)">
+  </label>
+  <button class="btn" onclick="odSaveDaySnapshot(false)"
+    style="background:#7c3aed;" title="Save today's performance snapshot to OneDrive now">💾 Save Day</button>
+  <button class="btn" onclick="togglePastDaysPanel()"
+    style="background:#0369a1;">📅 Past Days</button>
+  <span id="past-day-count" style="color:var(--muted);font-size:12px;"></span>
+  <span id="history-status" style="color:var(--muted);font-size:12px;">Sign in to OneDrive to share history across all machines</span>
+</div>
+
+<!-- ── Past Days Viewer ───────────────────────────────── -->
+<div id="past-days-panel" style="display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:14px 20px;">
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;">
+    <strong style="color:var(--text);font-size:14px;">📅 Past Performance</strong>
+    <select id="past-day-select" onchange="renderPastDay(this.value)"
+      style="background:var(--bg);border:1px solid var(--border);color:var(--text);
+             border-radius:6px;padding:5px 12px;font-size:13px;min-width:280px;">
+      <option value="">— Select a day to view —</option>
+    </select>
+    <button class="btn ghost" onclick="togglePastDaysPanel()" style="margin-left:auto;">✕ Close</button>
+  </div>
+  <div id="past-day-content"></div>
+</div>
+
+<!-- OneDrive setup panel (shown if no client ID configured) -->
+<div id="od-setup" style="display:none;background:#0c1a2e;border-bottom:1px solid #1d4ed8;
+  padding:12px 20px;font-size:13px;color:#bfdbfe;">
+  <strong style="color:#93c5fd;">&#128274; One-time OneDrive setup required</strong>
+  <div style="margin-top:8px;line-height:1.8;">
+    1. Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade" target="_blank" style="color:#7dd3fc;">portal.azure.com → App registrations → New registration</a><br>
+    2. Name: <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">Mintsoft Dashboard</code> &nbsp;•&nbsp; Supported account types: <strong>Accounts in this organisational directory only</strong><br>
+    3. Redirect URI: select <strong>Single-page application (SPA)</strong> and enter the URL of this dashboard<br>
+    4. Click <strong>Register</strong>, then copy the <strong>Application (client) ID</strong><br>
+    5. On the app page go to <strong>API permissions → Add → Microsoft Graph → Delegated → Files.ReadWrite</strong> and grant admin consent<br>
+    6. Paste the client ID here:
+    <input id="inp-od-clientid" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      style="background:#0d1117;border:1px solid #1d4ed8;color:#fff;padding:4px 8px;border-radius:4px;width:320px;margin-left:8px;">
+    <button class="btn" onclick="saveOdClientId()" style="margin-left:6px;">Save &amp; connect</button>
+  </div>
+</div>
+
+<!-- ── Charts ─────────────────────────────────────────── -->
+<div id="chart-row">
+  <div class="chart-card" style="flex:2;min-width:260px;">
+    <h3>Hourly Despatch Throughput</h3>
+    <div id="hourly-bars"><p class="empty-msg">Awaiting data…</p></div>
+  </div>
+  <div class="chart-card" style="flex:1.5;min-width:220px;">
+    <h3>Packer — Actual vs Target (secs/order)</h3>
+    <div id="packer-pace-bars"><p class="empty-msg">Awaiting data…</p></div>
+  </div>
+  <div class="chart-card" style="flex:1;min-width:200px;">
+    <h3>Pending by Courier / Channel</h3>
+    <div id="channel-bars"><p class="empty-msg">Awaiting data…</p></div>
+  </div>
+  <div class="chart-card" style="flex:1;min-width:200px;">
+    <h3>Pending by Account Manager</h3>
+    <div id="client-bars"><p class="empty-msg">Awaiting data…</p></div>
+  </div>
+</div>
+
+<!-- ── Per-packer table ────────────────────────────────── -->
+<div id="picker-section">
+  <div class="section-title">Per-Packer Performance — from live batch order data</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Packer</th>
+        <th>Orders</th>
+        <th>Batches</th>
+        <th>Actual Secs/Order</th>
+        <th>Target Secs/Order</th>
+        <th>vs Target</th>
+        <th>Working Time</th>
+        <th>First Despatch</th>
+        <th>Last Despatch</th>
+        <th>Pace</th>
+      </tr>
+    </thead>
+    <tbody id="picker-tbody">
+      <tr class="msg-row"><td colspan="10">Enter your API key and click Refresh to load data.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── Batch detail table ──────────────────────────────── -->
+<div id="batch-section">
+  <div class="section-title">Active Batches (last 7 days) — consolidated by reference type</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Batch IDs</th>
+        <th>Reference</th>
+        <th>Type</th>
+        <th>Orders</th>
+        <th>Packers</th>
+        <th>Status</th>
+        <th>Benchmark</th>
+        <th>Actual s/ord</th>
+        <th>vs Bench</th>
+        <th>Target (min)</th>
+        <th>Actual (min)</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+    </thead>
+    <tbody id="batch-tbody">
+      <tr class="msg-row"><td colspan="13">No batch data loaded.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<div id="footer">
+  <span>Mintsoft Despatch KPI · Haul &amp; Store · auto-refreshes every <span id="lbl-interval">15</span> min</span>
+  <span id="last-updated">Never refreshed</span>
+</div>
+
+<script>
+/* ================================================================
+   MINTSOFT DESPATCH KPI DASHBOARD — fully API-driven, no CSV upload
+   
+   TIMING MODEL (mirrors batch-despatch-by-personv2.ps1):
+   ───────────────────────────────────────────────────────
+   Target secs/order  = bracket_number_from_Reference × multiplier (default 6)
+   Actual secs/order  = real DespatchDate timestamps on orders in each batch
+                        (batch start = first DespatchDate, end = last DespatchDate)
+   Packer identified  = OrderNameValues where Name='DespatchByUser' → LastUpdatedByUser
+   
+   API calls:
+     GET /api/Batch/List          → all batches, filter to today by Created date
+     GET /api/Batch/{id}          → returns flat array of Order objects
+     GET /api/Order/Search        → today's open orders (for pending count)
+   ================================================================ */
+
+  // ── State ────────────────────────────────────────────
+  let refreshTimer   = null;
+  let countdownTimer = null;
+  let nextRefreshAt  = null;
+
+  // ── Load guard & first-load flag ────────────────────────────────
+  // isDashboardLoading prevents overlapping refreshes.
+  // hasInitialData controls whether the loading overlay is shown:
+  //   - First load: show overlay (nothing to display yet)
+  //   - Subsequent refreshes: fetch silently in background, keep current data visible,
+  //     swap in new data only when it’s ready.
+  let isDashboardLoading = false;
+  let hasInitialData     = false;
+
+  // ── Batch detail cache ───────────────────────────────
+  // Once a batch's orders are fetched we cache them here (keyed by batch ID).
+  // On subsequent refreshes we skip re-fetching batches that are already
+  // marked Despatched (completed) — their order data won't change.
+  const batchDetailCache = {};  // { [batchId]: { batch, orders } }
+
+  // ── DOM helpers ──────────────────────────────────────
+  const $ = id => document.getElementById(id);
+  const fmt2 = n => String(n).padStart(2,'0');
+
+  function apiKey()  { return $('inp-apikey').value.trim(); }
+  function baseUrl() { return $('inp-baseurl').value.trim().replace(/\/$/,''); }
+
+  // ── Batch history engine ──────────────────────────────────────────
+  // History is stored in browser storage — auto-loads when the dashboard opens,
+  // auto-saves every 2 hours. No file management needed.
+  const LS_KEY       = 'msoft_history';
+  let batchHistory   = [];
+  let lastAutoSave   = 0;
+  const AUTO_SAVE_MS = 2 * 60 * 60 * 1000;  // 2 hours
+
+  // ── Hourly packer snapshot history ──────────────────────────────────
+  // Each refresh we record { dow, hour, count, ts } for the live packer count.
+  // Stored separately in localStorage; trimmed to 60 days automatically.
+  const LS_KEY_SNAPS  = 'msoft_pksnaps';
+  let packerSnapshots = [];   // [{ dow, hour, count, ts }]
+
+  // ── Daily performance snapshots ──────────────────────────────────────────
+  const OD_SNAP_PATH    = '/Apps/MintoftDashboard/mintsoft-daily-snapshots.json';
+  let   dailySnapshots  = {};     // keyed by YYYY-MM-DD
+  let   lastRenderState = null;   // captured each render cycle
+  let lastSnapshotHour = -1; // -1 = no snapshot taken yet this session
+
+  // Called once on page load — reads history from browser storage
+  function initHistory() {
+    try {
+      const LS = window['local'+'Storage'];
+      const raw = LS.getItem(LS_KEY);
+      if (!raw) { updateHistoryUI(); return; }
+      const data    = JSON.parse(raw);
+      const batches = Array.isArray(data) ? data : (data.batches || []);
+      batchHistory  = batches.filter(b => b.batchId && b.actualSecOrd);
+      updateHistoryUI();
+      setHistoryStatus('Loaded from browser storage — ' + batchHistory.length + ' batches');
+      console.log('History: loaded', batchHistory.length, 'batches from browser storage');
+    } catch(e) { console.warn('History load:', e); }
+  }
+
+  function saveHistory() {
+    try {
+      window['local'+'Storage'].setItem(LS_KEY, JSON.stringify({ version: 2, saved: new Date().toISOString(), batches: batchHistory }));
+      lastAutoSave = Date.now();
+      setHistoryStatus('Auto-saved ' + new Date().toLocaleTimeString('en-GB') + ' — ' + batchHistory.length + ' batches');
+      console.log('History: saved', batchHistory.length, 'batches');
+    } catch(e) {
+      console.warn('History save error, trimming…', e);
+      try {
+        const keep = Math.floor(batchHistory.length * 0.8);
+        batchHistory = batchHistory.slice(-keep);
+        window['local'+'Storage'].setItem(LS_KEY, JSON.stringify({ version: 2, saved: new Date().toISOString(), batches: batchHistory }));
+        lastAutoSave = Date.now();
+        setHistoryStatus('Saved (trimmed to ' + batchHistory.length + ' batches)');
+      } catch(e2) { console.error('History save failed:', e2); }
+    }
+    // Also sync to OneDrive if signed in
+    if (typeof odAccount !== 'undefined' && odAccount) odSaveHistory();
+  }
+
+  function exportHistory() {
+    if (batchHistory.length === 0) { alert('No history to export yet.'); return; }
+    const json = JSON.stringify({ version: 2, exported: new Date().toISOString(), batches: batchHistory }, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'mintsoft-history.json'; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function loadHistoryFile(input) {
+    // Manual load — merges a previously exported JSON into the in-memory history
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data    = JSON.parse(e.target.result);
+        const batches = Array.isArray(data) ? data : (data.batches || []);
+        const existing = new Set(batchHistory.map(h => h.batchId));
+        let added = 0;
+        for (const b of batches) {
+          if (b.batchId && b.actualSecOrd && !existing.has(b.batchId)) {
+            batchHistory.push(b); existing.add(b.batchId); added++;
+          }
+        }
+        saveHistory();
+        updateHistoryUI();
+        setHistoryStatus('Loaded from file — ' + batchHistory.length + ' batches (' + added + ' new)');
+      } catch(err) { alert('Could not load history: ' + err.message); }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  }
+
+  function mergeHistoryFromBatches(batchRows, packerMap) {
+    const existing = new Set(batchHistory.map(h => h.batchId));
+    let added = 0;
+    const todayPackerCount = Object.keys(packerMap).length || 1;
+    for (const row of batchRows) {
+      if (!row.actualSecOrd || !row.despatched) continue;
+      if (existing.has(row.id)) continue;
+      const batchDate = row.batchEnd || new Date();
+      batchHistory.push({
+        batchId:      row.id,
+        reference:    row.reference,
+        date:         batchDate.toISOString(),
+        dayOfWeek:    batchDate.getDay(),   // 0=Sun, 1=Mon … 6=Sat
+        actualSecOrd: row.actualSecOrd,
+        orderCount:   row.orderCount,
+        packerCount:  todayPackerCount
+      });
+      existing.add(row.id);
+      added++;
+    }
+    if (added > 0) console.log('History: added', added, 'batches from today, total=', batchHistory.length);
+    updateHistoryUI();
+    // Auto-save every 2 hours (or immediately on first new data)
+    if (batchHistory.length > 0 && (lastAutoSave === 0 || Date.now() - lastAutoSave >= AUTO_SAVE_MS)) {
+      saveHistory();
+    }
+  }
+
+  function calcBenchmark() {
+    // Top 20% fastest secs/order per base reference type, then weighted average across types
+    if (batchHistory.length === 0) return null;
+
+    // Group by base reference
+    const groups = {};
+    for (const b of batchHistory) {
+      const key = baseRef(b.reference || '');
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(b);
+    }
+
+    let totalWeightedSecs = 0, totalOrders = 0;
+    for (const batches of Object.values(groups)) {
+      const sorted  = [...batches].sort((a,b) => a.actualSecOrd - b.actualSecOrd);
+      const topN    = Math.max(1, Math.ceil(sorted.length * 0.20));
+      const top     = sorted.slice(0, topN);
+      const grpOrders = top.reduce((s,b) => s + b.orderCount, 0);
+      const grpSecs   = top.reduce((s,b) => s + b.actualSecOrd * b.orderCount, 0);
+      totalWeightedSecs += grpSecs;
+      totalOrders       += grpOrders;
+    }
+    return totalOrders > 0 ? totalWeightedSecs / totalOrders : null;
+  }
+
+  // Per-reference benchmark map (used in batch table)
+  function calcBenchmarkByRef() {
+    const map = {};
+    if (batchHistory.length === 0) return map;
+    const groups = {};
+    for (const b of batchHistory) {
+      const key = baseRef(b.reference || '');
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(b);
+    }
+    for (const [key, batches] of Object.entries(groups)) {
+      const sorted = [...batches].sort((a,b) => a.actualSecOrd - b.actualSecOrd);
+      const topN   = Math.max(1, Math.ceil(sorted.length * 0.20));
+      const top    = sorted.slice(0, topN);
+      const ord    = top.reduce((s,b) => s + b.orderCount, 0);
+      const secs   = top.reduce((s,b) => s + b.actualSecOrd * b.orderCount, 0);
+      map[key] = ord > 0 ? secs / ord : null;
+    }
+    return map;
+  }
+
+  // Per-reference TARGET — top 10% fastest despatched batches per reference type.
+  function calcTargetByRef() {
+    const map = {};
+    if (batchHistory.length === 0) return map;
+    const groups = {};
+    for (const b of batchHistory) {
+      const key = baseRef(b.reference || '');
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(b);
+    }
+    for (const [key, batches] of Object.entries(groups)) {
+      const sorted = [...batches].sort((a,b) => a.actualSecOrd - b.actualSecOrd);
+      const topN   = Math.max(1, Math.ceil(sorted.length * 0.10));
+      const top    = sorted.slice(0, topN);
+      const ord    = top.reduce((s,b) => s + b.orderCount, 0);
+      const secs   = top.reduce((s,b) => s + b.actualSecOrd * b.orderCount, 0);
+      map[key] = ord > 0 ? secs / ord : null;
+    }
+    return map;
+  }
+
+  // Weighted top-10% target for a single packer based on their ref-type mix today
+  function calcPackerTarget(packerRefs) {
+    if (!packerRefs || batchHistory.length === 0) return null;
+    const targetByRef = calcTargetByRef();
+    let totalOrders = 0, weightedSecs = 0;
+    for (const [ref, orders] of Object.entries(packerRefs)) {
+      const t = targetByRef[ref];
+      if (t) { weightedSecs += t * orders; totalOrders += orders; }
+    }
+    return totalOrders > 0 ? weightedSecs / totalOrders : null;
+  }
+
+  // ── Packer snapshot engine ──────────────────────────────────────────
+  function initPackerSnapshots() {
+    try {
+      const raw = window['local'+'Storage'].getItem(LS_KEY_SNAPS);
+      if (raw) packerSnapshots = JSON.parse(raw);
+    } catch(e) { packerSnapshots = []; }
+  }
+
+  function savePackerSnapshots() {
+    // Trim to last 60 days
+    const cutoff = Date.now() - 60 * 24 * 3600 * 1000;
+    packerSnapshots = packerSnapshots.filter(s => new Date(s.ts).getTime() > cutoff);
+    try { window['local'+'Storage'].setItem(LS_KEY_SNAPS, JSON.stringify(packerSnapshots)); }
+    catch(e) { console.warn('Packer snapshot save error', e); }
+  }
+
+  // Called each render with the current LIVE packer count (raw, not clamped to 1).
+  // Deduplicates within the same calendar-hour so one entry per hour per day.
+  function recordPackerSnapshot(liveCount) {
+    if (liveCount < 1) return;
+    const now  = new Date();
+    const dow  = now.getDay();
+    const hour = now.getHours();
+    const dateHour = now.toISOString().slice(0, 13); // "2026-04-01T14"
+    // Replace any existing entry for this exact calendar-hour (keep latest reading)
+    packerSnapshots = packerSnapshots.filter(s => s.dateHour !== dateHour);
+    packerSnapshots.push({ dow, hour, count: liveCount, ts: now.toISOString(), dateHour });
+    savePackerSnapshots();
+  }
+
+  // Average packer count for a given day-of-week + hour across historical dates.
+  // Groups by calendar date (max per date-hour), then averages across dates.
+  // Returns null if fewer than 2 distinct previous dates have data.
+  function getHourlyPackerAvg(dow, hour) {
+    const relevant = packerSnapshots.filter(s => s.dow === dow && s.hour === hour);
+    if (relevant.length === 0) return null;
+    // Max per calendar date
+    const byDate = {};
+    for (const s of relevant) {
+      const d = s.ts.slice(0, 10);
+      byDate[d] = Math.max(byDate[d] || 0, s.count);
+    }
+    const vals = Object.values(byDate);
+    if (vals.length < 2) return null; // need at least 2 days of data
+    return vals.reduce((a, b) => a + b, 0) / vals.length;
+  }
+
+  // Number of distinct previous calendar dates with snapshot data for a given DOW.
+  function hourlyDataDays(dow) {
+    const today = new Date().toISOString().slice(0, 10);
+    const dates = new Set(
+      packerSnapshots
+        .filter(s => s.dow === dow && s.ts.slice(0, 10) !== today)
+        .map(s => s.ts.slice(0, 10))
+    );
+    return dates.size;
+  }
+
+  // Hour-by-hour ETA simulation using historical packer counts.
+  // Returns { etaMs, packerProfile } or null (caller should fall back to flat calc).
+  function simulateEtaHourly(pendingN, secOrd, nowMs, dow, livePackers) {
+    const dataDays = hourlyDataDays(dow);
+    if (dataDays < 2) return null; // not enough history yet
+
+    let remaining = pendingN;
+    let tMs       = nowMs;
+    const DOW_NAMES_S = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const packerProfile = []; // for subtitle summary
+
+    // Safety cap: simulate at most 16 hours ahead
+    const limitMs = nowMs + 16 * 3600 * 1000;
+
+    while (remaining > 0 && tMs < limitMs) {
+      const tDate   = new Date(tMs);
+      const hour    = tDate.getHours();
+      const secsToNextHour = (60 - tDate.getMinutes()) * 60 - tDate.getSeconds();
+
+      // For the current hour use live count; for future hours use history
+      let exp;
+      if (hour === new Date(nowMs).getHours()) {
+        exp = livePackers > 0 ? livePackers : (getHourlyPackerAvg(dow, hour) || 1);
+      } else {
+        exp = getHourlyPackerAvg(dow, hour) || livePackers || 1;
+      }
+      exp = Math.max(1, Math.round(exp));
+
+      packerProfile.push(`${fmt2(hour)}:00→${exp}p`);
+
+      const capacity = (exp * secsToNextHour) / secOrd;
+
+      if (capacity >= remaining) {
+        // Completes within this hour slot
+        const secsNeeded = (remaining * secOrd) / exp;
+        return { etaMs: tMs + secsNeeded * 1000, packerProfile, dataDays };
+      }
+
+      remaining -= capacity;
+      // Advance pointer to start of next hour
+      tMs = new Date(tDate.getFullYear(), tDate.getMonth(), tDate.getDate(),
+                     hour + 1, 0, 0, 0).getTime();
+    }
+
+    return null; // couldn't project completion (runs past limit)
+  }
+
+  function updateHistoryUI() {
+    const n = batchHistory.length;
+    $('history-count').textContent = n === 0
+      ? 'No history yet'
+      : n + ' batch' + (n === 1 ? '' : 'es') + ' in history';
+  }
+
+  function setHistoryStatus(msg) { $('history-status').textContent = msg; }
+
+function showBenchmarkAlert(actualSec, benchmarkSec) {
+    if (!actualSec || !benchmarkSec) { $('bench-alert').style.display = 'none'; return; }
+    const pctDiff = ((actualSec - benchmarkSec) / benchmarkSec) * 100;
+    const el = $('bench-alert');
+    if (Math.abs(pctDiff) < 10) { el.style.display = 'none'; return; }
+    const improved = pctDiff < 0;
+    el.style.display      = 'flex';
+    el.style.background   = improved ? '#0a2e1a' : '#2e0a0a';
+    el.style.borderColor  = improved ? '#16a34a' : '#dc2626';
+    el.style.color        = improved ? '#86efac' : '#fca5a5';
+    $('bench-alert-icon').textContent = improved ? '🟢' : '🔴';
+    $('bench-alert-msg').innerHTML = improved
+      ? `<strong>Process improved!</strong> Current pace (${actualSec.toFixed(1)}s/order) is <strong>${Math.abs(pctDiff).toFixed(0)}% faster</strong> than your historical benchmark (${benchmarkSec.toFixed(1)}s/order). Great work — consider updating the benchmark.`
+      : `<strong>Process slower than usual.</strong> Current pace (${actualSec.toFixed(1)}s/order) is <strong>${Math.abs(pctDiff).toFixed(0)}% slower</strong> than your historical benchmark (${benchmarkSec.toFixed(1)}s/order). Something may have changed.`;
+  }
+
+  // Storage helpers — module-level so OneDrive code can also use them
+  function lsGet(k)    { try { return window['local'+'Storage'].getItem(k); }    catch(e) { return null; } }
+  function lsSet(k, v) { try { window['local'+'Storage'].setItem(k, v); return true; } catch(e) { return false; } }
+  function lsDel(k)    { try { window['local'+'Storage'].removeItem(k); }           catch(e) {} }
+  function hashGet(k) {
+    const p = new URLSearchParams(location.hash.replace(/^#/, ''));
+    return p.get(k);
+  }
+  function hashSet(k, v) {
+    const p = new URLSearchParams(location.hash.replace(/^#/, ''));
+    if (v) p.set(k, v); else p.delete(k);
+    history.replaceState(null, '', location.pathname + location.search + '#' + p.toString());
+  }
+
+  // Persist API key + packers — loads automatically on open
+  (function() {
+    const saved = lsGet('msoft_key') || hashGet('k');
+    if (saved) {
+      $('inp-apikey').value = saved;
+      $('setup-banner').style.display = 'none';  // already set up
+    } else {
+      $('setup-banner').style.display = 'flex';  // first time — show instructions
+    }
+    const savedP = lsGet('msoft_packers') || hashGet('p');
+    if (savedP) $('inp-packers').value = savedP;
+    $('inp-apikey').addEventListener('change', () => {
+      const v = $('inp-apikey').value.trim();
+      lsSet('msoft_key', v); hashSet('k', v);
+      if (v) $('setup-banner').style.display = 'none';
+    });
+    $('inp-packers').addEventListener('change', () => {
+      const v = $('inp-packers').value.trim();
+      lsSet('msoft_packers', v); hashSet('p', v);
+    });
+  })();
+  function mult()    { return parseInt($('inp-mult').value, 10) || 6; }
+
+  function shiftTimes() {
+    const [sh,sm] = ($('inp-start').value||'07:15').split(':').map(Number);
+    const [eh,em] = ($('inp-end').value  ||'17:00').split(':').map(Number);
+    return {sh,sm,eh,em};
+  }
+
+  function shiftCutoff() {
+    // Today at shift start time — used to filter "today's" batches
+    const {sh,sm} = shiftTimes();
+    const d = new Date(); d.setHours(sh,sm,0,0); return d;
+  }
+
+  function setStatus(msg, type) {
+    $('status-pill').textContent = msg;
+    $('status-pill').className   = type || '';
+  }
+
+  function showLoading(msg) {
+    if (!hasInitialData) {
+      // First load — show the full overlay so there's something meaningful on screen
+      $('loading-msg').textContent = msg || 'Loading…';
+      $('loading-overlay').classList.add('show');
+    } else {
+      // Background refresh — update status pill instead of blocking the screen
+      setStatus(msg || 'Refreshing…', 'warn');
+    }
+  }
+  function hideLoading() {
+    $('loading-overlay').classList.remove('show');
+  }
+
+  // ── Clock & shift bar ─────────────────────────────────
+  function updateClock() {
+    const now = new Date();
+    $('clock').textContent   = `${fmt2(now.getHours())}:${fmt2(now.getMinutes())}:${fmt2(now.getSeconds())}`;
+    $('date-str').textContent = now.toLocaleDateString('en-GB',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+    const {sh,sm,eh,em} = shiftTimes();
+    const startM = sh*60+sm, endM = eh*60+em, nowM = now.getHours()*60+now.getMinutes();
+    const pct = Math.min(100,Math.max(0,(nowM-startM)/(endM-startM)*100));
+    if ($('shift-fill'))  $('shift-fill').style.width = pct.toFixed(1)+'%';
+    if ($('lbl-pct'))     $('lbl-pct').textContent    = pct.toFixed(0)+'% of shift elapsed';
+    if ($('lbl-start'))   $('lbl-start').textContent  = $('inp-start').value;
+    if ($('lbl-end'))     $('lbl-end').textContent    = $('inp-end').value;
+    if ($('lbl-mult'))    $('lbl-mult').textContent   = $('inp-mult').value;
+    if ($('lbl-interval')) $('lbl-interval').textContent = $('inp-interval').value;
+    // Countdown
+    if (nextRefreshAt) {
+      const secsLeft = Math.max(0, Math.round((nextRefreshAt - Date.now())/1000));
+      const m = Math.floor(secsLeft/60), s = secsLeft%60;
+      $('next-refresh').textContent = secsLeft > 0 ? `Next refresh in ${m}:${fmt2(s)}` : '';
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // ── Date helpers ──────────────────────────────────────
+  function parseMintsoftDate(s) {
+    if (!s) return null;
+    // Handle ISO 8601 and dd/mm/yyyy hh:mm:ss
+    if (s.includes('T') || s.includes('-')) {
+      const d = new Date(s);
+      return isNaN(d.getTime()) ? null : d;
+    }
+    // dd/mm/yyyy hh:mm:ss
+    const [datePart, timePart] = s.split(' ');
+    if (!datePart) return null;
+    const [d,mo,y] = datePart.split('/').map(Number);
+    const [h=0,mi=0,se=0] = (timePart||'').split(':').map(Number);
+    const dt = new Date(y, mo-1, d, h, mi, se);
+    return isNaN(dt.getTime()) ? null : dt;
+  }
+
+  function isToday(dt) {
+    if (!dt) return false;
+    const now = new Date();
+    return dt.getFullYear()===now.getFullYear() &&
+           dt.getMonth()===now.getMonth() &&
+           dt.getDate()===now.getDate();
+  }
+
+  function todayISO() {
+    const d = new Date();
+    return `${d.getFullYear()}-${fmt2(d.getMonth()+1)}-${fmt2(d.getDate())}`;
+  }
+
+  function todayStartDT() {
+    // Mintsoft date-time format: yyyy-MM-ddTHH:mm:ss
+    return todayISO() + 'T00:00:00';
+  }
+  function todayEndDT() {
+    return todayISO() + 'T23:59:59';
+  }
+
+  // ── API fetch ─────────────────────────────────────────
+  async function apiFetch(path, params={}) {
+    const url = new URL(baseUrl() + path);
+    Object.entries(params).forEach(([k,v]) => { if(v!=null) url.searchParams.set(k,v); });
+    console.log('API →', url.toString());
+    const res = await fetch(url.toString(), {
+      headers: { 'ms-apikey': apiKey(), 'Accept': 'application/json' }
+    });
+    if (!res.ok) {
+      let body = '';
+      try { body = await res.text(); } catch(e) {}
+      console.error('API error body:', body);
+      throw new Error(`HTTP ${res.status} on ${path} — ${body.slice(0,120)}`);
+    }
+    return res.json();
+  }
+
+  function normalise(raw) {
+    if (Array.isArray(raw))                return raw;
+    if (raw && Array.isArray(raw.Data))    return raw.Data;
+    if (raw && Array.isArray(raw.Orders))  return raw.Orders;
+    if (raw && Array.isArray(raw.Batches)) return raw.Batches;
+    return [];
+  }
+
+  // ── Batch type from Reference ─────────────────────────
+  function getBatchType(ref) {
+    const m = (ref||'').match(/\((\d{1,3})\)/);
+    if (!m) return null;
+    const n = parseInt(m[1], 10);
+    return (isNaN(n)||n<1||n>100) ? null : n;
+  }
+
+  // Strip trailing run number so e.g. "AMBIENT(7) Run 3" and "AMBIENT(7) Run 12"
+  // both map to base reference "AMBIENT(7)"
+  function baseRef(ref) {
+    return (ref||'').replace(/\s*(run\s*\d+|#\d+|\d+\s*$)/i, '').trim();
+  }
+
+  // ── Extract despatch user from OrderNameValues ────────
+  // Mirrors Get-DespatchUserEvents in the PS1
+  function getDespatchUsers(order) {
+    const nvs = order.OrderNameValues;
+    if (!Array.isArray(nvs)) return [];
+    return nvs
+      .filter(nv => nv.Name === 'DespatchByUser' && nv.LastUpdatedByUser)
+      .map(nv => ({
+        user:        nv.LastUpdatedByUser,
+        lastUpdated: parseMintsoftDate(nv.LastUpdated)
+      }))
+      .filter(e => e.lastUpdated);
+  }
+
+  // ── Friendly packer name: email → first name ──────────
+  function packerName(raw) {
+    if (!raw) return 'Unknown';
+    const s = raw.trim();
+    if (s.includes('@')) {
+      const left = s.split('@')[0];
+      const first = left.split('-')[0];
+      return first.charAt(0).toUpperCase() + first.slice(1);
+    }
+    return s;
+  }
+
+  // ── Main data load ────────────────────────────────────
+  async function loadDashboard() {
+    if (!apiKey()) { setStatus('No API key', 'err'); return; }
+    if (isDashboardLoading) {
+      console.log('loadDashboard: skipping — previous load still in progress');
+      return;
+    }
+    isDashboardLoading = true;
+
+    showLoading('Fetching batch list…');
+    setStatus('Loading…', 'warn');
+
+    try {
+      // 1) Fetch all status IDs for this account
+      let statusIdDespatched = 4;
+      let pendingStatusIds   = [];  // all statuses that count as "work to do"
+
+      try {
+        const statusesRaw = await apiFetch('/api/Order/Statuses');
+        const statuses = normalise(statusesRaw);
+
+        // Pending = anything that is work-in-progress (not despatched/cancelled/invoiced)
+        const pendingKeywords   = ['open','awaitingpicking','picking','picked','printed','packed','awaiting'];
+        const excludeKeywords   = ['despatched','cancelled','invoiced','returned','fraud','backorder','hold','skipped'];
+
+        for (const s of statuses) {
+          const n = (s.Name || '').toLowerCase().replace(/\s/g,'');
+          if (n.includes('despatch'))  statusIdDespatched = s.ID;
+          if (pendingKeywords.some(k => n.includes(k)) && !excludeKeywords.some(k => n.includes(k))) {
+            pendingStatusIds.push(s.ID);
+          }
+        }
+        console.log('Despatched status ID:', statusIdDespatched);
+        console.log('Pending status IDs:', pendingStatusIds);
+      } catch(e) {
+        console.warn('Could not fetch statuses:', e.message);
+        pendingStatusIds = [2];
+      }
+
+      // Helper: fetch all pages from Order/List
+      async function fetchAllOrders(params) {
+        let page = 1, all = [];
+        while (true) {
+          const raw = await apiFetch('/api/Order/List', { ...params, PageNo: page, Limit: 100 });
+          const batch = normalise(raw);
+          all = all.concat(batch);
+          if (batch.length < 100) break;  // last page
+          page++;
+          if (page > 200) break;          // safety cap at 20000 orders
+        }
+        return all;
+      }
+
+      showLoading('Fetching batch list…');
+
+      // 2) Fetch batch list first, then pending statuses sequentially.
+      //    Firing all status IDs + all pages in parallel hammers the API and causes
+      //    502 timeouts. Sequential fetching is slower but reliable.
+      const batchListRaw = await apiFetch('/api/Batch/List');
+      const allBatches   = normalise(batchListRaw);
+
+      const statusIdsToFetch = pendingStatusIds.length > 0 ? pendingStatusIds : [2];
+      const pending = [];
+      for (let i = 0; i < statusIdsToFetch.length; i++) {
+        const id = statusIdsToFetch[i];
+        showLoading(`Fetching pending orders… (status ${i + 1} of ${statusIdsToFetch.length})`);
+        const orders = await fetchAllOrders({ OrderStatusId: id });
+        pending.push(...orders);
+      }
+      console.log('Total pending orders:', pending.length);
+
+      // 2) Filter to batches created within the last 7 days OR updated today.
+      //    Only include batches from prior days if they are NOT yet fully despatched
+      //    (i.e. still have work to do). Today's batches are always included.
+      const cutoff = new Date();
+      cutoff.setDate(cutoff.getDate() - 7);
+      cutoff.setHours(0, 0, 0, 0);
+      const todayBatches = allBatches.filter(b => {
+        const created = parseMintsoftDate(b.Created);
+        const lu      = parseMintsoftDate(b.LastUpdated);
+        const inWindow = (created && created >= cutoff) || (lu && isToday(lu));
+        if (!inWindow) return false;
+        // For batches NOT created today: skip if fully despatched (nothing left to do)
+        if (created && !isToday(created) && b.Despatched === true) return false;
+        return true;
+      });
+
+      if (todayBatches.length === 0) {
+        // No batches yet today — still render so ETA shows from history/pending
+        setStatus(`OK · ${new Date().toLocaleTimeString('en-GB')} · no batches yet`, 'ok');
+        hideLoading();
+        render({ packerMap:{}, batchRows:[], teamActualSecOrd:null, teamTargetSecOrd:null, teamTotalOrders:0 },
+               [], pending, [], []);
+        return;
+      }
+
+      // 3) Fetch orders for batches — with two optimisations:
+      //    a) Use cached orders for any batch already fetched AND now fully despatched
+      //       (completed batches don't change, no need to re-fetch).
+      //    b) Fetch remaining batches in chunks of 5 to avoid API timeouts.
+
+      // Split into cached (skip API) vs needs fetching.
+      // The proxy PS1 is single-threaded so we MUST fetch one batch at a time —
+      // any concurrent requests queue up and time out waiting.
+      const cached  = [];
+      const toFetch = [];
+      for (const b of todayBatches) {
+        const cached_entry = batchDetailCache[b.ID];
+        // Use cache if: already fetched AND the batch is fully done (Mintsoft flag OR
+        // we previously determined it was effectively complete with cancelled orders).
+        const isDone = b.Despatched === true || (cached_entry && cached_entry.effectivelyComplete);
+        if (cached_entry && isDone) {
+          cached_entry.batch = b;  // refresh batch metadata
+          cached.push(cached_entry);
+        } else {
+          toFetch.push(b);
+        }
+      }
+
+      console.log(`Batch fetch: ${toFetch.length} to fetch, ${cached.length} from cache`);
+
+      const freshDetails = [];
+      let skippedBatches = 0;
+      for (let i = 0; i < toFetch.length; i++) {
+        const b = toFetch[i];
+        showLoading(`Fetching batch ${i + 1} of ${toFetch.length} (${cached.length} cached)…`);
+        let orders = null;
+        try {
+          orders = normalise(await apiFetch(`/api/Batch/${b.ID}`));
+        } catch(e) {
+          // 502/timeout — wait 2s and retry once before skipping
+          console.warn(`Batch ${b.ID} fetch failed (${e.message}), retrying in 2s…`);
+          await new Promise(r => setTimeout(r, 2000));
+          try {
+            orders = normalise(await apiFetch(`/api/Batch/${b.ID}`));
+          } catch(e2) {
+            console.warn(`Batch ${b.ID} skipped after retry: ${e2.message}`);
+            skippedBatches++;
+            continue;  // skip this batch, keep processing the rest
+          }
+        }
+        const detail = { batch: b, orders };
+        batchDetailCache[b.ID] = detail;
+        freshDetails.push(detail);
+      }
+      if (skippedBatches > 0) {
+        console.warn(`${skippedBatches} batch(es) could not be loaded and were skipped.`);
+      }
+
+      const batchDetails = [...cached, ...freshDetails];
+
+      // 4) Process
+      const processed = processBatchDetails(batchDetails, pendingStatusIds);
+
+      // Write effectivelyComplete back to cache so completed-with-cancellations batches
+      // are not re-fetched on the next background refresh.
+      for (const row of processed.batchRows) {
+        if (row.effectivelyComplete && batchDetailCache[row.id]) {
+          batchDetailCache[row.id].effectivelyComplete = true;
+        }
+      }
+
+      // 5) Get despatched orders today using Order/List with SinceDespatchDate
+      const despatched = await fetchAllOrders({
+        OrderStatusId:     statusIdDespatched,
+        SinceDespatchDate: todayStartDT()
+      });
+      console.log('Total despatched today:', despatched.length);
+
+      hideLoading();
+      setStatus(`OK · ${new Date().toLocaleTimeString('en-GB')}`, 'ok');
+      $('last-updated').textContent = 'Last refreshed: ' + new Date().toLocaleTimeString('en-GB');
+      isDashboardLoading = false;
+      hasInitialData     = true;  // subsequent refreshes run silently in background
+
+      render(processed, despatched, pending, todayBatches, batchDetails);
+
+    } catch(err) {
+      hideLoading();
+      console.error(err);
+      setStatus('Error: '+err.message, 'err');
+      isDashboardLoading = false;  // always release the guard so next refresh can run
+    }
+  }
+
+  // ── Core processing — mirrors PS1 logic ──────────────
+  function processBatchDetails(batchDetails, pendingStatusIds) {
+    // Build a Set of status IDs that mean "still needs work".
+    // Any order NOT in this set is considered done (despatched, cancelled, invoiced, etc.)
+    const pendingSet = new Set(pendingStatusIds || []);
+    const packerMap  = {};  // name → { orders, totalActualSecs, totalTargetSecs, batches, allTimes }
+    const batchRows  = [];
+
+    // Date boundaries computed once for the whole function
+    const todayStart = new Date(); todayStart.setHours(0,0,0,0);
+    const todayEnd   = new Date(); todayEnd.setHours(23,59,59,999);
+
+    // Pre-compute top-10% target per reference from history
+    const targetByRef = calcTargetByRef();
+
+    for (const { batch, orders } of batchDetails) {
+      const batchType      = getBatchType(batch.Reference);
+      const histTarget     = targetByRef[baseRef(batch.Reference || '')] ?? null;
+      const targetSecOrd   = histTarget !== null ? histTarget
+                           : (batchType !== null ? batchType * mult() : null);
+
+      // Only count orders despatched TODAY — batches from the 7-day window contain
+      // orders despatched on previous days which must not skew today's packer stats.
+      const despatched = orders.filter(o => {
+        if (!o.DespatchDate) return false;
+        const dt = parseMintsoftDate(o.DespatchDate);
+        return dt && dt >= todayStart && dt <= todayEnd;
+      });
+      const orderCount = despatched.length;
+
+      // Batch start/end from DespatchDate
+      const times = despatched
+        .map(o => parseMintsoftDate(o.DespatchDate))
+        .filter(Boolean)
+        .sort((a,b)=>a-b);
+
+      const batchStart = times[0]   || null;
+      const batchEnd   = times[times.length-1] || null;
+
+      const targetDurationMin = (targetSecOrd && orderCount)
+        ? Math.round((targetSecOrd * orderCount) / 60 * 10) / 10
+        : null;
+
+      // Outlier-clean the batch duration: sum only spans ≤ 20 min, skip lunch/overnight gaps
+      const MAX_BREAK_SECS_BATCH = 20 * 60;
+      let batchActiveSecs = 0;
+      for (let i = 1; i < times.length; i++) {
+        const gap = (times[i] - times[i-1]) / 1000;
+        if (gap <= MAX_BREAK_SECS_BATCH) batchActiveSecs += gap;
+      }
+      const actualDurationMin = (batchActiveSecs > 0 && orderCount > 1)
+        ? Math.round((batchActiveSecs / 60) * 10) / 10
+        : null;
+
+      // Actual secs per order for this batch
+      const actualSecOrd = (actualDurationMin && orderCount > 0)
+        ? Math.round((actualDurationMin * 60) / orderCount * 10) / 10
+        : null;
+
+      // A batch is effectively complete if NO orders remain in a pending/actionable status.
+      // This handles the case where a batch has cancelled orders: Mintsoft marks it
+      // PickingComplete but never Despatched because the cancelled orders were never sent.
+      // We check the raw order list — if every order is either despatched (has DespatchDate)
+      // or not pending (status not in pendingSet), the batch is done.
+      const effectivelyComplete = orders.length > 0 && orders.every(o => {
+        if (o.DespatchDate) return true;  // already despatched
+        if (pendingSet.size > 0 && !pendingSet.has(o.OrderStatusId)) return true;  // cancelled/invoiced/etc
+        return false;
+      });
+
+      batchRows.push({
+        id:              batch.ID,
+        reference:       batch.Reference || '',
+        batchType,
+        orderCount,
+        assignedUser:    batch.AssignedUser || '',
+        despatched:          batch.Despatched || effectivelyComplete,
+        pickingComplete:     batch.PickingComplete,
+        pickingStarted:      batch.PickingStarted,
+        effectivelyComplete,
+        targetDurationMin,
+        actualDurationMin,
+        targetSecOrd,
+        actualSecOrd,
+        batchStart,
+        batchEnd
+      });
+
+      // ── Per-packer: build a map of user → their own despatch timestamps ──────
+      // Each DespatchByUser event on an order means that person despatched that order.
+      // We count per-packer orders from their event count, NOT the total batch size
+      // (which was wrong when multiple packers share a batch).
+      const userOrders = {};  // rawUser → [despatchDate of each order they did today]
+
+      for (const order of despatched) {
+        const dt = parseMintsoftDate(order.DespatchDate);
+        if (!dt || dt < todayStart || dt > todayEnd) continue;
+
+        const events = getDespatchUsers(order);
+        if (events.length > 0) {
+          // Use the DespatchByUser name from OrderNameValues
+          for (const ev of events) {
+            if (!userOrders[ev.user]) userOrders[ev.user] = [];
+            userOrders[ev.user].push(dt);
+          }
+        } else if (order.DespatchedByUser) {
+          // Fall back to top-level DespatchedByUser field
+          const u = order.DespatchedByUser;
+          if (!userOrders[u]) userOrders[u] = [];
+          userOrders[u].push(dt);
+        }
+      }
+
+      // If no per-order user data at all, fall back to AssignedUser on the batch
+      if (Object.keys(userOrders).length === 0 && batch.AssignedUser && batchEnd) {
+        userOrders[batch.AssignedUser] = times.filter(t => t >= todayStart && t <= todayEnd);
+      }
+
+      // ── Outlier removal: strip breaks > 20 min from duration calculation ──────
+      // A packer going to lunch or a batch started yesterday and finished today
+      // creates a huge gap in timestamps that inflates secs/order.
+      // We find all inter-order gaps, remove any gap > MAX_BREAK_SECS, and sum
+      // only the "active" spans to get a clean actual duration.
+      const MAX_BREAK_SECS = 20 * 60;  // 20 minutes
+
+      function activeSecsFromTimes(sortedTimes) {
+        if (sortedTimes.length < 2) return null;
+        let active = 0;
+        for (let i = 1; i < sortedTimes.length; i++) {
+          const gap = (sortedTimes[i] - sortedTimes[i-1]) / 1000;
+          if (gap <= MAX_BREAK_SECS) active += gap;
+          // gaps > MAX_BREAK_SECS are treated as breaks and excluded
+        }
+        return active > 0 ? active : null;
+      }
+
+      // ── Attribute orders and timing to each packer ────────────────────────────
+      for (const [rawUser, packerTimes] of Object.entries(userOrders)) {
+        const name = packerName(rawUser);
+        if (!packerMap[name]) {
+          packerMap[name] = {
+            orders: 0, totalActualSecs: 0, totalTargetSecs: 0,
+            batches: 0, allTimes: [], batchTimesList: [], refs: {}, lastSeen: null
+          };
+        }
+        const p = packerMap[name];
+        const packerOrderCount = packerTimes.length;
+        if (packerOrderCount === 0) continue;
+
+        p.batches++;
+        p.orders += packerOrderCount;  // count only THIS packer's orders, not whole batch
+        p.allTimes.push(...packerTimes);
+        p.batchTimesList.push([...packerTimes].sort((a,b) => a-b));
+
+        // Track the most recent despatch time for this packer (for active/inactive detection)
+        for (const t of packerTimes) {
+          if (!p.lastSeen || t > p.lastSeen) p.lastSeen = t;
+        }
+
+        const br = baseRef(batch.Reference || '');
+        p.refs[br] = (p.refs[br] || 0) + packerOrderCount;
+
+        // Secs/order for this packer's share of the batch using outlier-cleaned times
+        const sortedPackerTimes = [...packerTimes].sort((a,b) => a-b);
+        const packerActiveSecs  = activeSecsFromTimes(sortedPackerTimes);
+        const packerActualSecOrd = (packerActiveSecs && packerOrderCount > 1)
+          ? packerActiveSecs / packerOrderCount
+          : null;
+
+        if (packerActualSecOrd) p.totalActualSecs += packerActualSecOrd * packerOrderCount;
+        if (targetSecOrd)       p.totalTargetSecs += targetSecOrd * packerOrderCount;
+      }
+    }
+
+    // Compute team-wide averages
+    let teamTotalActualSecs = 0, teamTotalOrders = 0;
+    let teamTotalTargetSecs = 0;
+    for (const p of Object.values(packerMap)) {
+      teamTotalActualSecs += p.totalActualSecs;
+      teamTotalTargetSecs += p.totalTargetSecs;
+      teamTotalOrders     += p.orders;
+    }
+    const teamActualSecOrd = teamTotalOrders > 0 ? teamTotalActualSecs / teamTotalOrders : null;
+    const teamTargetSecOrd = teamTotalOrders > 0 ? teamTotalTargetSecs / teamTotalOrders : null;
+
+    return { packerMap, batchRows, teamActualSecOrd, teamTargetSecOrd, teamTotalOrders };
+  }
+
+  // ── Render all ────────────────────────────────────────
+  function render(processed, despatched, pending, todayBatches, batchDetails) {
+    const { packerMap, batchRows, teamActualSecOrd, teamTargetSecOrd, teamTotalOrders } = processed;
+
+    // Accumulate history from today completed batches, then calc benchmark
+    mergeHistoryFromBatches(batchRows, packerMap);
+    const benchmarkSecOrd = calcBenchmark();
+
+    const despN = despatched.length;
+    const pendN = pending.length;
+    const total = despN + pendN;
+    const pct   = total>0 ? (despN/total*100).toFixed(0)+'%' : '—';
+
+    // Despatch rate
+    const {sh,sm} = shiftTimes();
+    const now = new Date(), shiftStart = new Date(now);
+    shiftStart.setHours(sh,sm,0,0);
+    const elapsedH = Math.max(0.01,(now-shiftStart)/3600000);
+    const rate = (despN/elapsedH).toFixed(1);
+
+    // ── ETA & Remaining Work ─────────────────────────────────────────────────
+    // Active = despatched at least one order in the last 20 minutes
+    const INACTIVE_THRESH_MS = 20 * 60 * 1000;
+    const nowMs = Date.now();
+    const DOW_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const todayDow  = now.getDay();
+
+    // Raw live packer count (un-clamped so we can record 0 honestly)
+    const livePackers = Object.values(packerMap).filter(
+      p => p.lastSeen && (nowMs - p.lastSeen) <= INACTIVE_THRESH_MS
+    ).length;
+    const packerCount   = Math.max(1, livePackers);
+    const manualPackers = parseInt($('inp-packers').value, 10) || 0;
+
+    // Record this moment's live count into hourly snapshot history
+    if (livePackers > 0) recordPackerSnapshot(livePackers);
+
+    // Flat fallback: historical avg by DOW (from batch history packerCount field)
+    function histAvgPackersByDow(dow) {
+      const withCount = batchHistory.filter(b =>
+        b.packerCount && b.packerCount > 1 &&
+        (b.dayOfWeek === dow || new Date(b.date).getDay() === dow)
+      );
+      if (withCount.length === 0) return null;
+      const byDate = {};
+      for (const b of withCount) {
+        const d = (b.date||'').slice(0,10);
+        byDate[d] = Math.max(byDate[d]||0, b.packerCount);
+      }
+      const vals = Object.values(byDate);
+      return vals.reduce((s,v)=>s+v,0) / vals.length;
+    }
+    const histPdow = histAvgPackersByDow(todayDow);
+    const histPall = (() => {
+      const withCount = batchHistory.filter(b => b.packerCount && b.packerCount > 1);
+      if (withCount.length === 0) return null;
+      const byDate = {};
+      for (const b of withCount) {
+        const d = (b.date||'').slice(0,10);
+        byDate[d] = Math.max(byDate[d]||0, b.packerCount);
+      }
+      const vals = Object.values(byDate);
+      return vals.reduce((s,v)=>s+v,0) / vals.length;
+    })();
+    const histP = histPdow || histPall;
+
+    // Flat effective packers (used when hourly simulation isn't available yet)
+    const effectivePackers = livePackers > 0  ? livePackers
+                           : manualPackers > 0 ? manualPackers
+                           : histP             ? Math.round(histP)
+                           : 1;
+    const packerBasis = livePackers > 0  ? 'live'
+                      : manualPackers > 0 ? 'manual'
+                      : histPdow          ? DOW_NAMES[todayDow] + ' avg'
+                      : histPall          ? 'overall avg'
+                      : 'default';
+    console.log(`Packers: ${effectivePackers} (${packerBasis}), hourly data days: ${hourlyDataDays(todayDow)}`);
+
+    // Secs/order: actual → benchmark → batch-type target → batch refs → 30s default
+    const secOrd = teamActualSecOrd || benchmarkSecOrd || teamTargetSecOrd || (() => {
+      const refs = todayBatches.map(b => getBatchType(b.Reference)).filter(t=>t!==null).map(t=>t*mult());
+      return refs.length > 0 ? refs.reduce((a,b)=>a+b,0)/refs.length : 30;
+    })();
+
+    const secOrdLabel = teamActualSecOrd ? `actual ${teamActualSecOrd.toFixed(1)}s/ord`
+                      : benchmarkSecOrd  ? `benchmark ${benchmarkSecOrd.toFixed(1)}s/ord`
+                      : teamTargetSecOrd ? `target ${teamTargetSecOrd.toFixed(1)}s/ord`
+                      :                   `est. ${secOrd.toFixed(1)}s/ord`;
+
+    let etaStr = '—', etaSub = 'Need timing data', etaClass = '';
+    let remHrs = '—', remSub = 'of estimated time remaining';
+
+    if (pendN === 0 && despN > 0) {
+      etaStr = 'Done ✓'; etaSub = 'All orders despatched'; etaClass = 'c-green';
+    } else if (pendN > 0 && secOrd) {
+      const {eh,em} = shiftTimes();
+      const endT = new Date(now); endT.setHours(eh,em,0,0);
+
+      // ── Try hour-by-hour simulation first ──────────────────────────
+      const sim = simulateEtaHourly(pendN, secOrd, nowMs, todayDow, livePackers);
+
+      let etaMs, pNote;
+      if (sim) {
+        etaMs  = sim.etaMs;
+        // Show the first 3 future hours of the packer profile in the subtitle
+        const profileSnippet = sim.packerProfile.slice(0,3).join(', ')
+                             + (sim.packerProfile.length > 3 ? '…' : '');
+        pNote  = `hourly hist (${sim.dataDays}d): ${profileSnippet}`;
+      } else {
+        // ── Flat fallback ───────────────────────────────────────────
+        const remSecs = (pendN * secOrd) / effectivePackers;
+        etaMs  = nowMs + remSecs * 1000;
+        const dataDays = hourlyDataDays(todayDow);
+        pNote  = `${effectivePackers} packer${effectivePackers===1?'':'s'} (${packerBasis}`
+               + (dataDays > 0 ? `, ${dataDays}d hourly data — need 2` : ', building hourly history') + ')';
+      }
+
+      const eta  = new Date(etaMs);
+      etaStr = `${fmt2(eta.getHours())}:${fmt2(eta.getMinutes())}`;
+      const late = eta > endT;
+      etaSub   = (late ? '⚠ Overruns shift — ' : '✓ Within shift — ') + secOrdLabel + `, ${pNote}`;
+      etaClass = late ? 'c-red' : 'c-green';
+
+      const remSecs2 = Math.max(0, (etaMs - nowMs) / 1000);
+      const h = Math.floor(remSecs2/3600), m = Math.round((remSecs2%3600)/60);
+      remHrs = h > 0 ? `${h}h ${m}m` : `${m}m`;
+      remSub = secOrdLabel + `, ${pNote}`;
+    }
+
+    // Benchmark KPI card
+    if (benchmarkSecOrd) {
+      $('v-bench').textContent    = benchmarkSecOrd.toFixed(1) + 's';
+      $('v-bench-sub').textContent = `top 20% per ref type — ${batchHistory.length} batches`;
+    } else {
+      $('v-bench').textContent    = '—';
+      $('v-bench-sub').textContent = 'load history or run a few shifts first';
+    }
+
+    // vs target — compare actual vs benchmark (or formula target if no benchmark)
+    const compareTarget = benchmarkSecOrd || teamTargetSecOrd;
+    let vsTarget = '—', vsTargetSub = '', vsClass = '';
+    if (teamActualSecOrd && compareTarget) {
+      const diff = teamActualSecOrd - compareTarget;
+      const pctDiff = (diff/compareTarget*100);
+      vsTarget = (diff<=0?'':'+') + pctDiff.toFixed(0)+'%';
+      const basis = benchmarkSecOrd ? 'benchmark' : 'formula target';
+      if (diff <= 0) { vsTargetSub=`Under ${basis} — ahead of pace`; vsClass='c-green'; }
+      else           { vsTargetSub=`Over ${basis} — behind pace`;     vsClass='c-amber'; }
+    }
+
+    // Benchmark alert — fires if current pace is ≥10% off benchmark
+    showBenchmarkAlert(teamActualSecOrd, benchmarkSecOrd);
+
+    // Set KPI values
+    $('v-despatched').textContent = despN;
+    $('v-pending').textContent    = pendN;
+    $('v-total').textContent      = total;
+    $('v-pct').textContent        = pct;
+    $('v-actual-secs').textContent = teamActualSecOrd ? teamActualSecOrd.toFixed(1)+'s' : '—';
+    $('v-actual-sub').textContent  = teamActualSecOrd
+      ? `(${(teamActualSecOrd/60).toFixed(1)} min) real despatch times`
+      : 'no completed batches yet';
+    $('v-target-secs').textContent = teamTargetSecOrd ? teamTargetSecOrd.toFixed(1)+'s' : '—';
+    { const _tr = calcTargetByRef();
+      $('v-target-sub').textContent = Object.keys(_tr).length > 0
+        ? `top 10% fastest per ref type (${batchHistory.length} batches)`
+        : `from batch type × ${$('inp-mult').value}s`; }
+    $('v-rate').textContent    = rate;
+    $('v-eta').textContent     = etaStr;
+    $('v-eta-sub').textContent = etaSub;
+    $('kpi-eta').className     = 'kpi ' + etaClass;
+    $('v-rem').textContent     = remHrs;
+    $('v-rem-sub').textContent = remSub;
+    $('v-batches').textContent = todayBatches.length;
+    const totalPackers    = Object.keys(packerMap).length;
+    const inactivePackers = Object.values(packerMap).filter(
+      p => !p.lastSeen || (nowMs - p.lastSeen) > INACTIVE_THRESH_MS
+    ).length;
+    $('v-packers').textContent = packerCount || '—';
+    $('kpi-packers-sub').textContent = inactivePackers > 0
+      ? `${inactivePackers} inactive (>${20}min)`
+      : 'all active now';
+    $('v-vs-target').textContent     = vsTarget;
+    $('v-vs-target-sub').textContent = vsTargetSub;
+    // Apply colour to vs-target card dynamically
+    document.querySelector('.kpi:last-child').className = 'kpi ' + vsClass;
+
+    // Annotate each packer with active status before passing to render functions
+    for (const p of Object.values(packerMap)) {
+      p.isActive = p.lastSeen && (nowMs - p.lastSeen) <= INACTIVE_THRESH_MS;
+    }
+
+    renderHourlyBars(despatched);
+    renderChannelBars(pending);
+    renderClientBars(pending);
+    renderPackerPaceBars(packerMap, teamTargetSecOrd);
+    renderPickerTable(packerMap, teamActualSecOrd, teamTargetSecOrd);
+    renderBatchTable(batchRows);
+
+    // ── Capture state for daily snapshot ─────────────────────────────────
+    const _today = now.toISOString().slice(0, 10);
+    if (_today !== (lastRenderState||{}).date) lastSnapshotHour = -1; // new day reset
+    lastRenderState = {
+      date:            _today,
+      despN, pendN, total, pct, rate,
+      secOrdActual:    teamActualSecOrd,
+      secOrdBenchmark: benchmarkSecOrd,
+      secOrdTarget:    teamTargetSecOrd,
+      peakPackers:     livePackers,
+      etaStr,
+      batches:         todayBatches.length,
+      packers: Object.entries(packerMap)
+        .filter(([,p]) => p.orders > 0)
+        .map(([name, p]) => ({
+          name,
+          orders:       p.orders,
+          actualSecOrd: p.orders > 0 ? p.totalActualSecs / p.orders : null,
+          benchTarget:  calcPackerBenchmark(p.refs),
+          top10Target:  calcPackerTarget(p.refs)
+        })),
+      batchRows: batchRows.map(b => ({
+        reference:    b.reference || b.ref,
+        client:       b.client,
+        orders:       b.orders,
+        actualSecOrd: b.actualSecOrd
+      }))
+    };
+    // Auto-save once per calendar hour (and always when shift completes)
+    const _currentHour = now.getHours();
+    const _isShiftDone = (pendN === 0 && despN > 0);
+    if (odAccount && (_currentHour !== lastSnapshotHour || _isShiftDone)) {
+      lastSnapshotHour = _currentHour;
+      odSaveDaySnapshot(true);
+    }
+  }
+
+  function renderEmpty(pending) {
+    $('v-pending').textContent = pending.length;
+    $('v-pending').textContent = pending.length;
+    renderChannelBars(pending);
+    renderClientBars(pending);
+  }
+
+  // ── Hourly bars ───────────────────────────────────────
+  function renderHourlyBars(despatched) {
+    const el = $('hourly-bars');
+    const hourMap = {};
+    despatched.forEach(o => {
+      const d = parseMintsoftDate(o.DespatchedDate||o.DespatchDate||'');
+      if (!d) return;
+      hourMap[d.getHours()] = (hourMap[d.getHours()]||0)+1;
+    });
+    const keys = Object.keys(hourMap).map(Number).sort((a,b)=>a-b);
+    if (!keys.length) { el.innerHTML='<p class="empty-msg">No despatched orders with timestamps yet</p>'; return; }
+    const max = Math.max(...Object.values(hourMap));
+    el.innerHTML = keys.map(h => {
+      const v=hourMap[h], pct=(v/max*100).toFixed(1);
+      return `<div class="bar-row">
+        <div class="bar-lbl">${fmt2(h)}:00</div>
+        <div class="bar-track"><div class="bar-fill green" style="width:${pct}%"></div></div>
+        <div class="bar-val">${v} orders</div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Channel bars ──────────────────────────────────────
+  function renderChannelBars(pending) {
+    const el = $('channel-bars');
+    const map = {};
+    pending.forEach(o => {
+      const k = o.CourierServiceName||o.Channel||o.OrderChannel||'Unspecified';
+      map[k] = (map[k]||0)+1;
+    });
+    const entries = Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    if (!entries.length) { el.innerHTML='<p class="empty-msg">No pending orders</p>'; return; }
+    const max = Math.max(...entries.map(e=>e[1]));
+    el.innerHTML = entries.map(([lbl,v]) => {
+      const pct=(v/max*100).toFixed(1);
+      return `<div class="bar-row">
+        <div class="bar-lbl" title="${lbl}">${lbl}</div>
+        <div class="bar-track"><div class="bar-fill amber" style="width:${pct}%"></div></div>
+        <div class="bar-val">${v}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Extract client name from an order object.
+  // Per the Mintsoft Swagger spec (api.mintsoft.co.uk/swagger/docs/v1),
+  // the warehouse client is exposed as the read-only field CLIENT_CODE.
+  function getClientName(o) {
+    // Mintsoft API Order model: client is exposed as CLIENT_CODE (read-only string)
+    // per the Swagger definition at api.mintsoft.co.uk/swagger/docs/v1
+    return o.CLIENT_CODE || o.ClientCode || o.ClientId || 'Unknown';
+  }
+
+  function renderClientBars(pending) {
+    const el = $('client-bars');
+    const map = {};
+    pending.forEach(o => {
+      const k = getClientName(o);
+      map[k] = (map[k]||0)+1;
+    });
+    const entries = Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,10);
+    if (!entries.length) { el.innerHTML='<p class="empty-msg">No pending orders</p>'; return; }
+    const max = Math.max(...entries.map(e=>e[1]));
+    el.innerHTML = entries.map(([lbl,v]) => {
+      const pct=(v/max*100).toFixed(1);
+      return `<div class="bar-row">
+        <div class="bar-lbl" title="${lbl}">${lbl}</div>
+        <div class="bar-track"><div class="bar-fill green" style="width:${pct}%"></div></div>
+        <div class="bar-val">${v}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Packer pace bars (actual vs target) ───────────────
+  // Calculate benchmark secs/order for a packer based on the ref types they worked on today.
+  // Weighted by how many orders they did of each ref type.
+  function calcPackerBenchmark(packerRefs) {
+    if (!packerRefs || batchHistory.length === 0) return null;
+    const benchByRef = calcBenchmarkByRef();
+    let totalOrders = 0, weightedSecs = 0;
+    for (const [ref, orders] of Object.entries(packerRefs)) {
+      const bench = benchByRef[ref];
+      if (bench) { weightedSecs += bench * orders; totalOrders += orders; }
+    }
+    return totalOrders > 0 ? weightedSecs / totalOrders : null;
+  }
+
+  function renderPackerPaceBars(packerMap, teamTarget) {
+    const el = $('packer-pace-bars');
+    const packers = Object.entries(packerMap)
+      .filter(([,p])=>p.orders>0)
+      .map(([name,p])=>({
+        name,
+        actual:   p.orders>0 ? p.totalActualSecs/p.orders : null,
+        target:   p.orders>0 ? p.totalTargetSecs/p.orders : null,
+        orders:   p.orders,
+        isActive: p.isActive,
+        refs:     p.refs
+      }))
+      .sort((a,b) => {
+        // Active packers first, then by order count
+        if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
+        return b.orders - a.orders;
+      });
+
+    if (!packers.length) { el.innerHTML='<p class="empty-msg">No packer data yet</p>'; return; }
+
+    const packersWithBench = packers.map(p => ({
+      ...p,
+      benchTarget: calcPackerBenchmark(p.refs) || p.target,
+      top10Target: calcPackerTarget(p.refs)
+    }));
+
+    const maxSecs = Math.max(
+      ...packersWithBench.flatMap(p => [p.actual||0, p.benchTarget||0, p.top10Target||0]),
+      1
+    );
+
+    el.innerHTML = packersWithBench.map(p => {
+      const aP   = p.actual      ? (p.actual/maxSecs*100).toFixed(1)      : 0;
+      const tP   = p.benchTarget ? (p.benchTarget/maxSecs*100).toFixed(1) : 0;
+      const t10P = p.top10Target ? (p.top10Target/maxSecs*100).toFixed(1) : 0;
+      const good = p.actual && p.benchTarget && p.actual <= p.benchTarget;
+      const hasBench = !!calcPackerBenchmark(p.refs);
+      const benchLabel  = hasBench ? 'Bench' : 'Target';
+      const nameColor   = p.isActive ? 'var(--text)' : 'var(--muted)';
+      const inactiveBadge = p.isActive ? ''
+        : ' <span style="font-size:10px;background:#1c1a02;color:#fde047;border:1px solid #713f12;'
+        + 'padding:1px 6px;border-radius:999px;vertical-align:middle;">Inactive</span>';
+      const top10Row = p.top10Target ? `
+        <div class="bar-row" style="margin-bottom:2px;">
+          <div class="bar-lbl" style="width:50px;font-size:11px;color:#60a5fa;">Top 10%</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${t10P}%;background:#1d4ed8;opacity:0.7;"></div></div>
+          <div class="bar-val" style="color:#60a5fa;">${p.top10Target.toFixed(0)}s</div>
+        </div>` : '';
+      return `<div style="margin-bottom:10px;opacity:${p.isActive?1:0.55};">
+        <div style="font-size:12px;margin-bottom:3px;color:${nameColor};">
+          ${p.name}${inactiveBadge}
+          <span style="color:var(--muted);font-size:11px;">(${p.orders} orders)</span>
+        </div>
+        <div class="bar-row" style="margin-bottom:2px;">
+          <div class="bar-lbl" style="width:50px;font-size:11px;">Actual</div>
+          <div class="bar-track"><div class="bar-fill ${good?'green':'red'}" style="width:${aP}%"></div></div>
+          <div class="bar-val">${p.actual ? p.actual.toFixed(0)+'s' : '—'}</div>
+        </div>
+        <div class="bar-row" style="margin-bottom:2px;">
+          <div class="bar-lbl" style="width:50px;font-size:11px;color:var(--muted);">${benchLabel}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${tP}%;background:var(--border)"></div></div>
+          <div class="bar-val" style="color:var(--muted);">${p.benchTarget ? p.benchTarget.toFixed(0)+'s' : '—'}</div>
+        </div>
+        ${top10Row}
+      </div>`;
+    }).join('');
+  }
+
+  // ── Picker table ──────────────────────────────────────
+  function renderPickerTable(packerMap, teamActual, teamTarget) {
+    const tbody = $('picker-tbody');
+    const packers = Object.entries(packerMap)
+      .map(([name,p])=>({name,...p}))
+      .sort((a,b) => {
+        if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
+        return b.orders - a.orders;
+      });
+
+    if (!packers.length) {
+      tbody.innerHTML='<tr class="msg-row"><td colspan="10">No packer data found. Batch orders may not have DespatchByUser events yet.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = packers.map(p => {
+      const actualSecOrd = p.orders>0 ? (p.totalActualSecs/p.orders) : null;
+      // Use benchmark for this packer's ref mix — fall back to formula target
+      const benchTarget  = calcPackerBenchmark(p.refs);
+      const targetSecOrd = benchTarget || (p.orders>0 ? (p.totalTargetSecs/p.orders) : null);
+      const targetLabel  = benchTarget ? 'bench' : 'target';
+      // First/last despatch for display columns
+      const sortedTimes = [...p.allTimes].sort((a,b)=>a-b);
+      const firstT = sortedTimes[0];
+      const lastT  = sortedTimes[sortedTimes.length-1];
+      // Working time = sum of active segments per batch, gaps >5 min excluded
+      const GAP_MS = 5 * 60 * 1000;
+      let workingMs = 0;
+      for (const times of p.batchTimesList) {
+        if (times.length < 2) continue;
+        let segStart = times[0], prevT = times[0];
+        for (let i = 1; i < times.length; i++) {
+          if (times[i] - prevT > GAP_MS) { workingMs += prevT - segStart; segStart = times[i]; }
+          prevT = times[i];
+        }
+        workingMs += prevT - segStart;
+      }
+      let totalH = '—';
+      if (workingMs > 0) {
+        const wm = workingMs / 60000;
+        const wh = Math.floor(wm / 60), wmin = Math.round(wm % 60);
+        totalH = wh > 0 ? `${wh}h ${wmin}m` : `${wmin}m`;
+      }
+      const first = firstT ? `${fmt2(firstT.getHours())}:${fmt2(firstT.getMinutes())}` : '—';
+      const last  = lastT  ? `${fmt2(lastT.getHours())}:${fmt2(lastT.getMinutes())}`   : '—';
+
+      // vs target
+      let vsTgt = '—';
+      if (actualSecOrd && targetSecOrd) {
+        const diff = actualSecOrd - targetSecOrd;
+        vsTgt = (diff<=0?'':'+') + diff.toFixed(0)+'s';
+      }
+
+      // Pace badge
+      let badge = '<span class="badge badge-avg">Average</span>';
+      if (actualSecOrd && teamActual) {
+        if (actualSecOrd < teamActual*0.85)      badge='<span class="badge badge-fast">Fast</span>';
+        else if (actualSecOrd > teamActual*1.15) badge='<span class="badge badge-slow">Slow</span>';
+      }
+
+      const inactiveBadge = p.isActive ? ''
+        : '<span class="badge" style="background:#1c1a02;color:#fde047;border-color:#713f12;margin-left:4px;">Inactive</span>';
+      const rowStyle = p.isActive ? '' : 'opacity:0.55;';
+
+      return `<tr style="${rowStyle}">
+        <td><strong>${p.name}</strong>${inactiveBadge}</td>
+        <td>${p.orders}</td>
+        <td>${p.batches}</td>
+        <td>${actualSecOrd ? actualSecOrd.toFixed(1)+'s' : '—'}</td>
+        <td>${targetSecOrd ? targetSecOrd.toFixed(1)+'s <span style="font-size:10px;color:var(--muted);">('+targetLabel+')</span>' : '—'}</td>
+        <td style="color:${actualSecOrd&&targetSecOrd&&actualSecOrd<=targetSecOrd?'var(--green)':'var(--amber)'}">${vsTgt}</td>
+        <td>${totalH}</td>
+        <td>${first}</td>
+        <td>${last}</td>
+        <td>${badge}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ── Batch table — consolidated by base reference, split by status ────────
+  function renderBatchTable(batchRows) {
+    const tbody = $('batch-tbody');
+    if (!batchRows.length) {
+      tbody.innerHTML = '<tr class="msg-row"><td colspan="10">No batches found today.</td></tr>';
+      return;
+    }
+
+    const benchByRef = calcBenchmarkByRef();
+
+    // Classify each row
+    function statusOf(r) {
+      if (r.despatched)      return 'Despatched';  // includes effectively complete (cancelled orders)
+      if (r.pickingComplete) return 'Picked';
+      return 'Waiting';
+    }
+
+    // Group by status → base reference
+    const sections = { Waiting: {}, Picked: {}, Despatched: {} };
+    for (const r of batchRows) {
+      const sec = statusOf(r);
+      const key = baseRef(r.reference);
+      if (!sections[sec][key]) sections[sec][key] = [];
+      sections[sec][key].push(r);
+    }
+
+    // Build HTML for one group of rows sharing the same base reference
+    function groupRows(baseReference, rows, statusLabel, badgeClass) {
+      const ids       = rows.map(r => r.id).join(', ');
+      const totalOrds = rows.reduce((s,r) => s + r.orderCount, 0);
+      const batchNums = rows.map(r => {
+        // Extract run/number suffix from full reference
+        const suffix = r.reference.replace(baseReference, '').trim();
+        return suffix || ('#'+r.id);
+      }).join(', ');
+
+      // Earliest start, latest end across all runs in this group
+      const starts = rows.map(r => r.batchStart).filter(Boolean);
+      const ends   = rows.map(r => r.batchEnd).filter(Boolean);
+      const groupStart = starts.length ? new Date(Math.min(...starts)) : null;
+      const groupEnd   = ends.length   ? new Date(Math.max(...ends))   : null;
+
+      const startStr = groupStart ? fmt2(groupStart.getHours())+':'+fmt2(groupStart.getMinutes()) : '—';
+      const endStr   = groupEnd   ? fmt2(groupEnd.getHours())+':'+fmt2(groupEnd.getMinutes())     : '—';
+
+      // Weighted actual secs/order across completed runs
+      let wSecs = 0, wOrds = 0;
+      for (const r of rows) {
+        if (r.actualSecOrd && r.orderCount) { wSecs += r.actualSecOrd * r.orderCount; wOrds += r.orderCount; }
+      }
+      const groupActualSec = wOrds > 0 ? wSecs / wOrds : null;
+
+      // Target: from batch type of first row with one
+      const batchType = rows.find(r => r.batchType !== null)?.batchType ?? null;
+      const targetSec = batchType !== null ? batchType * mult() : null;
+
+      // Benchmark for this reference type
+      const bench = benchByRef[baseReference] || null;
+
+      // Actual duration: groupEnd - groupStart across all runs combined
+      const groupActualMin = (groupStart && groupEnd && totalOrds > 1)
+        ? Math.round(((groupEnd - groupStart) / 60000) * 10) / 10
+        : null;
+      const groupTargetMin = (targetSec && totalOrds)
+        ? Math.round((targetSec * totalOrds / 60) * 10) / 10
+        : null;
+
+      const actMinStr = groupActualMin !== null ? groupActualMin+'m' : '—';
+      const tgtMinStr = groupTargetMin !== null ? groupTargetMin+'m' : '—';
+
+      // vs benchmark or vs target
+      const cmpSec = bench || targetSec;
+      let vsColor = 'inherit';
+      let vsStr   = '—';
+      if (groupActualSec && cmpSec) {
+        const pct = ((groupActualSec - cmpSec) / cmpSec * 100);
+        vsStr   = (pct <= 0 ? '' : '+') + pct.toFixed(0) + '%';
+        vsColor = pct <= 0 ? 'var(--green)' : 'var(--amber)';
+      }
+
+      const benchStr = bench ? bench.toFixed(1)+'s' : (targetSec ? targetSec.toFixed(1)+'s†' : '—');
+      const actSecStr = groupActualSec ? groupActualSec.toFixed(1)+'s' : '—';
+
+      const statusBadge = `<span class="badge ${badgeClass}">${statusLabel}</span>`;
+      const runNums = rows.length > 1
+        ? `<div style="font-size:11px;color:var(--muted);margin-top:3px;">${batchNums}</div>`
+        : '';
+
+      return `<tr>
+        <td style="font-size:11px;color:var(--muted)">${ids}</td>
+        <td>
+          <strong>${baseReference}</strong>
+          ${runNums}
+        </td>
+        <td>${batchType !== null ? batchType : '—'}</td>
+        <td>${totalOrds}</td>
+        <td>${rows.map(r=>r.assignedUser||'—').filter((v,i,a)=>a.indexOf(v)===i).join(', ')}</td>
+        <td>${statusBadge}</td>
+        <td>${benchStr}</td>
+        <td>${actSecStr}</td>
+        <td style="color:${vsColor}">${vsStr}</td>
+        <td>${tgtMinStr}</td>
+        <td>${actMinStr}</td>
+        <td>${startStr}</td>
+        <td>${endStr}</td>
+      </tr>`;
+    }
+
+    // Section header row
+    function sectionHeader(label, badgeClass, count) {
+      return `<tr style="background:var(--bg);">
+        <td colspan="13" style="padding:6px 10px;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.08em;border-top:2px solid var(--border);">
+          <span class="badge ${badgeClass}" style="margin-right:6px;">${label}</span>
+          ${count} reference type${count===1?'':'s'}
+        </td>
+      </tr>`;
+    }
+
+    let html = '';
+    const sectionDefs = [
+      { key: 'Waiting',    label: 'Waiting',    badge: 'badge-pend' },
+      { key: 'Picked',     label: 'Picked',     badge: 'badge-avg'  },
+      { key: 'Despatched', label: 'Despatched', badge: 'badge-done' },
+    ];
+
+    for (const { key, label, badge } of sectionDefs) {
+      const refMap = sections[key];
+      const refKeys = Object.keys(refMap);
+      if (refKeys.length === 0) continue;
+      html += sectionHeader(label, badge, refKeys.length);
+      // Sort by base reference name for consistency
+      refKeys.sort().forEach(ref => {
+        html += groupRows(ref, refMap[ref], label, badge);
+      });
+    }
+
+    tbody.innerHTML = html || '<tr class="msg-row"><td colspan="13">No batches found today.</td></tr>';
+  }
+
+  // ── Auto-refresh ──────────────────────────────────────
+  function scheduleRefresh() {
+    if (refreshTimer) clearInterval(refreshTimer);
+    const mins = parseInt($('inp-interval').value)||15;
+    const ms   = mins * 60 * 1000;
+    nextRefreshAt = Date.now() + ms;
+    refreshTimer  = setInterval(() => {
+      loadDashboard();
+      nextRefreshAt = Date.now() + ms;
+    }, ms);
+  }
+
+  $('btn-refresh').addEventListener('click', () => {
+    loadDashboard();
+    scheduleRefresh();
+  });
+
+  $('inp-interval').addEventListener('change', scheduleRefresh);
+
+  // Load history from browser storage automatically on page open
+  initHistory();
+  initPackerSnapshots();
+
+  // Auto-refresh on page load — no need to click Refresh Now
+  if (apiKey()) {
+    loadDashboard();
+    scheduleRefresh();
+  } else {
+    // No API key yet — start the refresh timer so it fires once the key is entered
+    $('inp-apikey').addEventListener('change', () => {
+      if (apiKey()) { loadDashboard(); scheduleRefresh(); }
+    }, { once: true });
+  }
+
+  // ── OneDrive Sync (MSAL.js) ──────────────────────────────────────────────
+  // Shared mintsoft-history.json lives at /Apps/MintsoftDashboard/mintsoft-history.json
+  // on whichever account is signed in. All users sign in to the same shared account.
+  const OD_FILE_PATH    = '/Apps/MintoftDashboard/mintsoft-history.json';
+  const OD_LS_KEY       = 'msoft_od_clientid';
+  const OD_CLIENT_ID_DEFAULT = '793611e1-890d-4c11-9d8f-d2953c6c3c80';
+  let   msalInstance = null;
+  let   odAccount    = null;
+
+  function getOdClientId() {
+    return lsGet(OD_LS_KEY) || hashGet('od') || OD_CLIENT_ID_DEFAULT;
+  }
+
+  function saveOdClientId() {
+    const v = $('inp-od-clientid').value.trim();
+    if (!v) return;
+    lsSet(OD_LS_KEY, v); hashSet('od', v);
+    $('od-setup').style.display = 'none';
+    initMsal(v);
+  }
+
+  function initMsal(clientId) {
+    if (!window.msal) { console.warn('MSAL not loaded'); return; }
+    msalInstance = new msal.PublicClientApplication({
+      auth: {
+        clientId,
+        authority: 'https://login.microsoftonline.com/75f1e93a-19be-4e6e-aaed-379a2b80572f',
+        redirectUri: location.href.split('#')[0]
+      },
+      cache: { cacheLocation: 'localStorage', storeAuthStateInCookie: true }
+    });
+    // Handle redirect after login
+    msalInstance.handleRedirectPromise().then(resp => {
+      if (resp) {
+        odAccount = resp.account;
+        onOdSignedIn();
+      } else {
+        const accounts = msalInstance.getAllAccounts();
+        if (accounts.length > 0) { odAccount = accounts[0]; onOdSignedIn(); }
+        else { updateOdUI(false); }
+      }
+    }).catch(e => { console.warn('MSAL redirect error:', e); updateOdUI(false); });
+  }
+
+  async function odSignIn() {
+    const clientId = getOdClientId();
+    if (!clientId) { $('od-setup').style.display = 'block'; return; }
+    if (!msalInstance) initMsal(clientId);
+    try {
+      const resp = await msalInstance.loginPopup({ scopes: ['Files.ReadWrite', 'User.Read'] });
+      odAccount = resp.account;
+      onOdSignedIn();
+    } catch(e) {
+      if (e.errorCode !== 'user_cancelled') console.warn('OneDrive sign-in error:', e);
+    }
+  }
+
+  async function odSignOut() {
+    if (msalInstance && odAccount) {
+      await msalInstance.logoutPopup({ account: odAccount });
+    }
+    odAccount = null;
+    updateOdUI(false);
+  }
+
+  function updateOdUI(signedIn) {
+    $('btn-od-signin').style.display  = signedIn ? 'none'  : '';
+    $('btn-od-signout').style.display = signedIn ? ''      : 'none';
+    if (!signedIn) setHistoryStatus('Sign in to OneDrive to share history across all machines');
+  }
+
+  async function onOdSignedIn() {
+    updateOdUI(true);
+    const name = odAccount.name || odAccount.username;
+    setHistoryStatus('OneDrive: signed in as ' + name + ' — syncing history…');
+    await odLoadHistory();
+    await odLoadDaySnapshots();
+    // Schedule auto-sync every 2 hours
+    setInterval(odSaveHistory, AUTO_SAVE_MS);
+  }
+
+  async function getOdToken() {
+    const r = await msalInstance.acquireTokenSilent({
+      scopes: ['Files.ReadWrite'],
+      account: odAccount
+    });
+    return r.accessToken;
+  }
+
+  async function odLoadHistory() {
+    try {
+      const token = await getOdToken();
+      const res   = await fetch(
+        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_FILE_PATH + ':/content',
+        { headers: { Authorization: 'Bearer ' + token } }
+      );
+      if (res.status === 404) {
+        setHistoryStatus('OneDrive: no history file yet — will create on next save');
+        return;
+      }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data    = await res.json();
+      const batches = Array.isArray(data) ? data : (data.batches || []);
+      const before  = batchHistory.length;
+      const existing = new Set(batchHistory.map(h => h.batchId));
+      let added = 0;
+      for (const b of batches) {
+        if (b.batchId && b.actualSecOrd && !existing.has(b.batchId)) {
+          batchHistory.push(b); existing.add(b.batchId); added++;
+        }
+      }
+      updateHistoryUI();
+
+      // ── Merge packer snapshots from OneDrive ───────────────────────────────
+      const cloudSnaps = data.packerSnaps || [];
+      const snapKey = s => s.dow + '-' + s.hour + '-' + s.ts.slice(0, 13);
+      const existingSnaps = new Set(packerSnapshots.map(snapKey));
+      let snapsAdded = 0;
+      for (const s of cloudSnaps) {
+        if (s.dow != null && s.hour != null && s.ts && !existingSnaps.has(snapKey(s))) {
+          packerSnapshots.push(s); existingSnaps.add(snapKey(s)); snapsAdded++;
+        }
+      }
+      if (snapsAdded > 0) savePackerSnapshots();
+
+      setHistoryStatus('OneDrive: synced — ' + batchHistory.length + ' batches (' + added + ' new), ' + packerSnapshots.length + ' packer snaps (' + snapsAdded + ' new)');
+      console.log('OneDrive: loaded', added, 'new batches, total=', batchHistory.length, '| packer snaps added:', snapsAdded);
+    } catch(e) { console.warn('OneDrive load error:', e); setHistoryStatus('OneDrive: load error — ' + e.message); }
+  }
+
+  async function odSaveHistory() {
+    if (!odAccount || !msalInstance) return;
+    try {
+      const token = await getOdToken();
+      const json  = JSON.stringify({ version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots }, null, 2);
+      const res   = await fetch(
+        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_FILE_PATH + ':/content',
+        { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
+      );
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      setHistoryStatus('OneDrive: saved ' + new Date().toLocaleTimeString('en-GB') + ' — ' + batchHistory.length + ' batches, ' + packerSnapshots.length + ' packer snaps');
+      console.log('OneDrive: saved', batchHistory.length, 'batches');
+    } catch(e) { console.warn('OneDrive save error:', e); setHistoryStatus('OneDrive: save error — ' + e.message); }
+  }
+
+  // After local save, also push to OneDrive if signed in
+  // (wired directly into saveHistory body below — no wrapper needed)
+
+  // ── Daily Performance Snapshot ───────────────────────────────────────────
+
+  function captureDaySnapshot() {
+    if (!lastRenderState) return null;
+    const r = lastRenderState;
+    const _snapNow = new Date();
+    const _snapHour = String(_snapNow.getHours()).padStart(2, '0');
+    return {
+      date:            r.date,
+      hour:            _snapHour,
+      savedAt:         _snapNow.toISOString(),
+      despatched:      r.despN,
+      pending:         r.pendN,
+      total:           r.total,
+      pct:             r.pct,
+      ratePerHour:     r.rate,
+      secOrdActual:    r.secOrdActual,
+      secOrdBenchmark: r.secOrdBenchmark,
+      secOrdTarget:    r.secOrdTarget,
+      peakPackers:     r.peakPackers,
+      etaStr:          r.etaStr,
+      batches:         r.batches,
+      packers:         r.packers,
+      batchRows:       r.batchRows
+    };
+  }
+
+  async function odSaveDaySnapshot(silent) {
+    if (!odAccount || !msalInstance) {
+      if (!silent) alert('Sign in to OneDrive first to save day snapshots.');
+      return;
+    }
+    const snap = captureDaySnapshot();
+    if (!snap || snap.despatched === 0) {
+      if (!silent) alert('No despatch data to save yet — wait until some orders are despatched.');
+      return;
+    }
+    try {
+      const token = await getOdToken();
+      const _snapKey = snap.hour ? `${snap.date}T${snap.hour}` : snap.date;
+    dailySnapshots[_snapKey] = snap;
+      const json  = JSON.stringify({ version: 1, saved: new Date().toISOString(), days: dailySnapshots }, null, 2);
+      const res   = await fetch(
+        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_SNAP_PATH + ':/content',
+        { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
+      );
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      setHistoryStatus('📅 Day snapshot saved — ' + snap.date + ' (' + snap.despatched + ' orders despatched)');
+      updateDaySnapshotUI();
+    } catch(e) {
+      console.warn('Day snapshot save error:', e);
+      if (!silent) setHistoryStatus('Day snapshot error: ' + e.message);
+    }
+  }
+
+  async function odLoadDaySnapshots() {
+    if (!odAccount || !msalInstance) return;
+    try {
+      const token = await getOdToken();
+      const res   = await fetch(
+        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_SNAP_PATH + ':/content',
+        { headers: { Authorization: 'Bearer ' + token } }
+      );
+      if (res.status === 404) return;
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data     = await res.json();
+      const incoming = data.days || {};
+      for (const [d, snap] of Object.entries(incoming)) {
+        if (!dailySnapshots[d] || new Date(snap.savedAt) > new Date((dailySnapshots[d]||{}).savedAt||0)) {
+          dailySnapshots[d] = snap;
+        }
+      }
+      updateDaySnapshotUI();
+      console.log('Day snapshots loaded:', Object.keys(dailySnapshots).length, 'days');
+    } catch(e) { console.warn('Day snapshots load error:', e); }
+  }
+
+  function updateDaySnapshotUI() {
+    const days = Object.keys(dailySnapshots).sort().reverse();
+    const sel  = $('past-day-select');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select a day —</option>'
+      + days.map(d => {
+          const s = dailySnapshots[d];
+          const _lbl = d.includes('T') ? d.replace('T', ' ') + ':00' : d;
+        return `<option value="${d}">${_lbl}  ·  ${s.despatched} despatched  ·  ${s.pct}</option>`;
+        }).join('');
+    $('past-day-count').textContent = days.length + ' day' + (days.length === 1 ? '' : 's') + ' saved';
+  }
+
+  function togglePastDaysPanel() {
+    const el = $('past-days-panel');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function renderPastDay(dateStr) {
+    const el = $('past-day-content');
+    if (!dateStr || !dailySnapshots[dateStr]) { el.innerHTML = ''; return; }
+    const s  = dailySnapshots[dateStr];
+    const fS = v => (v != null && !isNaN(+v)) ? (+v).toFixed(1) + 's' : '—';
+    const fN = v => v != null ? v : '—';
+
+    const packerRows = (s.packers || []).sort((a, b) => b.orders - a.orders).map(p => {
+      const good = p.actualSecOrd && p.benchTarget && p.actualSecOrd <= p.benchTarget;
+      const col  = good ? 'var(--green)' : 'var(--amber)';
+      return `<tr>
+        <td style="font-weight:600;padding:6px 10px;">${p.name}</td>
+        <td style="text-align:right;padding:6px 10px;">${p.orders}</td>
+        <td style="text-align:right;padding:6px 10px;color:${col};">${fS(p.actualSecOrd)}</td>
+        <td style="text-align:right;padding:6px 10px;color:var(--muted);">${fS(p.benchTarget)}</td>
+        <td style="text-align:right;padding:6px 10px;color:#60a5fa;">${fS(p.top10Target)}</td>
+      </tr>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px;">
+        <div class="kpi"><div class="kpi-label">Despatched</div><div class="kpi-val c-green">${fN(s.despatched)}</div><div class="kpi-sub">${s.pct} of ${fN(s.total)}</div></div>
+        <div class="kpi"><div class="kpi-label">Rate</div><div class="kpi-val">${fN(s.ratePerHour)}</div><div class="kpi-sub">orders / hour</div></div>
+        <div class="kpi"><div class="kpi-label">Actual s/ord</div><div class="kpi-val">${fS(s.secOrdActual)}</div><div class="kpi-sub">team average</div></div>
+        <div class="kpi"><div class="kpi-label">Benchmark</div><div class="kpi-val">${fS(s.secOrdBenchmark)}</div><div class="kpi-sub">top 20% hist</div></div>
+        <div class="kpi"><div class="kpi-label">Peak Packers</div><div class="kpi-val">${fN(s.peakPackers)}</div><div class="kpi-sub">at snapshot time</div></div>
+        <div class="kpi"><div class="kpi-label">Batches</div><div class="kpi-val">${fN(s.batches)}</div><div class="kpi-sub">processed</div></div>
+      </div>
+      ${packerRows ? `<table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden;">
+        <thead><tr style="color:var(--muted);font-size:11px;border-bottom:1px solid var(--border);">
+          <th style="text-align:left;padding:6px 10px;">Packer</th>
+          <th style="text-align:right;padding:6px 10px;">Orders</th>
+          <th style="text-align:right;padding:6px 10px;">Actual s/ord</th>
+          <th style="text-align:right;padding:6px 10px;">Bench s/ord</th>
+          <th style="text-align:right;padding:6px 10px;">Top 10%</th>
+        </tr></thead>
+        <tbody>${packerRows}</tbody>
+      </table>` : '<p class="empty-msg">No packer data in this snapshot</p>'}
+      <div style="margin-top:10px;font-size:11px;color:var(--muted);">Snapshot saved: ${new Date(s.savedAt).toLocaleString('en-GB')}</div>`;
+  }
+
+  // Init MSAL on load — client ID is baked in so always initialises
+  (function() {
+    $('od-setup').style.display = 'none';  // setup panel not needed, ID is pre-configured
+    initMsal(getOdClientId());
+  })();
+
+</script>
+
+
+
+
+
+
+
+
+
+<script id="proxy-dl-script">
+(function() {
+  var content = "param(\n    [int]    $Port   = 8787,\n    [string] $ApiKey = \"\"\n)\n\n$MintSoftBase = \"https://api.mintsoft.co.uk\"\n$Prefix       = \"http://localhost:\" + $Port + \"/\"\n\n$listener = New-Object System.Net.HttpListener\n$listener.Prefixes.Add($Prefix)\n$listener.Start()\n\nWrite-Host \"\"\nWrite-Host \"  Mintsoft CORS Proxy running on $Prefix\" -ForegroundColor Cyan\nWrite-Host \"  Forwarding to: $MintSoftBase\" -ForegroundColor Gray\nWrite-Host \"  Press Ctrl+C to stop.\" -ForegroundColor Gray\nWrite-Host \"\"\n\nfunction Send-CorsHeaders($res) {\n    try { $res.Headers.Add(\"Access-Control-Allow-Origin\",  \"*\") }           catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Methods\", \"GET, POST, PUT, DELETE, OPTIONS\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Headers\", \"ms-apikey, Content-Type, Accept, Authorization\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Expose-Headers\",\"*\") }           catch {}\n}\n\ntry {\n    while ($true) {\n\n        # Block until a request arrives (this is synchronous \u2014 no polling needed)\n        $ctx = $null\n        try {\n            $ctx = $listener.GetContext()\n        } catch {\n            # Listener was stopped (Ctrl+C) \u2014 exit cleanly\n            break\n        }\n\n        $req = $ctx.Request\n        $res = $ctx.Response\n\n        Write-Host (\"  \" + $req.HttpMethod + \" \" + $req.Url.PathAndQuery) -ForegroundColor DarkGray\n\n        # \u2500\u2500 CORS preflight \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if ($req.HttpMethod -eq \"OPTIONS\") {\n            $res.StatusCode = 204\n            Send-CorsHeaders $res\n            $res.Close()\n            continue\n        }\n\n        # \u2500\u2500 Proxy the request \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        $targetUrl = $MintSoftBase + $req.Url.PathAndQuery\n\n        try {\n            $upstream = [System.Net.HttpWebRequest]::Create($targetUrl)\n            $upstream.Method               = $req.HttpMethod\n            $upstream.Timeout              = 90000\n            $upstream.AutomaticDecompression = [System.Net.DecompressionMethods]::GZip -bor [System.Net.DecompressionMethods]::Deflate\n\n            # \u2500\u2500 Forward headers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            foreach ($hdr in $req.Headers.AllKeys) {\n                $val      = $req.Headers[$hdr]\n                $hdrLower = $hdr.ToLower()\n\n                if ($hdrLower -eq \"ms-apikey\") {\n                    $keyToUse = if ($ApiKey -ne \"\") { $ApiKey } else { $val }\n                    $upstream.Headers.Add(\"ms-apikey\", $keyToUse)\n                } elseif ($hdrLower -eq \"accept\") {\n                    $upstream.Accept = $val\n                } elseif ($hdrLower -eq \"content-type\") {\n                    $upstream.ContentType = $val\n                } elseif ($hdrLower -in @(\"host\", \"connection\", \"transfer-encoding\", \"accept-encoding\")) {\n                    # skip \u2014 let .NET handle these\n                } else {\n                    try { $upstream.Headers.Add($hdr, $val) } catch {}\n                }\n            }\n\n            # Inject key if not already set\n            if ($ApiKey -ne \"\" -and $req.Headers[\"ms-apikey\"] -eq $null) {\n                $upstream.Headers.Add(\"ms-apikey\", $ApiKey)\n            }\n\n            # \u2500\u2500 Forward request body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            if ($req.HasEntityBody) {\n                $upstream.ContentLength = $req.ContentLength64\n                $bodyBytes = New-Object byte[] $req.ContentLength64\n                [void]$req.InputStream.Read($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream = $upstream.GetRequestStream()\n                $upReqStream.Write($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream.Close()\n            }\n\n            # \u2500\u2500 Get upstream response \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upResponse = $null\n            try {\n                $upResponse = $upstream.GetResponse()\n            } catch [System.Net.WebException] {\n                if ($_.Exception.Response -ne $null) {\n                    $upResponse = $_.Exception.Response\n                } else {\n                    throw\n                }\n            }\n\n            # \u2500\u2500 Read decompressed body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upStream  = $upResponse.GetResponseStream()\n            $reader    = New-Object System.IO.StreamReader($upStream, [System.Text.Encoding]::UTF8)\n            $bodyText  = $reader.ReadToEnd()\n            $reader.Close()\n            $upResponse.Close()\n\n            # \u2500\u2500 Write response to browser \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes($bodyText)\n            $res.StatusCode      = [int]$upResponse.StatusCode\n            $res.ContentType     = \"application/json; charset=utf-8\"\n            $res.ContentLength64 = $bodyBytes.Length\n            Send-CorsHeaders $res\n            $res.OutputStream.Write($bodyBytes, 0, $bodyBytes.Length)\n\n        } catch {\n            Write-Host (\"  ERROR: \" + $_.Exception.Message) -ForegroundColor Red\n            $errMsg   = $_.Exception.Message -replace '\"', \"'\"\n            $errBytes = [System.Text.Encoding]::UTF8.GetBytes('{\"error\":\"' + $errMsg + '\"}')\n            try {\n                $res.StatusCode      = 502\n                $res.ContentType     = \"application/json; charset=utf-8\"\n                $res.ContentLength64 = $errBytes.Length\n                Send-CorsHeaders $res\n                $res.OutputStream.Write($errBytes, 0, $errBytes.Length)\n            } catch {}\n        }\n\n        try { $res.Close() } catch {}\n    }\n} finally {\n    try { $listener.Stop() } catch {}\n    Write-Host \"Proxy stopped.\" -ForegroundColor Yellow\n}\n";
+  var blob = new Blob([content], {type: "text/plain"});
+  var url = URL.createObjectURL(blob);
+  var link = document.getElementById("proxy-download-link");
+  if (link) { link.href = url; }
+})();
+</script>
+</body>
+</html>
+
       --border:  #30363d;
       --blue:    #2563eb;<!DOCTYPE html>
 <html lang="en">
