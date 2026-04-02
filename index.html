@@ -621,7 +621,7 @@
       } catch(e2) { console.error('History save failed:', e2); }
     }
     // Also sync to OneDrive if signed in
-    if (ghToken && ghRepo) ghSaveHistory();
+    if (ghToken && ghRepo) ghscheduleGhSave();
   }
 
   function exportHistory() {
@@ -650,7 +650,7 @@
             batchHistory.push(b); existing.add(b.batchId); added++;
           }
         }
-        saveHistory();
+        scheduleGhSave();
         updateHistoryUI();
         setHistoryStatus('Loaded from file — ' + batchHistory.length + ' batches (' + added + ' new)');
       } catch(err) { alert('Could not load history: ' + err.message); }
@@ -683,7 +683,7 @@
     updateHistoryUI();
     // Auto-save every 2 hours (or immediately on first new data)
     if (batchHistory.length > 0 && (lastAutoSave === 0 || Date.now() - lastAutoSave >= AUTO_SAVE_MS)) {
-      saveHistory();
+      scheduleGhSave();
     }
   }
 
@@ -2218,7 +2218,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     try {
       await ghLoadHistory();
       await ghLoadDaySnapshots();
-      await ghSaveHistory();
+      await ghscheduleGhSave();
       updateGhUI(true);
     } catch(e) {
       console.warn('GitHub sync error:', e);
@@ -2417,3 +2417,169 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 </html>
 
       --border:  #30363d;
+/* ============================
+   🔥 MULTI-USER GITHUB SYNC ENGINE
+   ============================ */
+
+let lastRemoteSha = null;
+let lastRemoteUpdatedAt = null;
+
+let ghSaveQueue = [];
+let ghSaving = false;
+let ghSaveTimer = null;
+
+let ghUser = "User-" + Math.floor(Math.random() * 1000);
+
+/* ---------- PUT FILE (create/update) ---------- */
+async function ghPutFile(path, content) {
+  const url = baseUrl() + `/gh-api/repos/${ghRepo}/contents/${path}`;
+
+  let sha = null;
+
+  try {
+    const res = await fetch(url, {
+      headers: { Authorization: `token ${ghToken}` }
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      sha = data.sha;
+      lastRemoteSha = sha;
+    }
+  } catch {}
+
+  const payload = {
+    message: "Update mintsoft history",
+    content: btoa(unescape(encodeURIComponent(content)))
+  };
+
+  if (sha) payload.sha = sha;
+
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${ghToken}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(txt);
+  }
+
+  const result = await res.json();
+  lastRemoteSha = result.content.sha;
+  lastRemoteUpdatedAt = new Date().toISOString();
+
+  return result;
+}
+
+/* ---------- RETRY ---------- */
+async function ghPutFileWithRetry(path, content, attempt = 1) {
+  try {
+    return await ghPutFile(path, content);
+  } catch (e) {
+    if (attempt >= 3) throw e;
+    await new Promise(r => setTimeout(r, attempt * 1500));
+    return ghPutFileWithRetry(path, content, attempt + 1);
+  }
+}
+
+/* ---------- QUEUE ---------- */
+function ghQueueSave(content) {
+  ghSaveQueue.push(content);
+  processGhQueue();
+}
+
+async function processGhQueue() {
+  if (ghSaving || ghSaveQueue.length === 0) return;
+
+  ghSaving = true;
+
+  const content = ghSaveQueue.pop();
+  ghSaveQueue = [];
+
+  try {
+    await ghPutFileWithRetry("mintsoft-history.json", content);
+    setHistoryStatus("GitHub synced ✓");
+  } catch (e) {
+    ghSaveQueue.push(content);
+    setHistoryStatus("Retrying GitHub...");
+  }
+
+  ghSaving = false;
+
+  if (ghSaveQueue.length > 0) {
+    setTimeout(processGhQueue, 2000);
+  }
+}
+
+/* ---------- DEBOUNCE SAVE ---------- */
+function scheduleGhSave() {
+  if (!ghToken || !ghRepo) return;
+
+  clearTimeout(ghSaveTimer);
+
+  ghSaveTimer = setTimeout(() => {
+    const json = JSON.stringify({
+      version: 3,
+      updatedAt: new Date().toISOString(),
+      updatedBy: ghUser,
+      batches: batchHistory
+    }, null, 2);
+
+    ghQueueSave(json);
+  }, 3000);
+}
+
+/* ---------- MERGE (multi-user safe) ---------- */
+function mergeHistory(local, remote) {
+  const map = new Map();
+
+  [...remote, ...local].forEach(b => {
+    if (b.batchId) map.set(b.batchId, b);
+  });
+
+  return Array.from(map.values());
+}
+
+/* ---------- LOAD REMOTE ---------- */
+async function ghLoadHistory() {
+  if (!ghToken || !ghRepo) return;
+
+  try {
+    const url = baseUrl() + `/gh-api/repos/${ghRepo}/contents/mintsoft-history.json`;
+
+    const res = await fetch(url, {
+      headers: { Authorization: `token ${ghToken}` }
+    });
+
+    if (!res.ok) return;
+
+    const data = await res.json();
+
+    if (data.sha === lastRemoteSha) return;
+
+    const decoded = JSON.parse(atob(data.content));
+
+    if (lastRemoteUpdatedAt && decoded.updatedAt <= lastRemoteUpdatedAt) return;
+
+    console.log("🔄 Synced from another user");
+
+    lastRemoteSha = data.sha;
+    lastRemoteUpdatedAt = decoded.updatedAt;
+
+    batchHistory = mergeHistory(batchHistory, decoded.batches || []);
+
+    updateHistoryUI();
+    setHistoryStatus("Synced from another user");
+
+  } catch (e) {
+    console.warn("Sync error:", e);
+  }
+}
+
+/* ---------- START POLLING ---------- */
+setInterval(ghLoadHistory, 10000);
