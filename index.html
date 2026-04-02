@@ -2113,7 +2113,9 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     }, { once: true });
   }
 
-  // ── GitHub Sync ───────────────────────────────────────────────────────────
+  // GitHub API calls are routed through the local proxy at /gh-api/
+  // to avoid CORS issues when running at localhost:8787.
+  const GH_API = '/gh-api/repos';
   // All users read/write the same files in the GitHub repo via the API.
   // Each user stores their own token in localStorage — it never leaves the browser.
   const GH_LS_TOKEN   = 'msoft_gh_token';
@@ -2182,7 +2184,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   // ── GitHub API helpers ────────────────────────────────────────────────────
   async function ghGetFile(path) {
-    const res = await fetch(`https://api.github.com/repos/${ghRepo}/contents/${path}`, {
+    const res = await fetch(`${GH_API}/${ghRepo}/contents/${path}`, {
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json' }
     });
     if (res.status === 404) return null;
@@ -2196,7 +2198,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     const body = { message: 'Dashboard sync ' + new Date().toISOString(),
                    content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))) };
     if (existingSha) body.sha = existingSha;
-    const res = await fetch(`https://api.github.com/repos/${ghRepo}/contents/${path}`, {
+    const res = await fetch(`${GH_API}/${ghRepo}/contents/${path}`, {
       method: 'PUT',
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json',
                  'Content-Type': 'application/json' },
