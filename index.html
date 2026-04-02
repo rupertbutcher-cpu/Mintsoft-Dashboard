@@ -2119,13 +2119,30 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   }
 
   // ── OneDrive Sync (MSAL.js) ──────────────────────────────────────────────
-  // Shared mintsoft-history.json lives at /Apps/MintsoftDashboard/mintsoft-history.json
-  // on whichever account is signed in. All users sign in to the same shared account.
+  // History is stored on the shared SharePoint root site so every user
+  // reads and writes the same files regardless of who is signed in.
   const OD_FILE_PATH    = '/Apps/MintoftDashboard/mintsoft-history.json';
   const OD_LS_KEY       = 'msoft_od_clientid';
   const OD_CLIENT_ID_DEFAULT = '793611e1-890d-4c11-9d8f-d2953c6c3c80';
-  let   msalInstance = null;
-  let   odAccount    = null;
+  const SP_HOSTNAME     = 'haulandstorecouk.sharepoint.com';
+  let   msalInstance    = null;
+  let   odAccount       = null;
+  let   spDriveBase     = null;
+
+  // Discover the SharePoint root site drive URL once after sign-in.
+  async function getSpDriveBase() {
+    if (spDriveBase) return spDriveBase;
+    const token = await getOdToken();
+    const res   = await fetch(
+      `https://graph.microsoft.com/v1.0/sites/${SP_HOSTNAME}:/`,
+      { headers: { Authorization: 'Bearer ' + token } }
+    );
+    if (!res.ok) throw new Error('SP site lookup failed: HTTP ' + res.status);
+    const site  = await res.json();
+    spDriveBase = `https://graph.microsoft.com/v1.0/sites/${site.id}/drive/root:`;
+    console.log('SharePoint drive base:', spDriveBase);
+    return spDriveBase;
+  }
 
   function getOdClientId() {
     return lsGet(OD_LS_KEY) || hashGet('od') || OD_CLIENT_ID_DEFAULT;
@@ -2167,7 +2184,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     if (!clientId) { $('od-setup').style.display = 'block'; return; }
     if (!msalInstance) initMsal(clientId);
     try {
-      const resp = await msalInstance.loginPopup({ scopes: ['Files.ReadWrite', 'User.Read'] });
+      const resp = await msalInstance.loginPopup({ scopes: ['Files.ReadWrite', 'Sites.ReadWrite.All', 'User.Read'] });
       odAccount = resp.account;
       onOdSignedIn();
     } catch(e) {
@@ -2201,7 +2218,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   async function getOdToken() {
     const r = await msalInstance.acquireTokenSilent({
-      scopes: ['Files.ReadWrite'],
+      scopes: ['Files.ReadWrite', 'Sites.ReadWrite.All'],
       account: odAccount
     });
     return r.accessToken;
@@ -2209,9 +2226,10 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   async function odLoadHistory() {
     try {
+      const base  = await getSpDriveBase();
       const token = await getOdToken();
       const res   = await fetch(
-        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_FILE_PATH + ':/content',
+        base + OD_FILE_PATH + ':/content',
         { headers: { Authorization: 'Bearer ' + token } }
       );
       if (res.status === 404) {
@@ -2251,10 +2269,11 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   async function odSaveHistory() {
     if (!odAccount || !msalInstance) return;
     try {
+      const base  = await getSpDriveBase();
       const token = await getOdToken();
       const json  = JSON.stringify({ version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots }, null, 2);
       const res   = await fetch(
-        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_FILE_PATH + ':/content',
+        base + OD_FILE_PATH + ':/content',
         { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
       );
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -2304,12 +2323,13 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       return;
     }
     try {
+      const base  = await getSpDriveBase();
       const token = await getOdToken();
       const _snapKey = snap.hour ? `${snap.date}T${snap.hour}` : snap.date;
     dailySnapshots[_snapKey] = snap;
       const json  = JSON.stringify({ version: 1, saved: new Date().toISOString(), days: dailySnapshots }, null, 2);
       const res   = await fetch(
-        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_SNAP_PATH + ':/content',
+        base + OD_SNAP_PATH + ':/content',
         { method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: json }
       );
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -2324,9 +2344,10 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   async function odLoadDaySnapshots() {
     if (!odAccount || !msalInstance) return;
     try {
+      const base  = await getSpDriveBase();
       const token = await getOdToken();
       const res   = await fetch(
-        'https://graph.microsoft.com/v1.0/me/drive/root:' + OD_SNAP_PATH + ':/content',
+        base + OD_SNAP_PATH + ':/content',
         { headers: { Authorization: 'Bearer ' + token } }
       );
       if (res.status === 404) return;
