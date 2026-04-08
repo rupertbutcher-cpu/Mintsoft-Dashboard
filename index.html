@@ -1059,11 +1059,22 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     return (isNaN(n)||n<1||n>100) ? null : n;
   }
 
-  // Strip trailing run number so e.g. "AMBIENT(7) Run 3" and "AMBIENT(7) Run 12"
-  // both map to base reference "AMBIENT(7)"
-  function baseRef(ref) {
-    return (ref||'').replace(/\s*(run\s*\d+|#\d+|\d+\s*$)/i, '').trim();
+  // Normalise a batch reference to a stable key for history grouping.
+  // Strips the leading date prefix (e.g. "2026-03-28 06-05 - ") AND
+  // the trailing run suffix (e.g. "- Run 3") so that the same batch type
+  // across different days and run numbers maps to a single history bucket.
+  function normalizeRef(ref) {
+    if (!ref) return '';
+    return (ref)
+      .replace(/^\d{4}-\d{2}-\d{2}\s+[0-9]{2}[-:][0-9]{2}\s*-\s*/i, '') // strip leading date+time prefix
+      .replace(/^\d{4}-\d{2}-\d{2}\s+/i, '')                               // strip bare leading date
+      .replace(/\s*-?\s*Run\s*\d+\s*$/i, '')                               // strip trailing Run N
+      .replace(/\s*(#\d+|\d+\s*)$/i, '')                                    // strip trailing bare numbers
+      .trim();
   }
+
+  // Keep baseRef as an alias for backwards-compat with any inline uses
+  function baseRef(ref) { return normalizeRef(ref); }
 
   // ── Extract despatch user from OrderNameValues ────────
   // Mirrors Get-DespatchUserEvents in the PS1
