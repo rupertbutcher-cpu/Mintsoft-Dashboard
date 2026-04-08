@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-08T06:59:33.956Z",
+  "saved": "2026-04-08T08:23:19.309Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -12761,6 +12761,114 @@
       "actualSecOrd": 26,
       "orderCount": 6,
       "packerCount": 4
+    },
+    {
+      "batchId": 8428730,
+      "reference": "2026-04-08 06-00 - Salcura Large Evri ND (4) - Run 1",
+      "date": "2026-04-08T06:46:27.632Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 22.5,
+      "orderCount": 4,
+      "packerCount": 7
+    },
+    {
+      "batchId": 8428769,
+      "reference": "",
+      "date": "2026-04-08T06:46:29.819Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 136,
+      "orderCount": 3,
+      "packerCount": 7
+    },
+    {
+      "batchId": 8428739,
+      "reference": "2026-04-08 06-00 - Salcura Large Evri ND (4) - Run 2",
+      "date": "2026-04-08T07:01:51.731Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 33,
+      "orderCount": 2,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8428711,
+      "reference": "2026-04-08 06-00 - Totter Singles DX - Run 1",
+      "date": "2026-04-08T07:04:25.844Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 69.4,
+      "orderCount": 39,
+      "packerCount": 7
+    },
+    {
+      "batchId": 8428720,
+      "reference": "2026-04-08 06-00 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-08T07:31:52.090Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 35.2,
+      "orderCount": 23,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428735,
+      "reference": "2026-04-08 06-00 - Anicura Large Evri ND - Run 1",
+      "date": "2026-04-08T07:31:43.173Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 99.3,
+      "orderCount": 9,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428698,
+      "reference": "2026-04-08 05-55 - Hey Harper Multi Evri (12) - Run 1",
+      "date": "2026-04-08T07:45:15.911Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 137.2,
+      "orderCount": 22,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8428688,
+      "reference": "2026-04-08 05-50 - Anicura Singles Evri ND - Run 1",
+      "date": "2026-04-08T07:59:54.923Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 47.5,
+      "orderCount": 25,
+      "packerCount": 16
+    },
+    {
+      "batchId": 8428703,
+      "reference": "2026-04-08 05-55 - Ripple+ Evri ND (8) - Run 1",
+      "date": "2026-04-08T08:01:38.137Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 15,
+      "orderCount": 2,
+      "packerCount": 16
+    },
+    {
+      "batchId": 8428731,
+      "reference": "2026-04-08 06-00 - Wild Dose 2/3 Evri TIME (3) - Run 2",
+      "date": "2026-04-08T08:01:48.718Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45.6,
+      "orderCount": 5,
+      "packerCount": 16
+    },
+    {
+      "batchId": 8428706,
+      "reference": "2026-04-08 05-55 - Bare Biology Single Tub RM (6) - Run 1",
+      "date": "2026-04-08T08:15:45.072Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 31.3,
+      "orderCount": 18,
+      "packerCount": 16
+    },
+    {
+      "batchId": 8428725,
+      "reference": "2026-04-08 06-00 - Wild Dose 2/3 Evri ND (3) - Run 1",
+      "date": "2026-04-08T08:16:35.715Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 26.3,
+      "orderCount": 24,
+      "packerCount": 16
     }
   ],
   "packerSnaps": [
@@ -12777,6 +12885,20 @@
       "count": 3,
       "ts": "2026-04-08T06:47:06.423Z",
       "dateHour": "2026-04-08T06"
+    },
+    {
+      "dow": 3,
+      "hour": 8,
+      "count": 7,
+      "ts": "2026-04-08T07:47:19.463Z",
+      "dateHour": "2026-04-08T07"
+    },
+    {
+      "dow": 3,
+      "hour": 9,
+      "count": 12,
+      "ts": "2026-04-08T08:16:57.554Z",
+      "dateHour": "2026-04-08T08"
     }
   ]
 }
