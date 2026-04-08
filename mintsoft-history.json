@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-08T06:23:18.033Z",
+  "saved": "2026-04-08T06:59:33.956Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -12752,6 +12752,15 @@
       "actualSecOrd": 186,
       "orderCount": 10,
       "packerCount": 22
+    },
+    {
+      "batchId": 8428689,
+      "reference": "2026-04-08 05-50 - Salcura Singles (3) - Run 1",
+      "date": "2026-04-08T06:28:24.984Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 26,
+      "orderCount": 6,
+      "packerCount": 4
     }
   ],
   "packerSnaps": [
@@ -12765,8 +12774,8 @@
     {
       "dow": 3,
       "hour": 7,
-      "count": 2,
-      "ts": "2026-04-08T06:16:50.829Z",
+      "count": 3,
+      "ts": "2026-04-08T06:47:06.423Z",
       "dateHour": "2026-04-08T06"
     }
   ]
