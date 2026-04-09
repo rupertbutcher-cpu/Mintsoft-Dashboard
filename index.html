@@ -1493,12 +1493,22 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     const total = despN + pendN;
     const pct   = total>0 ? (despN/total*100).toFixed(0)+'%' : '—';
 
-    // Despatch rate
+    // Despatch rate — use time since first actual despatch (not shift start)
+    // This avoids inflated rates early in the shift when elapsed time is tiny
     const {sh,sm} = shiftTimes();
     const now = new Date(), shiftStart = new Date(now);
     shiftStart.setHours(sh,sm,0,0);
-    const elapsedH = Math.max(0.01,(now-shiftStart)/3600000);
-    const rate = (despN/elapsedH).toFixed(1);
+    let rateBaseTime = shiftStart;
+    // If we have real despatch timestamps, use the earliest one as the rate baseline
+    if (despatched.length > 0) {
+      const firstDespatch = despatched
+        .map(o => parseMintsoftDate(o.DespatchDate))
+        .filter(Boolean)
+        .sort((a,b) => a-b)[0];
+      if (firstDespatch && firstDespatch > shiftStart) rateBaseTime = firstDespatch;
+    }
+    const elapsedH = Math.max(0.05, (now - rateBaseTime) / 3600000); // min 3 minutes
+    const rate = despN > 0 ? (despN / elapsedH).toFixed(1) : '0.0';
 
     // ── ETA & Remaining Work ─────────────────────────────────────────────────
     // Active = despatched at least one order in the last 20 minutes
@@ -1750,8 +1760,13 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     const el = $('channel-bars');
     const map = {};
     pending.forEach(o => {
-      const k = o.CourierServiceName||o.Channel||o.OrderChannel||'Unspecified';
-      map[k] = (map[k]||0)+1;
+      // Batch orders may have Channel as object or string; handle both shapes
+      const ch = o.CourierServiceName || o.CourierName ||
+                 (o.Courier && (o.Courier.Name || o.Courier.CourierName)) ||
+                 (typeof o.Channel === 'string' ? o.Channel : null) ||
+                 (o.Channel && o.Channel.Name) ||
+                 o.OrderChannel || o.ChannelName || 'Unspecified';
+      map[ch] = (map[ch]||0)+1;
     });
     const entries = Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,8);
     if (!entries.length) { el.innerHTML='<p class="empty-msg">No pending orders</p>'; return; }
@@ -1770,9 +1785,10 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   // Per the Mintsoft Swagger spec (api.mintsoft.co.uk/swagger/docs/v1),
   // the warehouse client is exposed as the read-only field CLIENT_CODE.
   function getClientName(o) {
-    // Mintsoft API Order model: client is exposed as CLIENT_CODE (read-only string)
-    // per the Swagger definition at api.mintsoft.co.uk/swagger/docs/v1
-    return o.CLIENT_CODE || o.ClientCode || o.ClientId || 'Unknown';
+    // Handle both Order/List shape and Batch order shape
+    return o.CLIENT_CODE || o.ClientCode ||
+           (o.Client && (o.Client.Name || o.Client.ClientCode)) ||
+           o.ClientName || o.AccountManager || o.ClientId || 'Unknown';
   }
 
   function renderClientBars(pending) {
@@ -2131,7 +2147,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   // GitHub API calls are routed through the local proxy at /gh-api/
   // to avoid CORS issues when running at localhost:8787.
-  const GH_API = '/gh-api/repos';
+  const GH_API = 'https://api.github.com/repos';
   // All users read/write the same files in the GitHub repo via the API.
   // Each user stores their own token in localStorage — it never leaves the browser.
   const GH_LS_TOKEN   = 'msoft_gh_token';
