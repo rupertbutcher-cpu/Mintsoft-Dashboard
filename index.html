@@ -2147,7 +2147,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   // GitHub API calls are routed through the local proxy at /gh-api/
   // to avoid CORS issues when running at localhost:8787.
-  const GH_API = 'https://api.github.com/repos';
+  const GH_API = () => baseUrl() + '/gh-api/repos';
   // All users read/write the same files in the GitHub repo via the API.
   // Each user stores their own token in localStorage — it never leaves the browser.
   const GH_LS_TOKEN   = 'msoft_gh_token';
@@ -2216,7 +2216,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   // ── GitHub API helpers ────────────────────────────────────────────────────
   async function ghGetFile(path) {
-    const res = await fetch(`${GH_API}/${ghRepo}/contents/${path}`, {
+    const res = await fetch(`${GH_API()}/${ghRepo}/contents/${path}`, {
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json' }
     });
     if (res.status === 404) return null;
@@ -2230,7 +2230,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     const body = { message: 'Dashboard sync ' + new Date().toISOString(),
                    content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))) };
     if (existingSha) body.sha = existingSha;
-    const res = await fetch(`${GH_API}/${ghRepo}/contents/${path}`, {
+    const res = await fetch(`${GH_API()}/${ghRepo}/contents/${path}`, {
       method: 'PUT',
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json',
                  'Content-Type': 'application/json' },
@@ -2462,7 +2462,7 @@ let ghUser = "User-" + Math.floor(Math.random() * 1000);
 
 /* ---------- PUT FILE (create/update) ---------- */
 async function ghPutFile(path, content) {
-  const url = `https://api.github.com/repos/${ghRepo}/contents/${path}`;
+  const url = `${baseUrl()}/gh-api/repos/${ghRepo}/contents/${path}`;
 
   let sha = null;
 
@@ -2580,7 +2580,7 @@ async function ghLoadHistory() {
   if (!ghToken || !ghRepo) return;
 
   try {
-    const url = `https://api.github.com/repos/${ghRepo}/contents/mintsoft-history.json`;
+    const url = `${baseUrl()}/gh-api/repos/${ghRepo}/contents/mintsoft-history.json`;
 
     const res = await fetch(url, {
       headers: { Authorization: `token ${ghToken}` }
