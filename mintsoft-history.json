@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-09T11:24:55.286Z",
+  "saved": "2026-04-09T13:24:54.645Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15380,6 +15380,195 @@
       "actualSecOrd": 32,
       "orderCount": 3,
       "packerCount": 19
+    },
+    {
+      "batchId": 8428954,
+      "reference": "2026-04-09 05-51 - Rosalique Gift Set (7) - Run 1",
+      "date": "2026-04-09T11:09:23.948Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 84.8,
+      "orderCount": 16,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429066,
+      "reference": "2026-04-09 11-02 - Bare Biology LL 11am (2) - Run 1",
+      "date": "2026-04-09T11:24:50.414Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 20.5,
+      "orderCount": 33,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429051,
+      "reference": "2026-04-09 09-16 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-09T11:39:51.959Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 33.5,
+      "orderCount": 56,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429060,
+      "reference": "Wild Dose Singles Bloating LL",
+      "date": "2026-04-09T11:39:42.330Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30.1,
+      "orderCount": 85,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429076,
+      "reference": "2026-04-09 11-12 - Bare Biology RM48 11am (7) - Run 1",
+      "date": "2026-04-09T11:39:36.105Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 54,
+      "orderCount": 15,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429077,
+      "reference": "2026-04-09 11-12 - Bare Biology RM48 11am (7) - Run 2",
+      "date": "2026-04-09T11:38:23.969Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 43.3,
+      "orderCount": 14,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429059,
+      "reference": "Wild Dose BOTTLE Singles Bloating Evri",
+      "date": "2026-04-09T11:54:39.465Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30.9,
+      "orderCount": 35,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429079,
+      "reference": "2026-04-09 11-17 - Rosalique Pre Mades Evri ND Custom (4) - Run 1",
+      "date": "2026-04-09T11:54:35.122Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 59.1,
+      "orderCount": 62,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429068,
+      "reference": "2026-04-09 11-02 - Ripple+ Multi LL 11am (8) - Run 1",
+      "date": "2026-04-09T12:09:39.484Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 65.3,
+      "orderCount": 8,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429029,
+      "reference": "2026-04-09 06-16 - Bare Biology Pack of Six (10) - Run 1",
+      "date": "2026-04-09T12:09:25.343Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 24,
+      "orderCount": 2,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429052,
+      "reference": "Shirt Company Singles",
+      "date": "2026-04-09T12:19:11.055Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 111,
+      "orderCount": 10,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429080,
+      "reference": "",
+      "date": "2026-04-09T12:10:12.629Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 363.3,
+      "orderCount": 9,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429046,
+      "reference": "2026-04-09 07-06 - Shirt Company Multi - Run 1",
+      "date": "2026-04-09T12:38:42.609Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 94,
+      "orderCount": 3,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429067,
+      "reference": "2026-04-09 11-02 - Luella Grey Trade 11am - Run 1",
+      "date": "2026-04-09T12:27:44.267Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 75,
+      "orderCount": 6,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429106,
+      "reference": "2026-04-09 13-17 - Salcura Amazon 1pm (4) - Run 1",
+      "date": "2026-04-09T12:39:52.049Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 18,
+      "orderCount": 2,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429146,
+      "reference": "2026-04-09 13-22 - Totter Singles DX 1pm - Run 1",
+      "date": "2026-04-09T12:54:47.964Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 51.1,
+      "orderCount": 31,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429159,
+      "reference": "2026-04-09 13-27 - Anicura Small Evri ND 1pm - Run 1",
+      "date": "2026-04-09T12:54:44.603Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 25,
+      "orderCount": 6,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429173,
+      "reference": "2026-04-09 13-32 - Bare Biology RM24 1pm (7) - Run 1",
+      "date": "2026-04-09T12:55:02.050Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 12,
+      "orderCount": 2,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429081,
+      "reference": "2026-04-09 11-57 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
+      "date": "2026-04-09T12:59:01.545Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 26.8,
+      "orderCount": 34,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429136,
+      "reference": "2026-04-09 13-22 - Hey Harper Multi RM24 1pm (12) - Run 1",
+      "date": "2026-04-09T13:10:31.010Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30,
+      "orderCount": 2,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8429194,
+      "reference": "2026-04-09 14-02 - Totter DX 2pm - Run 1",
+      "date": "2026-04-09T13:06:55.981Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 55.5,
+      "orderCount": 4,
+      "packerCount": 19
     }
   ],
   "packerSnaps": [
@@ -15484,9 +15673,23 @@
     {
       "dow": 4,
       "hour": 12,
-      "count": 10,
-      "ts": "2026-04-09T11:10:10.344Z",
+      "count": 6,
+      "ts": "2026-04-09T11:55:06.609Z",
       "dateHour": "2026-04-09T11"
+    },
+    {
+      "dow": 4,
+      "hour": 13,
+      "count": 8,
+      "ts": "2026-04-09T12:55:33.020Z",
+      "dateHour": "2026-04-09T12"
+    },
+    {
+      "dow": 4,
+      "hour": 14,
+      "count": 11,
+      "ts": "2026-04-09T13:11:08.578Z",
+      "dateHour": "2026-04-09T13"
     }
   ]
 }
