@@ -30,6 +30,7 @@ while ($listener.IsListening) {
   $res.Headers.Add("Access-Control-Allow-Origin",  "*")
   $res.Headers.Add("Access-Control-Allow-Headers", "ms-apikey,Authorization,Content-Type,Accept")
   $res.Headers.Add("Access-Control-Allow-Methods", "GET,PUT,POST,PATCH,DELETE,OPTIONS")
+  $res.Headers.Add("Access-Control-Allow-Private-Network", "true")
 
   if ($req.HttpMethod -eq "OPTIONS") { $res.StatusCode = 204; $res.Close(); continue }
 
