@@ -459,7 +459,7 @@
     <div id="packer-pace-bars"><p class="empty-msg">Awaiting data…</p></div>
   </div>
   <div class="chart-card" style="flex:1;min-width:200px;">
-    <h3>Pending by Courier / Channel</h3>
+    <h3>Pending by Courier</h3>
     <div id="channel-bars"><p class="empty-msg">Awaiting data…</p></div>
   </div>
   <div class="chart-card" style="flex:1;min-width:200px;">
@@ -1282,7 +1282,21 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         for (const o of orders) { if (_pSet.has(o.OrderStatusId)) pending.push(o); }
       }
       console.log('Pending (from batches):', pending.length);
-      render(processed, despatched, pending, todayBatches, batchDetails);
+
+      // Fetch pending orders from OrderList API for courier/channel display
+      // Batch order objects don't carry CourierServiceName; OrderList does.
+      let pendingForCourier = pending; // fallback to batch orders
+      try {
+        const courierOrders = [];
+        const statusIdsToFetch = pendingStatusIds.length > 0 ? pendingStatusIds : [2];
+        for (let i = 0; i < statusIdsToFetch.length; i++) {
+          const ords = await fetchAllOrders({ OrderStatusId: statusIdsToFetch[i] });
+          courierOrders.push(...ords);
+        }
+        if (courierOrders.length > 0) pendingForCourier = courierOrders;
+        console.log('Pending (for courier bars):', courierOrders.length);
+      } catch(e) { console.warn('Courier fetch skipped:', e.message); }
+      render(processed, despatched, pending, todayBatches, batchDetails, pendingForCourier);
 
     } catch(err) {
       hideLoading();
@@ -1481,7 +1495,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   }
 
   // ── Render all ────────────────────────────────────────
-  function render(processed, despatched, pending, todayBatches, batchDetails) {
+  function render(processed, despatched, pending, todayBatches, batchDetails, pendingForCourier) {
+    pendingForCourier = pendingForCourier || pending;
     const { packerMap, batchRows, teamActualSecOrd, teamTargetSecOrd, teamTotalOrders } = processed;
 
     // Accumulate history from today completed batches, then calc benchmark
@@ -1683,7 +1698,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     }
 
     renderHourlyBars(despatched);
-    renderChannelBars(pending);
+    renderChannelBars(pendingForCourier);
     renderClientBars(pending);
     renderPackerPaceBars(packerMap, teamTargetSecOrd);
     renderPickerTable(packerMap, teamActualSecOrd, teamTargetSecOrd);
@@ -1729,7 +1744,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   function renderEmpty(pending) {
     $('v-pending').textContent = pending.length;
     $('v-pending').textContent = pending.length;
-    renderChannelBars(pending);
+    renderChannelBars(pendingForCourier);
     renderClientBars(pending);
   }
 
@@ -1760,12 +1775,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     const el = $('channel-bars');
     const map = {};
     pending.forEach(o => {
-      // Batch orders may have Channel as object or string; handle both shapes
-      const ch = o.CourierServiceName || o.CourierName ||
-                 (o.Courier && (o.Courier.Name || o.Courier.CourierName)) ||
-                 (typeof o.Channel === 'string' ? o.Channel : null) ||
-                 (o.Channel && o.Channel.Name) ||
-                 o.OrderChannel || o.ChannelName || 'Unspecified';
+      const ch = o.CourierServiceName || o.CourierName || 'Unknown';
       map[ch] = (map[ch]||0)+1;
     });
     const entries = Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,8);
