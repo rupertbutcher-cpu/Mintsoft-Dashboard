@@ -1,109 +1,105 @@
 param(
-  [string]$ApiKey  = "",
-  [int]   $Port    = 8787
+  [string]$ApiKey = "",
+  [int]   $Port   = 8787
 )
-
-# ── Mintsoft Despatch KPI Dashboard — Local Proxy ──────────────────────────
-# Forwards:
-#   /api/*     → https://api.mintsoft.co.uk/api/*   (Mintsoft API)
-#   /gh-api/*  → https://api.github.com/*            (GitHub API for history sync)
-# ─────────────────────────────────────────────────────────────────────────────
 
 $listener = [System.Net.HttpListener]::new()
 $listener.Prefixes.Add("http://localhost:$Port/")
 $listener.Start()
 Write-Host "Proxy running on http://localhost:$Port  (Ctrl-C to stop)" -ForegroundColor Cyan
 
+function Invoke-Upstream {
+  param($res, $fwdRes)
+  if ($null -eq $fwdRes) {
+    $res.StatusCode = 504
+    $b = [System.Text.Encoding]::UTF8.GetBytes("Gateway timeout")
+    $res.OutputStream.Write($b, 0, $b.Length)
+    return
+  }
+  $res.StatusCode = [int]$fwdRes.StatusCode
+  if ($fwdRes.ContentType) { $res.ContentType = $fwdRes.ContentType }
+  try { $fwdRes.GetResponseStream().CopyTo($res.OutputStream) } catch {}
+  try { $fwdRes.Close() } catch {}
+}
+
 while ($listener.IsListening) {
   $ctx = $listener.GetContext()
   $req = $ctx.Request
   $res = $ctx.Response
 
-  # ── CORS pre-flight ──────────────────────────────────────────────────────
   $res.Headers.Add("Access-Control-Allow-Origin",  "*")
   $res.Headers.Add("Access-Control-Allow-Headers", "ms-apikey,Authorization,Content-Type,Accept")
   $res.Headers.Add("Access-Control-Allow-Methods", "GET,PUT,POST,PATCH,DELETE,OPTIONS")
 
-  if ($req.HttpMethod -eq "OPTIONS") {
-    $res.StatusCode = 204
-    $res.Close()
-    continue
-  }
+  if ($req.HttpMethod -eq "OPTIONS") { $res.StatusCode = 204; $res.Close(); continue }
 
   $path = $req.Url.PathAndQuery
 
-  # ── Route: GitHub API ────────────────────────────────────────────────────
+  # --- GitHub API ---
   if ($path.StartsWith("/gh-api/")) {
     $target = "https://api.github.com/" + $path.Substring("/gh-api/".Length)
     try {
-      $fwdReq = [System.Net.WebRequest]::Create($target)
-      $fwdReq.Method = $req.HttpMethod
-      $fwdReq.Accept = "application/vnd.github+json"
-      $fwdReq.Headers.Add("User-Agent", "MintSoft-KPI-Proxy/1.0")
+      [System.Net.HttpWebRequest]$hw = [System.Net.WebRequest]::Create($target)
+      $hw.Method    = $req.HttpMethod
+      $hw.Accept    = "application/vnd.github+json"
+      $hw.UserAgent = "MintSoft-KPI-Proxy/1.0"
+      $hw.Timeout   = 15000
 
-      # Forward Authorization header (GitHub token)
-      $authHdr = $req.Headers["Authorization"]
-      if ($authHdr) { $fwdReq.Headers.Add("Authorization", $authHdr) }
+      $auth = $req.Headers["Authorization"]
+      if ($auth) { $hw.Headers["Authorization"] = $auth }
 
-      if ($req.HasEntityBody -and $req.HttpMethod -in @("PUT","POST","PATCH")) {
-        $fwdReq.ContentType = "application/json"
-        $body = [System.IO.StreamReader]::new($req.InputStream).ReadToEnd()
+      if ($req.HasEntityBody -and ($req.HttpMethod -in @("PUT","POST","PATCH"))) {
+        $hw.ContentType = "application/json"
+        $body  = [System.IO.StreamReader]::new($req.InputStream).ReadToEnd()
         $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
-        $fwdReq.ContentLength = $bytes.Length
-        $fwdReq.GetRequestStream().Write($bytes, 0, $bytes.Length)
+        $hw.ContentLength = $bytes.Length
+        $hw.GetRequestStream().Write($bytes, 0, $bytes.Length)
       }
 
-      try {
-        $fwdRes = $fwdReq.GetResponse()
-      } catch [System.Net.WebException] {
+      $fwdRes = $null
+      try   { $fwdRes = $hw.GetResponse() }
+      catch [System.Net.WebException] {
         $fwdRes = $_.Exception.Response
+        Write-Host "GitHub error: $($_.Exception.Message)" -ForegroundColor Yellow
       }
 
-      $res.StatusCode       = [int]$fwdRes.StatusCode
-      $res.ContentType      = $fwdRes.ContentType
-      $fwdRes.GetResponseStream().CopyTo($res.OutputStream)
-      $fwdRes.Close()
+      Invoke-Upstream $res $fwdRes
     } catch {
-      $res.StatusCode = 502
-      $err = [System.Text.Encoding]::UTF8.GetBytes("GitHub proxy error: $_")
-      $res.OutputStream.Write($err, 0, $err.Length)
+      Write-Host "GitHub fatal: $_" -ForegroundColor Red
+      try { $res.StatusCode = 502 } catch {}
     }
-    $res.Close()
+    try { $res.Close() } catch {}
     continue
   }
 
-  # ── Route: Mintsoft API ──────────────────────────────────────────────────
+  # --- Mintsoft API ---
   if ($path.StartsWith("/api/")) {
     $target = "https://api.mintsoft.co.uk" + $path
     try {
-      $fwdReq = [System.Net.WebRequest]::Create($target)
-      $fwdReq.Method  = $req.HttpMethod
-      $fwdReq.Accept  = "application/json"
+      $hw = [System.Net.WebRequest]::Create($target)
+      $hw.Method  = $req.HttpMethod
+      $hw.Accept  = "application/json"
+      $hw.Timeout = 30000
 
-      # Use baked-in key if provided, otherwise forward from request header
       $key = if ($ApiKey) { $ApiKey } else { $req.Headers["ms-apikey"] }
-      if ($key) { $fwdReq.Headers.Add("ms-apikey", $key) }
+      if ($key) { $hw.Headers["ms-apikey"] = $key }
 
-      try {
-        $fwdRes = $fwdReq.GetResponse()
-      } catch [System.Net.WebException] {
+      $fwdRes = $null
+      try   { $fwdRes = $hw.GetResponse() }
+      catch [System.Net.WebException] {
         $fwdRes = $_.Exception.Response
+        Write-Host "Mintsoft error: $($_.Exception.Message)" -ForegroundColor Yellow
       }
 
-      $res.StatusCode  = [int]$fwdRes.StatusCode
-      $res.ContentType = $fwdRes.ContentType
-      $fwdRes.GetResponseStream().CopyTo($res.OutputStream)
-      $fwdRes.Close()
+      Invoke-Upstream $res $fwdRes
     } catch {
-      $res.StatusCode = 502
-      $err = [System.Text.Encoding]::UTF8.GetBytes("Mintsoft proxy error: $_")
-      $res.OutputStream.Write($err, 0, $err.Length)
+      Write-Host "Mintsoft fatal: $_" -ForegroundColor Red
+      try { $res.StatusCode = 502 } catch {}
     }
-    $res.Close()
+    try { $res.Close() } catch {}
     continue
   }
 
-  # ── 404 for anything else ────────────────────────────────────────────────
   $res.StatusCode = 404
   $res.Close()
 }
