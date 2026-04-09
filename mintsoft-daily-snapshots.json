@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "saved": "2026-04-09T06:14:14.654Z",
+  "saved": "2026-04-09T06:21:24.098Z",
   "days": {
     "2026-04-08T07": {
       "date": "2026-04-08",
@@ -3658,18 +3658,18 @@
     "2026-04-09T07": {
       "date": "2026-04-09",
       "hour": "07",
-      "savedAt": "2026-04-09T06:14:14.540Z",
-      "despatched": 9,
+      "savedAt": "2026-04-09T06:21:23.990Z",
+      "despatched": 16,
       "pending": 2569,
-      "total": 2578,
-      "pct": "0%",
-      "ratePerHour": "900.0",
-      "secOrdActual": 14.249799999999999,
+      "total": 2585,
+      "pct": "1%",
+      "ratePerHour": "150.0",
+      "secOrdActual": 85.00318181818183,
       "secOrdBenchmark": 40.623198901236094,
-      "secOrdTarget": 33.28,
-      "peakPackers": 1,
-      "etaStr": "17:24",
-      "batches": 204,
+      "secOrdTarget": 29.381818181818186,
+      "peakPackers": 3,
+      "etaStr": "03:34",
+      "batches": 205,
       "packers": [
         {
           "name": "Elysha",
@@ -3679,11 +3679,25 @@
           "top10Target": 24
         },
         {
+          "name": "Lynn",
+          "orders": 1,
+          "actualSecOrd": 0,
+          "benchTarget": 20,
+          "top10Target": 20
+        },
+        {
+          "name": "Callum",
+          "orders": 1,
+          "actualSecOrd": 0,
+          "benchTarget": 24,
+          "top10Target": 24
+        },
+        {
           "name": "Ewan",
-          "orders": 4,
-          "actualSecOrd": 17.81225,
-          "benchTarget": 50.423008849557526,
-          "top10Target": 35.6
+          "orders": 8,
+          "actualSecOrd": 116.87937500000001,
+          "benchTarget": 44.87013274336284,
+          "top10Target": 31.900000000000002
         }
       ],
       "batchRows": [
@@ -4237,7 +4251,7 @@
         },
         {
           "reference": "2026-04-09 06-01 - Totter Singles DX - Run 1",
-          "actualSecOrd": 18
+          "actualSecOrd": 133.7
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose 2/3 Evri TIME (3) - Run 1",
@@ -4499,6 +4513,10 @@
         },
         {
           "reference": "2026-04-09 07-11 - Troubadour - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-09 07-16 - Emma Shipley - Run 1",
           "actualSecOrd": null
         }
       ]
