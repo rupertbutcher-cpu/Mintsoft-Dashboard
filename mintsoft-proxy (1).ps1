@@ -53,7 +53,9 @@ while ($listener.IsListening) {
         $body  = [System.IO.StreamReader]::new($req.InputStream).ReadToEnd()
         $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
         $hw.ContentLength = $bytes.Length
-        $hw.GetRequestStream().Write($bytes, 0, $bytes.Length)
+        $reqStream = $hw.GetRequestStream()
+        $reqStream.Write($bytes, 0, $bytes.Length)
+        $reqStream.Close()
       }
 
       $fwdRes = $null
