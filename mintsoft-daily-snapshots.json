@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "saved": "2026-04-09T08:25:18.640Z",
+  "saved": "2026-04-09T08:46:10.468Z",
   "days": {
     "2026-04-08T07": {
       "date": "2026-04-08",
@@ -5389,25 +5389,25 @@
     "2026-04-09T09": {
       "date": "2026-04-09",
       "hour": "09",
-      "savedAt": "2026-04-09T08:25:18.283Z",
-      "despatched": 954,
-      "pending": 1721,
-      "total": 2675,
-      "pct": "36%",
-      "ratePerHour": "442.7",
-      "secOrdActual": 45.828220507166485,
-      "secOrdBenchmark": 39.985241309053855,
-      "secOrdTarget": 30.622492508589886,
-      "peakPackers": 15,
-      "etaStr": "10:51",
-      "batches": 196,
+      "savedAt": "2026-04-09T08:46:09.808Z",
+      "despatched": 1311,
+      "pending": 1367,
+      "total": 2678,
+      "pct": "49%",
+      "ratePerHour": "520.4",
+      "secOrdActual": 44.70985922330097,
+      "secOrdBenchmark": 39.91049101493292,
+      "secOrdTarget": 29.71881030538708,
+      "peakPackers": 16,
+      "etaStr": "10:49",
+      "batches": 193,
       "packers": [
         {
-          "name": "Jody",
-          "orders": 5,
-          "actualSecOrd": 24.936799999999998,
-          "benchTarget": 21,
-          "top10Target": 21
+          "name": "Callum",
+          "orders": 2,
+          "actualSecOrd": 0,
+          "benchTarget": 27.117073170731707,
+          "top10Target": 25.8
         },
         {
           "name": "Elysha",
@@ -5417,74 +5417,67 @@
           "top10Target": 24
         },
         {
-          "name": "Lynn",
-          "orders": 33,
-          "actualSecOrd": 98.01960606060607,
-          "benchTarget": 47.2934375,
-          "top10Target": 34.5625
-        },
-        {
           "name": "Adamd",
-          "orders": 75,
-          "actualSecOrd": 46.61946666666667,
-          "benchTarget": 50.2315168071297,
-          "top10Target": 47.41875268817204
+          "orders": 98,
+          "actualSecOrd": 48.88813265306123,
+          "benchTarget": 44.41203968945904,
+          "top10Target": 41.899802501645816
         },
         {
-          "name": "Callum",
-          "orders": 1,
-          "actualSecOrd": 0,
-          "benchTarget": 24,
-          "top10Target": 24
+          "name": "Lynn",
+          "orders": 46,
+          "actualSecOrd": 73.87765217391303,
+          "benchTarget": 22.31888888888889,
+          "top10Target": 21.90222222222222
         },
         {
           "name": "Ed",
-          "orders": 167,
-          "actualSecOrd": 31.822101796407186,
-          "benchTarget": 32.74042440293417,
-          "top10Target": 30.802395209580837
+          "orders": 226,
+          "actualSecOrd": 29.33608849557522,
+          "benchTarget": 32.53607379244163,
+          "top10Target": 30.88008849557522
         },
         {
           "name": "Matt",
-          "orders": 109,
-          "actualSecOrd": 53.55340366972477,
-          "benchTarget": 35.41571262524552,
-          "top10Target": 26.868152031454784
+          "orders": 125,
+          "actualSecOrd": 52.83848,
+          "benchTarget": 35.13497375159789,
+          "top10Target": 27.886777914768157
         },
         {
           "name": "Alex",
-          "orders": 26,
-          "actualSecOrd": 38.19276923076923,
+          "orders": 48,
+          "actualSecOrd": 48.0763125,
           "benchTarget": 20.142857142857142,
           "top10Target": 19.09090909090909
         },
         {
           "name": "Tegan",
-          "orders": 67,
-          "actualSecOrd": 41.09594029850746,
-          "benchTarget": 33.067756497556516,
-          "top10Target": 23.575576662143824
+          "orders": 83,
+          "actualSecOrd": 38.154674698795176,
+          "benchTarget": 31.513981205461057,
+          "top10Target": 21.922453450164294
         },
         {
           "name": "Howard",
-          "orders": 1,
-          "actualSecOrd": 0,
+          "orders": 33,
+          "actualSecOrd": 39.560060606060595,
           "benchTarget": 30.816748768472902,
           "top10Target": 27.21395348837209
         },
         {
           "name": "Jack",
-          "orders": 165,
-          "actualSecOrd": 32.25781818181819,
-          "benchTarget": 25.21537893555437,
-          "top10Target": 22.21919191919192
+          "orders": 192,
+          "actualSecOrd": 31.960750000000004,
+          "benchTarget": 25.796197030910466,
+          "top10Target": 23.63133134226884
         },
         {
           "name": "Janey",
-          "orders": 77,
-          "actualSecOrd": 44.367714285714285,
-          "benchTarget": 25.3992297979798,
-          "top10Target": 24.09912295496711
+          "orders": 103,
+          "actualSecOrd": 45.601805825242714,
+          "benchTarget": 26.597898559100013,
+          "top10Target": 24.721485310805697
         },
         {
           "name": "Jemma",
@@ -5494,39 +5487,46 @@
           "top10Target": 33.02358490566038
         },
         {
+          "name": "Manleka",
+          "orders": 79,
+          "actualSecOrd": 48.38315189873418,
+          "benchTarget": 38.282456372484155,
+          "top10Target": 34.19361223347568
+        },
+        {
           "name": "Ewan",
-          "orders": 54,
-          "actualSecOrd": 49.74162962962963,
-          "benchTarget": 45.11010597618268,
-          "top10Target": 32.34074074074074
+          "orders": 63,
+          "actualSecOrd": 46.87125396825396,
+          "benchTarget": 43.070907163258624,
+          "top10Target": 31.90634920634921
+        },
+        {
+          "name": "Jody",
+          "orders": 14,
+          "actualSecOrd": 50.16557142857143,
+          "benchTarget": 39.563265306122446,
+          "top10Target": 31.942857142857143
         },
         {
           "name": "Alice",
-          "orders": 8,
-          "actualSecOrd": 142.941875,
-          "benchTarget": 96,
-          "top10Target": 96
+          "orders": 18,
+          "actualSecOrd": 102.38494444444444,
+          "benchTarget": 104.775,
+          "top10Target": 104.775
         },
         {
           "name": "Paul",
-          "orders": 4,
-          "actualSecOrd": 290.8855,
+          "orders": 7,
+          "actualSecOrd": 344.5035714285714,
           "benchTarget": 94,
           "top10Target": 94
         },
         {
           "name": "Caitlin",
-          "orders": 7,
-          "actualSecOrd": 52.97842857142856,
-          "benchTarget": 35.833333333333336,
-          "top10Target": 33
-        },
-        {
-          "name": "Manleka",
-          "orders": 52,
-          "actualSecOrd": 54.398057692307695,
-          "benchTarget": 51.48647540983606,
-          "top10Target": 45.207874015748025
+          "orders": 43,
+          "actualSecOrd": 37.46562790697675,
+          "benchTarget": 34.51937984496124,
+          "top10Target": 31.813953488372093
         },
         {
           "name": "Gemma",
@@ -5652,10 +5652,6 @@
         {
           "reference": "2026-04-06 06-03 - Wild Dose Singles LL (2) - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-06 06-03 - Rosalique Evri (6) - Run 4",
-          "actualSecOrd": 25.2
         },
         {
           "reference": "2026-04-06 06-08 - Wild Dose Evri (8) - Run 1",
@@ -5846,19 +5842,11 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-08 11-01 - Luella Grey Trade 11am - Run 1",
-          "actualSecOrd": 100.2
-        },
-        {
           "reference": "2026-04-08 11-10 - Bare Biology RM48 11am (7) - Run 2",
           "actualSecOrd": null
         },
         {
           "reference": "sr",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-08 13-11 - Luella Grey Trade 1pm - Run 1",
           "actualSecOrd": null
         },
         {
@@ -5875,11 +5863,11 @@
         },
         {
           "reference": "2026-04-08 15-56 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
-          "actualSecOrd": 36
+          "actualSecOrd": 54.5
         },
         {
           "reference": "2026-04-09 05-36 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 50.6
         },
         {
           "reference": "2026-04-09 05-36 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
@@ -5891,7 +5879,7 @@
         },
         {
           "reference": "2026-04-09 05-46 - Wild Dose Singles Bloating LL Box (2) - Run 1",
-          "actualSecOrd": 28.8
+          "actualSecOrd": 26.8
         },
         {
           "reference": "2026-04-09 05-46 - Salcura Amazon (4) - Run 1",
@@ -5903,19 +5891,19 @@
         },
         {
           "reference": "2026-04-09 05-46 - Wild Dose 2/3 Bloating LL (3) - Run 1",
-          "actualSecOrd": 38.3
+          "actualSecOrd": 51.8
         },
         {
           "reference": "2026-04-09 05-46 - Wild Dose 2/3 Bloating LL (3) - Run 2",
-          "actualSecOrd": null
+          "actualSecOrd": 34.2
         },
         {
           "reference": "2026-04-09 05-51 - Ripple+ Singles LL (6) - Run 1",
-          "actualSecOrd": 18.9
+          "actualSecOrd": 22.1
         },
         {
           "reference": "2026-04-09 05-51 - Rosalique Pre Mades Evri ND (4) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 39.6
         },
         {
           "reference": "2026-04-09 05-51 - Anicura Singles Evri ND - Run 1",
@@ -5935,7 +5923,7 @@
         },
         {
           "reference": "2026-04-09 05-51 - Salcura Singles (3) - Run 1",
-          "actualSecOrd": 30
+          "actualSecOrd": 46.7
         },
         {
           "reference": "2026-04-09 05-51 - Rosalique Gift Set (7) - Run 1",
@@ -6007,7 +5995,7 @@
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 33.5
         },
         {
           "reference": "2026-04-09 06-01 - Untamed Singles GE (10) - Run 1",
@@ -6111,15 +6099,15 @@
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose 4+ Evri (4) - Run 2",
-          "actualSecOrd": null
+          "actualSecOrd": 50.1
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 3",
-          "actualSecOrd": null
+          "actualSecOrd": 25.5
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose Evri ND (8) - Run 1",
-          "actualSecOrd": 40
+          "actualSecOrd": 34.6
         },
         {
           "reference": "2026-04-09 06-01 - SOAR Singles - Run 1",
@@ -6147,7 +6135,7 @@
         },
         {
           "reference": "2026-04-09 06-01 - OGT - Run 1",
-          "actualSecOrd": 291
+          "actualSecOrd": 344.6
         },
         {
           "reference": "2026-04-09 06-06 - Wild Dose RM (8) - Run 1",
@@ -6167,7 +6155,7 @@
         },
         {
           "reference": "2026-04-09 06-06 - Bare Biology Singles RM48 (5) - Run 1",
-          "actualSecOrd": 42.6
+          "actualSecOrd": 47.4
         },
         {
           "reference": "2026-04-09 06-06 - Ripple+ International (10) - Run 1",
@@ -6175,7 +6163,7 @@
         },
         {
           "reference": "2026-04-09 06-06 - INDI Gutbar Evri - Run 1",
-          "actualSecOrd": 53.1
+          "actualSecOrd": 38.9
         },
         {
           "reference": "2026-04-09 06-06 - Wild Dose Evri (8) - Run 2",
@@ -6183,7 +6171,7 @@
         },
         {
           "reference": "2026-04-09 06-06 - Wild Dose Evri (8) - Run 3",
-          "actualSecOrd": 51.5
+          "actualSecOrd": 49.8
         },
         {
           "reference": "2026-04-09 06-06 - Spacemasks Yuzu - Run 1",
@@ -6203,7 +6191,7 @@
         },
         {
           "reference": "2026-04-09 06-11 - INDI RM - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 18
         },
         {
           "reference": "2026-04-09 06-11 - INDI Singles Evri - Run 1",
@@ -6219,7 +6207,7 @@
         },
         {
           "reference": "2026-04-09 06-11 - Bare Biology RM48 (7) - Run 2",
-          "actualSecOrd": null
+          "actualSecOrd": 42
         },
         {
           "reference": "2026-04-09 06-11 - INDI Multi Evri - Run 1",
@@ -6247,7 +6235,7 @@
         },
         {
           "reference": "2026-04-09 07-01 - Rampley International - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 40.5
         },
         {
           "reference": "2026-04-09 07-01 - Duo Singles - Run 1",
@@ -6305,11 +6293,11 @@
         },
         {
           "reference": "2026-04-09 07-11 - Troubadour - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 29.3
         },
         {
           "reference": "2026-04-09 07-16 - Emma Shipley - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 108
         },
         {
           "reference": "2026-04-09 08-46 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
