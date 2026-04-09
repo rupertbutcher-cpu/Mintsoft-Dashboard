@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "saved": "2026-04-09T09:05:04.006Z",
+  "saved": "2026-04-09T09:14:06.185Z",
   "days": {
     "2026-04-08T07": {
       "date": "2026-04-08",
@@ -6312,17 +6312,17 @@
     "2026-04-09T10": {
       "date": "2026-04-09",
       "hour": "10",
-      "savedAt": "2026-04-09T09:05:03.739Z",
-      "despatched": 1596,
-      "pending": 1079,
-      "total": 2675,
-      "pct": "60%",
-      "ratePerHour": "563.1",
-      "secOrdActual": 44.019665327978586,
-      "secOrdBenchmark": 39.60365186410485,
-      "secOrdTarget": 28.372707996547263,
-      "peakPackers": 16,
-      "etaStr": "10:54",
+      "savedAt": "2026-04-09T09:14:05.933Z",
+      "despatched": 1672,
+      "pending": 1002,
+      "total": 2674,
+      "pct": "63%",
+      "ratePerHour": "560.2",
+      "secOrdActual": 43.56398917886696,
+      "secOrdBenchmark": 39.53476829577107,
+      "secOrdTarget": 28.222709119231382,
+      "peakPackers": 14,
+      "etaStr": "11:06",
       "batches": 192,
       "packers": [
         {
@@ -6340,6 +6340,13 @@
           "top10Target": 24
         },
         {
+          "name": "Caitlin",
+          "orders": 74,
+          "actualSecOrd": 38.251243243243245,
+          "benchTarget": 33.23261261261261,
+          "top10Target": 30.800675675675677
+        },
+        {
           "name": "Lynn",
           "orders": 63,
           "actualSecOrd": 67.35860317460318,
@@ -6348,10 +6355,10 @@
         },
         {
           "name": "Ed",
-          "orders": 276,
-          "actualSecOrd": 27.980518115942022,
-          "benchTarget": 28.90996317314843,
-          "top10Target": 25.738405797101446
+          "orders": 301,
+          "actualSecOrd": 27.49339202657806,
+          "benchTarget": 28.175044177167536,
+          "top10Target": 24.730232558139534
         },
         {
           "name": "Matt",
@@ -6362,10 +6369,10 @@
         },
         {
           "name": "Alex",
-          "orders": 75,
-          "actualSecOrd": 43.319720000000004,
-          "benchTarget": 20.469061224489796,
-          "top10Target": 19.253090909090908
+          "orders": 88,
+          "actualSecOrd": 40.681125,
+          "benchTarget": 21.14043723706447,
+          "top10Target": 19.751363578949785
         },
         {
           "name": "Tegan",
@@ -6376,17 +6383,17 @@
         },
         {
           "name": "Howard",
-          "orders": 56,
-          "actualSecOrd": 44.26176785714285,
-          "benchTarget": 30.816748768472902,
+          "orders": 70,
+          "actualSecOrd": 43.540657142857135,
+          "benchTarget": 30.816748768472905,
           "top10Target": 27.21395348837209
         },
         {
           "name": "Jack",
-          "orders": 214,
-          "actualSecOrd": 32.873084112149535,
-          "benchTarget": 26.84377159832518,
-          "top10Target": 24.48165909298157
+          "orders": 224,
+          "actualSecOrd": 33.340375,
+          "benchTarget": 27.851466693591174,
+          "top10Target": 25.344401081956395
         },
         {
           "name": "Adamd",
@@ -6425,10 +6432,10 @@
         },
         {
           "name": "Jody",
-          "orders": 31,
-          "actualSecOrd": 54.856193548387104,
+          "orders": 39,
+          "actualSecOrd": 57.71148717948718,
           "benchTarget": 39.563265306122446,
-          "top10Target": 31.942857142857143
+          "top10Target": 31.94285714285714
         },
         {
           "name": "Alice",
@@ -6443,13 +6450,6 @@
           "actualSecOrd": 364.4271,
           "benchTarget": 94,
           "top10Target": 94
-        },
-        {
-          "name": "Caitlin",
-          "orders": 67,
-          "actualSecOrd": 38.71029850746269,
-          "benchTarget": 33.39124378109453,
-          "top10Target": 30.39179104477612
         },
         {
           "name": "Gemma",
@@ -6782,7 +6782,7 @@
         },
         {
           "reference": "2026-04-08 13-31 - Wild Dose BOTTLE Singles Bloating Evri 1pm (8) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 28.5
         },
         {
           "reference": "2026-04-09 05-36 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
@@ -6822,7 +6822,7 @@
         },
         {
           "reference": "2026-04-09 05-51 - Rosalique Pre Mades Evri ND (4) - Run 1",
-          "actualSecOrd": 44.3
+          "actualSecOrd": 43.5
         },
         {
           "reference": "2026-04-09 05-51 - Anicura Singles Evri ND - Run 1",
@@ -6830,7 +6830,7 @@
         },
         {
           "reference": "2026-04-09 05-51 - Wild Dose Singles Bloating LL (2) - Run 1",
-          "actualSecOrd": 20.8
+          "actualSecOrd": 21.5
         },
         {
           "reference": "2026-04-09 05-51 - Wild Dose Singles Bloating Evri (2) - Run 1",
@@ -6866,7 +6866,7 @@
         },
         {
           "reference": "2026-04-09 05-56 - Wild Dose 2/3 LL (3) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 25.2
         },
         {
           "reference": "2026-04-09 05-56 - Hey Harper Multi Evri (12) - Run 1",
@@ -6882,7 +6882,7 @@
         },
         {
           "reference": "2026-04-09 05-56 - Wild Dose 2/3 LL (3) - Run 2",
-          "actualSecOrd": 35.7
+          "actualSecOrd": 35.3
         },
         {
           "reference": "2026-04-09 05-56 - Ripple+ Multi LL (8) - Run 1",
@@ -6982,7 +6982,7 @@
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose 4+ Evri (4) - Run 1",
-          "actualSecOrd": 58.6
+          "actualSecOrd": 61.9
         },
         {
           "reference": "2026-04-09 06-01 - Wild Dose 2/3 Evri TIME (3) - Run 2",
@@ -7070,7 +7070,7 @@
         },
         {
           "reference": "2026-04-09 06-06 - Wild Dose Evri (8) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 43.2
         },
         {
           "reference": "2026-04-09 06-06 - Bare Biology Singles RM48 (5) - Run 1",
@@ -7114,7 +7114,7 @@
         },
         {
           "reference": "2026-04-09 06-11 - INDI Singles Evri - Run 1",
-          "actualSecOrd": 28
+          "actualSecOrd": 31
         },
         {
           "reference": "2026-04-09 06-11 - Bare Biology RM48 (7) - Run 1",
