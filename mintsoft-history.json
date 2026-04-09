@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-08T09:16:56.598Z",
+  "saved": "2026-04-09T08:20:30.784Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -14534,6 +14534,213 @@
       "actualSecOrd": 126,
       "orderCount": 3,
       "packerCount": 18
+    },
+    {
+      "batchId": 8428944,
+      "reference": "2026-04-09 05-46 - Anicura Amazon - Run 1",
+      "date": "2026-04-09T06:35:13.411Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 24,
+      "orderCount": 3,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428980,
+      "reference": "2026-04-09 06-01 - Totter Singles DX - Run 1",
+      "date": "2026-04-09T06:35:40.494Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 62.7,
+      "orderCount": 29,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8429032,
+      "reference": "2026-04-09 06-56 - Pirates Grog Chests - Run 1",
+      "date": "2026-04-09T06:50:43.726Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 52,
+      "orderCount": 3,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428949,
+      "reference": "2026-04-09 05-51 - Anicura Singles Evri ND - Run 1",
+      "date": "2026-04-09T06:50:25.870Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 29.1,
+      "orderCount": 7,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428956,
+      "reference": "2026-04-09 05-56 - Hey Harper Singles Evri (6) - Run 1",
+      "date": "2026-04-09T06:50:43.976Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 35.2,
+      "orderCount": 22,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428974,
+      "reference": "2026-04-09 06-01 - Totter RM - Run 1",
+      "date": "2026-04-09T06:50:39.863Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 28.5,
+      "orderCount": 4,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8429000,
+      "reference": "2026-04-09 06-01 - SOAR Singles - Run 1",
+      "date": "2026-04-09T06:50:53.245Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 26.6,
+      "orderCount": 7,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8429034,
+      "reference": "2026-04-09 07-01 - Duo Singles - Run 1",
+      "date": "2026-04-09T06:27:45.393Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 32.4,
+      "orderCount": 5,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8428951,
+      "reference": "2026-04-09 05-51 - Wild Dose Singles Bloating Evri (2) - Run 1",
+      "date": "2026-04-09T07:06:11.328Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 27.6,
+      "orderCount": 45,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8428957,
+      "reference": "2026-04-09 05-56 - Anicura Small Evri ND - Run 1",
+      "date": "2026-04-09T07:05:22.661Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 18,
+      "orderCount": 2,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8428991,
+      "reference": "2026-04-09 06-01 - Luella Gray - Run 1",
+      "date": "2026-04-09T07:05:39.026Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 114,
+      "orderCount": 2,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8428960,
+      "reference": "2026-04-09 05-56 - Hey Harper Multi Evri (12) - Run 1",
+      "date": "2026-04-09T07:19:59.804Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 70.2,
+      "orderCount": 13,
+      "packerCount": 12
+    },
+    {
+      "batchId": 8428981,
+      "reference": "2026-04-09 06-01 - Wild Dose 2/3 Evri TIME (3) - Run 1",
+      "date": "2026-04-09T07:20:54.562Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 22.4,
+      "orderCount": 22,
+      "packerCount": 12
+    },
+    {
+      "batchId": 8429006,
+      "reference": "2026-04-09 06-01 - Anicura Large Evri ND - Run 1",
+      "date": "2026-04-09T07:19:38.806Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 27,
+      "orderCount": 2,
+      "packerCount": 12
+    },
+    {
+      "batchId": 8428962,
+      "reference": "2026-04-09 05-56 - Ripple+ Evri (8) - Run 1",
+      "date": "2026-04-09T07:29:15.170Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30.5,
+      "orderCount": 13,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8428966,
+      "reference": "2026-04-09 05-56 - Luella Grey Trade - Run 1",
+      "date": "2026-04-09T07:34:38.953Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 108,
+      "orderCount": 4,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8428967,
+      "reference": "2026-04-09 06-01 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-09T07:35:41.609Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 36.2,
+      "orderCount": 30,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8429010,
+      "reference": "2026-04-09 06-06 - Wild Dose Singles Evri (2) - Run 1",
+      "date": "2026-04-09T07:35:52.085Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 13.2,
+      "orderCount": 5,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8429016,
+      "reference": "2026-04-09 06-06 - Wild Dose Evri (8) - Run 2",
+      "date": "2026-04-09T07:35:21.109Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 65.6,
+      "orderCount": 14,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8429038,
+      "reference": "2026-04-09 07-01 - PeakFlowSpace - Run 1",
+      "date": "2026-04-09T07:34:20.462Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 48.3,
+      "orderCount": 19,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8429014,
+      "reference": "2026-04-09 06-06 - Ripple+ International (10) - Run 1",
+      "date": "2026-04-09T07:50:22.397Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 47.4,
+      "orderCount": 10,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8429037,
+      "reference": "2026-04-09 07-01 - Kit Blake - Run 1",
+      "date": "2026-04-09T07:50:25.924Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 96,
+      "orderCount": 2,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8428958,
+      "reference": "2026-04-09 05-56 - Bare Biology Single Tub RM (6) - Run 1",
+      "date": "2026-04-09T08:06:32.939Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 54,
+      "orderCount": 22,
+      "packerCount": 15
     }
   ],
   "packerSnaps": [
@@ -14568,9 +14775,58 @@
     {
       "dow": 3,
       "hour": 10,
-      "count": 12,
-      "ts": "2026-04-08T09:02:21.970Z",
+      "count": 10,
+      "ts": "2026-04-08T09:47:06.350Z",
       "dateHour": "2026-04-08T09"
+    },
+    {
+      "dow": 3,
+      "hour": 13,
+      "count": 4,
+      "ts": "2026-04-08T12:48:08.499Z",
+      "dateHour": "2026-04-08T12"
+    },
+    {
+      "dow": 3,
+      "hour": 14,
+      "count": 15,
+      "ts": "2026-04-08T13:46:32.027Z",
+      "dateHour": "2026-04-08T13"
+    },
+    {
+      "dow": 3,
+      "hour": 15,
+      "count": 17,
+      "ts": "2026-04-08T14:48:59.937Z",
+      "dateHour": "2026-04-08T14"
+    },
+    {
+      "dow": 4,
+      "hour": 6,
+      "count": 1,
+      "ts": "2026-04-09T05:58:49.744Z",
+      "dateHour": "2026-04-09T05"
+    },
+    {
+      "dow": 4,
+      "hour": 7,
+      "count": 8,
+      "ts": "2026-04-09T06:51:30.102Z",
+      "dateHour": "2026-04-09T06"
+    },
+    {
+      "dow": 4,
+      "hour": 8,
+      "count": 10,
+      "ts": "2026-04-09T07:51:02.916Z",
+      "dateHour": "2026-04-09T07"
+    },
+    {
+      "dow": 4,
+      "hour": 9,
+      "count": 10,
+      "ts": "2026-04-09T08:08:06.109Z",
+      "dateHour": "2026-04-09T08"
     }
   ]
 }
