@@ -660,9 +660,9 @@
   }
 
 
-  /* ---- scheduleGhSave stub ---- */
+  /* ---- scheduleGhSave stub: calls GitHub sync engine ---- */
   function scheduleGhSave() {
-    if (typeof window._scheduleGhSave === 'function') window._scheduleGhSave();
+    if (typeof window._ghScheduleSave === 'function') window._ghScheduleSave();
   }
 
   function mergeHistoryFromBatches(batchRows, packerMap) {
@@ -1169,9 +1169,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       const batchListRaw = await apiFetch('/api/Batch/List');
       const allBatches   = normalise(batchListRaw);
 
-      // Pending orders derived from batch data (orders in active batches not yet despatched)
-      // This avoids fetching all historical pending orders from the entire account.
-      const pending = [];  // will be populated after batch details are fetched below
+      // Pending orders derived from batch data below
+      const pending = [];
 
       // 2) Filter to batches created within the last 7 days OR updated today.
       //    Only include batches from prior days if they are NOT yet fully despatched
@@ -1277,16 +1276,12 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       isDashboardLoading = false;
       hasInitialData     = true;  // subsequent refreshes run silently in background
 
-      // Populate pending from batch orders that are still in a pending status
-      // (not despatched, not cancelled) — scoped to the 7-day batch window
-      const _pendingSet = new Set(pendingStatusIds.length > 0 ? pendingStatusIds : [2]);
+      // Derive pending from batch orders not yet despatched
+      const _pSet = new Set(pendingStatusIds.length > 0 ? pendingStatusIds : [2]);
       for (const {orders} of batchDetails) {
-        for (const o of orders) {
-          if (_pendingSet.has(o.OrderStatusId)) pending.push(o);
-        }
+        for (const o of orders) { if (_pSet.has(o.OrderStatusId)) pending.push(o); }
       }
-      console.log('Pending orders (from batches):', pending.length);
-
+      console.log('Pending (from batches):', pending.length);
       render(processed, despatched, pending, todayBatches, batchDetails);
 
     } catch(err) {
@@ -2433,9 +2428,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   var link = document.getElementById("proxy-download-link");
   if (link) { link.href = url; }
 })();
-</script>
-</body>
-</html>
+
 
       --border:  #30363d;
 /* ============================
@@ -2453,7 +2446,7 @@ let ghUser = "User-" + Math.floor(Math.random() * 1000);
 
 /* ---------- PUT FILE (create/update) ---------- */
 async function ghPutFile(path, content) {
-  const url = baseUrl() + `/gh-api/repos/${ghRepo}/contents/${path}`;
+  const url = `https://api.github.com/repos/${ghRepo}/contents/${path}`;
 
   let sha = null;
 
@@ -2538,7 +2531,7 @@ async function processGhQueue() {
 }
 
 /* ---------- DEBOUNCE SAVE ---------- */
-window._scheduleGhSave = function() {
+window._ghScheduleSave = function() {
   if (!ghToken || !ghRepo) return;
 
   clearTimeout(ghSaveTimer);
@@ -2571,7 +2564,7 @@ async function ghLoadHistory() {
   if (!ghToken || !ghRepo) return;
 
   try {
-    const url = baseUrl() + `/gh-api/repos/${ghRepo}/contents/mintsoft-history.json`;
+    const url = `https://api.github.com/repos/${ghRepo}/contents/mintsoft-history.json`;
 
     const res = await fetch(url, {
       headers: { Authorization: `token ${ghToken}` }
@@ -2604,3 +2597,6 @@ async function ghLoadHistory() {
 
 /* ---------- START POLLING ---------- */
 setInterval(ghLoadHistory, 10000);
+</script>
+</body>
+</html>
