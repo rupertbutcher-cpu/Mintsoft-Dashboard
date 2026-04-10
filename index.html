@@ -441,10 +441,14 @@
   <div style="margin-top:8px;line-height:2;">
     1. Go to <a href="https://github.com/settings/tokens/new?description=Mintsoft+Dashboard&scopes=repo" target="_blank" style="color:#7dd3fc;">github.com → Settings → Developer settings → Personal access tokens → Generate new token (classic)</a><br>
     2. Set description: <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">Mintsoft Dashboard</code> &nbsp;•&nbsp; Tick the <strong>repo</strong> scope &nbsp;•&nbsp; Click <strong>Generate token</strong><br>
-    3. Copy the token and paste it below — it is stored only in your browser, never sent anywhere except GitHub:<br>
+    3. Enter your repo name (e.g. <code style="background:#0d1117;padding:1px 6px;border-radius:4px;">rupert/mintsoft-dashboard</code>) and paste the token below — stored only in your browser:<br>
+    <input id="inp-gh-repo" type="text" placeholder="owner/repo-name"
+      style="background:#0d1117;border:1px solid #238636;color:#fff;padding:4px 8px;border-radius:4px;width:240px;margin-top:4px;">
     <input id="inp-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-      style="background:#0d1117;border:1px solid #238636;color:#fff;padding:4px 8px;border-radius:4px;width:340px;margin-top:4px;">
-    <button class="btn" onclick="ghSaveToken()" style="margin-left:6px;background:#238636;">Save &amp; connect</button>
+      style="background:#0d1117;border:1px solid #238636;color:#fff;padding:4px 8px;border-radius:4px;width:300px;margin-top:4px;margin-left:6px;">
+    <button class="btn" onclick="ghSaveConnect()" style="margin-left:6px;background:#238636;">Save &amp; connect</button>
+    <button class="btn ghost" onclick="ghTestConnection()" style="margin-left:6px;" title="Test proxy + token + repo access">🔍 Test connection</button>
+    <div id="gh-test-result" style="margin-top:8px;font-size:12px;display:none;background:#0d1117;padding:8px 10px;border-radius:6px;border:1px solid var(--border);white-space:pre-wrap;font-family:monospace;color:#e6edf3;"></div>
   </div>
 </div>
 
@@ -660,9 +664,12 @@
   }
 
 
-  /* ---- scheduleGhSave stub: calls GitHub sync engine ---- */
+  /* ---- scheduleGhSave: debounced GitHub save (500ms) ---- */
+  let _ghSaveTimer = null;
   function scheduleGhSave() {
-    if (typeof window._ghScheduleSave === 'function') window._ghScheduleSave();
+    if (!ghToken || !ghRepo) return;
+    clearTimeout(_ghSaveTimer);
+    _ghSaveTimer = setTimeout(ghSaveHistory, 500);
   }
 
   function mergeHistoryFromBatches(batchRows, packerMap) {
@@ -2158,6 +2165,16 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   // GitHub API calls are routed through the local proxy at /gh-api/
   // to avoid CORS issues when running at localhost:8787.
   const GH_API = () => baseUrl() + '/gh-api/repos';
+  let _ghAutoSaveStarted = false;
+  // Single auto-save interval — started once when first connected, not on every sync
+  setInterval(() => { if (_ghAutoSaveStarted && ghToken && ghRepo) ghSaveHistory(); }, AUTO_SAVE_MS);
+  // When the page is opened as a file:// URL, baseUrl() is unreachable from the browser.
+  // Always talk to the proxy on its fixed port for GitHub API calls.
+  function ghProxyBase() {
+    const b = baseUrl();
+    if (b && b.startsWith('http')) return b;
+    return 'http://localhost:8787'; // fallback when served as file://
+  }
   // All users read/write the same files in the GitHub repo via the API.
   // Each user stores their own token in localStorage — it never leaves the browser.
   const GH_LS_TOKEN   = 'msoft_gh_token';
@@ -2170,43 +2187,105 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   function ghGetCreds() {
     ghToken = lsGet(GH_LS_TOKEN) || null;
     ghRepo  = lsGet(GH_LS_REPO)  || null;
-    // Auto-detect repo from the URL the proxy is serving index.html from
+    // Detect and clear corrupted repo values (e.g. full URLs stored by mistake)
+    if (ghRepo && (ghRepo.startsWith('http') || !ghRepo.includes('/') || ghRepo.split('/').length !== 2)) {
+      console.warn('GitHub: clearing invalid repo value from localStorage:', ghRepo);
+      ghRepo = null;
+      lsSet(GH_LS_REPO, '');
+    }
     if (!ghRepo) {
-      // Try to extract owner/repo from a raw.githubusercontent.com URL stored in session
       const stored = sessionStorage.getItem('msoft_gh_repo_auto');
       if (stored) ghRepo = stored;
     }
     return !!(ghToken && ghRepo);
   }
 
-  function ghSaveToken() {
-    const tok = $('inp-gh-token').value.trim();
-    if (!tok) return;
+  // Called by the Save & connect button in the gh-setup panel
+  function ghSaveConnect() {
+    let repo = ($('inp-gh-repo') || {}).value ? $('inp-gh-repo').value.trim() : '';
+    const tok  = ($('inp-gh-token') || {}).value ? $('inp-gh-token').value.trim() : '';
+    if (!repo || !tok) { alert('Please enter both a repo name (owner/repo) and a token.'); return; }
+    // Strip any URL prefix — accept full GitHub URLs or bare owner/repo
+    repo = repo.replace(/^https?:\/\/github\.com\//, '').replace(/\.git$/, '').replace(/^https?:\/\/[^/]+\//, '').replace(/\/+$/, '');
+    if (!repo.includes('/') || repo.split('/').length !== 2) {
+      alert('Repo must be in the format  owner/repo-name\ne.g.  rupertbutcher-cpu/Mintsoft-Dashboard\n\nGot: ' + repo);
+      return;
+    }
+    lsSet(GH_LS_REPO, repo);
     lsSet(GH_LS_TOKEN, tok);
-    $('gh-setup').style.display = 'none';
+    ghRepo  = repo;
     ghToken = tok;
-    ghConnectWithToken();
+    $('gh-setup').style.display = 'none';
+    updateGhUI(true);
+    ghSync();
+    _ghAutoSaveStarted = true;
   }
+
+  async function ghTestConnection() {
+    const repo  = ($('inp-gh-repo')  || {}).value ? $('inp-gh-repo').value.trim()  : (ghRepo  || '');
+    const token = ($('inp-gh-token') || {}).value ? $('inp-gh-token').value.trim() : (ghToken || '');
+    const out   = $('gh-test-result');
+    if (!out) return;
+    out.style.display = 'block';
+    out.style.color   = '#e6edf3';
+    out.textContent   = 'Testing…';
+    const base = ghProxyBase();
+    const lines = [];
+    lines.push('Proxy base : ' + base);
+    lines.push('Repo       : ' + (repo  || '(not set)'));
+    lines.push('Token      : ' + (token ? token.slice(0,8) + '…' + token.slice(-4) : '(not set)'));
+    if (!repo || !token) { out.textContent = lines.join('\n') + '\n\nMissing repo or token.'; return; }
+    // 1. Test proxy reachability
+    try {
+      const pingUrl = base + '/gh-api/repos/' + repo;
+      lines.push('\nTesting : ' + pingUrl);
+      const r = await fetch(pingUrl, { headers: { Authorization: 'token ' + token, Accept: 'application/vnd.github+json' } });
+      lines.push('HTTP status: ' + r.status + ' ' + r.statusText);
+      const body = await r.json().catch(() => ({}));
+      if (r.ok) {
+        lines.push('✅ Repo access OK — ' + (body.full_name || repo));
+        lines.push('   Private: ' + body.private + '  Default branch: ' + body.default_branch);
+        out.style.color = '#4ade80';
+      } else {
+        lines.push('❌ GitHub error: ' + (body.message || JSON.stringify(body)));
+        if (r.status === 401) lines.push('   → Token is invalid or expired');
+        if (r.status === 403) lines.push('   → Token lacks "repo" scope, or repo is an org repo needing SSO');
+        if (r.status === 404) lines.push('   → Repo not found — check owner/reponame spelling');
+        out.style.color = '#fca5a5';
+      }
+    } catch(e) {
+      lines.push('❌ Fetch failed: ' + e.message);
+      lines.push('   → Proxy not running, or wrong Base URL / port');
+      out.style.color = '#fca5a5';
+    }
+    out.textContent = lines.join('\n');
+  }
+
+  // Keep ghSaveToken as an alias so any old bookmarks / cached pages still work
+  function ghSaveToken() { ghSaveConnect(); }
 
   async function ghConnectWithToken() {
     if (!ghToken) { $('gh-setup').style.display = 'block'; return; }
-    // Discover the repo by reading the raw URL from the proxy's OneDriveUrl hint
-    // or fall back to asking. For now auto-detect from known token.
     if (!ghRepo) {
-      // Ask user for repo if not already known
+      // Pre-fill repo field if panel is visible, otherwise fall back to prompt
+      if ($('gh-setup').style.display !== 'none') return; // wait for user to submit panel
       const r = prompt('Enter your GitHub repo (owner/reponame):\ne.g.  rupert-haulandstore/mintsoft-dashboard');
       if (!r) return;
       ghRepo = r.trim();
       lsSet(GH_LS_REPO, ghRepo);
     }
     await ghSync();
-    setInterval(ghSaveHistory, AUTO_SAVE_MS);
+    _ghAutoSaveStarted = true;
   }
 
   function ghConnect() {
-    if (ghGetCreds()) {
+    ghGetCreds(); // refresh + self-heal from localStorage
+    if (ghToken && ghRepo) {
       ghConnectWithToken();
     } else {
+      // Pre-fill whatever is already stored before showing the panel
+      if ($('inp-gh-repo'))  $('inp-gh-repo').value  = ghRepo  || '';
+      if ($('inp-gh-token')) $('inp-gh-token').value = ghToken || '';
       $('gh-setup').style.display = 'block';
     }
   }
@@ -2225,22 +2304,43 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   }
 
   // ── GitHub API helpers ────────────────────────────────────────────────────
+  // Calls GitHub REST API directly — no local proxy needed.
+  // ghPutFile always GETs the SHA first so it works on any machine whether
+  // the file already exists (SHA required) or not (SHA omitted). This was
+  // the root cause of the previous 422 "sha required" errors.
+  // ghGetFileSha: gets only the SHA (used by ghPutFile) — never parses content
+  async function ghGetFileSha(path) {
+    const res = await fetch(ghProxyBase() + '/gh-api/repos/' + ghRepo + '/contents/' + path, {
+      headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json' }
+    });
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error('GitHub GET SHA ' + path + ': HTTP ' + res.status);
+    const meta = await res.json();
+    return meta.sha;  // just the SHA — no content parsing
+  }
+
+  // ghGetFile: gets SHA + decoded JSON content (used by ghLoadHistory / ghLoadDaySnapshots)
   async function ghGetFile(path) {
-    const res = await fetch(`${GH_API()}/${ghRepo}/contents/${path}`, {
+    const res = await fetch(ghProxyBase() + '/gh-api/repos/' + ghRepo + '/contents/' + path, {
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json' }
     });
     if (res.status === 404) return null;
     if (!res.ok) throw new Error('GitHub GET ' + path + ': HTTP ' + res.status);
     const meta = await res.json();
-    const content = JSON.parse(atob(meta.content.replace(/\n/g, '')));
-    return { data: content, sha: meta.sha };
+    const decoded = atob(meta.content.replace(/\n/g, ''));
+    let data;
+    try { data = JSON.parse(decoded); } catch(e) { throw new Error('GitHub GET ' + path + ': invalid JSON in file'); }
+    return { data, sha: meta.sha };
   }
 
-  async function ghPutFile(path, data, existingSha) {
+  async function ghPutFile(path, data) {
+    // Always fetch current SHA first — required when updating, omitted when creating.
+    let sha = null;
+    try { sha = await ghGetFileSha(path); } catch(e) { console.warn('ghGetFileSha error (will try PUT without SHA):', e.message); }
     const body = { message: 'Dashboard sync ' + new Date().toISOString(),
                    content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))) };
-    if (existingSha) body.sha = existingSha;
-    const res = await fetch(`${GH_API()}/${ghRepo}/contents/${path}`, {
+    if (sha) body.sha = sha;
+    const res = await fetch(ghProxyBase() + '/gh-api/repos/' + ghRepo + '/contents/' + path, {
       method: 'PUT',
       headers: { Authorization: 'token ' + ghToken, Accept: 'application/vnd.github+json',
                  'Content-Type': 'application/json' },
@@ -2260,7 +2360,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     try {
       await ghLoadHistory();
       await ghLoadDaySnapshots();
-      await scheduleGhSave();
+      await ghSaveHistory();
       updateGhUI(true);
     } catch(e) {
       console.warn('GitHub sync error:', e);
@@ -2299,10 +2399,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   async function ghSaveHistory() {
     if (!ghToken || !ghRepo) return;
     try {
-      const existing = await ghGetFile(GH_HIST_PATH);
-      const sha = await ghPutFile(GH_HIST_PATH,
-        { version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots },
-        existing ? existing.sha : null);
+      await ghPutFile(GH_HIST_PATH,
+        { version: 3, saved: new Date().toISOString(), batches: batchHistory, packerSnaps: packerSnapshots });
       setHistoryStatus('GitHub: saved ' + new Date().toLocaleTimeString('en-GB') + ' — ' + batchHistory.length + ' batches');
       console.log('GitHub: saved', batchHistory.length, 'batches');
     } catch(e) { console.warn('GitHub save error:', e); setHistoryStatus('GitHub: save error — ' + e.message); }
@@ -2332,10 +2430,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     try {
       const _snapKey = snap.hour ? `${snap.date}T${snap.hour}` : snap.date;
       dailySnapshots[_snapKey] = snap;
-      const existing = await ghGetFile(GH_SNAP_PATH);
       await ghPutFile(GH_SNAP_PATH,
-        { version: 1, saved: new Date().toISOString(), days: dailySnapshots },
-        existing ? existing.sha : null);
+        { version: 1, saved: new Date().toISOString(), days: dailySnapshots });
       setHistoryStatus('📅 Day snapshot saved — ' + snap.date + ' (' + snap.despatched + ' orders despatched)');
       updateDaySnapshotUI();
     } catch(e) {
@@ -2430,10 +2526,17 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       <div style="margin-top:10px;font-size:11px;color:var(--muted);">Snapshot saved: ${new Date(s.savedAt).toLocaleString('en-GB')}</div>`;
   }
 
-  // Init MSAL on load — client ID is baked in so always initialises
+  // On page load: restore GitHub credentials and auto-connect if already configured
   (function() {
-    // Auto-connect GitHub if token already saved
-    if (ghGetCreds()) ghConnectWithToken();
+    ghGetCreds(); // populates ghToken / ghRepo from localStorage
+    // Pre-fill setup panel inputs in case user opens it later
+    if (ghRepo  && $('inp-gh-repo'))  $('inp-gh-repo').value  = ghRepo;
+    if (ghToken && $('inp-gh-token')) $('inp-gh-token').value = ghToken;
+    updateGhUI(!!(ghToken && ghRepo));
+    if (ghToken && ghRepo) {
+      ghSync();
+      _ghAutoSaveStarted = true;
+    }
   })();
 
 </script>
@@ -2448,181 +2551,12 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
 <script id="proxy-dl-script">
 (function() {
-  var content = "param(\n    [int]    $Port   = 8787,\n    [string] $ApiKey = \"\"\n)\n\n$MintSoftBase = \"https://api.mintsoft.co.uk\"\n$Prefix       = \"http://localhost:\" + $Port + \"/\"\n\n$listener = New-Object System.Net.HttpListener\n$listener.Prefixes.Add($Prefix)\n$listener.Start()\n\nWrite-Host \"\"\nWrite-Host \"  Mintsoft CORS Proxy running on $Prefix\" -ForegroundColor Cyan\nWrite-Host \"  Forwarding to: $MintSoftBase\" -ForegroundColor Gray\nWrite-Host \"  Press Ctrl+C to stop.\" -ForegroundColor Gray\nWrite-Host \"\"\n\nfunction Send-CorsHeaders($res) {\n    try { $res.Headers.Add(\"Access-Control-Allow-Origin\",  \"*\") }           catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Methods\", \"GET, POST, PUT, DELETE, OPTIONS\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Headers\", \"ms-apikey, Content-Type, Accept, Authorization\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Expose-Headers\",\"*\") }           catch {}\n}\n\ntry {\n    while ($true) {\n\n        # Block until a request arrives (this is synchronous \u2014 no polling needed)\n        $ctx = $null\n        try {\n            $ctx = $listener.GetContext()\n        } catch {\n            # Listener was stopped (Ctrl+C) \u2014 exit cleanly\n            break\n        }\n\n        $req = $ctx.Request\n        $res = $ctx.Response\n\n        Write-Host (\"  \" + $req.HttpMethod + \" \" + $req.Url.PathAndQuery) -ForegroundColor DarkGray\n\n        # \u2500\u2500 CORS preflight \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if ($req.HttpMethod -eq \"OPTIONS\") {\n            $res.StatusCode = 204\n            Send-CorsHeaders $res\n            $res.Close()\n            continue\n        }\n\n        # \u2500\u2500 Proxy the request \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        $targetUrl = $MintSoftBase + $req.Url.PathAndQuery\n\n        try {\n            $upstream = [System.Net.HttpWebRequest]::Create($targetUrl)\n            $upstream.Method               = $req.HttpMethod\n            $upstream.Timeout              = 90000\n            $upstream.AutomaticDecompression = [System.Net.DecompressionMethods]::GZip -bor [System.Net.DecompressionMethods]::Deflate\n\n            # \u2500\u2500 Forward headers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            foreach ($hdr in $req.Headers.AllKeys) {\n                $val      = $req.Headers[$hdr]\n                $hdrLower = $hdr.ToLower()\n\n                if ($hdrLower -eq \"ms-apikey\") {\n                    $keyToUse = if ($ApiKey -ne \"\") { $ApiKey } else { $val }\n                    $upstream.Headers.Add(\"ms-apikey\", $keyToUse)\n                } elseif ($hdrLower -eq \"accept\") {\n                    $upstream.Accept = $val\n                } elseif ($hdrLower -eq \"content-type\") {\n                    $upstream.ContentType = $val\n                } elseif ($hdrLower -in @(\"host\", \"connection\", \"transfer-encoding\", \"accept-encoding\")) {\n                    # skip \u2014 let .NET handle these\n                } else {\n                    try { $upstream.Headers.Add($hdr, $val) } catch {}\n                }\n            }\n\n            # Inject key if not already set\n            if ($ApiKey -ne \"\" -and $req.Headers[\"ms-apikey\"] -eq $null) {\n                $upstream.Headers.Add(\"ms-apikey\", $ApiKey)\n            }\n\n            # \u2500\u2500 Forward request body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            if ($req.HasEntityBody) {\n                $upstream.ContentLength = $req.ContentLength64\n                $bodyBytes = New-Object byte[] $req.ContentLength64\n                [void]$req.InputStream.Read($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream = $upstream.GetRequestStream()\n                $upReqStream.Write($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream.Close()\n            }\n\n            # \u2500\u2500 Get upstream response \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upResponse = $null\n            try {\n                $upResponse = $upstream.GetResponse()\n            } catch [System.Net.WebException] {\n                if ($_.Exception.Response -ne $null) {\n                    $upResponse = $_.Exception.Response\n                } else {\n                    throw\n                }\n            }\n\n            # \u2500\u2500 Read decompressed body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upStream  = $upResponse.GetResponseStream()\n            $reader    = New-Object System.IO.StreamReader($upStream, [System.Text.Encoding]::UTF8)\n            $bodyText  = $reader.ReadToEnd()\n            $reader.Close()\n            $upResponse.Close()\n\n            # \u2500\u2500 Write response to browser \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes($bodyText)\n            $res.StatusCode      = [int]$upResponse.StatusCode\n            $res.ContentType     = \"application/json; charset=utf-8\"\n            $res.ContentLength64 = $bodyBytes.Length\n            Send-CorsHeaders $res\n            $res.OutputStream.Write($bodyBytes, 0, $bodyBytes.Length)\n\n        } catch {\n            Write-Host (\"  ERROR: \" + $_.Exception.Message) -ForegroundColor Red\n            $errMsg   = $_.Exception.Message -replace '\"', \"'\"\n            $errBytes = [System.Text.Encoding]::UTF8.GetBytes('{\"error\":\"' + $errMsg + '\"}')\n            try {\n                $res.StatusCode      = 502\n                $res.ContentType     = \"application/json; charset=utf-8\"\n                $res.ContentLength64 = $errBytes.Length\n                Send-CorsHeaders $res\n                $res.OutputStream.Write($errBytes, 0, $errBytes.Length)\n            } catch {}\n        }\n\n        try { $res.Close() } catch {}\n    }\n} finally {\n    try { $listener.Stop() } catch {}\n    Write-Host \"Proxy stopped.\" -ForegroundColor Yellow\n}\n";
+  var content = "param(\n    [int]    $Port   = 8787,\n    [string] $ApiKey = \"\"\n)\n\n$MintSoftBase = \"https://api.mintsoft.co.uk\"\n$Prefix       = \"http://localhost:\" + $Port + \"/\"\n\n$listener = New-Object System.Net.HttpListener\n$listener.Prefixes.Add($Prefix)\n$listener.Start()\n\nWrite-Host \"\"\nWrite-Host \"  Mintsoft CORS Proxy running on $Prefix\" -ForegroundColor Cyan\nWrite-Host \"  Forwarding to: $MintSoftBase\" -ForegroundColor Gray\nWrite-Host \"  Press Ctrl+C to stop.\" -ForegroundColor Gray\nWrite-Host \"\"\n\nfunction Send-CorsHeaders($res) {\n    try { $res.Headers.Add(\"Access-Control-Allow-Origin\",  \"*\") }           catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Methods\", \"GET, POST, PUT, DELETE, OPTIONS\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Allow-Headers\", \"ms-apikey, Content-Type, Accept, Authorization\") } catch {}\n    try { $res.Headers.Add(\"Access-Control-Expose-Headers\",\"*\") }           catch {}\n}\n\ntry {\n    while ($true) {\n\n        # Block until a request arrives (this is synchronous \u2014 no polling needed)\n        $ctx = $null\n        try {\n            $ctx = $listener.GetContext()\n        } catch {\n            # Listener was stopped (Ctrl+C) \u2014 exit cleanly\n            break\n        }\n\n        $req = $ctx.Request\n        $res = $ctx.Response\n\n        Write-Host (\"  \" + $req.HttpMethod + \" \" + $req.Url.PathAndQuery) -ForegroundColor DarkGray\n\n        # \u2500\u2500 CORS preflight \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if ($req.HttpMethod -eq \"OPTIONS\") {\n            $res.StatusCode = 204\n            Send-CorsHeaders $res\n            $res.Close()\n            continue\n        }\n\n        # \u2500\u2500 Proxy the request \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        # Route /gh-api/ to GitHub, everything else to Mintsoft\n        $pathAndQuery = $req.Url.PathAndQuery\n        if ($pathAndQuery.StartsWith('/gh-api/')) {\n            $ghPath    = $pathAndQuery.Substring(8)\n            $targetUrl = 'https://api.github.com/' + $ghPath\n        } else {\n            $targetUrl = $MintSoftBase + $pathAndQuery\n        }\n\n        try {\n            $upstream = [System.Net.HttpWebRequest]::Create($targetUrl)\n            $upstream.Method               = $req.HttpMethod\n            $upstream.Timeout              = 90000\n            $upstream.AutomaticDecompression = [System.Net.DecompressionMethods]::GZip -bor [System.Net.DecompressionMethods]::Deflate\n\n            # \u2500\u2500 Forward headers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            foreach ($hdr in $req.Headers.AllKeys) {\n                $val      = $req.Headers[$hdr]\n                $hdrLower = $hdr.ToLower()\n\n                if ($hdrLower -eq \"ms-apikey\") {\n                    $keyToUse = if ($ApiKey -ne \"\") { $ApiKey } else { $val }\n                    $upstream.Headers.Add(\"ms-apikey\", $keyToUse)\n                } elseif ($hdrLower -eq \"accept\") {\n                    $upstream.Accept = $val\n                } elseif ($hdrLower -eq \"content-type\") {\n                    $upstream.ContentType = $val\n                } elseif ($hdrLower -eq \"authorization\") {\n                    # Authorization is a restricted header in .NET -- must be set directly\n                    try { $upstream.Headers[\"Authorization\"] = $val } catch {}\n                } elseif ($hdrLower -in @(\"host\", \"connection\", \"transfer-encoding\", \"accept-encoding\")) {\n                    # skip \u2014 let .NET handle these\n                } else {\n                    try { $upstream.Headers.Add($hdr, $val) } catch {}\n                }\n            }\n\n            # Inject key if not already set\n            if ($ApiKey -ne \"\" -and $req.Headers[\"ms-apikey\"] -eq $null) {\n                $upstream.Headers.Add(\"ms-apikey\", $ApiKey)\n            }\n\n            # \u2500\u2500 Forward request body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            if ($req.HasEntityBody) {\n                $upstream.ContentLength = $req.ContentLength64\n                $bodyBytes = New-Object byte[] $req.ContentLength64\n                [void]$req.InputStream.Read($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream = $upstream.GetRequestStream()\n                $upReqStream.Write($bodyBytes, 0, $bodyBytes.Length)\n                $upReqStream.Close()\n            }\n\n            # \u2500\u2500 Get upstream response \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upResponse = $null\n            try {\n                $upResponse = $upstream.GetResponse()\n            } catch [System.Net.WebException] {\n                if ($_.Exception.Response -ne $null) {\n                    $upResponse = $_.Exception.Response\n                } else {\n                    throw\n                }\n            }\n\n            # \u2500\u2500 Read decompressed body \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $upStream  = $upResponse.GetResponseStream()\n            $reader    = New-Object System.IO.StreamReader($upStream, [System.Text.Encoding]::UTF8)\n            $bodyText  = $reader.ReadToEnd()\n            $reader.Close()\n            $upResponse.Close()\n\n            # \u2500\u2500 Write response to browser \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes($bodyText)\n            $res.StatusCode      = [int]$upResponse.StatusCode\n            $res.ContentType     = \"application/json; charset=utf-8\"\n            $res.ContentLength64 = $bodyBytes.Length\n            Send-CorsHeaders $res\n            $res.OutputStream.Write($bodyBytes, 0, $bodyBytes.Length)\n\n        } catch {\n            Write-Host (\"  ERROR: \" + $_.Exception.Message) -ForegroundColor Red\n            $errMsg   = $_.Exception.Message -replace '\"', \"'\"\n            $errBytes = [System.Text.Encoding]::UTF8.GetBytes('{\"error\":\"' + $errMsg + '\"}')\n            try {\n                $res.StatusCode      = 502\n                $res.ContentType     = \"application/json; charset=utf-8\"\n                $res.ContentLength64 = $errBytes.Length\n                Send-CorsHeaders $res\n                $res.OutputStream.Write($errBytes, 0, $errBytes.Length)\n            } catch {}\n        }\n\n        try { $res.Close() } catch {}\n    }\n} finally {\n    try { $listener.Stop() } catch {}\n    Write-Host \"Proxy stopped.\" -ForegroundColor Yellow\n}\n";
   var blob = new Blob([content], {type: "text/plain"});
   var url = URL.createObjectURL(blob);
   var link = document.getElementById("proxy-download-link");
   if (link) { link.href = url; }
 })();
-
-
-      --border:  #30363d;
-/* ============================
-   🔥 MULTI-USER GITHUB SYNC ENGINE
-   ============================ */
-
-let lastRemoteSha = null;
-let lastRemoteUpdatedAt = null;
-
-let ghSaveQueue = [];
-let ghSaving = false;
-let ghSaveTimer = null;
-
-let ghUser = "User-" + Math.floor(Math.random() * 1000);
-
-/* ---------- PUT FILE (create/update) ---------- */
-async function ghPutFile(path, content) {
-  const url = `${baseUrl()}/gh-api/repos/${ghRepo}/contents/${path}`;
-
-  let sha = null;
-
-  try {
-    const res = await fetch(url, {
-      headers: { Authorization: `token ${ghToken}` }
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      sha = data.sha;
-      lastRemoteSha = sha;
-    }
-  } catch {}
-
-  const payload = {
-    message: "Update mintsoft history",
-    content: btoa(unescape(encodeURIComponent(content)))
-  };
-
-  if (sha) payload.sha = sha;
-
-  const res = await fetch(url, {
-    method: "PUT",
-    headers: {
-      Authorization: `token ${ghToken}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(txt);
-  }
-
-  const result = await res.json();
-  lastRemoteSha = result.content.sha;
-  lastRemoteUpdatedAt = new Date().toISOString();
-
-  return result;
-}
-
-/* ---------- RETRY ---------- */
-async function ghPutFileWithRetry(path, content, attempt = 1) {
-  try {
-    return await ghPutFile(path, content);
-  } catch (e) {
-    if (attempt >= 3) throw e;
-    await new Promise(r => setTimeout(r, attempt * 1500));
-    return ghPutFileWithRetry(path, content, attempt + 1);
-  }
-}
-
-/* ---------- QUEUE ---------- */
-function ghQueueSave(content) {
-  ghSaveQueue.push(content);
-  processGhQueue();
-}
-
-async function processGhQueue() {
-  if (ghSaving || ghSaveQueue.length === 0) return;
-
-  ghSaving = true;
-
-  const content = ghSaveQueue.pop();
-  ghSaveQueue = [];
-
-  try {
-    await ghPutFileWithRetry("mintsoft-history.json", content);
-    setHistoryStatus("GitHub synced ✓");
-  } catch (e) {
-    ghSaveQueue.push(content);
-    setHistoryStatus("Retrying GitHub...");
-  }
-
-  ghSaving = false;
-
-  if (ghSaveQueue.length > 0) {
-    setTimeout(processGhQueue, 2000);
-  }
-}
-
-/* ---------- DEBOUNCE SAVE ---------- */
-window._ghScheduleSave = function() {
-  if (!ghToken || !ghRepo) return;
-
-  clearTimeout(ghSaveTimer);
-
-  ghSaveTimer = setTimeout(() => {
-    const json = JSON.stringify({
-      version: 3,
-      updatedAt: new Date().toISOString(),
-      updatedBy: ghUser,
-      batches: batchHistory
-    }, null, 2);
-
-    ghQueueSave(json);
-  }, 3000);
-}
-
-/* ---------- MERGE (multi-user safe) ---------- */
-function mergeHistory(local, remote) {
-  const map = new Map();
-
-  [...remote, ...local].forEach(b => {
-    if (b.batchId) map.set(b.batchId, b);
-  });
-
-  return Array.from(map.values());
-}
-
-/* ---------- LOAD REMOTE ---------- */
-async function ghLoadHistory() {
-  if (!ghToken || !ghRepo) return;
-
-  try {
-    const url = `${baseUrl()}/gh-api/repos/${ghRepo}/contents/mintsoft-history.json`;
-
-    const res = await fetch(url, {
-      headers: { Authorization: `token ${ghToken}` }
-    });
-
-    if (!res.ok) return;
-
-    const data = await res.json();
-
-    if (data.sha === lastRemoteSha) return;
-
-    const decoded = JSON.parse(atob(data.content));
-
-    if (lastRemoteUpdatedAt && decoded.updatedAt <= lastRemoteUpdatedAt) return;
-
-    console.log("🔄 Synced from another user");
-
-    lastRemoteSha = data.sha;
-    lastRemoteUpdatedAt = decoded.updatedAt;
-
-    batchHistory = mergeHistory(batchHistory, decoded.batches || []);
-
-    updateHistoryUI();
-    setHistoryStatus("Synced from another user");
-
-  } catch (e) {
-    console.warn("Sync error:", e);
-  }
-}
-
-/* ---------- START POLLING ---------- */
-setInterval(ghLoadHistory, 10000);
 </script>
 </body>
 </html>
