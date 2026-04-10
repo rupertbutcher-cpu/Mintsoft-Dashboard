@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "saved": "2026-04-10T08:07:44.996Z",
+  "saved": "2026-04-10T08:09:02.288Z",
   "days": {
     "2026-04-08T07": {
       "date": "2026-04-08",
@@ -14805,46 +14805,88 @@
     "2026-04-10T09": {
       "date": "2026-04-10",
       "hour": "09",
-      "savedAt": "2026-04-10T08:07:44.996Z",
-      "despatched": 1088,
-      "pending": 1349,
-      "total": 2437,
-      "pct": "45%",
-      "ratePerHour": "579.0",
-      "secOrdActual": 41.028980609418284,
-      "secOrdBenchmark": 38.28629332054203,
-      "secOrdTarget": 26.20837588948997,
-      "peakPackers": 15,
-      "etaStr": "10:09",
+      "savedAt": "2026-04-10T08:09:00.863Z",
+      "despatched": 1100,
+      "pending": 1731,
+      "total": 2831,
+      "pct": "39%",
+      "ratePerHour": "578.9",
+      "secOrdActual": 41.78924251069899,
+      "secOrdBenchmark": 38.43728231542801,
+      "secOrdTarget": 23.943428767714124,
+      "peakPackers": 14,
+      "etaStr": "10:35",
       "batches": 187,
       "packers": [
         {
           "name": "Callum",
-          "orders": 155,
-          "actualSecOrd": 32.371322580645156,
-          "benchTarget": 24.91319678761045,
-          "top10Target": 23.109074151654795
+          "orders": 136,
+          "actualSecOrd": 32.99752205882353,
+          "benchTarget": 24.987753236402618,
+          "top10Target": 23.000490685784804
         },
         {
           "name": "Jack",
-          "orders": 147,
-          "actualSecOrd": 30.034054421768705,
-          "benchTarget": 25.463064431362657,
-          "top10Target": 23.515362088370072
+          "orders": 58,
+          "actualSecOrd": 39.31637931034483,
+          "benchTarget": 32.52996418980847,
+          "top10Target": 29.372034210167644
         },
         {
           "name": "Matt",
-          "orders": 106,
-          "actualSecOrd": 51.42304716981132,
-          "benchTarget": 39.2551261795904,
-          "top10Target": 31.98834750155505
+          "orders": 56,
+          "actualSecOrd": 63.45558928571429,
+          "benchTarget": 40.55557160364146,
+          "top10Target": 29.491071428571427
         },
         {
           "name": "Elysha",
-          "orders": 124,
-          "actualSecOrd": 36.28964516129032,
-          "benchTarget": 23.152449872917053,
-          "top10Target": 19.679386767610268
+          "orders": 75,
+          "actualSecOrd": 33.10856,
+          "benchTarget": 20.148697640943624,
+          "top10Target": 19.643906976744184
+        },
+        {
+          "name": "Karen",
+          "orders": 89,
+          "actualSecOrd": 22.72764044943821,
+          "benchTarget": 19.723336911666916,
+          "top10Target": 17.299744637385086
+        },
+        {
+          "name": "Adamd",
+          "orders": 34,
+          "actualSecOrd": 45.82135294117648,
+          "benchTarget": 41.14461966604823,
+          "top10Target": 40.28590527119939
+        },
+        {
+          "name": "Ed",
+          "orders": 37,
+          "actualSecOrd": 34.22767567567568,
+          "benchTarget": 30.25997569864496,
+          "top10Target": 25.77968517968518
+        },
+        {
+          "name": "Ewan",
+          "orders": 51,
+          "actualSecOrd": 43.02323529411765,
+          "benchTarget": 36.999255628177195,
+          "top10Target": 30.637254901960784
+        },
+        {
+          "name": "Manleka",
+          "orders": 62,
+          "actualSecOrd": 32.26222580645161,
+          "benchTarget": 12.743200684055603,
+          "top10Target": 7.978751202714337
+        },
+        {
+          "name": "Alice",
+          "orders": 18,
+          "actualSecOrd": 57.909277777777774,
+          "benchTarget": 40.17475386779184,
+          "top10Target": 40.15555555555555
         },
         {
           "name": "Janey",
@@ -14854,48 +14896,6 @@
           "top10Target": 15
         },
         {
-          "name": "Karen",
-          "orders": 165,
-          "actualSecOrd": 31.79295757575758,
-          "benchTarget": 23.05222987855518,
-          "top10Target": 19.313935458480913
-        },
-        {
-          "name": "Ed",
-          "orders": 51,
-          "actualSecOrd": 38.854019607843135,
-          "benchTarget": 36.18741182360935,
-          "top10Target": 32.47394957983193
-        },
-        {
-          "name": "Adamd",
-          "orders": 64,
-          "actualSecOrd": 45.197078125000004,
-          "benchTarget": 42.71042329521502,
-          "top10Target": 41.754469009826146
-        },
-        {
-          "name": "Jemma",
-          "orders": 42,
-          "actualSecOrd": 95.88059523809522,
-          "benchTarget": 37.869854453409275,
-          "top10Target": 36.07925013683634
-        },
-        {
-          "name": "Alice",
-          "orders": 19,
-          "actualSecOrd": 71.95426315789473,
-          "benchTarget": 57.31645569620254,
-          "top10Target": 57.300000000000004
-        },
-        {
-          "name": "Manleka",
-          "orders": 72,
-          "actualSecOrd": 30.603263888888893,
-          "benchTarget": 14.644827542904254,
-          "top10Target": 10.010148592488042
-        },
-        {
           "name": "Paul",
           "orders": 3,
           "actualSecOrd": 200.79566666666668,
@@ -14903,39 +14903,32 @@
           "top10Target": 94
         },
         {
-          "name": "Ewan",
-          "orders": 65,
-          "actualSecOrd": 45.66506153846155,
-          "benchTarget": 37.74911680911681,
-          "top10Target": 31.27230769230769
-        },
-        {
           "name": "Howard",
-          "orders": 2,
-          "actualSecOrd": 36.36,
+          "orders": 3,
+          "actualSecOrd": 47.678,
           "benchTarget": 39.563265306122446,
-          "top10Target": 31.942857142857143
+          "top10Target": 31.94285714285714
         },
         {
           "name": "Jody",
-          "orders": 1,
-          "actualSecOrd": 0,
+          "orders": 2,
+          "actualSecOrd": 42.6125,
           "benchTarget": 31.5,
           "top10Target": 26.4
         },
         {
-          "name": "Roo",
-          "orders": 10,
-          "actualSecOrd": 92.7739,
-          "benchTarget": 92.4,
-          "top10Target": 92.4
+          "name": "Tegan",
+          "orders": 2,
+          "actualSecOrd": 107.241,
+          "benchTarget": 68.57142857142857,
+          "top10Target": 49.5
         },
         {
-          "name": "Tegan",
-          "orders": 4,
-          "actualSecOrd": 57.31375,
-          "benchTarget": 37.285714285714285,
-          "top10Target": 27.75
+          "name": "Jemma",
+          "orders": 22,
+          "actualSecOrd": 128.51654545454542,
+          "benchTarget": 41.14651162790698,
+          "top10Target": 39.09310344827586
         }
       ],
       "batchRows": [
@@ -14960,15 +14953,7 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-06 05-48 - Wild Dose Singles Bloating LL Box (2) - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-06 05-53 - Rosalique Pre Mades Evri ND (4) - Run 2",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-06 05-53 - Bare Biology Trade - Run 1",
           "actualSecOrd": null
         },
         {
@@ -14992,10 +14977,6 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-06 06-08 - Wild Dose Evri (8) - Run 3",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-06 06-08 - Ripple+ International (10) - Run 1",
           "actualSecOrd": null
         },
@@ -15016,14 +14997,6 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-06 12-58 - Wild Dose Singles Bloating LL Custom (2) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-06 13-18 - Untamed Singles DPD 1pm (10) - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-06 13-18 - Bare Biology Single Tub RM 1pm (6) - Run 1",
           "actualSecOrd": null
         },
@@ -15036,15 +15009,7 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-06 13-23 - SOAR Singles 1pm - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-06 13-28 - Wild Dose Over 6 Blister Evri 1pm (8) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-06 13-33 - Wild Dose Singles LL 1pm (2) - Run 1",
           "actualSecOrd": null
         },
         {
@@ -15120,14 +15085,6 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-07 13-20 - Wild Dose 2/3 Bloating LL 1pm (3) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-08 05-40 - Wild Dose Trade - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-08 05-45 - Wild Dose Singles Bloating LL Box (2) - Run 1",
           "actualSecOrd": null
         },
@@ -15164,23 +15121,7 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-08 13-11 - Salcura Trade 1pm - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-08 13-21 - OGT Trade 1pm - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-09 06-01 - Rosalique Multi Evri ND (8) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-09 06-01 - INDI Trade - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-09 06-01 - Rosalique Evri (6) - Run 1",
           "actualSecOrd": null
         },
         {
@@ -15188,15 +15129,7 @@
           "actualSecOrd": null
         },
         {
-          "reference": "Bare Biology Trade",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-09 11-57 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-09 13-02 - Ripple+ Retail  1pm - Run 1",
           "actualSecOrd": null
         },
         {
@@ -15204,68 +15137,36 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 05-32 - Rosalique Trade - Run 1",
-          "actualSecOrd": null
-        },
-        {
           "reference": "2026-04-10 05-37 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
-          "actualSecOrd": 35.3
-        },
-        {
-          "reference": "2026-04-10 05-37 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-42 - Anicura Trade - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-42 - Salcura Trade - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 36.8
         },
         {
           "reference": "2026-04-10 05-47 - Wild Dose 2/3 Bloating LL (3) - Run 1",
-          "actualSecOrd": 27.1
+          "actualSecOrd": 27.5
         },
         {
           "reference": "2026-04-10 05-47 - Wild Dose 2/3 Bloating LL (3) - Run 2",
-          "actualSecOrd": 21.1
+          "actualSecOrd": 22.2
         },
         {
           "reference": "2026-04-10 05-47 - Anicura Amazon - Run 1",
-          "actualSecOrd": 26.1
-        },
-        {
-          "reference": "2026-04-10 05-47 - Wild Dose Singles Bloating LL Box (2) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 23
         },
         {
           "reference": "2026-04-10 05-47 - Salcura Amazon (4) - Run 1",
-          "actualSecOrd": 30.5
-        },
-        {
-          "reference": "2026-04-10 05-52 - Rosalique Pre Mades Evri ND (4) - Run 1",
-          "actualSecOrd": 85
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 05-52 - Rosalique Gift Set (7) - Run 1",
-          "actualSecOrd": 70.2
-        },
-        {
-          "reference": "2026-04-10 05-52 - Ripple+ Singles LL (6) - Run 1",
-          "actualSecOrd": 47.8
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 05-52 - Rosalique Pre Mades Evri ND (4) - Run 2",
-          "actualSecOrd": 20
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 05-52 - Wild Dose Singles Bloating LL (2) - Run 1",
-          "actualSecOrd": 27.3
-        },
-        {
-          "reference": "2026-04-10 05-52 - Bare Biology Trade - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 20.4
         },
         {
           "reference": "2026-04-10 05-52 - SOAR Trade - Run 1",
@@ -15273,67 +15174,35 @@
         },
         {
           "reference": "2026-04-10 05-52 - Wild Dose Singles Bloating Evri (2) - Run 1",
-          "actualSecOrd": 19
+          "actualSecOrd": 21.7
         },
         {
           "reference": "2026-04-10 05-52 - Hey Harper Clothing (18) - Run 1",
-          "actualSecOrd": 104.7
-        },
-        {
-          "reference": "2026-04-10 05-52 - Salcura Singles (3) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 105
         },
         {
           "reference": "2026-04-10 05-52 - Anicura Singles Evri ND - Run 1",
-          "actualSecOrd": 61.7
+          "actualSecOrd": 72.3
         },
         {
           "reference": "2026-04-10 05-57 - Anicura Small Evri ND - Run 1",
-          "actualSecOrd": 32.7
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 05-57 - Bare Biology Single Tub RM (6) - Run 1",
-          "actualSecOrd": 37
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 05-57 - Hey Harper Singles Evri (6) - Run 1",
-          "actualSecOrd": 32.5
-        },
-        {
-          "reference": "2026-04-10 05-57 - Ripple+ Evri (8) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-57 - Ripple+ Evri ND (8) - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-57 - Luella Grey Trade - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 33.3
         },
         {
           "reference": "2026-04-10 05-57 - Totter Yuzu - Run 1",
-          "actualSecOrd": 48
-        },
-        {
-          "reference": "2026-04-10 05-57 - Ripple+ Multi LL (8) - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-57 - Wild Dose 2/3 LL (3) - Run 1",
-          "actualSecOrd": 31.6
-        },
-        {
-          "reference": "2026-04-10 05-57 - Ripple+ Multi LL (8) - Run 2",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 05-57 - Wild Dose 2/3 LL (3) - Run 2",
-          "actualSecOrd": 27
         },
         {
           "reference": "2026-04-10 05-57 - Wild Dose 2/3 LL (3) - Run 3",
-          "actualSecOrd": 25
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 06-02 - Cuddlr Multi Evri - Run 1",
@@ -15349,26 +15218,257 @@
         },
         {
           "reference": "2026-04-10 06-02 - Wild Dose Over 6 Blister Evri (8) - Run 1",
-          "actualSecOrd": 46.9
+          "actualSecOrd": 28.8
         },
         {
           "reference": "2026-04-10 06-02 - Rosalique Multi Evri ND (8) - Run 1",
-          "actualSecOrd": 43.1
+          "actualSecOrd": null
         },
         {
           "reference": "2026-04-10 06-02 - Wild Dose 2/3 Evri ND (3) - Run 1",
-          "actualSecOrd": 25.4
+          "actualSecOrd": 9
         },
         {
           "reference": "2026-04-10 06-02 - SOAR Multi - Run 1",
-          "actualSecOrd": 47.5
-        },
-        {
-          "reference": "2026-04-10 06-02 - Salcura Large Evri ND (4) - Run 1",
-          "actualSecOrd": 54
+          "actualSecOrd": 51
         },
         {
           "reference": "2026-04-10 06-02 - Untamed Singles DPD (10) - Run 1",
+          "actualSecOrd": 27
+        },
+        {
+          "reference": "2026-04-10 06-02 - Totter RM - Run 1",
+          "actualSecOrd": 27.6
+        },
+        {
+          "reference": "2026-04-10 06-02 - SOAR Singles - Run 1",
+          "actualSecOrd": 32.5
+        },
+        {
+          "reference": "2026-04-10 06-02 - Rosalique Evri ND (6) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
+          "actualSecOrd": 33
+        },
+        {
+          "reference": "2026-04-10 06-02 - Untamed Singles GE (10) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Bare Biology LL (2) - Run 1",
+          "actualSecOrd": 19.8
+        },
+        {
+          "reference": "2026-04-10 06-02 - Untamed Multi - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles Evri ND (8) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Salcura Large Evri ND (4) - Run 2",
+          "actualSecOrd": 50
+        },
+        {
+          "reference": "2026-04-10 06-02 - Anicura Large Evri ND - Run 2",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Totter Singles DX - Run 1",
+          "actualSecOrd": 52.1
+        },
+        {
+          "reference": "2026-04-10 06-02 - Rosalique RM (6) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-02 - Wild Dose Evri ND (8) - Run 1",
+          "actualSecOrd": 36
+        },
+        {
+          "reference": "2026-04-10 06-02 - Pirates Grog - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-07 - Wild Dose Singles Evri (2) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 06-07 - Bare Biology Singles RM48 (5) - Run 1",
+          "actualSecOrd": 35.2
+        },
+        {
+          "reference": "2026-04-10 06-32 - Rhinomed - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-02 - The Opal - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-02 - Second Skin Singles - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-02 - Kit Blake - Run 1",
+          "actualSecOrd": 130.5
+        },
+        {
+          "reference": "2026-04-10 07-02 - ST8 Supply - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-02 - Second Skin Multi - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-02 - Natroceutics - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "&Daughter Singles",
+          "actualSecOrd": null
+        },
+        {
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 07-12 - Troubadour - Run 1",
+          "actualSecOrd": 22
+        },
+        {
+          "reference": "H&S Superclub",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 05-48 - Wild Dose Singles Bloating LL Box (2) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 05-53 - Bare Biology Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 06-08 - Wild Dose Evri (8) - Run 3",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 12-58 - Wild Dose Singles Bloating LL Custom (2) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 13-18 - Untamed Singles DPD 1pm (10) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 13-23 - SOAR Singles 1pm - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-06 13-33 - Wild Dose Singles LL 1pm (2) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-07 13-20 - Wild Dose 2/3 Bloating LL 1pm (3) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-08 05-40 - Wild Dose Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-08 13-11 - Salcura Trade 1pm - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-08 13-21 - OGT Trade 1pm - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-09 06-01 - INDI Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-09 06-01 - Rosalique Evri (6) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "Bare Biology Trade",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-09 13-02 - Ripple+ Retail  1pm - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-32 - Rosalique Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-37 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-42 - Anicura Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-42 - Salcura Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-47 - Wild Dose Singles Bloating LL Box (2) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-52 - Rosalique Pre Mades Evri ND (4) - Run 1",
+          "actualSecOrd": 79.2
+        },
+        {
+          "reference": "2026-04-10 05-52 - Ripple+ Singles LL (6) - Run 1",
+          "actualSecOrd": 47.8
+        },
+        {
+          "reference": "2026-04-10 05-52 - Bare Biology Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-52 - Salcura Singles (3) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Ripple+ Evri (8) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Ripple+ Evri ND (8) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Luella Grey Trade - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Ripple+ Multi LL (8) - Run 1",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Wild Dose 2/3 LL (3) - Run 1",
+          "actualSecOrd": 31.6
+        },
+        {
+          "reference": "2026-04-10 05-57 - Ripple+ Multi LL (8) - Run 2",
+          "actualSecOrd": null
+        },
+        {
+          "reference": "2026-04-10 05-57 - Wild Dose 2/3 LL (3) - Run 2",
+          "actualSecOrd": 28
+        },
+        {
+          "reference": "2026-04-10 06-02 - Salcura Large Evri ND (4) - Run 1",
           "actualSecOrd": 54
         },
         {
@@ -15376,20 +15476,8 @@
           "actualSecOrd": 200
         },
         {
-          "reference": "2026-04-10 06-02 - Totter RM - Run 1",
-          "actualSecOrd": 28.4
-        },
-        {
-          "reference": "2026-04-10 06-02 - SOAR Singles - Run 1",
-          "actualSecOrd": 37.3
-        },
-        {
           "reference": "2026-04-10 06-02 - Wild Dose Singles LL (2) - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 06-02 - Rosalique Evri ND (6) - Run 1",
-          "actualSecOrd": 31.3
         },
         {
           "reference": "2026-04-10 06-02 - Wild Dose 2/3 Evri TIME (3) - Run 1",
@@ -15400,32 +15488,16 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
-          "actualSecOrd": 31.5
-        },
-        {
-          "reference": "2026-04-10 06-02 - Untamed Singles GE (10) - Run 1",
-          "actualSecOrd": 33
-        },
-        {
           "reference": "2026-04-10 06-02 - Wild Dose 4+ Evri (4) - Run 1",
-          "actualSecOrd": 36
+          "actualSecOrd": 48
         },
         {
           "reference": "2026-04-10 06-02 - Luella Gray - Run 1",
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 06-02 - Bare Biology LL (2) - Run 1",
-          "actualSecOrd": 31
-        },
-        {
           "reference": "2026-04-10 06-02 - Wild Dose 4+ Evri (4) - Run 2",
-          "actualSecOrd": 57
-        },
-        {
-          "reference": "2026-04-10 06-02 - Untamed Multi - Run 1",
-          "actualSecOrd": 62
+          "actualSecOrd": 80
         },
         {
           "reference": "2026-04-10 06-02 - Ripple+ RM (6) - Run 1",
@@ -15444,48 +15516,16 @@
           "actualSecOrd": 86.7
         },
         {
-          "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles Evri ND (8) - Run 1",
-          "actualSecOrd": 24.6
-        },
-        {
-          "reference": "2026-04-10 06-02 - Salcura Large Evri ND (4) - Run 2",
-          "actualSecOrd": 68.3
-        },
-        {
-          "reference": "2026-04-10 06-02 - Anicura Large Evri ND - Run 2",
-          "actualSecOrd": 28
-        },
-        {
           "reference": "2026-04-10 06-02 - La Bonne Brosse Trade - Run 1",
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 06-02 - Totter Singles DX - Run 1",
-          "actualSecOrd": 49.3
-        },
-        {
-          "reference": "2026-04-10 06-02 - Rosalique RM (6) - Run 1",
-          "actualSecOrd": 24
-        },
-        {
           "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 2",
-          "actualSecOrd": 30.3
-        },
-        {
-          "reference": "2026-04-10 06-02 - Wild Dose Evri ND (8) - Run 1",
-          "actualSecOrd": 40.3
+          "actualSecOrd": 31.3
         },
         {
           "reference": "2026-04-10 06-02 - Wild Dose BOTTLE Singles RM48 (8) - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 06-02 - Pirates Grog - Run 1",
-          "actualSecOrd": 82.5
-        },
-        {
-          "reference": "2026-04-10 06-07 - Wild Dose Singles Evri (2) - Run 1",
-          "actualSecOrd": 12.9
         },
         {
           "reference": "2026-04-10 06-07 - INDI Gutbar Evri - Run 1",
@@ -15494,10 +15534,6 @@
         {
           "reference": "2026-04-10 06-07 - Wild Dose RM (8) - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 06-07 - Bare Biology Singles RM48 (5) - Run 1",
-          "actualSecOrd": 39.2
         },
         {
           "reference": "2026-04-10 06-07 - Wild Dose Evri (8) - Run 1",
@@ -15513,7 +15549,7 @@
         },
         {
           "reference": "2026-04-10 06-07 - Wild Dose Evri (8) - Run 3",
-          "actualSecOrd": 71.7
+          "actualSecOrd": 71.4
         },
         {
           "reference": "2026-04-10 06-12 - Spacemasks Singles - Run 1",
@@ -15537,7 +15573,7 @@
         },
         {
           "reference": "2026-04-10 06-12 - Bare Biology RM48 (7) - Run 1",
-          "actualSecOrd": null
+          "actualSecOrd": 42
         },
         {
           "reference": "2026-04-10 06-12 - Bare Biology RM48 (7) - Run 2",
@@ -15560,10 +15596,6 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 06-32 - Rhinomed - Run 1",
-          "actualSecOrd": 94
-        },
-        {
           "reference": "2026-04-10 07-02 - Duo Singles - Run 1",
           "actualSecOrd": null
         },
@@ -15576,20 +15608,8 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 07-02 - The Opal - Run 1",
-          "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 07-02 - Second Skin Singles - Run 1",
-          "actualSecOrd": 6
-        },
-        {
           "reference": "2026-04-10 07-02 - Rampley DPD - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "2026-04-10 07-02 - Kit Blake - Run 1",
-          "actualSecOrd": 157
         },
         {
           "reference": "2026-04-10 07-02 - Meanwhile Drinks - Run 1",
@@ -15600,31 +15620,12 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 07-02 - ST8 Supply - Run 1",
-          "actualSecOrd": 48
-        },
-        {
           "reference": "2026-04-10 07-02 - Duo Multi - Run 1",
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 07-02 - Second Skin Multi - Run 1",
-          "actualSecOrd": 108
-        },
-        {
           "reference": "2026-04-10 07-02 - PeakFlowSpace - Run 1",
-          "actualSecOrd": 35.5
-        },
-        {
-          "reference": "2026-04-10 07-02 - Natroceutics - Run 1",
-          "actualSecOrd": 21
-        },
-        {
-          "reference": "&Daughter Singles",
-          "actualSecOrd": 117.6
-        },
-        {
-          "actualSecOrd": 39
+          "actualSecOrd": 36.9
         },
         {
           "reference": "2026-04-10 07-07 - &Daughter Multi - Run 1",
@@ -15636,7 +15637,7 @@
         },
         {
           "reference": "2026-04-10 07-07 - Rippl Impact Singles Evri International - Run 1",
-          "actualSecOrd": 128
+          "actualSecOrd": 128.5
         },
         {
           "reference": "2026-04-10 07-07 - Shirt Company Singles - Run 1",
@@ -15667,16 +15668,8 @@
           "actualSecOrd": null
         },
         {
-          "reference": "2026-04-10 07-12 - Troubadour - Run 1",
-          "actualSecOrd": 78
-        },
-        {
           "reference": "2026-04-10 07-17 - Emma Shipley - Run 1",
           "actualSecOrd": null
-        },
-        {
-          "reference": "H&S Superclub",
-          "actualSecOrd": 6
         },
         {
           "reference": "2026-04-10 08-47 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
