@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T14:12:02.788Z",
+  "saved": "2026-04-15T14:17:42.719Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16919,6 +16919,33 @@
       "actualSecOrd": 50,
       "orderCount": 9,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430482,
+      "reference": "Salcura Large Evri ND",
+      "date": "2026-04-15T13:58:14.353Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45.8,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430513,
+      "reference": "2026-04-15 13-19 - Wild Dose Singles Bloating LL 1pm (2) - Run 1",
+      "date": "2026-04-15T13:59:44.807Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 21.2,
+      "orderCount": 47,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430450,
+      "reference": "Bare Biology RM48",
+      "date": "2026-04-15T14:05:26.744Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 73.6,
+      "orderCount": 15,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -17402,7 +17429,7 @@
       "dow": 3,
       "hour": 15,
       "count": 15,
-      "ts": "2026-04-15T14:00:19.364Z",
+      "ts": "2026-04-15T14:17:38.059Z",
       "dateHour": "2026-04-15T14"
     }
   ]
