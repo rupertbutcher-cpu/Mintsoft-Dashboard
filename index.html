@@ -2246,8 +2246,27 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     if (res.status === 404) return null;
     if (!res.ok) throw new Error('GitHub GET ' + path + ': HTTP ' + res.status);
     const meta = await res.json();
-    const content = JSON.parse(atob(meta.content.replace(/\n/g, '')));
-    return { data: content, sha: meta.sha };
+
+    let text;
+    if (meta.content && meta.content.trim()) {
+      // Small file — content is base64-encoded inline
+      text = atob(meta.content.replace(/\n/g, ''));
+    } else if (meta.download_url) {
+      // Large file (>1MB) — GitHub omits content, use download_url instead
+      // Route through proxy to avoid CORS issues
+      const rawUrl = meta.download_url;
+      const proxyUrl = baseUrl() + '/raw-gh?url=' + encodeURIComponent(rawUrl);
+      const rawRes = await fetch(proxyUrl, {
+        headers: { Authorization: 'token ' + ghToken }
+      });
+      if (!rawRes.ok) throw new Error('GitHub raw download failed: HTTP ' + rawRes.status);
+      text = await rawRes.text();
+    } else {
+      throw new Error('GitHub file has no content or download_url');
+    }
+
+    const data = JSON.parse(text);
+    return { data, sha: meta.sha };
   }
 
   async function ghPutFile(path, data, existingSha) {
