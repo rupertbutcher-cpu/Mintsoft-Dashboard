@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T12:00:59.259Z",
+  "saved": "2026-04-15T12:03:12.739Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16667,6 +16667,15 @@
       "actualSecOrd": 70.3,
       "orderCount": 18,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430477,
+      "reference": "2026-04-15 11-08 - Emma Shipley 11am - Run 1",
+      "date": "2026-04-15T11:57:51.965Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 142.8,
+      "orderCount": 5,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -17131,6 +17140,13 @@
       "count": 8,
       "ts": "2026-04-15T11:47:04.873Z",
       "dateHour": "2026-04-15T11"
+    },
+    {
+      "dow": 3,
+      "hour": 13,
+      "count": 11,
+      "ts": "2026-04-15T12:03:09.369Z",
+      "dateHour": "2026-04-15T12"
     }
   ]
 }
