@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T09:25:27.442Z",
+  "saved": "2026-04-15T09:26:03.323Z",
   "batches": [
     {
       "batchId": 8430323,
@@ -16082,6 +16082,42 @@
       "actualSecOrd": 52.8,
       "orderCount": 36,
       "packerCount": 19
+    },
+    {
+      "batchId": 8430322,
+      "reference": "2026-04-15 05-48 - Anicura Amazon - Run 1",
+      "date": "2026-04-15T08:59:29.784Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 34.8,
+      "orderCount": 15,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8430325,
+      "reference": "2026-04-15 05-48 - Wild Dose Singles Bloating LL Box (2) - Run 1",
+      "date": "2026-04-15T09:09:34.454Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 22.8,
+      "orderCount": 183,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8430346,
+      "reference": "2026-04-15 05-58 - Wild Dose 2/3 LL (3) - Run 2",
+      "date": "2026-04-15T09:09:31.389Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 55.1,
+      "orderCount": 16,
+      "packerCount": 19
+    },
+    {
+      "batchId": 8430430,
+      "reference": "2026-04-15 07-08 - Rippl Impact Multi Evri International - Run 1",
+      "date": "2026-04-15T09:08:14.436Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 220.5,
+      "orderCount": 4,
+      "packerCount": 19
     }
   ],
   "packerSnaps": [
@@ -16523,7 +16559,7 @@
       "dow": 3,
       "hour": 10,
       "count": 13,
-      "ts": "2026-04-15T09:11:20.764Z",
+      "ts": "2026-04-15T09:25:59.116Z",
       "dateHour": "2026-04-15T09"
     }
   ]
