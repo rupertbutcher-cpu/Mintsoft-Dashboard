@@ -573,6 +573,10 @@
   // History is stored in browser storage — auto-loads when the dashboard opens,
   // auto-saves every 2 hours. No file management needed.
   const LS_KEY       = 'msoft_history';
+  // Hard floor: any batch with actualSecOrd below this is a data artefact
+  // (pre-made label scans that survived the gap filter). Excluded from history
+  // saves AND ignored in all benchmark / target calculations.
+  const MIN_VALID_SEC_ORD = 5;
   let batchHistory   = [];
   let lastAutoSave   = 0;
   const AUTO_SAVE_MS = 2 * 60 * 60 * 1000;  // 2 hours
@@ -674,7 +678,7 @@
     let added = 0;
     const todayPackerCount = Object.keys(packerMap).length || 1;
     for (const row of batchRows) {
-      if (!row.actualSecOrd || !row.despatched) continue;
+      if (!row.actualSecOrd || row.actualSecOrd < MIN_VALID_SEC_ORD || !row.despatched) continue;
       if (existing.has(row.id)) continue;
       const batchDate = row.batchEnd || new Date();
       batchHistory.push({
@@ -705,6 +709,7 @@
     // Group by base reference
     const groups = {};
     for (const b of batchHistory) {
+      if (b.actualSecOrd < MIN_VALID_SEC_ORD) continue;
       const key = baseRef(b.reference || '');
       if (!groups[key]) groups[key] = [];
       groups[key].push(b);
@@ -729,6 +734,7 @@
     if (batchHistory.length === 0) return map;
     const groups = {};
     for (const b of batchHistory) {
+      if (b.actualSecOrd < MIN_VALID_SEC_ORD) continue;
       const key = baseRef(b.reference || '');
       if (!groups[key]) groups[key] = [];
       groups[key].push(b);
@@ -750,6 +756,7 @@
     if (batchHistory.length === 0) return map;
     const groups = {};
     for (const b of batchHistory) {
+      if (b.actualSecOrd < MIN_VALID_SEC_ORD) continue;
       const key = baseRef(b.reference || '');
       if (!groups[key]) groups[key] = [];
       groups[key].push(b);
@@ -1328,7 +1335,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
     // Exclude orders despatched < 1 s after the previous one.
     // Pre-made label scans produce near-zero gaps that skew timing.
-    const MIN_ORDER_GAP_MS = 1000;
+    const MIN_ORDER_GAP_MS = 2000;
     function filterSubSecondOrders(sortedTimes) {
       if (!sortedTimes.length) return sortedTimes;
       const out = [sortedTimes[0]];
@@ -1390,7 +1397,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         : null;
 
       // Actual secs per order — only valid if ≥25% of orders survived the sub-second filter
-      const minViableTimingOrders = Math.max(3, Math.ceil(orderCount * 0.25));
+      const minViableTimingOrders = Math.max(3, Math.ceil(orderCount * 0.30));
       const actualSecOrd = (actualDurationMin && timingOrderCount >= minViableTimingOrders)
         ? Math.round((actualDurationMin * 60) / timingOrderCount * 10) / 10
         : null;
@@ -1479,7 +1486,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         if (!packerMap[name]) {
           packerMap[name] = {
             orders: 0, totalActualSecs: 0, totalTargetSecs: 0,
-            batches: 0, allTimes: [], batchTimesList: [], refs: {}, lastSeen: null
+            batches: 0, allTimes: [], batchTimesList: [], refs: {}, lastSeen: null,
+            batchBreakdown: []
           };
         }
         const p = packerMap[name];
@@ -1505,13 +1513,25 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         const filteredPackerTimes = filterSubSecondOrders(sortedPackerTimes);
         const timingPackerOrderCount = filteredPackerTimes.length;
         const packerActiveSecs       = activeSecsFromTimes(filteredPackerTimes);
-        const minViablePackerOrders  = Math.max(3, Math.ceil(packerOrderCount * 0.25));
+        const minViablePackerOrders  = Math.max(3, Math.ceil(packerOrderCount * 0.30));
         const packerActualSecOrd     = (packerActiveSecs && timingPackerOrderCount >= minViablePackerOrders)
           ? packerActiveSecs / timingPackerOrderCount
           : null;
 
         if (packerActualSecOrd) p.totalActualSecs += packerActualSecOrd * packerOrderCount;
         if (targetSecOrd)       p.totalTargetSecs += targetSecOrd * packerOrderCount;
+
+        // Store per-batch breakdown for the drill-down click view
+        p.batchBreakdown.push({
+          id:          batch.ID,
+          reference:   batch.Reference || '',
+          batchType,
+          orders:      packerOrderCount,
+          actualSecOrd: packerActualSecOrd,
+          targetSecOrd,
+          start: filteredPackerTimes.length ? filteredPackerTimes[0].toISOString() : null,
+          end:   filteredPackerTimes.length ? filteredPackerTimes[filteredPackerTimes.length-1].toISOString() : null,
+        });
       }
     }
 
@@ -1763,6 +1783,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
           top10Target:  calcPackerTarget(p.refs),
           firstSeen:    p.allTimes.length ? new Date(Math.min(...p.allTimes.map(t=>t.getTime()))).toISOString() : null,
           lastSeen:     p.lastSeen ? p.lastSeen.toISOString() : null,
+          batchBreakdown: p.batchBreakdown || [],
         })),
       batchRows: batchRows.map(b => ({
         id:               b.id,
@@ -1992,6 +2013,54 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   }
 
   // ── Picker table ──────────────────────────────────────
+  // ── Packer batch drill-down helpers ──────────────────────────────────────
+  function packerDrillHTML(breakdown, packerKey) {
+    if (!breakdown || !breakdown.length) return '<p class="empty-msg" style="padding:8px 0;">No batch-level data available</p>';
+    const fS = v => (v != null && !isNaN(+v)) ? (+v).toFixed(0)+'s' : '—';
+    const fT = ts => { if(!ts) return '—'; const d=new Date(ts); return d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); };
+    const rows = breakdown.map(b => {
+      const vsT = b.actualSecOrd && b.targetSecOrd
+        ? ((b.actualSecOrd - b.targetSecOrd) / b.targetSecOrd * 100) : null;
+      const vsStr = vsT != null
+        ? `<span style="color:${vsT<=0?'var(--green)':'var(--red)'};">${vsT>0?'+':''}${vsT.toFixed(0)}%</span>` : '—';
+      let col = 'var(--blue)';
+      if (b.actualSecOrd && b.targetSecOrd) col = b.actualSecOrd <= b.targetSecOrd ? 'var(--green)' : 'var(--red)';
+      return `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:6px 10px;font-size:12px;color:var(--muted);">${b.id||'—'}</td>
+        <td style="padding:6px 10px;font-weight:600;font-size:12px;">${b.reference||'—'}</td>
+        <td style="padding:6px 10px;text-align:center;font-size:12px;">${b.batchType!=null?b.batchType:'—'}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;">${b.orders}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;color:${col};font-weight:600;">${fS(b.actualSecOrd)}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;color:var(--muted);">${fS(b.targetSecOrd)}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;">${vsStr}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;color:var(--muted);">${fT(b.start)}</td>
+        <td style="padding:6px 10px;text-align:right;font-size:12px;color:var(--muted);">${fT(b.end)}</td>
+      </tr>`;
+    }).join('');
+    return `<table style="width:100%;border-collapse:collapse;background:var(--bg);border-radius:6px;overflow:hidden;">
+      <thead><tr style="background:var(--surf2);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.4px;">
+        <th style="text-align:left;padding:6px 10px;">Batch ID</th>
+        <th style="text-align:left;padding:6px 10px;">Reference</th>
+        <th style="text-align:center;padding:6px 10px;">Type</th>
+        <th style="text-align:right;padding:6px 10px;">Orders</th>
+        <th style="text-align:right;padding:6px 10px;">Actual s/ord</th>
+        <th style="text-align:right;padding:6px 10px;">Target s/ord</th>
+        <th style="text-align:right;padding:6px 10px;">vs Target</th>
+        <th style="text-align:right;padding:6px 10px;">Start</th>
+        <th style="text-align:right;padding:6px 10px;">End</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function togglePackerDrill(rowId, btnEl) {
+    const dr = document.getElementById(rowId);
+    if (!dr) return;
+    const open = dr.style.display !== 'none';
+    dr.style.display = open ? 'none' : 'table-row';
+    btnEl.textContent = open ? '▶' : '▼';
+  }
+
   function renderPickerTable(packerMap, teamActual, teamTarget) {
     const tbody = $('picker-tbody');
     const packers = Object.entries(packerMap)
@@ -2055,8 +2124,14 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         : '<span class="badge" style="background:#1c1a02;color:#fde047;border-color:#713f12;margin-left:4px;">Inactive</span>';
       const rowStyle = p.isActive ? '' : 'opacity:0.55;';
 
+      const drillId = 'drill-' + p.name.replace(/\W/g,'_');
+      const drillHTML = packerDrillHTML(p.batchBreakdown || [], drillId);
       return `<tr style="${rowStyle}">
-        <td><strong>${p.name}</strong>${inactiveBadge}</td>
+        <td>
+          <button onclick="togglePackerDrill('${drillId}', this)"
+            style="background:none;border:none;color:var(--blue);cursor:pointer;font-size:11px;padding:0 4px 0 0;vertical-align:middle;" title="Show batch breakdown">▶</button>
+          <strong>${p.name}</strong>${inactiveBadge}
+        </td>
         <td>${p.orders}</td>
         <td>${p.batches}</td>
         <td>${actualSecOrd ? actualSecOrd.toFixed(1)+'s' : '—'}</td>
@@ -2066,6 +2141,11 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         <td>${first}</td>
         <td>${last}</td>
         <td>${badge}</td>
+      </tr>
+      <tr id="${drillId}" style="display:none;">
+        <td colspan="10" style="padding:0 12px 10px 28px;background:var(--bg);">
+          ${drillHTML}
+        </td>
       </tr>`;
     }).join('');
   }
@@ -2553,8 +2633,14 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       const workMins = (p.firstSeen && p.lastSeen)
         ? ((new Date(p.lastSeen) - new Date(p.firstSeen)) / 60000).toFixed(0) + 'm'
         : '—';
+      const pdId   = 'pd-drill-' + dateStr.replace(/\W/g,'_') + '-' + p.name.replace(/\W/g,'_');
+      const pdHTML = packerDrillHTML(p.batchBreakdown || [], pdId);
       return `<tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:8px 10px;font-weight:600;">${isStar?'⭐ ':''}${p.name}</td>
+        <td style="padding:8px 10px;font-weight:600;">
+          <button onclick="togglePackerDrill('${pdId}', this)"
+            style="background:none;border:none;color:var(--blue);cursor:pointer;font-size:11px;padding:0 4px 0 0;vertical-align:middle;" title="Show batch breakdown">▶</button>
+          ${isStar?'⭐ ':''}${p.name}
+        </td>
         <td style="padding:8px 10px;text-align:right;">${p.orders}</td>
         <td style="padding:8px 10px;text-align:right;">${p.batches||'—'}</td>
         <td style="padding:8px 10px;text-align:right;color:${col};font-weight:600;">${fS(p.actualSecOrd)}</td>
@@ -2564,6 +2650,11 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(p.firstSeen)}</td>
         <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(p.lastSeen)}</td>
         <td style="padding:8px 10px;text-align:right;color:var(--muted);">${workMins}</td>
+      </tr>
+      <tr id="${pdId}" style="display:none;">
+        <td colspan="10" style="padding:0 12px 10px 28px;background:var(--bg);">
+          ${pdHTML}
+        </td>
       </tr>`;
     }).join('');
 
