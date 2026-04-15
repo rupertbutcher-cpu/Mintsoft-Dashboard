@@ -454,8 +454,8 @@
     <h3>Hourly Despatch Throughput</h3>
     <div id="hourly-bars"><p class="empty-msg">Awaiting data…</p></div>
   </div>
-  <div class="chart-card" style="flex:1.5;min-width:220px;">
-    <h3>Packer — Actual vs Target (secs/order)</h3>
+  <div class="chart-card" style="flex:1.5;min-width:220px;padding-right:52px;">
+    <h3>Packer Performance</h3>
     <div id="packer-pace-bars"><p class="empty-msg">Awaiting data…</p></div>
   </div>
   <div class="chart-card" style="flex:1;min-width:200px;">
@@ -1325,6 +1325,18 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     // Build a Set of status IDs that mean "still needs work".
     // Any order NOT in this set is considered done (despatched, cancelled, invoiced, etc.)
     const pendingSet = new Set(pendingStatusIds || []);
+
+    // Exclude orders despatched < 1 s after the previous one.
+    // Pre-made label scans produce near-zero gaps that skew timing.
+    const MIN_ORDER_GAP_MS = 1000;
+    function filterSubSecondOrders(sortedTimes) {
+      if (!sortedTimes.length) return sortedTimes;
+      const out = [sortedTimes[0]];
+      for (let i = 1; i < sortedTimes.length; i++) {
+        if (sortedTimes[i] - sortedTimes[i - 1] >= MIN_ORDER_GAP_MS) out.push(sortedTimes[i]);
+      }
+      return out;
+    }
     const packerMap  = {};  // name → { orders, totalActualSecs, totalTargetSecs, batches, allTimes }
     const batchRows  = [];
 
@@ -1363,20 +1375,24 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         ? Math.round((targetSecOrd * orderCount) / 60 * 10) / 10
         : null;
 
-      // Outlier-clean the batch duration: sum only spans ≤ 20 min, skip lunch/overnight gaps
+      // Outlier-clean the batch duration: sum only spans ≤ 20 min, skip lunch/overnight gaps.
+      // Also strip sub-second gaps (pre-made label scans) before timing calculations.
+      const timingTimes = filterSubSecondOrders(times);
+      const timingOrderCount = timingTimes.length;
       const MAX_BREAK_SECS_BATCH = 20 * 60;
       let batchActiveSecs = 0;
-      for (let i = 1; i < times.length; i++) {
-        const gap = (times[i] - times[i-1]) / 1000;
+      for (let i = 1; i < timingTimes.length; i++) {
+        const gap = (timingTimes[i] - timingTimes[i-1]) / 1000;
         if (gap <= MAX_BREAK_SECS_BATCH) batchActiveSecs += gap;
       }
-      const actualDurationMin = (batchActiveSecs > 0 && orderCount > 1)
+      const actualDurationMin = (batchActiveSecs > 0 && timingOrderCount > 1)
         ? Math.round((batchActiveSecs / 60) * 10) / 10
         : null;
 
-      // Actual secs per order for this batch
-      const actualSecOrd = (actualDurationMin && orderCount > 0)
-        ? Math.round((actualDurationMin * 60) / orderCount * 10) / 10
+      // Actual secs per order — only valid if ≥25% of orders survived the sub-second filter
+      const minViableTimingOrders = Math.max(3, Math.ceil(orderCount * 0.25));
+      const actualSecOrd = (actualDurationMin && timingOrderCount >= minViableTimingOrders)
+        ? Math.round((actualDurationMin * 60) / timingOrderCount * 10) / 10
         : null;
 
       // A batch is effectively complete if NO orders remain in a pending/actionable status.
@@ -1456,6 +1472,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         return active > 0 ? active : null;
       }
 
+
       // ── Attribute orders and timing to each packer ────────────────────────────
       for (const [rawUser, packerTimes] of Object.entries(userOrders)) {
         const name = packerName(rawUser);
@@ -1482,11 +1499,15 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         const br = baseRef(batch.Reference || '');
         p.refs[br] = (p.refs[br] || 0) + packerOrderCount;
 
-        // Secs/order for this packer's share of the batch using outlier-cleaned times
-        const sortedPackerTimes = [...packerTimes].sort((a,b) => a-b);
-        const packerActiveSecs  = activeSecsFromTimes(sortedPackerTimes);
-        const packerActualSecOrd = (packerActiveSecs && packerOrderCount > 1)
-          ? packerActiveSecs / packerOrderCount
+        // Secs/order for this packer's share of the batch using outlier-cleaned times.
+        // Sub-second gaps (pre-made label scans) are excluded before timing calculations.
+        const sortedPackerTimes   = [...packerTimes].sort((a,b) => a-b);
+        const filteredPackerTimes = filterSubSecondOrders(sortedPackerTimes);
+        const timingPackerOrderCount = filteredPackerTimes.length;
+        const packerActiveSecs       = activeSecsFromTimes(filteredPackerTimes);
+        const minViablePackerOrders  = Math.max(3, Math.ceil(packerOrderCount * 0.25));
+        const packerActualSecOrd     = (packerActiveSecs && timingPackerOrderCount >= minViablePackerOrders)
+          ? packerActiveSecs / timingPackerOrderCount
           : null;
 
         if (packerActualSecOrd) p.totalActualSecs += packerActualSecOrd * packerOrderCount;
@@ -1852,17 +1873,16 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   function renderPackerPaceBars(packerMap, teamTarget) {
     const el = $('packer-pace-bars');
     const packers = Object.entries(packerMap)
-      .filter(([,p])=>p.orders>0)
-      .map(([name,p])=>({
+      .filter(([,p]) => p.orders > 0)
+      .map(([name,p]) => ({
         name,
-        actual:   p.orders>0 ? p.totalActualSecs/p.orders : null,
-        target:   p.orders>0 ? p.totalTargetSecs/p.orders : null,
+        actual:   p.orders > 0 ? p.totalActualSecs / p.orders : null,
+        target:   p.orders > 0 ? p.totalTargetSecs / p.orders : null,
         orders:   p.orders,
         isActive: p.isActive,
         refs:     p.refs
       }))
       .sort((a,b) => {
-        // Active packers first, then by order count
         if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
         return b.orders - a.orders;
       });
@@ -1875,46 +1895,88 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       top10Target: calcPackerTarget(p.refs)
     }));
 
-    const maxSecs = Math.max(
-      ...packersWithBench.flatMap(p => [p.actual||0, p.benchTarget||0, p.top10Target||0]),
-      1
-    );
+    // Legend
+    const legend = `
+      <div style="display:flex;gap:12px;margin-bottom:10px;font-size:11px;color:var(--muted);flex-wrap:wrap;align-items:center;">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#a855f7;vertical-align:middle;margin-right:4px;"></span>⭐ Top 10%</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--green);vertical-align:middle;margin-right:4px;"></span>Within bench</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#f97316;vertical-align:middle;margin-right:4px;"></span>10–20% over</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);vertical-align:middle;margin-right:4px;"></span>&gt;20% over</span>
+        <span><span style="display:inline-block;width:3px;height:12px;background:var(--amber);vertical-align:middle;margin-right:4px;border-radius:1px;"></span>Bench</span>
+        <span><span style="display:inline-block;width:3px;height:12px;background:#60a5fa;vertical-align:middle;margin-right:4px;border-radius:1px;"></span>Top 10%</span>
+      </div>`;
 
-    el.innerHTML = packersWithBench.map(p => {
-      const aP   = p.actual      ? (p.actual/maxSecs*100).toFixed(1)      : 0;
-      const tP   = p.benchTarget ? (p.benchTarget/maxSecs*100).toFixed(1) : 0;
-      const t10P = p.top10Target ? (p.top10Target/maxSecs*100).toFixed(1) : 0;
-      const good = p.actual && p.benchTarget && p.actual <= p.benchTarget;
-      const hasBench = !!calcPackerBenchmark(p.refs);
-      const benchLabel  = hasBench ? 'Bench' : 'Target';
-      const nameColor   = p.isActive ? 'var(--text)' : 'var(--muted)';
+    const rows = packersWithBench.map(p => {
+      // Per-packer scale: 100% of track = this packer's own highest value + 8% headroom
+      const rowMax   = Math.max(p.actual||0, p.benchTarget||0, p.top10Target||0, 1);
+      const rowScale = rowMax / 0.92;
+      const aP   = p.actual      ? Math.min(100, p.actual      / rowScale * 100).toFixed(1) : 0;
+      const bP   = p.benchTarget ? Math.min(100, p.benchTarget / rowScale * 100).toFixed(1) : null;
+      const t10P = p.top10Target ? Math.min(100, p.top10Target / rowScale * 100).toFixed(1) : null;
+
+      const hasBench   = !!calcPackerBenchmark(p.refs);
+      const benchLabel = hasBench ? 'Bench' : 'Target';
+
+      // Colour tiers based on performance vs top10 and bench:
+      //   Purple ⭐  actual ≤ top10  (at or beating the elite target)
+      //   Green      actual ≤ bench × 1.10  (within 10% of bench)
+      //   Orange     actual ≤ bench × 1.20  (10–20% over bench)
+      //   Red        actual >  bench × 1.20  (more than 20% over bench)
+      //   Blue       no bench/top10 data yet
+      let fillColor = 'var(--blue)';
+      let isStar    = false;
+      if (p.actual) {
+        if (p.top10Target && p.actual <= p.top10Target) {
+          fillColor = '#a855f7';   // purple
+          isStar    = true;
+        } else if (p.benchTarget) {
+          if      (p.actual <= p.benchTarget * 1.10) fillColor = 'var(--green)';
+          else if (p.actual <= p.benchTarget * 1.20) fillColor = '#f97316';  // orange
+          else                                        fillColor = 'var(--red)';
+        }
+      }
+
+      const nameColor     = p.isActive ? 'var(--text)' : 'var(--muted)';
       const inactiveBadge = p.isActive ? ''
         : ' <span style="font-size:10px;background:#1c1a02;color:#fde047;border:1px solid #713f12;'
-        + 'padding:1px 6px;border-radius:999px;vertical-align:middle;">Inactive</span>';
-      const top10Row = p.top10Target ? `
-        <div class="bar-row" style="margin-bottom:2px;">
-          <div class="bar-lbl" style="width:50px;font-size:11px;color:#60a5fa;">Top 10%</div>
-          <div class="bar-track"><div class="bar-fill" style="width:${t10P}%;background:#1d4ed8;opacity:0.7;"></div></div>
-          <div class="bar-val" style="color:#60a5fa;">${p.top10Target.toFixed(0)}s</div>
-        </div>` : '';
-      return `<div style="margin-bottom:10px;opacity:${p.isActive?1:0.55};">
-        <div style="font-size:12px;margin-bottom:3px;color:${nameColor};">
-          ${p.name}${inactiveBadge}
-          <span style="color:var(--muted);font-size:11px;">(${p.orders} orders)</span>
+        + 'padding:1px 5px;border-radius:999px;vertical-align:middle;">Inactive</span>';
+
+      // Tick markers (amber = bench, blue = top10)
+      const benchMarker = bP !== null
+        ? `<div style="position:absolute;left:${bP}%;top:-1px;bottom:-1px;width:3px;background:var(--amber);border-radius:1px;opacity:0.9;" title="${benchLabel}: ${p.benchTarget.toFixed(0)}s/order"></div>`
+        : '';
+      const top10Marker = t10P !== null
+        ? `<div style="position:absolute;left:${t10P}%;top:-1px;bottom:-1px;width:3px;background:#60a5fa;border-radius:1px;opacity:0.9;" title="Top 10%: ${p.top10Target.toFixed(0)}s/order"></div>`
+        : '';
+
+      // Value annotations
+      const actualStr = p.actual      ? p.actual.toFixed(0)      + 's' : '—';
+      const benchStr  = p.benchTarget ? p.benchTarget.toFixed(0) + 's' : null;
+      const top10Str  = p.top10Target ? p.top10Target.toFixed(0) + 's' : null;
+
+      const annotations = [
+        `<span style="color:${fillColor};font-weight:700;font-size:12px;">${actualStr}</span>`,
+        benchStr  ? `<span style="color:var(--amber);font-size:10px;">${benchLabel} ${benchStr}</span>` : null,
+        top10Str  ? `<span style="color:#60a5fa;font-size:10px;">Top10 ${top10Str}</span>`             : null,
+      ].filter(Boolean).join('<span style="color:var(--border);margin:0 3px;">·</span>');
+
+      return `
+      <div style="margin-bottom:11px;opacity:${p.isActive ? 1 : 0.5};">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+          <span style="font-size:12px;color:${nameColor};">${p.name}${inactiveBadge}${isStar ? ' <span style="font-size:13px;" title="At or beating Top 10% target!">⭐</span>' : ''} <span style="color:var(--muted);font-size:11px;">(${p.orders})</span></span>
+          <span style="display:flex;align-items:center;gap:5px;">${annotations}</span>
         </div>
-        <div class="bar-row" style="margin-bottom:2px;">
-          <div class="bar-lbl" style="width:50px;font-size:11px;">Actual</div>
-          <div class="bar-track"><div class="bar-fill ${good?'green':'red'}" style="width:${aP}%"></div></div>
-          <div class="bar-val">${p.actual ? p.actual.toFixed(0)+'s' : '—'}</div>
+        <div class="bar-track" style="position:relative;height:11px;border-radius:999px;overflow:visible;">
+          <div style="position:absolute;inset:0;background:var(--surf2);border-radius:999px;overflow:hidden;">
+            <div style="height:100%;width:${aP}%;background:${fillColor};border-radius:999px;transition:width .4s;"></div>
+          </div>
+          ${benchMarker}
+          ${top10Marker}
         </div>
-        <div class="bar-row" style="margin-bottom:2px;">
-          <div class="bar-lbl" style="width:50px;font-size:11px;color:var(--muted);">${benchLabel}</div>
-          <div class="bar-track"><div class="bar-fill" style="width:${tP}%;background:var(--border)"></div></div>
-          <div class="bar-val" style="color:var(--muted);">${p.benchTarget ? p.benchTarget.toFixed(0)+'s' : '—'}</div>
-        </div>
-        ${top10Row}
       </div>`;
     }).join('');
+
+    el.innerHTML = legend + rows;
   }
 
   // ── Picker table ──────────────────────────────────────
