@@ -406,7 +406,7 @@
   <span style="color:var(--muted);font-weight:600;">Batch History:</span>
   <span id="history-count" style="color:var(--fg);">No history loaded</span>
   <button class="btn" id="btn-gh-connect" onclick="ghConnect()" style="background:#238636;">⬡ Connect GitHub</button>
-  <button class="btn" id="btn-gh-sync" onclick="ghSync()" style="display:none;background:#238636;">↻ Sync GitHub</button>
+  <button class="btn" id="btn-gh-sync" onclick="ghSync()" style="display:none;background:#238636;" title="Pull latest from GitHub, then push local history up">↻ Sync GitHub</button>
   <button class="btn" id="btn-gh-disconnect" onclick="ghDisconnect()" style="display:none;background:#555;">Disconnect</button>
   <button class="btn" onclick="exportHistory()" title="Download history as a JSON file to move to another machine">⬇ Export history</button>
   <label class="btn" style="cursor:pointer;" title="Manually load a mintsoft-history.json backup">
@@ -693,6 +693,7 @@
     updateHistoryUI();
     // Auto-save every 2 hours (or immediately on first new data)
     if (batchHistory.length > 0 && (lastAutoSave === 0 || Date.now() - lastAutoSave >= AUTO_SAVE_MS)) {
+      lastAutoSave = Date.now();
       scheduleGhSave();
     }
   }
@@ -2273,7 +2274,8 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
     try {
       await ghLoadHistory();
       await ghLoadDaySnapshots();
-      await scheduleGhSave();
+      // After loading, always push current local history so new machines get it immediately
+      if (batchHistory.length > 0) await ghSaveHistory();
       updateGhUI(true);
     } catch(e) {
       console.warn('GitHub sync error:', e);
@@ -2284,7 +2286,16 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
 
   async function ghLoadHistory() {
     const file = await ghGetFile(GH_HIST_PATH);
-    if (!file) { setHistoryStatus('GitHub: no history file yet — will create on first save'); return; }
+    if (!file) {
+      // No file on GitHub yet — push local history up immediately to create it
+      if (batchHistory.length > 0) {
+        setHistoryStatus('GitHub: creating history file…');
+        await ghSaveHistory();
+      } else {
+        setHistoryStatus('GitHub: no history file yet — will create after first despatch data loads');
+      }
+      return;
+    }
     const data    = file.data;
     const batches = Array.isArray(data) ? data : (data.batches || []);
     const existing = new Set(batchHistory.map(h => h.batchId));
