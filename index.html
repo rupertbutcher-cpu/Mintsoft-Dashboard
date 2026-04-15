@@ -1344,6 +1344,39 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       }
       return out;
     }
+    function computeActiveSecsMAD(sortedTimes) {
+        if (!sortedTimes || sortedTimes.length < 2) return null;
+        const gaps = [];
+        for (let i = 1; i < sortedTimes.length; i++) {
+          gaps.push((sortedTimes[i] - sortedTimes[i-1]) / 1000);
+        }
+        // Dynamic walk-away threshold using Median Absolute Deviation.
+        // MAD is robust to outliers so one long gap doesn't inflate the threshold.
+        // Floor 3 min: always allow short interruptions (address fix, fetch boxes).
+        // Cap  20 min: always exclude lunch/overnight gaps (also used for inactivity).
+        // Fallback 5 min: too few data points to compute statistics reliably.
+        let threshold;
+        if (gaps.length < 5) {
+          threshold = 5 * 60;
+        } else {
+          const sorted = [...gaps].sort((a,b) => a-b);
+          const mid    = Math.floor(sorted.length / 2);
+          const medGap = sorted.length % 2 !== 0
+            ? sorted[mid]
+            : (sorted[mid-1] + sorted[mid]) / 2;
+          const absDevs = gaps.map(g => Math.abs(g - medGap)).sort((a,b) => a-b);
+          const aMid   = Math.floor(absDevs.length / 2);
+          const mad    = absDevs.length % 2 !== 0
+            ? absDevs[aMid]
+            : (absDevs[aMid-1] + absDevs[aMid]) / 2;
+          threshold = medGap + 2 * 1.4826 * mad;
+          threshold = Math.max(threshold, 3 * 60);   // floor:  3 min
+          threshold = Math.min(threshold, 20 * 60);  // cap:   20 min
+        }
+        let active = 0;
+        for (const gap of gaps) { if (gap <= threshold) active += gap; }
+        return active > 0 ? active : null;
+      }
     const packerMap  = {};  // name → { orders, totalActualSecs, totalTargetSecs, batches, allTimes }
     const batchRows  = [];
 
@@ -1386,12 +1419,7 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       // Also strip sub-second gaps (pre-made label scans) before timing calculations.
       const timingTimes = filterSubSecondOrders(times);
       const timingOrderCount = timingTimes.length;
-      const MAX_BREAK_SECS_BATCH = 20 * 60;
-      let batchActiveSecs = 0;
-      for (let i = 1; i < timingTimes.length; i++) {
-        const gap = (timingTimes[i] - timingTimes[i-1]) / 1000;
-        if (gap <= MAX_BREAK_SECS_BATCH) batchActiveSecs += gap;
-      }
+      const batchActiveSecs = computeActiveSecsMAD(timingTimes) || 0;
       const actualDurationMin = (batchActiveSecs > 0 && timingOrderCount > 1)
         ? Math.round((batchActiveSecs / 60) * 10) / 10
         : null;
@@ -1466,17 +1494,9 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
       // creates a huge gap in timestamps that inflates secs/order.
       // We find all inter-order gaps, remove any gap > MAX_BREAK_SECS, and sum
       // only the "active" spans to get a clean actual duration.
-      const MAX_BREAK_SECS = 20 * 60;  // 20 minutes
-
+      // activeSecsFromTimes now delegates to the MAD-based calculator
       function activeSecsFromTimes(sortedTimes) {
-        if (sortedTimes.length < 2) return null;
-        let active = 0;
-        for (let i = 1; i < sortedTimes.length; i++) {
-          const gap = (sortedTimes[i] - sortedTimes[i-1]) / 1000;
-          if (gap <= MAX_BREAK_SECS) active += gap;
-          // gaps > MAX_BREAK_SECS are treated as breaks and excluded
-        }
-        return active > 0 ? active : null;
+        return computeActiveSecsMAD(sortedTimes);
       }
 
 
