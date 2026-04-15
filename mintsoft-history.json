@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T14:50:35.800Z",
+  "saved": "2026-04-15T16:29:36.096Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17353,12 +17353,48 @@
       "packerCount": 23
     },
     {
-      "batchId": 8430542,
-      "reference": "2026-04-15 13-23 - PERS Multi 1pm - Run 1",
-      "date": "2026-04-15T14:41:25.276Z",
+      "batchId": 8430575,
+      "reference": "2026-04-15 13-29 - Bare Biology Singles RM48 1pm (5) - Run 1",
+      "date": "2026-04-15T14:30:40.391Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 116,
-      "orderCount": 3,
+      "actualSecOrd": 48,
+      "orderCount": 8,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430578,
+      "reference": "2026-04-15 13-33 - Bare Biology RM48 1pm (7) - Run 1",
+      "date": "2026-04-15T14:30:52.967Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 44.7,
+      "orderCount": 9,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430582,
+      "reference": "2026-04-15 13-33 - Anicura Large Evri ND 1pm - Run 1",
+      "date": "2026-04-15T14:30:05.050Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 49.2,
+      "orderCount": 5,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430587,
+      "reference": "2026-04-15 13-33 - Wild Dose 2/3 Evri ND 1pm (3) - Run 1",
+      "date": "2026-04-15T14:28:47.406Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 39.2,
+      "orderCount": 28,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430594,
+      "reference": "2026-04-15 13-33 - Wild Dose Singles LL 1pm (2) - Run 1",
+      "date": "2026-04-15T14:30:54.283Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 18.5,
+      "orderCount": 24,
       "packerCount": 23
     },
     {
@@ -17371,79 +17407,156 @@
       "packerCount": 23
     },
     {
-      "batchId": 8430575,
-      "reference": "2026-04-15 13-29 - Bare Biology Singles RM48 1pm (5) - Run 1",
-      "date": "2026-04-15T14:35:19.016Z",
+      "batchId": 8430494,
+      "reference": "2026-04-15 13-13 - Charlotte Simone Trade 1pm - Run 1",
+      "date": "2026-04-15T14:39:23.559Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 66,
-      "orderCount": 10,
+      "actualSecOrd": 63,
+      "orderCount": 4,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430511,
+      "reference": "2026-04-15 13-19 - Luella Gray 1pm - Run 1",
+      "date": "2026-04-15T14:43:49.179Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 142.5,
+      "orderCount": 4,
       "packerCount": 23
     },
     {
       "batchId": 8430577,
       "reference": "2026-04-15 13-33 - Wild Dose BOTTLE Singles RM48 1pm (8) - Run 1",
-      "date": "2026-04-15T14:49:47.425Z",
+      "date": "2026-04-15T14:44:27.477Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 28.6,
-      "orderCount": 13,
+      "actualSecOrd": 18,
+      "orderCount": 3,
       "packerCount": 23
     },
     {
-      "batchId": 8430578,
-      "reference": "2026-04-15 13-33 - Bare Biology RM48 1pm (7) - Run 1",
-      "date": "2026-04-15T14:32:31.959Z",
+      "batchId": 8430585,
+      "reference": "2026-04-15 13-33 - Wild Dose BOTTLE Singles Evri 1pm (8) - Run 1",
+      "date": "2026-04-15T14:44:49.675Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 45.8,
+      "actualSecOrd": 30.5,
       "orderCount": 11,
       "packerCount": 23
     },
     {
-      "batchId": 8430582,
-      "reference": "2026-04-15 13-33 - Anicura Large Evri ND 1pm - Run 1",
-      "date": "2026-04-15T14:37:43.464Z",
+      "batchId": 8430449,
+      "reference": "Bare Biology RM48",
+      "date": "2026-04-15T14:56:51.193Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 63.8,
-      "orderCount": 11,
+      "actualSecOrd": 59,
+      "orderCount": 25,
       "packerCount": 23
     },
     {
-      "batchId": 8430587,
-      "reference": "2026-04-15 13-33 - Wild Dose 2/3 Evri ND 1pm (3) - Run 1",
-      "date": "2026-04-15T14:34:11.069Z",
+      "batchId": 8430470,
+      "reference": "2026-04-15 11-03 - Luella Grey Trade 11am - Run 1",
+      "date": "2026-04-15T12:10:33.919Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 37.9,
-      "orderCount": 29,
+      "actualSecOrd": 114.4,
+      "orderCount": 17,
       "packerCount": 23
     },
     {
-      "batchId": 8430588,
-      "reference": "2026-04-15 13-33 - Wild Dose 2/3 LL 1pm (3) - Run 2",
-      "date": "2026-04-15T14:35:16.171Z",
+      "batchId": 8430498,
+      "reference": "2026-04-15 13-18 - Prana Chai 1pm - Run 1",
+      "date": "2026-04-15T14:58:46.961Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 21.6,
-      "orderCount": 10,
+      "actualSecOrd": 330,
+      "orderCount": 6,
       "packerCount": 23
     },
     {
-      "batchId": 8430594,
-      "reference": "2026-04-15 13-33 - Wild Dose Singles LL 1pm (2) - Run 1",
-      "date": "2026-04-15T14:43:38.915Z",
+      "batchId": 8430591,
+      "reference": "2026-04-15 13-33 - Wild Dose Evri ND 1pm (8) - Run 1",
+      "date": "2026-04-15T14:59:27.172Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 18.9,
-      "orderCount": 64,
+      "actualSecOrd": 52.3,
+      "orderCount": 24,
       "packerCount": 23
     },
     {
-      "batchId": 8430602,
-      "reference": "2026-04-15 13-38 - Bare Biology Pack of Six 1pm (10) - Run 1",
-      "date": "2026-04-15T14:38:30.611Z",
+      "batchId": 8430596,
+      "reference": "2026-04-15 13-38 - Wild Dose RM 1pm (8) - Run 1",
+      "date": "2026-04-15T14:59:01.755Z",
       "dayOfWeek": 3,
-      "actualSecOrd": 70.5,
+      "actualSecOrd": 34.5,
       "orderCount": 4,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430581,
+      "reference": "2026-04-15 13-33 - Wild Dose 2/3 LL 1pm (3) - Run 1",
+      "date": "2026-04-15T15:00:10.878Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 31.5,
+      "orderCount": 37,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430589,
+      "reference": "2026-04-15 13-33 - Wild Dose Pill Box Evri 1pm (8) - Run 1",
+      "date": "2026-04-15T14:59:14.511Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 55.7,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430599,
+      "reference": "2026-04-15 13-38 - Wild Dose Evri 1pm (8) - Run 1",
+      "date": "2026-04-15T15:44:23.231Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 55.1,
+      "orderCount": 27,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430584,
+      "reference": "2026-04-15 13-33 - Wild Dose BOTTLE Singles Bloating Evri 1pm (8) - Run 1",
+      "date": "2026-04-15T15:44:05.519Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 41.3,
+      "orderCount": 48,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430440,
+      "reference": "Bare Biology LL",
+      "date": "2026-04-15T14:10:39.279Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 15.4,
+      "orderCount": 47,
+      "packerCount": 24
+    },
+    {
+      "batchId": 8430604,
+      "reference": "2026-04-15 13-38 - Wild Dose Evri 1pm (8) - Run 2",
+      "date": "2026-04-15T15:55:25.828Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 74.1,
+      "orderCount": 20,
+      "packerCount": 24
     }
   ],
   "packerSnaps": [
+    {
+      "dow": 4,
+      "hour": 7,
+      "count": 8,
+      "ts": "2026-04-09T06:51:52.867Z",
+      "dateHour": "2026-04-09T06"
+    },
+    {
+      "dow": 4,
+      "hour": 8,
+      "count": 10,
+      "ts": "2026-04-09T07:52:29.453Z",
+      "dateHour": "2026-04-09T07"
+    },
     {
       "dow": 4,
       "hour": 8,
@@ -17509,30 +17622,16 @@
     },
     {
       "dow": 4,
-      "hour": 7,
-      "count": 8,
-      "ts": "2026-04-09T06:51:30.102Z",
-      "dateHour": "2026-04-09T06"
-    },
-    {
-      "dow": 4,
-      "hour": 8,
-      "count": 10,
-      "ts": "2026-04-09T07:51:02.916Z",
-      "dateHour": "2026-04-09T07"
-    },
-    {
-      "dow": 4,
       "hour": 9,
-      "count": 15,
-      "ts": "2026-04-09T08:53:50.595Z",
+      "count": 16,
+      "ts": "2026-04-09T08:46:09.451Z",
       "dateHour": "2026-04-09T08"
     },
     {
       "dow": 4,
       "hour": 10,
-      "count": 12,
-      "ts": "2026-04-09T09:19:49.043Z",
+      "count": 11,
+      "ts": "2026-04-09T09:55:10.565Z",
       "dateHour": "2026-04-09T09"
     },
     {
@@ -17580,107 +17679,65 @@
     {
       "dow": 5,
       "hour": 8,
-      "count": 11,
-      "ts": "2026-04-10T07:38:29.541Z",
+      "count": 12,
+      "ts": "2026-04-10T07:53:53.625Z",
       "dateHour": "2026-04-10T07"
     },
     {
       "dow": 5,
       "hour": 9,
-      "count": 18,
-      "ts": "2026-04-10T08:45:22.215Z",
+      "count": 13,
+      "ts": "2026-04-10T08:53:47.403Z",
       "dateHour": "2026-04-10T08"
     },
     {
       "dow": 5,
       "hour": 10,
       "count": 12,
-      "ts": "2026-04-10T09:55:31.028Z",
+      "ts": "2026-04-10T09:53:46.773Z",
       "dateHour": "2026-04-10T09"
     },
     {
       "dow": 5,
       "hour": 11,
-      "count": 11,
-      "ts": "2026-04-10T10:24:47.378Z",
+      "count": 9,
+      "ts": "2026-04-10T10:53:39.409Z",
       "dateHour": "2026-04-10T10"
-    },
-    {
-      "dow": 3,
-      "hour": 8,
-      "count": 11,
-      "ts": "2026-04-15T07:21:22.286Z",
-      "dateHour": "2026-04-15T07"
-    },
-    {
-      "dow": 4,
-      "hour": 16,
-      "count": 3,
-      "ts": "2026-04-09T15:12:27.368Z",
-      "dateHour": "2026-04-09T15"
     },
     {
       "dow": 5,
       "hour": 12,
-      "count": 1,
-      "ts": "2026-04-10T11:51:23.506Z",
+      "count": 4,
+      "ts": "2026-04-10T11:53:49.055Z",
       "dateHour": "2026-04-10T11"
     },
     {
       "dow": 5,
       "hour": 13,
-      "count": 5,
-      "ts": "2026-04-10T12:51:52.595Z",
+      "count": 10,
+      "ts": "2026-04-10T12:54:01.486Z",
       "dateHour": "2026-04-10T12"
     },
     {
       "dow": 5,
       "hour": 14,
-      "count": 7,
-      "ts": "2026-04-10T13:51:45.627Z",
+      "count": 8,
+      "ts": "2026-04-10T13:53:57.890Z",
       "dateHour": "2026-04-10T13"
     },
     {
       "dow": 5,
       "hour": 15,
       "count": 4,
-      "ts": "2026-04-10T14:51:36.457Z",
+      "ts": "2026-04-10T14:53:47.841Z",
       "dateHour": "2026-04-10T14"
     },
     {
       "dow": 5,
       "hour": 16,
       "count": 1,
-      "ts": "2026-04-10T15:51:52.228Z",
+      "ts": "2026-04-10T15:53:42.900Z",
       "dateHour": "2026-04-10T15"
-    },
-    {
-      "dow": 1,
-      "hour": 7,
-      "count": 11,
-      "ts": "2026-04-13T06:52:49.692Z",
-      "dateHour": "2026-04-13T06"
-    },
-    {
-      "dow": 1,
-      "hour": 8,
-      "count": 17,
-      "ts": "2026-04-13T07:53:07.947Z",
-      "dateHour": "2026-04-13T07"
-    },
-    {
-      "dow": 1,
-      "hour": 9,
-      "count": 18,
-      "ts": "2026-04-13T08:08:25.959Z",
-      "dateHour": "2026-04-13T08"
-    },
-    {
-      "dow": 3,
-      "hour": 9,
-      "count": 16,
-      "ts": "2026-04-15T08:31:53.793Z",
-      "dateHour": "2026-04-15T08"
     },
     {
       "dow": 6,
@@ -17744,6 +17801,27 @@
       "count": 5,
       "ts": "2026-04-11T15:46:45.418Z",
       "dateHour": "2026-04-11T15"
+    },
+    {
+      "dow": 1,
+      "hour": 7,
+      "count": 9,
+      "ts": "2026-04-13T06:48:04.109Z",
+      "dateHour": "2026-04-13T06"
+    },
+    {
+      "dow": 1,
+      "hour": 8,
+      "count": 17,
+      "ts": "2026-04-13T07:48:14.724Z",
+      "dateHour": "2026-04-13T07"
+    },
+    {
+      "dow": 1,
+      "hour": 9,
+      "count": 21,
+      "ts": "2026-04-13T08:48:38.050Z",
+      "dateHour": "2026-04-13T08"
     },
     {
       "dow": 1,
@@ -17887,16 +17965,37 @@
     },
     {
       "dow": 3,
+      "hour": 8,
+      "count": 11,
+      "ts": "2026-04-15T07:54:38.469Z",
+      "dateHour": "2026-04-15T07"
+    },
+    {
+      "dow": 3,
+      "hour": 9,
+      "count": 11,
+      "ts": "2026-04-15T08:54:27.080Z",
+      "dateHour": "2026-04-15T08"
+    },
+    {
+      "dow": 3,
       "hour": 10,
       "count": 14,
-      "ts": "2026-04-15T09:53:02.057Z",
+      "ts": "2026-04-15T09:40:11.373Z",
       "dateHour": "2026-04-15T09"
+    },
+    {
+      "dow": 4,
+      "hour": 16,
+      "count": 3,
+      "ts": "2026-04-09T15:12:27.368Z",
+      "dateHour": "2026-04-09T15"
     },
     {
       "dow": 3,
       "hour": 11,
-      "count": 11,
-      "ts": "2026-04-15T10:53:42.412Z",
+      "count": 13,
+      "ts": "2026-04-15T10:48:36.541Z",
       "dateHour": "2026-04-15T10"
     },
     {
@@ -17910,22 +18009,36 @@
       "dow": 3,
       "hour": 13,
       "count": 7,
-      "ts": "2026-04-15T12:57:25.399Z",
+      "ts": "2026-04-15T12:48:34.492Z",
       "dateHour": "2026-04-15T12"
     },
     {
       "dow": 3,
       "hour": 14,
       "count": 14,
-      "ts": "2026-04-15T13:52:32.990Z",
+      "ts": "2026-04-15T13:45:23.258Z",
       "dateHour": "2026-04-15T13"
     },
     {
       "dow": 3,
       "hour": 15,
-      "count": 14,
-      "ts": "2026-04-15T14:50:31.484Z",
+      "count": 9,
+      "ts": "2026-04-15T14:59:52.713Z",
       "dateHour": "2026-04-15T14"
+    },
+    {
+      "dow": 3,
+      "hour": 16,
+      "count": 3,
+      "ts": "2026-04-15T15:59:44.318Z",
+      "dateHour": "2026-04-15T15"
+    },
+    {
+      "dow": 3,
+      "hour": 17,
+      "count": 2,
+      "ts": "2026-04-15T16:15:15.889Z",
+      "dateHour": "2026-04-15T16"
     }
   ]
 }
