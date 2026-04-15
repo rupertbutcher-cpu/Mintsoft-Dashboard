@@ -1756,15 +1756,27 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
         .map(([name, p]) => ({
           name,
           orders:       p.orders,
+          batches:      p.batches,
           actualSecOrd: p.orders > 0 ? p.totalActualSecs / p.orders : null,
+          targetSecOrd: p.orders > 0 ? p.totalTargetSecs / p.orders : null,
           benchTarget:  calcPackerBenchmark(p.refs),
-          top10Target:  calcPackerTarget(p.refs)
+          top10Target:  calcPackerTarget(p.refs),
+          firstSeen:    p.allTimes.length ? new Date(Math.min(...p.allTimes.map(t=>t.getTime()))).toISOString() : null,
+          lastSeen:     p.lastSeen ? p.lastSeen.toISOString() : null,
         })),
       batchRows: batchRows.map(b => ({
-        reference:    b.reference || b.ref,
-        client:       b.client,
-        orders:       b.orders,
-        actualSecOrd: b.actualSecOrd
+        id:               b.id,
+        reference:        b.reference,
+        batchType:        b.batchType,
+        orderCount:       b.orderCount,
+        assignedUser:     b.assignedUser,
+        despatched:       b.despatched,
+        targetSecOrd:     b.targetSecOrd,
+        actualSecOrd:     b.actualSecOrd,
+        targetDurationMin: b.targetDurationMin,
+        actualDurationMin: b.actualDurationMin,
+        batchStart:       b.batchStart ? b.batchStart.toISOString() : null,
+        batchEnd:         b.batchEnd   ? b.batchEnd.toISOString()   : null,
       }))
     };
     // Auto-save once per calendar hour (and always when shift completes)
@@ -2499,42 +2511,135 @@ function showBenchmarkAlert(actualSec, benchmarkSec) {
   function renderPastDay(dateStr) {
     const el = $('past-day-content');
     if (!dateStr || !dailySnapshots[dateStr]) { el.innerHTML = ''; return; }
-    const s  = dailySnapshots[dateStr];
-    const fS = v => (v != null && !isNaN(+v)) ? (+v).toFixed(1) + 's' : '—';
-    const fN = v => v != null ? v : '—';
+    const s   = dailySnapshots[dateStr];
+    const fS  = v  => (v  != null && !isNaN(+v))  ? (+v).toFixed(1)  + 's'  : '—';
+    const fM  = v  => (v  != null && !isNaN(+v))  ? (+v).toFixed(1)  + 'm'  : '—';
+    const fN  = v  => v  != null ? v : '—';
+    const fT  = ts => { if (!ts) return '—'; const d = new Date(ts); return d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); };
 
-    const packerRows = (s.packers || []).sort((a, b) => b.orders - a.orders).map(p => {
-      const good = p.actualSecOrd && p.benchTarget && p.actualSecOrd <= p.benchTarget;
-      const col  = good ? 'var(--green)' : 'var(--amber)';
-      return `<tr>
-        <td style="font-weight:600;padding:6px 10px;">${p.name}</td>
-        <td style="text-align:right;padding:6px 10px;">${p.orders}</td>
-        <td style="text-align:right;padding:6px 10px;color:${col};">${fS(p.actualSecOrd)}</td>
-        <td style="text-align:right;padding:6px 10px;color:var(--muted);">${fS(p.benchTarget)}</td>
-        <td style="text-align:right;padding:6px 10px;color:#60a5fa;">${fS(p.top10Target)}</td>
+    // ── Packer colour tier (mirrors live dashboard) ──────────────────────
+    function packerFill(actual, bench, top10) {
+      if (!actual) return 'var(--blue)';
+      if (top10  && actual <= top10)           return '#a855f7';
+      if (bench  && actual <= bench * 1.10)    return 'var(--green)';
+      if (bench  && actual <= bench * 1.20)    return '#f97316';
+      if (bench)                               return 'var(--red)';
+      return 'var(--blue)';
+    }
+
+    // ── KPI cards ────────────────────────────────────────────────────────
+    const kpis = `
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:18px;">
+        <div class="kpi c-green"><div class="kpi-lbl">Despatched</div><div class="kpi-val">${fN(s.despatched)}</div><div class="kpi-sub">${s.pct} of ${fN(s.total)}</div></div>
+        <div class="kpi c-blue"><div class="kpi-lbl">Rate</div><div class="kpi-val">${fN(s.ratePerHour)}</div><div class="kpi-sub">orders / hour</div></div>
+        <div class="kpi c-amber"><div class="kpi-lbl">Actual s/ord</div><div class="kpi-val">${fS(s.secOrdActual)}</div><div class="kpi-sub">team average</div></div>
+        <div class="kpi"><div class="kpi-lbl">Benchmark</div><div class="kpi-val">${fS(s.secOrdBenchmark)}</div><div class="kpi-sub">top 20% hist</div></div>
+        <div class="kpi"><div class="kpi-lbl">Target s/ord</div><div class="kpi-val">${fS(s.secOrdTarget)}</div><div class="kpi-sub">weighted target</div></div>
+        <div class="kpi"><div class="kpi-lbl">Peak Packers</div><div class="kpi-val">${fN(s.peakPackers)}</div><div class="kpi-sub">at snapshot time</div></div>
+        <div class="kpi"><div class="kpi-lbl">Batches</div><div class="kpi-val">${fN(s.batches)}</div><div class="kpi-sub">processed</div></div>
+      </div>`;
+
+    // ── Packer performance table ─────────────────────────────────────────
+    const sortedPackers = (s.packers || []).sort((a,b) => b.orders - a.orders);
+    const packerTbody = sortedPackers.map(p => {
+      const col    = packerFill(p.actualSecOrd, p.benchTarget, p.top10Target);
+      const isStar = p.top10Target && p.actualSecOrd && p.actualSecOrd <= p.top10Target;
+      const vsB    = p.actualSecOrd && p.benchTarget
+        ? ((p.actualSecOrd - p.benchTarget) / p.benchTarget * 100)
+        : null;
+      const vsStr  = vsB != null
+        ? `<span style="color:${vsB<=0?'var(--green)':'var(--red)'};">${vsB>0?'+':''}${vsB.toFixed(0)}%</span>`
+        : '—';
+      const workMins = (p.firstSeen && p.lastSeen)
+        ? ((new Date(p.lastSeen) - new Date(p.firstSeen)) / 60000).toFixed(0) + 'm'
+        : '—';
+      return `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:8px 10px;font-weight:600;">${isStar?'⭐ ':''}${p.name}</td>
+        <td style="padding:8px 10px;text-align:right;">${p.orders}</td>
+        <td style="padding:8px 10px;text-align:right;">${p.batches||'—'}</td>
+        <td style="padding:8px 10px;text-align:right;color:${col};font-weight:600;">${fS(p.actualSecOrd)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--amber);">${fS(p.benchTarget)}</td>
+        <td style="padding:8px 10px;text-align:right;color:#60a5fa;">${fS(p.top10Target)}</td>
+        <td style="padding:8px 10px;text-align:right;">${vsStr}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(p.firstSeen)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(p.lastSeen)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${workMins}</td>
       </tr>`;
     }).join('');
 
-    el.innerHTML = `
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px;">
-        <div class="kpi"><div class="kpi-label">Despatched</div><div class="kpi-val c-green">${fN(s.despatched)}</div><div class="kpi-sub">${s.pct} of ${fN(s.total)}</div></div>
-        <div class="kpi"><div class="kpi-label">Rate</div><div class="kpi-val">${fN(s.ratePerHour)}</div><div class="kpi-sub">orders / hour</div></div>
-        <div class="kpi"><div class="kpi-label">Actual s/ord</div><div class="kpi-val">${fS(s.secOrdActual)}</div><div class="kpi-sub">team average</div></div>
-        <div class="kpi"><div class="kpi-label">Benchmark</div><div class="kpi-val">${fS(s.secOrdBenchmark)}</div><div class="kpi-sub">top 20% hist</div></div>
-        <div class="kpi"><div class="kpi-label">Peak Packers</div><div class="kpi-val">${fN(s.peakPackers)}</div><div class="kpi-sub">at snapshot time</div></div>
-        <div class="kpi"><div class="kpi-label">Batches</div><div class="kpi-val">${fN(s.batches)}</div><div class="kpi-sub">processed</div></div>
-      </div>
-      ${packerRows ? `<table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden;">
-        <thead><tr style="color:var(--muted);font-size:11px;border-bottom:1px solid var(--border);">
-          <th style="text-align:left;padding:6px 10px;">Packer</th>
-          <th style="text-align:right;padding:6px 10px;">Orders</th>
-          <th style="text-align:right;padding:6px 10px;">Actual s/ord</th>
-          <th style="text-align:right;padding:6px 10px;">Bench s/ord</th>
-          <th style="text-align:right;padding:6px 10px;">Top 10%</th>
+    const packerTable = packerTbody ? `
+      <div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Per-Packer Performance</div>
+      <div style="overflow-x:auto;margin-bottom:20px;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+        <thead><tr style="background:var(--surf2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px;">
+          <th style="text-align:left;padding:8px 10px;">Packer</th>
+          <th style="text-align:right;padding:8px 10px;">Orders</th>
+          <th style="text-align:right;padding:8px 10px;">Batches</th>
+          <th style="text-align:right;padding:8px 10px;">Actual s/ord</th>
+          <th style="text-align:right;padding:8px 10px;">Bench</th>
+          <th style="text-align:right;padding:8px 10px;">Top 10%</th>
+          <th style="text-align:right;padding:8px 10px;">vs Bench</th>
+          <th style="text-align:right;padding:8px 10px;">First</th>
+          <th style="text-align:right;padding:8px 10px;">Last</th>
+          <th style="text-align:right;padding:8px 10px;">Working</th>
         </tr></thead>
-        <tbody>${packerRows}</tbody>
-      </table>` : '<p class="empty-msg">No packer data in this snapshot</p>'}
-      <div style="margin-top:10px;font-size:11px;color:var(--muted);">Snapshot saved: ${new Date(s.savedAt).toLocaleString('en-GB')}</div>`;
+        <tbody>${packerTbody}</tbody>
+      </table></div>` : '<p class="empty-msg" style="margin-bottom:16px;">No packer data in this snapshot</p>';
+
+    // ── Batch reference table ────────────────────────────────────────────
+    const rows = (s.batchRows || [])
+      .filter(b => b.actualSecOrd || b.orderCount)
+      .sort((a,b) => (a.reference||'').localeCompare(b.reference||''));
+
+    const batchTbody = rows.map(b => {
+      const vsT = b.actualSecOrd && b.targetSecOrd
+        ? ((b.actualSecOrd - b.targetSecOrd) / b.targetSecOrd * 100)
+        : null;
+      const vsStr = vsT != null
+        ? `<span style="color:${vsT<=0?'var(--green)':'var(--red)'};">${vsT>0?'+':''}${vsT.toFixed(0)}%</span>`
+        : '—';
+      const statusBadge = b.despatched
+        ? '<span class="badge badge-done">Done</span>'
+        : '<span class="badge badge-pend">Pending</span>';
+      return `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:8px 10px;font-size:12px;color:var(--muted);">${b.id||'—'}</td>
+        <td style="padding:8px 10px;font-weight:600;">${b.reference||'—'}</td>
+        <td style="padding:8px 10px;text-align:center;">${b.batchType!=null?b.batchType:'—'}</td>
+        <td style="padding:8px 10px;text-align:right;">${b.orderCount||'—'}</td>
+        <td style="padding:8px 10px;text-align:center;">${statusBadge}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--amber);font-weight:600;">${fS(b.actualSecOrd)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fS(b.targetSecOrd)}</td>
+        <td style="padding:8px 10px;text-align:right;">${vsStr}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fM(b.actualDurationMin)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fM(b.targetDurationMin)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(b.batchStart)}</td>
+        <td style="padding:8px 10px;text-align:right;color:var(--muted);">${fT(b.batchEnd)}</td>
+      </tr>`;
+    }).join('');
+
+    const batchTable = batchTbody ? `
+      <div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Batch Breakdown</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+        <thead><tr style="background:var(--surf2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px;">
+          <th style="text-align:left;padding:8px 10px;">Batch ID</th>
+          <th style="text-align:left;padding:8px 10px;">Reference</th>
+          <th style="text-align:center;padding:8px 10px;">Type</th>
+          <th style="text-align:right;padding:8px 10px;">Orders</th>
+          <th style="text-align:center;padding:8px 10px;">Status</th>
+          <th style="text-align:right;padding:8px 10px;">Actual s/ord</th>
+          <th style="text-align:right;padding:8px 10px;">Target s/ord</th>
+          <th style="text-align:right;padding:8px 10px;">vs Target</th>
+          <th style="text-align:right;padding:8px 10px;">Actual min</th>
+          <th style="text-align:right;padding:8px 10px;">Target min</th>
+          <th style="text-align:right;padding:8px 10px;">Start</th>
+          <th style="text-align:right;padding:8px 10px;">End</th>
+        </tr></thead>
+        <tbody>${batchTbody}</tbody>
+      </table></div>` : '<p class="empty-msg">No batch data in this snapshot</p>';
+
+    el.innerHTML = kpis + packerTable + batchTable
+      + `<div style="font-size:11px;color:var(--muted);padding-top:4px;">Snapshot saved: ${new Date(s.savedAt).toLocaleString('en-GB')}</div>`;
   }
 
   // Init MSAL on load — client ID is baked in so always initialises
