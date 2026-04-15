@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T07:20:13.719Z",
+  "saved": "2026-04-15T07:21:25.906Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15731,6 +15731,132 @@
       "actualSecOrd": 51,
       "orderCount": 8,
       "packerCount": 12
+    },
+    {
+      "batchId": 8430323,
+      "reference": "2026-04-15 05-48 - Salcura Amazon (4) - Run 1",
+      "date": "2026-04-15T07:04:52.385Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45,
+      "orderCount": 16,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430333,
+      "reference": "2026-04-15 05-53 - Salcura Singles (3) - Run 1",
+      "date": "2026-04-15T06:51:24.602Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 59,
+      "orderCount": 18,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430336,
+      "reference": "2026-04-15 05-58 - Bare Biology Single Tub RM (6) - Run 1",
+      "date": "2026-04-15T06:34:05.152Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 47,
+      "orderCount": 23,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430352,
+      "reference": "2026-04-15 06-03 - Rosalique Evri (6) - Run 1",
+      "date": "2026-04-15T07:09:57.384Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 41.9,
+      "orderCount": 60,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430355,
+      "reference": "2026-04-15 06-03 - Totter Multi DX - Run 1",
+      "date": "2026-04-15T07:09:48.362Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 32,
+      "orderCount": 3,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430357,
+      "reference": "2026-04-15 06-03 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-15T06:58:31.244Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 32.4,
+      "orderCount": 40,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430369,
+      "reference": "2026-04-15 06-03 - Salcura Large Evri ND (4) - Run 1",
+      "date": "2026-04-15T06:32:30.065Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 63.4,
+      "orderCount": 23,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430374,
+      "reference": "2026-04-15 06-03 - Untamed Singles GE (10) - Run 1",
+      "date": "2026-04-15T07:12:19.310Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 85.5,
+      "orderCount": 4,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430384,
+      "reference": "2026-04-15 06-03 - Wild Dose 2/3 Evri TIME (3) - Run 2",
+      "date": "2026-04-15T07:08:18.132Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 30,
+      "orderCount": 6,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430387,
+      "reference": "2026-04-15 06-03 - Salcura Large Evri ND (4) - Run 2",
+      "date": "2026-04-15T07:14:57.868Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 57.3,
+      "orderCount": 9,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430399,
+      "reference": "2026-04-15 06-13 - Spacemasks Singles - Run 1",
+      "date": "2026-04-15T07:12:59.972Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 24.8,
+      "orderCount": 8,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430405,
+      "reference": "2026-04-15 06-13 - Bare Biology RM48 (7) - Run 1",
+      "date": "2026-04-15T07:01:00.569Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 90.3,
+      "orderCount": 23,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430411,
+      "reference": "2026-04-15 06-33 - Rhinomed - Run 1",
+      "date": "2026-04-15T07:18:28.473Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 36,
+      "orderCount": 2,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430417,
+      "reference": "2026-04-15 07-03 - ST8 Supply - Run 1",
+      "date": "2026-04-15T07:13:41.919Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 88.3,
+      "orderCount": 14,
+      "packerCount": 13
     }
   ],
   "packerSnaps": [
@@ -15894,6 +16020,13 @@
       "count": 11,
       "ts": "2026-04-10T10:24:47.378Z",
       "dateHour": "2026-04-10T10"
+    },
+    {
+      "dow": 3,
+      "hour": 8,
+      "count": 11,
+      "ts": "2026-04-15T07:21:22.286Z",
+      "dateHour": "2026-04-15T07"
     }
   ]
 }
