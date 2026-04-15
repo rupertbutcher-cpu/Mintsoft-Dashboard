@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T12:11:59.132Z",
+  "saved": "2026-04-15T12:13:32.471Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16676,6 +16676,24 @@
       "actualSecOrd": 142.8,
       "orderCount": 5,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430454,
+      "reference": "Bare Biology Pack of Six",
+      "date": "2026-04-15T12:06:06.968Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45,
+      "orderCount": 4,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430476,
+      "reference": "2026-04-15 11-08 - Ripple+ Evri 11am (8) - Run 1",
+      "date": "2026-04-15T12:11:07.683Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 46.5,
+      "orderCount": 12,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -17144,8 +17162,8 @@
     {
       "dow": 3,
       "hour": 13,
-      "count": 11,
-      "ts": "2026-04-15T12:03:09.369Z",
+      "count": 13,
+      "ts": "2026-04-15T12:13:28.228Z",
       "dateHour": "2026-04-15T12"
     }
   ]
