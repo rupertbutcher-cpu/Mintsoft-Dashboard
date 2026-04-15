@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T14:48:41.266Z",
+  "saved": "2026-04-15T14:50:35.800Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17351,6 +17351,96 @@
       "actualSecOrd": 21.6,
       "orderCount": 10,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430542,
+      "reference": "2026-04-15 13-23 - PERS Multi 1pm - Run 1",
+      "date": "2026-04-15T14:41:25.276Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 116,
+      "orderCount": 3,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430568,
+      "reference": "2026-04-15 13-29 - Wild Dose RM International 1pm (8) - Run 1",
+      "date": "2026-04-15T14:44:14.921Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 60.8,
+      "orderCount": 8,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430575,
+      "reference": "2026-04-15 13-29 - Bare Biology Singles RM48 1pm (5) - Run 1",
+      "date": "2026-04-15T14:35:19.016Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 66,
+      "orderCount": 10,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430577,
+      "reference": "2026-04-15 13-33 - Wild Dose BOTTLE Singles RM48 1pm (8) - Run 1",
+      "date": "2026-04-15T14:49:47.425Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 28.6,
+      "orderCount": 13,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430578,
+      "reference": "2026-04-15 13-33 - Bare Biology RM48 1pm (7) - Run 1",
+      "date": "2026-04-15T14:32:31.959Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45.8,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430582,
+      "reference": "2026-04-15 13-33 - Anicura Large Evri ND 1pm - Run 1",
+      "date": "2026-04-15T14:37:43.464Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 63.8,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430587,
+      "reference": "2026-04-15 13-33 - Wild Dose 2/3 Evri ND 1pm (3) - Run 1",
+      "date": "2026-04-15T14:34:11.069Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 37.9,
+      "orderCount": 29,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430588,
+      "reference": "2026-04-15 13-33 - Wild Dose 2/3 LL 1pm (3) - Run 2",
+      "date": "2026-04-15T14:35:16.171Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 21.6,
+      "orderCount": 10,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430594,
+      "reference": "2026-04-15 13-33 - Wild Dose Singles LL 1pm (2) - Run 1",
+      "date": "2026-04-15T14:43:38.915Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 18.9,
+      "orderCount": 64,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430602,
+      "reference": "2026-04-15 13-38 - Bare Biology Pack of Six 1pm (10) - Run 1",
+      "date": "2026-04-15T14:38:30.611Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 70.5,
+      "orderCount": 4,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -17834,7 +17924,7 @@
       "dow": 3,
       "hour": 15,
       "count": 14,
-      "ts": "2026-04-15T14:22:49.966Z",
+      "ts": "2026-04-15T14:50:31.484Z",
       "dateHour": "2026-04-15T14"
     }
   ]
