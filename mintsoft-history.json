@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T10:22:44.743Z",
+  "saved": "2026-04-15T10:25:06.544Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16352,6 +16352,96 @@
       "actualSecOrd": 56,
       "orderCount": 40,
       "packerCount": 20
+    },
+    {
+      "batchId": 8430318,
+      "reference": "2026-04-15 05-38 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
+      "date": "2026-04-15T10:15:51.714Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 54,
+      "orderCount": 144,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430341,
+      "reference": "2026-04-15 05-58 - Ripple+ Multi LL (8) - Run 1",
+      "date": "2026-04-15T10:20:23.792Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 33.5,
+      "orderCount": 44,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430344,
+      "reference": "2026-04-15 05-58 - Wild Dose 2/3 LL (3) - Run 1",
+      "date": "2026-04-15T10:12:14.892Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 47.3,
+      "orderCount": 54,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430345,
+      "reference": "2026-04-15 05-58 - Ripple+ Multi LL (8) - Run 2",
+      "date": "2026-04-15T10:16:58.152Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 48,
+      "orderCount": 16,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430351,
+      "reference": "2026-04-15 06-03 - Ripple+ RM (6) - Run 1",
+      "date": "2026-04-15T10:00:36.024Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 68,
+      "orderCount": 3,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430368,
+      "reference": "2026-04-15 06-03 - Rosalique Singles Evri ND (4) - Run 1",
+      "date": "2026-04-15T09:56:15.427Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 40.6,
+      "orderCount": 13,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430390,
+      "reference": "2026-04-15 06-08 - Wild Dose RM (8) - Run 1",
+      "date": "2026-04-15T10:18:19.648Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 289.2,
+      "orderCount": 5,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430425,
+      "reference": "2026-04-15 07-03 - Duo Singles - Run 1",
+      "date": "2026-04-15T10:11:31.378Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 66,
+      "orderCount": 5,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430434,
+      "reference": "2026-04-15 07-08 - Rippl Impact Singles Evri International - Run 2",
+      "date": "2026-04-15T09:56:55.796Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 111.8,
+      "orderCount": 19,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430439,
+      "reference": "Rippl Impact Singles Evri International",
+      "date": "2026-04-15T10:15:39.314Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 52.2,
+      "orderCount": 13,
+      "packerCount": 20
     }
   ],
   "packerSnaps": [
@@ -16806,8 +16896,8 @@
     {
       "dow": 3,
       "hour": 11,
-      "count": 12,
-      "ts": "2026-04-15T10:08:01.667Z",
+      "count": 15,
+      "ts": "2026-04-15T10:25:02.669Z",
       "dateHour": "2026-04-15T10"
     }
   ]
