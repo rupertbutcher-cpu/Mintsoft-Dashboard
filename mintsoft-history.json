@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T10:35:32.276Z",
+  "saved": "2026-04-15T10:38:06.922Z",
   "batches": [
     {
       "batchId": 8430323,
@@ -16379,6 +16379,51 @@
       "actualSecOrd": 23,
       "orderCount": 6,
       "packerCount": 20
+    },
+    {
+      "batchId": 8430329,
+      "reference": "2026-04-15 05-53 - Wild Dose Singles Bloating LL (2) - Run 1",
+      "date": "2026-04-15T10:22:21.893Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 50.4,
+      "orderCount": 61,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430330,
+      "reference": "2026-04-15 05-53 - SOAR Trade - Run 1",
+      "date": "2026-04-15T10:09:29.241Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 138,
+      "orderCount": 6,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430361,
+      "reference": "2026-04-15 06-03 - Wild Dose Pill Box Evri (8) - Run 1",
+      "date": "2026-04-15T10:21:46.962Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 110.4,
+      "orderCount": 15,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430438,
+      "reference": "2026-04-15 09-18 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
+      "date": "2026-04-15T10:22:21.641Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 32.4,
+      "orderCount": 27,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430447,
+      "reference": "Bare Biology Single Tub RM",
+      "date": "2026-04-15T10:22:02.527Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 51.2,
+      "orderCount": 17,
+      "packerCount": 20
     }
   ],
   "packerSnaps": [
@@ -16833,8 +16878,8 @@
     {
       "dow": 3,
       "hour": 11,
-      "count": 14,
-      "ts": "2026-04-15T10:23:13.339Z",
+      "count": 12,
+      "ts": "2026-04-15T10:38:02.862Z",
       "dateHour": "2026-04-15T10"
     }
   ]
