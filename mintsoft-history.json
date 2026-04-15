@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T13:05:33.353Z",
+  "saved": "2026-04-15T13:06:41.936Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16712,6 +16712,42 @@
       "actualSecOrd": 52.5,
       "orderCount": 59,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430448,
+      "reference": "Bare Biology Single Tub RM",
+      "date": "2026-04-15T12:50:29.520Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 41.1,
+      "orderCount": 7,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430480,
+      "reference": "Salcura Large Evri ND",
+      "date": "2026-04-15T11:58:06.082Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 62,
+      "orderCount": 15,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430545,
+      "reference": "2026-04-15 13-23 - Ripple+ Influencers 1pm (12) - Run 1",
+      "date": "2026-04-15T13:05:56.793Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 79.5,
+      "orderCount": 4,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430555,
+      "reference": "2026-04-15 13-23 - SOAR Singles 1pm - Run 1",
+      "date": "2026-04-15T13:05:28.382Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 38,
+      "orderCount": 3,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -17183,6 +17219,13 @@
       "count": 6,
       "ts": "2026-04-15T12:51:43.207Z",
       "dateHour": "2026-04-15T12"
+    },
+    {
+      "dow": 3,
+      "hour": 14,
+      "count": 12,
+      "ts": "2026-04-15T13:06:37.971Z",
+      "dateHour": "2026-04-15T13"
     }
   ]
 }
