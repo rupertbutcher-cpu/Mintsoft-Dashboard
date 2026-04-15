@@ -2519,10 +2519,6 @@ window._ghScheduleSave = function() {
   scheduleGhSave();
 }
 
-// Legacy vars kept to avoid reference errors
-let ghSaveQueue = [];
-let ghSaving    = false;
-let ghSaveTimer = null;
 
 window._ghScheduleSave_unused = function() {
   // old block preserved as comment only — real save uses ghSaveHistory()
@@ -2537,55 +2533,29 @@ window._ghScheduleSave_unused = function() {
   }, 3000);
 }
 
-/* ---------- MERGE (multi-user safe) ---------- */
-function mergeHistory(local, remote) {
-  const map = new Map();
-
-  [...remote, ...local].forEach(b => {
-    if (b.batchId) map.set(b.batchId, b);
-  });
-
-  return Array.from(map.values());
-}
-
-/* ---------- LOAD REMOTE ---------- */
-async function ghLoadHistory() {
+/* ---------- Periodic sync: pull from GitHub every 30s to catch other users' updates ---------- */
+setInterval(async () => {
   if (!ghToken || !ghRepo) return;
-
   try {
-    const url = `${baseUrl()}/gh-api/repos/${ghRepo}/contents/mintsoft-history.json`;
-
-    const res = await fetch(url, {
-      headers: { Authorization: `token ${ghToken}` }
-    });
-
-    if (!res.ok) return;
-
-    const data = await res.json();
-
-    if (data.sha === lastRemoteSha) return;
-
-    const decoded = JSON.parse(atob(data.content));
-
-    if (lastRemoteUpdatedAt && decoded.updatedAt <= lastRemoteUpdatedAt) return;
-
-    console.log("🔄 Synced from another user");
-
-    lastRemoteSha = data.sha;
-    lastRemoteUpdatedAt = decoded.updatedAt;
-
-    batchHistory = mergeHistory(batchHistory, decoded.batches || []);
-
-    updateHistoryUI();
-    setHistoryStatus("Synced from another user");
-
-  } catch (e) {
-    console.warn("Sync error:", e);
-  }
-}
-
-/* ---------- START POLLING ---------- */
-setInterval(ghLoadHistory, 10000);
+    const file = await ghGetFile(GH_HIST_PATH);
+    if (!file) return;
+    if (file.sha === lastRemoteSha) return;  // nothing changed
+    lastRemoteSha = file.sha;
+    const incoming = file.data.batches || [];
+    const existing = new Set(batchHistory.map(h => h.batchId));
+    let added = 0;
+    for (const b of incoming) {
+      if (b.batchId && b.actualSecOrd && !existing.has(b.batchId)) {
+        batchHistory.push(b); existing.add(b.batchId); added++;
+      }
+    }
+    if (added > 0) {
+      updateHistoryUI();
+      setHistoryStatus('Synced ' + added + ' new batches from another machine');
+      console.log('GitHub poll: merged', added, 'new batches');
+    }
+  } catch(e) { console.warn('GitHub poll error:', e.message); }
+}, 30000);
 </script>
 </body>
 </html>
