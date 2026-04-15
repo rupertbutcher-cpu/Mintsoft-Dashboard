@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T13:22:06.727Z",
+  "saved": "2026-04-15T13:24:05.286Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16748,6 +16748,195 @@
       "actualSecOrd": 38,
       "orderCount": 3,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430358,
+      "reference": "2026-04-15 06-03 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 1",
+      "date": "2026-04-15T13:06:48.043Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 38.9,
+      "orderCount": 60,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430382,
+      "reference": "2026-04-15 06-03 - Luella Gray - Run 1",
+      "date": "2026-04-15T13:20:28.067Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 363.8,
+      "orderCount": 11,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430421,
+      "reference": "2026-04-15 07-03 - Rampley DPD - Run 1",
+      "date": "2026-04-15T11:13:11.175Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 70.5,
+      "orderCount": 4,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430436,
+      "reference": "2026-04-15 07-18 - Emma Shipley - Run 1",
+      "date": "2026-04-15T11:26:44.303Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 62,
+      "orderCount": 6,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430464,
+      "reference": "2026-04-15 10-58 - Wild Dose Singles Bloating LL Custom (2) - Run 1",
+      "date": "2026-04-15T13:21:29.447Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 23.2,
+      "orderCount": 105,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430477,
+      "reference": "2026-04-15 11-08 - Emma Shipley 11am - Run 1",
+      "date": "2026-04-15T11:57:51.965Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 81.6,
+      "orderCount": 5,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430488,
+      "reference": "2026-04-15 13-13 - Spacemasks Trade 1pm - Run 1",
+      "date": "2026-04-15T12:48:00.974Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 60,
+      "orderCount": 4,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430509,
+      "reference": "2026-04-15 13-19 - Rippl Impact Multi Evri International 1pm - Run 1",
+      "date": "2026-04-15T13:22:37.248Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 56,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430518,
+      "reference": "2026-04-15 13-18 - Kit Blake 1pm - Run 1",
+      "date": "2026-04-15T13:03:36.323Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 163.5,
+      "orderCount": 4,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430538,
+      "reference": "2026-04-15 13-23 - Rosalique Gift Set 1pm (7) - Run 1",
+      "date": "2026-04-15T13:06:24.116Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 27.6,
+      "orderCount": 5,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430547,
+      "reference": "2026-04-15 13-23 - Ripple+ International 1pm (10) - Run 1",
+      "date": "2026-04-15T12:56:11.255Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 46,
+      "orderCount": 9,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430549,
+      "reference": "2026-04-15 13-23 - Salcura Singles Evri ND 1pm (3) - Run 1",
+      "date": "2026-04-15T12:56:38.259Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 50,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430558,
+      "reference": "2026-04-15 13-23 - SOAR Multi 1pm - Run 1",
+      "date": "2026-04-15T13:08:39.269Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 48,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430559,
+      "reference": "2026-04-15 13-23 - Totter Singles DX 1pm - Run 1",
+      "date": "2026-04-15T13:07:49.725Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 20.6,
+      "orderCount": 32,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430563,
+      "reference": "2026-04-15 13-23 - Hey Harper Singles RM24 1pm (6) - Run 1",
+      "date": "2026-04-15T13:10:41.040Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 18,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430564,
+      "reference": "2026-04-15 13-23 - Hey Harper Singles Evri 1pm (6) - Run 1",
+      "date": "2026-04-15T13:17:50.300Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 25.6,
+      "orderCount": 15,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430566,
+      "reference": "2026-04-15 13-29 - Rosalique Multi Evri ND 1pm (8) - Run 1",
+      "date": "2026-04-15T13:20:26.730Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 42,
+      "orderCount": 12,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430569,
+      "reference": "2026-04-15 13-29 - Rosalique Evri 1pm (6) - Run 1",
+      "date": "2026-04-15T13:02:14.244Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 27.2,
+      "orderCount": 17,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430571,
+      "reference": "2026-04-15 13-29 - Ripple+ Evri 1pm (8) - Run 1",
+      "date": "2026-04-15T13:16:52.561Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 62,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430576,
+      "reference": "2026-04-15 13-29 - Rosalique Evri ND 1pm (6) - Run 1",
+      "date": "2026-04-15T12:52:50.363Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 36,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430606,
+      "reference": "2026-04-15 14-03 - Totter DX 2pm - Run 1",
+      "date": "2026-04-15T13:18:31.604Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 53,
+      "orderCount": 6,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -17223,8 +17412,8 @@
     {
       "dow": 3,
       "hour": 14,
-      "count": 15,
-      "ts": "2026-04-15T13:15:40.223Z",
+      "count": 16,
+      "ts": "2026-04-15T13:24:01.209Z",
       "dateHour": "2026-04-15T13"
     }
   ]
