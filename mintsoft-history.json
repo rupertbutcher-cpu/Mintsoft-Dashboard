@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T11:02:36.978Z",
+  "saved": "2026-04-15T11:03:49.266Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16514,6 +16514,78 @@
       "actualSecOrd": 48.5,
       "orderCount": 13,
       "packerCount": 20
+    },
+    {
+      "batchId": 8430367,
+      "reference": "2026-04-15 06-03 - Wild Dose BOTTLE Singles RM48 (8) - Run 1",
+      "date": "2026-04-15T10:48:26.817Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 45.1,
+      "orderCount": 25,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430397,
+      "reference": "2026-04-15 06-08 - Wild Dose Evri (8) - Run 3",
+      "date": "2026-04-15T11:01:16.513Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 124.8,
+      "orderCount": 30,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430414,
+      "reference": "2026-04-15 07-03 - Kit Blake - Run 1",
+      "date": "2026-04-15T10:51:56.502Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 151,
+      "orderCount": 6,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430423,
+      "reference": "2026-04-15 07-03 - Staise Singles - Run 1",
+      "date": "2026-04-15T10:59:07.368Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 42,
+      "orderCount": 3,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430457,
+      "reference": "Salcura Large Evri ND",
+      "date": "2026-04-15T10:56:53.082Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 87.2,
+      "orderCount": 19,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430458,
+      "reference": "Salcura Singles Evri ND",
+      "date": "2026-04-15T10:52:06.357Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 53.6,
+      "orderCount": 48,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430459,
+      "reference": "Salcura Singles Evri ND",
+      "date": "2026-04-15T10:59:58.836Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 48.7,
+      "orderCount": 43,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430466,
+      "reference": "2026-04-15 11-03 - Ripple+ Multi LL 11am (8) - Run 1",
+      "date": "2026-04-15T10:48:34.526Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 53.6,
+      "orderCount": 16,
+      "packerCount": 20
     }
   ],
   "packerSnaps": [
@@ -16975,8 +17047,8 @@
     {
       "dow": 3,
       "hour": 12,
-      "count": 12,
-      "ts": "2026-04-15T11:01:26.666Z",
+      "count": 13,
+      "ts": "2026-04-15T11:03:45.844Z",
       "dateHour": "2026-04-15T11"
     }
   ]
