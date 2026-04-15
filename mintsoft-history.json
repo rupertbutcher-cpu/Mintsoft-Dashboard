@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-15T10:47:29.931Z",
+  "saved": "2026-04-15T10:48:39.877Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16424,6 +16424,96 @@
       "actualSecOrd": 51.2,
       "orderCount": 17,
       "packerCount": 20
+    },
+    {
+      "batchId": 8430351,
+      "reference": "2026-04-15 06-03 - Ripple+ RM (6) - Run 1",
+      "date": "2026-04-15T10:00:36.024Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 68,
+      "orderCount": 3,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430365,
+      "reference": "2026-04-15 06-03 - Rosalique Evri (6) - Run 2",
+      "date": "2026-04-15T09:34:18.292Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 27.7,
+      "orderCount": 13,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430386,
+      "reference": "2026-04-15 06-03 - Rosalique Evri ND (6) - Run 1",
+      "date": "2026-04-15T09:46:34.528Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 148.5,
+      "orderCount": 4,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430400,
+      "reference": "2026-04-15 06-13 - INDI RM - Run 1",
+      "date": "2026-04-15T08:42:26.383Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 56,
+      "orderCount": 3,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430401,
+      "reference": "2026-04-15 06-13 - INDI Singles Evri - Run 1",
+      "date": "2026-04-15T08:51:03.884Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 52.5,
+      "orderCount": 8,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430404,
+      "reference": "2026-04-15 06-13 - Wild Dose LL (3) - Run 1",
+      "date": "2026-04-15T09:50:15.983Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 16.8,
+      "orderCount": 5,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430410,
+      "reference": "2026-04-15 06-33 - Shirt Company Multi - Run 1",
+      "date": "2026-04-15T10:35:30.349Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 70,
+      "orderCount": 6,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430412,
+      "reference": "2026-04-15 06-33 - Shirt Company Singles - Run 1",
+      "date": "2026-04-15T10:43:55.756Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 46.5,
+      "orderCount": 4,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430462,
+      "reference": "Salcura Mop Up",
+      "date": "2026-04-15T10:45:16.005Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 88.6,
+      "orderCount": 21,
+      "packerCount": 20
+    },
+    {
+      "batchId": 8430468,
+      "reference": "2026-04-15 11-03 - Ripple+ Singles LL 11am (6) - Run 1",
+      "date": "2026-04-15T10:33:46.317Z",
+      "dayOfWeek": 3,
+      "actualSecOrd": 48.5,
+      "orderCount": 13,
+      "packerCount": 20
     }
   ],
   "packerSnaps": [
@@ -16879,7 +16969,7 @@
       "dow": 3,
       "hour": 11,
       "count": 13,
-      "ts": "2026-04-15T10:38:36.923Z",
+      "ts": "2026-04-15T10:48:36.541Z",
       "dateHour": "2026-04-15T10"
     }
   ]
