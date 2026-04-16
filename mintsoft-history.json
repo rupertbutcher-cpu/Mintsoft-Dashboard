@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T10:54:55.277Z",
+  "saved": "2026-04-16T11:26:07.430Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15686,6 +15686,78 @@
       "actualSecOrd": 20,
       "orderCount": 6,
       "packerCount": 22
+    },
+    {
+      "batchId": 8430731,
+      "reference": "Bare Biology Singles RM48",
+      "date": "2026-04-16T10:40:21.248Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 39.7,
+      "orderCount": 21,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430735,
+      "reference": "Wild Dose BOTTLE Singles Bloating Evri",
+      "date": "2026-04-16T10:40:25.900Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 42.4,
+      "orderCount": 34,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430713,
+      "reference": "2026-04-16 07-09 - Rippl Impact Multi Evri International - Run 1",
+      "date": "2026-04-16T10:55:06.881Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 76.6,
+      "orderCount": 17,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430727,
+      "reference": "2026-04-16 10-29 - Bare Biology Singles RM48 Custom (5) - Run 1",
+      "date": "2026-04-16T10:54:30.694Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 45.8,
+      "orderCount": 55,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430728,
+      "reference": "Bare Biology LL",
+      "date": "2026-04-16T10:55:25.718Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 23.4,
+      "orderCount": 41,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430732,
+      "reference": "Bare Biology Single Tub RM",
+      "date": "2026-04-16T10:54:29.995Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 46.4,
+      "orderCount": 15,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430734,
+      "reference": "Bare Biology RM48",
+      "date": "2026-04-16T10:54:55.573Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 53.3,
+      "orderCount": 17,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430736,
+      "reference": "Wild Dose Singles Bloating LL",
+      "date": "2026-04-16T10:55:11.238Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 25.4,
+      "orderCount": 46,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -16217,9 +16289,16 @@
     {
       "dow": 4,
       "hour": 11,
-      "count": 9,
-      "ts": "2026-04-16T10:40:52.407Z",
+      "count": 11,
+      "ts": "2026-04-16T10:55:50.359Z",
       "dateHour": "2026-04-16T10"
+    },
+    {
+      "dow": 4,
+      "hour": 12,
+      "count": 3,
+      "ts": "2026-04-16T11:26:02.701Z",
+      "dateHour": "2026-04-16T11"
     }
   ]
 }
