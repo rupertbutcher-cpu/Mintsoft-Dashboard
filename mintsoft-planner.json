@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-16T07:21:06.641Z",
+  "updatedAt": "2026-04-16T07:28:07.948Z",
   "rotas": {
     "2026-04-16": {
-      "savedAt": "2026-04-16T07:21:06.469Z",
+      "savedAt": "2026-04-16T07:28:07.703Z",
       "v": 2,
       "staff": [
         {
@@ -212,49 +212,49 @@
         "Thu": {
           "Callum|07:00": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|07:30": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|08:00": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|08:30": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|09:00": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|09:30": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|10:00": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|10:30": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
@@ -272,67 +272,73 @@
           ],
           "Callum|13:00": [
             {
-              "cn": "Wild Dose BOTTLE Singles Evri (8)",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|13:30": [
             {
-              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|14:00": [
             {
-              "cn": "SOAR Singles",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|14:30": [
             {
-              "cn": "Wild Dose RM (8)",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|15:00": [
             {
-              "cn": "INDI Multi Evri",
+              "cn": "Salcura Trade",
               "r": "K"
             }
           ],
           "Callum|15:30": [
             {
-              "cn": "Energy Bytes",
+              "cn": "Salcura Trade",
               "r": "K"
             }
           ],
           "Callum|16:00": [
             {
-              "cn": "&Daughter Trade",
+              "cn": "Salcura Trade",
+              "r": "K"
+            }
+          ],
+          "Callum|16:30": [
+            {
+              "cn": "Salcura Trade",
               "r": "K"
             }
           ],
           "Matt|07:00": [
             {
-              "cn": "Rosalique Pre Mades Evri ND (4)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|07:30": [
             {
-              "cn": "Rosalique Pre Mades Evri ND (4)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|08:00": [
             {
-              "cn": "Rosalique Pre Mades Evri ND (4)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|08:30": [
             {
-              "cn": "Rosalique Pre Mades Evri ND (4)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
@@ -356,175 +362,175 @@
           ],
           "Matt|10:30": [
             {
-              "cn": "Bare Biology Singles RM48 11am (5)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|11:00": [
             {
-              "cn": "Bare Biology Singles RM48 11am (5)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|11:30": [
             {
-              "cn": "Bare Biology RM",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|13:00": [
             {
-              "cn": "Bare Biology RM",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|13:30": [
             {
-              "cn": "Bare Biology Singles RM48 Custom (5)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|14:00": [
             {
-              "cn": "Charlotte Simone Singles BoxA DPD",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|14:30": [
             {
-              "cn": "Anicura Amazon",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|15:00": [
             {
-              "cn": "Rosalique Gift Set (7)",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|15:30": [
             {
-              "cn": "SOAR Trade",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|16:00": [
             {
-              "cn": "Pirates Grog Yuzu",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|16:30": [
             {
-              "cn": "SOAR Multi",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Wendy|07:00": [
             {
-              "cn": "Wild Dose 2/3 LL (3)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|07:30": [
             {
-              "cn": "Wild Dose 2/3 LL (3)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|08:00": [
             {
-              "cn": "Wild Dose 2/3 LL (3)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|08:30": [
             {
-              "cn": "Rosalique Multi Evri ND (8)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|09:00": [
             {
-              "cn": "Rosalique Multi Evri ND (8)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|09:30": [
             {
-              "cn": "Rosalique Evri ND (6)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|10:00": [
             {
-              "cn": "Rosalique Evri ND (6)",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|10:30": [
             {
-              "cn": "Ripple+ Retail",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|11:00": [
             {
-              "cn": "Ripple+ Retail",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|11:30": [
             {
-              "cn": "Salcura Singles (3)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|13:00": [
             {
-              "cn": "Wild Dose Singles Bloating LL (2)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|13:30": [
             {
-              "cn": "Anicura Small Evri ND",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|14:00": [
             {
-              "cn": "Totter Yuzu",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|14:30": [
             {
-              "cn": "Rosalique Singles Evri ND (4)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|15:00": [
             {
-              "cn": "Rosalique RM (6)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|15:30": [
             {
-              "cn": "Rosalique Evri (6)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|16:00": [
             {
-              "cn": "Wild Dose Over 6 Blister Evri (8)",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
           "Wendy|16:30": [
             {
-              "cn": "Cuddlr Singles Evri",
+              "cn": "Anicura Large Evri ND",
               "r": "K"
             }
           ],
@@ -554,169 +560,181 @@
           ],
           "Lynn|09:00": [
             {
-              "cn": "Rampley International",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|09:30": [
             {
-              "cn": "Rampley International",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|10:00": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|10:30": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|11:00": [
             {
-              "cn": "Wild Dose 2/3 Bloating LL Custom (3)",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|11:30": [
             {
-              "cn": "RETURN STOCK BLUE LAGOON TO FRANCE",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|13:00": [
             {
-              "cn": "Wild Dose BOTTLE Singles Bloating Evri Custom (8)",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|13:30": [
             {
-              "cn": "Pirates Grog Yuzu 1pm",
+              "cn": "Duo Singles",
               "r": "K"
             }
           ],
           "Lynn|14:00": [
             {
-              "cn": "Bare Biology Singles RM",
+              "cn": "Duo Singles",
               "r": "K"
             }
           ],
           "Lynn|14:30": [
             {
-              "cn": "La Bonne Brosse Trade 1pm",
+              "cn": "Duo Singles",
               "r": "K"
             }
           ],
           "Lynn|15:00": [
             {
-              "cn": "SOAR Trade 1pm",
+              "cn": "Duo Singles",
               "r": "K"
             }
           ],
           "Lynn|15:30": [
             {
-              "cn": "Salcura Trade",
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Lynn|16:00": [
+            {
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Lynn|16:30": [
+            {
+              "cn": "Duo Singles",
               "r": "K"
             }
           ],
           "Jack|07:00": [
             {
-              "cn": "INDI Gutbar Evri",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|07:30": [
             {
-              "cn": "INDI Gutbar Evri",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|08:00": [
             {
-              "cn": "INDI Gutbar Evri",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|08:30": [
             {
-              "cn": "INDI Singles Evri",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|09:00": [
             {
-              "cn": "INDI Singles Evri",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|09:30": [
             {
-              "cn": "Wild Dose 4+ Evri (4)",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|10:00": [
             {
-              "cn": "Wild Dose 4+ Evri (4)",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|10:30": [
             {
-              "cn": "Shirt Company Singles",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|11:00": [
             {
-              "cn": "Rosalique Pre Mades Evri ND 1pm (4)",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Jack|11:30": [
             {
-              "cn": "Anicura Trade 1pm",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|13:00": [
             {
-              "cn": "Salcura Trade 1pm",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|13:30": [
             {
-              "cn": "Neil",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|14:00": [
             {
-              "cn": "Wild Dose BOTTLE Singles Bloating Evri Box (8)",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|14:30": [
             {
-              "cn": "Wild Dose Singles Bloating Evri (2)",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|15:00": [
             {
-              "cn": "Hey Harper Multi Evri (12)",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
           "Jack|15:30": [
             {
-              "cn": "OGT",
+              "cn": "Wild Dose Pill Box Evri (8)",
               "r": "K"
             }
           ],
@@ -726,75 +744,81 @@
               "r": "K"
             }
           ],
+          "Jack|16:30": [
+            {
+              "cn": "Wild Dose Pill Box Evri (8)",
+              "r": "K"
+            }
+          ],
           "Ewan|07:00": [
             {
-              "cn": "Rippl Impact Singles Evri International",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|07:30": [
             {
-              "cn": "Rippl Impact Singles Evri International",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|08:00": [
             {
-              "cn": "Rippl Impact Singles Evri International",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|08:30": [
             {
-              "cn": "Anicura Singles Evri ND",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|09:00": [
             {
-              "cn": "Anicura Singles Evri ND",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|09:30": [
             {
-              "cn": "Rosalique Trade",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|10:00": [
             {
-              "cn": "Rosalique Trade",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|10:30": [
             {
-              "cn": "Prana Chai 1pm",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|11:00": [
             {
-              "cn": "Hey Harper Singles Evri (6)",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|11:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|13:00": [
             {
-              "cn": "Wild Dose BOTTLE Singles RM48 (8)",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|13:30": [
             {
-              "cn": "Wild Dose Singles LL (2)",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
@@ -806,31 +830,43 @@
           ],
           "Ewan|14:30": [
             {
-              "cn": "Pirates Grog Chests",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|15:00": [
             {
-              "cn": "Matchroom Boxing",
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Ewan|15:30": [
             {
-              "cn": "Kit Blake",
+              "cn": "Totter Singles DX",
+              "r": "K"
+            }
+          ],
+          "Ewan|16:00": [
+            {
+              "cn": "Totter Singles DX",
+              "r": "K"
+            }
+          ],
+          "Ewan|16:30": [
+            {
+              "cn": "Totter Singles DX",
               "r": "K"
             }
           ],
           "Tracey|07:00": [
             {
-              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|07:30": [
             {
-              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
@@ -848,67 +884,85 @@
           ],
           "Tracey|09:00": [
             {
-              "cn": "Wild Dose 2/3 Bloating LL (3)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|09:30": [
             {
-              "cn": "Wild Dose 2/3 Bloating LL (3)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|10:00": [
             {
-              "cn": "Ripple+ Multi LL (8)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|10:30": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|11:00": [
             {
-              "cn": "Charlotte Simone Singles BoxA DHL",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|11:30": [
             {
-              "cn": "Luella Grey",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|13:00": [
             {
-              "cn": "Wild Dose LL (3)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|13:30": [
             {
-              "cn": "La Bonne Brosse Multi",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|14:00": [
             {
-              "cn": "Staise Singles",
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ],
           "Tracey|14:30": [
             {
-              "cn": "SA Wilson",
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ],
           "Tracey|15:00": [
             {
-              "cn": "Second Skin Singles",
+              "cn": "Bare Biology RM48 (7)",
+              "r": "K"
+            }
+          ],
+          "Tracey|15:30": [
+            {
+              "cn": "Bare Biology RM48 (7)",
+              "r": "K"
+            }
+          ],
+          "Tracey|16:00": [
+            {
+              "cn": "Bare Biology RM48 (7)",
+              "r": "K"
+            }
+          ],
+          "Tracey|16:30": [
+            {
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ]
