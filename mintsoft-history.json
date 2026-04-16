@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T07:26:43.837Z",
+  "saved": "2026-04-16T07:26:54.038Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15272,6 +15272,33 @@
       "actualSecOrd": 60,
       "orderCount": 4,
       "packerCount": 14
+    },
+    {
+      "batchId": 8430631,
+      "reference": "2026-04-16 05-59 - Pirates Grog Yuzu - Run 1",
+      "date": "2026-04-16T07:21:36.501Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 76,
+      "orderCount": 3,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430671,
+      "reference": "2026-04-16 06-04 - Salcura Large Evri ND (4) - Run 2",
+      "date": "2026-04-16T07:17:58.330Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 46,
+      "orderCount": 9,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430717,
+      "reference": "2026-04-16 07-14 - Troubadour - Run 1",
+      "date": "2026-04-16T07:26:09.902Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 58.5,
+      "orderCount": 4,
+      "packerCount": 14
     }
   ],
   "packerSnaps": [
@@ -15783,7 +15810,7 @@
       "dow": 4,
       "hour": 8,
       "count": 14,
-      "ts": "2026-04-16T07:18:05.507Z",
+      "ts": "2026-04-16T07:26:50.130Z",
       "dateHour": "2026-04-16T07"
     }
   ]
