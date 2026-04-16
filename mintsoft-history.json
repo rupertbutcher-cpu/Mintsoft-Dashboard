@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T06:51:15.545Z",
+  "saved": "2026-04-16T06:52:06.165Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15146,6 +15146,24 @@
       "actualSecOrd": 42,
       "orderCount": 3,
       "packerCount": 9
+    },
+    {
+      "batchId": 8430637,
+      "reference": "2026-04-16 05-59 - Bare Biology Single Tub RM (6) - Run 1",
+      "date": "2026-04-16T06:48:51.218Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 53.1,
+      "orderCount": 19,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8430664,
+      "reference": "2026-04-16 06-04 - Totter Singles DX - Run 1",
+      "date": "2026-04-16T06:48:27.173Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 21.6,
+      "orderCount": 32,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -15650,7 +15668,7 @@
       "dow": 4,
       "hour": 7,
       "count": 9,
-      "ts": "2026-04-16T06:50:47.613Z",
+      "ts": "2026-04-16T06:52:02.700Z",
       "dateHour": "2026-04-16T06"
     }
   ]
