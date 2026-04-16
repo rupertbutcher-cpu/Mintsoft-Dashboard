@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T06:44:04.282Z",
+  "saved": "2026-04-16T06:44:53.906Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15119,6 +15119,33 @@
       "actualSecOrd": 75.9,
       "orderCount": 20,
       "packerCount": 7
+    },
+    {
+      "batchId": 8430657,
+      "reference": "2026-04-16 06-04 - Luella Gray - Run 1",
+      "date": "2026-04-16T06:27:04.579Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 94,
+      "orderCount": 3,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8430661,
+      "reference": "2026-04-16 06-04 - Wild Dose 2/3 Evri ND (3) - Run 1",
+      "date": "2026-04-16T06:40:04.612Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 22.9,
+      "orderCount": 17,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8430670,
+      "reference": "2026-04-16 06-04 - Untamed Singles GE (10) - Run 1",
+      "date": "2026-04-16T06:41:51.263Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 42,
+      "orderCount": 3,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -15622,8 +15649,8 @@
     {
       "dow": 4,
       "hour": 7,
-      "count": 7,
-      "ts": "2026-04-16T06:35:53.283Z",
+      "count": 9,
+      "ts": "2026-04-16T06:44:50.450Z",
       "dateHour": "2026-04-16T06"
     }
   ]
