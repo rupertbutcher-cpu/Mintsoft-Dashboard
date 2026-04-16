@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T09:41:36.276Z",
+  "saved": "2026-04-16T09:41:59.842Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15650,6 +15650,51 @@
       "actualSecOrd": 44.6,
       "orderCount": 51,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430618,
+      "reference": "2026-04-16 05-49 - Wild Dose Singles Bloating LL Box (2) - Run 1",
+      "date": "2026-04-16T09:26:22.819Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 33.4,
+      "orderCount": 204,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430621,
+      "reference": "2026-04-16 05-54 - Rosalique Gift Set (7) - Run 1",
+      "date": "2026-04-16T09:26:04.326Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 63.3,
+      "orderCount": 11,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430624,
+      "reference": "2026-04-16 05-54 - Wild Dose Singles Bloating LL (2) - Run 1",
+      "date": "2026-04-16T09:26:46.956Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 32.9,
+      "orderCount": 37,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430652,
+      "reference": "2026-04-16 06-04 - Rosalique Evri (6) - Run 1",
+      "date": "2026-04-16T09:26:34.874Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 28.2,
+      "orderCount": 23,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430719,
+      "reference": "2026-04-16 08-49 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-16T09:26:41.752Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 52.2,
+      "orderCount": 43,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -16174,8 +16219,8 @@
     {
       "dow": 4,
       "hour": 10,
-      "count": 10,
-      "ts": "2026-04-16T09:27:01.278Z",
+      "count": 11,
+      "ts": "2026-04-16T09:41:56.313Z",
       "dateHour": "2026-04-16T09"
     }
   ]
