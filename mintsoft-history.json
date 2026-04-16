@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T12:54:55.021Z",
+  "saved": "2026-04-16T13:41:00.284Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15812,6 +15812,132 @@
       "actualSecOrd": 53.3,
       "orderCount": 54,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430743,
+      "reference": "2026-04-16 11-14 - Bare Biology RM48 11am (7) - Run 1",
+      "date": "2026-04-16T12:35:10.011Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 72.3,
+      "orderCount": 23,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430760,
+      "reference": "Wild Dose LL",
+      "date": "2026-04-16T12:40:20.814Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 32.2,
+      "orderCount": 80,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430665,
+      "reference": "2026-04-16 06-04 - SOAR Singles - Run 1",
+      "date": "2026-04-16T07:25:13.743Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430792,
+      "reference": "2026-04-16 13-19 - Wild Dose Singles Bloating LL 1pm (2) - Run 1",
+      "date": "2026-04-16T13:10:28.907Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 16.3,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430804,
+      "reference": "2026-04-16 13-25 - Hey Harper Multi Evri 1pm (12) - Run 1",
+      "date": "2026-04-16T13:04:14.709Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 114,
+      "orderCount": 6,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430827,
+      "reference": "2026-04-16 13-25 - Ripple+ Evri ND 1pm (8) - Run 1",
+      "date": "2026-04-16T13:10:20.731Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 28.8,
+      "orderCount": 10,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430855,
+      "reference": "2026-04-16 13-34 - Bare Biology RM48 1pm (7) - Run 1",
+      "date": "2026-04-16T13:10:21.481Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 86,
+      "orderCount": 3,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430783,
+      "reference": "2026-04-16 13-19 - Wild Dose Singles Bloating Evri 1pm (2) - Run 1",
+      "date": "2026-04-16T13:25:23.659Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 34.6,
+      "orderCount": 17,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430824,
+      "reference": "2026-04-16 13-25 - Rosalique Evri ND 1pm (6) - Run 1",
+      "date": "2026-04-16T13:25:07.998Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 66,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430839,
+      "reference": "2026-04-16 13-29 - Ripple+ Evri 1pm (8) - Run 1",
+      "date": "2026-04-16T13:24:52.381Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 37.8,
+      "orderCount": 10,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430844,
+      "reference": "2026-04-16 13-34 - Salcura Large Evri ND 1pm (4) - Run 1",
+      "date": "2026-04-16T13:24:51.976Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 64.9,
+      "orderCount": 16,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430851,
+      "reference": "2026-04-16 13-34 - Wild Dose BOTTLE Singles Bloating Evri 1pm (8) - Run 1",
+      "date": "2026-04-16T13:25:22.320Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30,
+      "orderCount": 9,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430853,
+      "reference": "2026-04-16 13-34 - Bare Biology RM24 1pm (7) - Run 1",
+      "date": "2026-04-16T13:25:15.525Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 43,
+      "orderCount": 6,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430867,
+      "reference": "2026-04-16 13-39 - Wild Dose Singles Evri 1pm (2) - Run 1",
+      "date": "2026-04-16T13:25:08.944Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 25.2,
+      "orderCount": 5,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -16358,8 +16484,15 @@
       "dow": 4,
       "hour": 13,
       "count": 5,
-      "ts": "2026-04-16T12:41:04.543Z",
+      "ts": "2026-04-16T12:56:02.875Z",
       "dateHour": "2026-04-16T12"
+    },
+    {
+      "dow": 4,
+      "hour": 14,
+      "count": 13,
+      "ts": "2026-04-16T13:40:56.274Z",
+      "dateHour": "2026-04-16T13"
     }
   ]
 }
