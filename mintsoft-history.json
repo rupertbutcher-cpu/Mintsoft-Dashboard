@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T07:26:54.038Z",
+  "saved": "2026-04-16T07:27:34.606Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15283,12 +15283,39 @@
       "packerCount": 14
     },
     {
+      "batchId": 8430668,
+      "reference": "2026-04-16 06-04 - Wild Dose 4+ Evri (4) - Run 2",
+      "date": "2026-04-16T07:27:08.566Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 67.2,
+      "orderCount": 15,
+      "packerCount": 14
+    },
+    {
       "batchId": 8430671,
       "reference": "2026-04-16 06-04 - Salcura Large Evri ND (4) - Run 2",
       "date": "2026-04-16T07:17:58.330Z",
       "dayOfWeek": 4,
       "actualSecOrd": 46,
       "orderCount": 9,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430672,
+      "reference": "2026-04-16 06-09 - Bare Biology Singles RM48 (5) - Run 1",
+      "date": "2026-04-16T07:26:44.386Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 60.7,
+      "orderCount": 42,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430688,
+      "reference": "2026-04-16 06-19 - La Bonne Brosse Multi - Run 1",
+      "date": "2026-04-16T07:26:14.215Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 74.3,
+      "orderCount": 8,
       "packerCount": 14
     },
     {
@@ -15810,7 +15837,7 @@
       "dow": 4,
       "hour": 8,
       "count": 14,
-      "ts": "2026-04-16T07:26:50.130Z",
+      "ts": "2026-04-16T07:27:31.006Z",
       "dateHour": "2026-04-16T07"
     }
   ]
