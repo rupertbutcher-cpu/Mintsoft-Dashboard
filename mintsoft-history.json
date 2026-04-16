@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T14:54:55.281Z",
+  "saved": "2026-04-16T15:41:16.326Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16127,6 +16127,60 @@
       "actualSecOrd": 53.3,
       "orderCount": 18,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430771,
+      "reference": "2026-04-16 13-14 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-16T14:40:07.924Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 45.1,
+      "orderCount": 41,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430864,
+      "reference": "2026-04-16 13-39 - Salcura Mop Up 1pm (4) - Run 1",
+      "date": "2026-04-16T14:39:41.727Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 64.5,
+      "orderCount": 12,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430886,
+      "reference": "",
+      "date": "2026-04-16T14:53:51.570Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 66.8,
+      "orderCount": 8,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430862,
+      "reference": "2026-04-16 13-34 - Anicura Large Evri ND 1pm - Run 1",
+      "date": "2026-04-16T14:52:16.128Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 63.3,
+      "orderCount": 11,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430806,
+      "reference": "2026-04-16 13-25 - Troubadour 1pm - Run 1",
+      "date": "2026-04-16T13:54:23.957Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 15.4,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430866,
+      "reference": "2026-04-16 13-39 - Wild Dose Evri 1pm (8) - Run 1",
+      "date": "2026-04-16T14:59:34.654Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 77.5,
+      "orderCount": 25,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -16686,9 +16740,16 @@
     {
       "dow": 4,
       "hour": 15,
-      "count": 9,
-      "ts": "2026-04-16T14:40:35.459Z",
+      "count": 8,
+      "ts": "2026-04-16T14:56:02.269Z",
       "dateHour": "2026-04-16T14"
+    },
+    {
+      "dow": 4,
+      "hour": 16,
+      "count": 1,
+      "ts": "2026-04-16T15:41:11.751Z",
+      "dateHour": "2026-04-16T15"
     }
   ]
 }
