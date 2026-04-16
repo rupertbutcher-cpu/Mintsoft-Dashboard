@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T15:41:16.326Z",
+  "saved": "2026-04-16T16:54:55.322Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16181,6 +16181,15 @@
       "actualSecOrd": 77.5,
       "orderCount": 25,
       "packerCount": 23
+    },
+    {
+      "batchId": 8430884,
+      "reference": "2026-04-16 15-24 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-16T15:54:50.481Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 46.8,
+      "orderCount": 46,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -16748,8 +16757,15 @@
       "dow": 4,
       "hour": 16,
       "count": 1,
-      "ts": "2026-04-16T15:41:11.751Z",
+      "ts": "2026-04-16T15:55:38.120Z",
       "dateHour": "2026-04-16T15"
+    },
+    {
+      "dow": 4,
+      "hour": 17,
+      "count": 1,
+      "ts": "2026-04-16T16:11:13.000Z",
+      "dateHour": "2026-04-16T16"
     }
   ]
 }
