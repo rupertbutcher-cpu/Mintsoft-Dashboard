@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T08:54:54.971Z",
+  "saved": "2026-04-16T09:10:48.149Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15434,6 +15434,105 @@
       "actualSecOrd": 34.3,
       "orderCount": 18,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430639,
+      "reference": "2026-04-16 06-04 - Rosalique Multi Evri ND (8) - Run 1",
+      "date": "2026-04-16T08:40:27.373Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 72,
+      "orderCount": 14,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430647,
+      "reference": "2026-04-16 06-04 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
+      "date": "2026-04-16T08:40:28.599Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 42.8,
+      "orderCount": 52,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430660,
+      "reference": "2026-04-16 06-04 - Wild Dose Pill Box Evri (8) - Run 1",
+      "date": "2026-04-16T08:39:20.203Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 48.6,
+      "orderCount": 28,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430675,
+      "reference": "2026-04-16 06-09 - Wild Dose Evri (8) - Run 1",
+      "date": "2026-04-16T08:40:25.733Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 75.5,
+      "orderCount": 24,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430678,
+      "reference": "2026-04-16 06-09 - Wild Dose Evri (8) - Run 2",
+      "date": "2026-04-16T08:39:18.935Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 57.3,
+      "orderCount": 22,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430626,
+      "reference": "2026-04-16 05-54 - Rosalique Pre Mades Evri ND (4) - Run 1",
+      "date": "2026-04-16T08:54:26.627Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 40.7,
+      "orderCount": 71,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430632,
+      "reference": "2026-04-16 05-59 - Wild Dose 2/3 LL (3) - Run 1",
+      "date": "2026-04-16T08:55:23.817Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 33.4,
+      "orderCount": 41,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430667,
+      "reference": "2026-04-16 06-04 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 3",
+      "date": "2026-04-16T08:54:05.781Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 36,
+      "orderCount": 14,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430685,
+      "reference": "2026-04-16 06-14 - INDI Multi Evri - Run 1",
+      "date": "2026-04-16T08:55:10.114Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 47.5,
+      "orderCount": 12,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430720,
+      "reference": "2026-04-16 08-49 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
+      "date": "2026-04-16T08:55:31.689Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 45.5,
+      "orderCount": 33,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430662,
+      "reference": "2026-04-16 06-04 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 2",
+      "date": "2026-04-16T08:57:15.370Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 42.7,
+      "orderCount": 59,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -15951,9 +16050,16 @@
     {
       "dow": 4,
       "hour": 9,
-      "count": 16,
-      "ts": "2026-04-16T08:40:52.994Z",
+      "count": 14,
+      "ts": "2026-04-16T08:55:44.321Z",
       "dateHour": "2026-04-16T08"
+    },
+    {
+      "dow": 4,
+      "hour": 10,
+      "count": 13,
+      "ts": "2026-04-16T09:10:43.736Z",
+      "dateHour": "2026-04-16T09"
     }
   ]
 }
