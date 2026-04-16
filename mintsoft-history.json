@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T06:54:52.367Z",
+  "saved": "2026-04-16T06:55:51.881Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15164,6 +15164,15 @@
       "actualSecOrd": 21.6,
       "orderCount": 32,
       "packerCount": 9
+    },
+    {
+      "batchId": 8430669,
+      "reference": "2026-04-16 06-04 - Wild Dose Evri ND (8) - Run 1",
+      "date": "2026-04-16T06:52:47.624Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 49,
+      "orderCount": 6,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -15668,7 +15677,7 @@
       "dow": 4,
       "hour": 7,
       "count": 9,
-      "ts": "2026-04-16T06:52:02.700Z",
+      "ts": "2026-04-16T06:55:48.401Z",
       "dateHour": "2026-04-16T06"
     }
   ]
