@@ -1,66 +1,135 @@
 {
   "version": 1,
-  "saved": "2026-04-16T06:12:52.827Z",
+  "saved": "2026-04-16T06:20:30.077Z",
   "days": {
     "2026-04-16T07": {
       "date": "2026-04-16",
       "hour": "07",
-      "savedAt": "2026-04-16T06:12:52.528Z",
-      "despatched": 10,
-      "pending": 2320,
-      "total": 2330,
-      "pct": "0%",
-      "ratePerHour": "200.0",
-      "secOrdActual": 24.51411111111111,
+      "savedAt": "2026-04-16T06:20:29.733Z",
+      "despatched": 36,
+      "pending": 2304,
+      "total": 2340,
+      "pct": "2%",
+      "ratePerHour": "393.2",
+      "secOrdActual": 42.42209090909091,
       "secOrdBenchmark": 41.51064078578109,
-      "secOrdTarget": 33.86666666666667,
-      "peakPackers": 2,
-      "etaStr": "10:36",
-      "batches": 152,
+      "secOrdTarget": 29.61574569221628,
+      "peakPackers": 5,
+      "etaStr": "11:34",
+      "batches": 153,
       "packers": [
         {
-          "name": "Wendy",
-          "orders": 7,
+          "name": "Callum",
+          "orders": 1,
           "batches": 1,
-          "actualSecOrd": 31.518142857142855,
+          "actualSecOrd": 0,
+          "targetSecOrd": 122,
+          "benchTarget": 122,
+          "top10Target": 122,
+          "firstSeen": "2026-04-16T06:19:02.019Z",
+          "lastSeen": "2026-04-16T06:19:02.019Z",
+          "batchBreakdown": [
+            {
+              "id": 8430629,
+              "reference": "2026-04-16 05-54 - Bare Biology Trade - Run 1",
+              "batchType": null,
+              "orders": 1,
+              "actualSecOrd": null,
+              "targetSecOrd": 122,
+              "start": "2026-04-16T06:19:02.019Z",
+              "end": "2026-04-16T06:19:02.019Z"
+            }
+          ]
+        },
+        {
+          "name": "Matt",
+          "orders": 14,
+          "batches": 1,
+          "actualSecOrd": 31.78071428571429,
+          "targetSecOrd": 18.535714285714285,
+          "benchTarget": 19.379508196721314,
+          "top10Target": 18.535714285714285,
+          "firstSeen": "2026-04-16T06:12:31.555Z",
+          "lastSeen": "2026-04-16T06:19:56.485Z",
+          "batchBreakdown": [
+            {
+              "id": 8430638,
+              "reference": "2026-04-16 06-04 - Bare Biology LL (2) - Run 1",
+              "batchType": 2,
+              "orders": 14,
+              "actualSecOrd": 31.78071428571429,
+              "targetSecOrd": 18.535714285714285,
+              "start": "2026-04-16T06:12:31.555Z",
+              "end": "2026-04-16T06:19:56.485Z"
+            }
+          ]
+        },
+        {
+          "name": "Wendy",
+          "orders": 11,
+          "batches": 1,
+          "actualSecOrd": 57.56445454545454,
           "targetSecOrd": 36,
-          "benchTarget": 51.659701492537316,
+          "benchTarget": 51.65970149253732,
           "top10Target": 36,
           "firstSeen": "2026-04-16T06:02:02.861Z",
-          "lastSeen": "2026-04-16T06:12:19.010Z",
+          "lastSeen": "2026-04-16T06:19:11.592Z",
           "batchBreakdown": [
             {
               "id": 8430656,
               "reference": "2026-04-16 06-04 - Salcura Large Evri ND (4) - Run 1",
               "batchType": 4,
-              "orders": 7,
-              "actualSecOrd": 31.518142857142855,
+              "orders": 11,
+              "actualSecOrd": 57.56445454545454,
               "targetSecOrd": 36,
               "start": "2026-04-16T06:02:02.861Z",
-              "end": "2026-04-16T06:12:19.010Z"
+              "end": "2026-04-16T06:19:11.592Z"
+            }
+          ]
+        },
+        {
+          "name": "Ewan",
+          "orders": 1,
+          "batches": 1,
+          "actualSecOrd": 0,
+          "targetSecOrd": 41.41960784313726,
+          "benchTarget": 44.14817518248175,
+          "top10Target": 41.41960784313726,
+          "firstSeen": "2026-04-16T06:19:52.347Z",
+          "lastSeen": "2026-04-16T06:19:52.347Z",
+          "batchBreakdown": [
+            {
+              "id": 8430664,
+              "reference": "2026-04-16 06-04 - Totter Singles DX - Run 1",
+              "batchType": null,
+              "orders": 1,
+              "actualSecOrd": null,
+              "targetSecOrd": 41.41960784313726,
+              "start": "2026-04-16T06:19:52.347Z",
+              "end": "2026-04-16T06:19:52.347Z"
             }
           ]
         },
         {
           "name": "Tracey",
-          "orders": 2,
+          "orders": 6,
           "batches": 1,
-          "actualSecOrd": 0,
-          "targetSecOrd": 26.4,
+          "actualSecOrd": 53.63166666666667,
+          "targetSecOrd": 26.399999999999995,
           "benchTarget": 35.60666666666666,
-          "top10Target": 26.4,
+          "top10Target": 26.399999999999995,
           "firstSeen": "2026-04-16T06:09:31.045Z",
-          "lastSeen": "2026-04-16T06:10:59.597Z",
+          "lastSeen": "2026-04-16T06:18:59.437Z",
           "batchBreakdown": [
             {
               "id": 8430684,
               "reference": "2026-04-16 06-14 - Bare Biology RM48 (7) - Run 1",
               "batchType": 7,
-              "orders": 2,
-              "actualSecOrd": null,
+              "orders": 6,
+              "actualSecOrd": 53.63166666666667,
               "targetSecOrd": 26.4,
               "start": "2026-04-16T06:09:31.045Z",
-              "end": "2026-04-16T06:10:59.597Z"
+              "end": "2026-04-16T06:18:59.437Z"
             }
           ]
         }
@@ -966,15 +1035,15 @@
           "id": 8430629,
           "reference": "2026-04-16 05-54 - Bare Biology Trade - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 1,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 122,
           "actualSecOrd": null,
-          "targetDurationMin": null,
+          "targetDurationMin": 2,
           "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "batchStart": "2026-04-16T06:19:02.019Z",
+          "batchEnd": "2026-04-16T06:19:02.019Z"
         },
         {
           "id": 8430630,
@@ -1092,15 +1161,15 @@
           "id": 8430638,
           "reference": "2026-04-16 06-04 - Bare Biology LL (2) - Run 1",
           "batchType": 2,
-          "orderCount": 0,
+          "orderCount": 14,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 18.535714285714285,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 31.7,
+          "targetDurationMin": 4.3,
+          "actualDurationMin": 7.4,
+          "batchStart": "2026-04-16T06:12:31.555Z",
+          "batchEnd": "2026-04-16T06:19:56.485Z"
         },
         {
           "id": 8430639,
@@ -1344,15 +1413,15 @@
           "id": 8430656,
           "reference": "2026-04-16 06-04 - Salcura Large Evri ND (4) - Run 1",
           "batchType": 4,
-          "orderCount": 7,
+          "orderCount": 11,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 36,
-          "actualSecOrd": 31.7,
-          "targetDurationMin": 4.2,
-          "actualDurationMin": 3.7,
+          "actualSecOrd": 57.8,
+          "targetDurationMin": 6.6,
+          "actualDurationMin": 10.6,
           "batchStart": "2026-04-16T06:02:02.861Z",
-          "batchEnd": "2026-04-16T06:12:19.010Z"
+          "batchEnd": "2026-04-16T06:19:11.592Z"
         },
         {
           "id": 8430657,
@@ -1456,15 +1525,15 @@
           "id": 8430664,
           "reference": "2026-04-16 06-04 - Totter Singles DX - Run 1",
           "batchType": null,
-          "orderCount": 0,
-          "assignedUser": "",
+          "orderCount": 1,
+          "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 41.41960784313726,
           "actualSecOrd": null,
-          "targetDurationMin": null,
+          "targetDurationMin": 0.7,
           "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "batchStart": "2026-04-16T06:19:52.347Z",
+          "batchEnd": "2026-04-16T06:19:52.347Z"
         },
         {
           "id": 8430665,
@@ -1736,15 +1805,15 @@
           "id": 8430684,
           "reference": "2026-04-16 06-14 - Bare Biology RM48 (7) - Run 1",
           "batchType": 7,
-          "orderCount": 2,
+          "orderCount": 6,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 26.4,
-          "actualSecOrd": null,
-          "targetDurationMin": 0.9,
-          "actualDurationMin": 1.5,
+          "actualSecOrd": 54,
+          "targetDurationMin": 2.6,
+          "actualDurationMin": 5.4,
           "batchStart": "2026-04-16T06:09:31.045Z",
-          "batchEnd": "2026-04-16T06:10:59.597Z"
+          "batchEnd": "2026-04-16T06:18:59.437Z"
         },
         {
           "id": 8430685,
@@ -1807,7 +1876,7 @@
           "reference": "2026-04-16 06-34 - Shirt Company Singles - Run 1",
           "batchType": null,
           "orderCount": 0,
-          "assignedUser": "ALL",
+          "assignedUser": "haulandstore6@haul-store.accessmyworkspace.com",
           "despatched": false,
           "targetSecOrd": 46.5,
           "actualSecOrd": null,
@@ -1821,7 +1890,7 @@
           "reference": "2026-04-16 06-34 - Shirt Company Multi - Run 1",
           "batchType": null,
           "orderCount": 0,
-          "assignedUser": "ALL",
+          "assignedUser": "haulandstore6@haul-store.accessmyworkspace.com",
           "despatched": false,
           "targetSecOrd": 58.5,
           "actualSecOrd": null,
@@ -2188,6 +2257,20 @@
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 33.725,
+          "actualSecOrd": null,
+          "targetDurationMin": null,
+          "actualDurationMin": null,
+          "batchStart": null,
+          "batchEnd": null
+        },
+        {
+          "id": 8430717,
+          "reference": "2026-04-16 07-14 - Troubadour - Run 1",
+          "batchType": null,
+          "orderCount": 0,
+          "assignedUser": "ALL",
+          "despatched": false,
+          "targetSecOrd": 22,
           "actualSecOrd": null,
           "targetDurationMin": null,
           "actualDurationMin": null,
