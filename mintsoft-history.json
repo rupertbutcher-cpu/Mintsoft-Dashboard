@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T07:17:13.787Z",
+  "saved": "2026-04-16T07:18:09.004Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15254,6 +15254,24 @@
       "actualSecOrd": 22.2,
       "orderCount": 10,
       "packerCount": 13
+    },
+    {
+      "batchId": 8430687,
+      "reference": "2026-04-16 06-19 - La Bonne Brosse Singles - Run 1",
+      "date": "2026-04-16T07:11:35.011Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 30,
+      "orderCount": 9,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430689,
+      "reference": "2026-04-16 06-34 - Shirt Company Singles - Run 1",
+      "date": "2026-04-16T07:11:46.645Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 60,
+      "orderCount": 4,
+      "packerCount": 14
     }
   ],
   "packerSnaps": [
@@ -15764,8 +15782,8 @@
     {
       "dow": 4,
       "hour": 8,
-      "count": 13,
-      "ts": "2026-04-16T07:10:13.874Z",
+      "count": 14,
+      "ts": "2026-04-16T07:18:05.507Z",
       "dateHour": "2026-04-16T07"
     }
   ]
