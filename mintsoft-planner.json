@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-16T07:42:35.106Z",
+  "updatedAt": "2026-04-16T10:34:33.688Z",
   "rotas": {
     "2026-04-16": {
-      "savedAt": "2026-04-16T07:42:34.858Z",
+      "savedAt": "2026-04-16T10:34:33.523Z",
       "v": 2,
       "staff": [
         {
@@ -333,7 +333,9 @@
         "Rippl Impact Multi Evri International",
         "Laura Hammett",
         "Troubadour",
-        "Emma Shipley"
+        "Emma Shipley",
+        "Bare Biology LL",
+        "Bare Biology Pack of Six"
       ],
       "roles": [
         "Goods In",
@@ -366,13 +368,37 @@
           ],
           "Wendy|07:00": [
             {
-              "cn": "Salcura Singles (3)",
+              "cn": "Rosalique Pre Mades Evri ND (4)",
               "r": "K"
             }
           ],
           "Wendy|07:30": [
             {
-              "cn": "Anicura Amazon",
+              "cn": "Bare Biology Singles RM",
+              "r": "K"
+            }
+          ],
+          "Wendy|08:00": [
+            {
+              "cn": "Bare Biology LL",
+              "r": "K"
+            }
+          ],
+          "Wendy|08:30": [
+            {
+              "cn": "Rosalique Multi Evri ND (8)",
+              "r": "K"
+            }
+          ],
+          "Wendy|09:00": [
+            {
+              "cn": "Salcura Singles (3)",
+              "r": "K"
+            }
+          ],
+          "Wendy|09:30": [
+            {
+              "cn": "Anicura Singles Evri ND",
               "r": "K"
             }
           ],
@@ -384,13 +410,7 @@
           ],
           "Jack|07:00": [
             {
-              "cn": "Wild Dose Singles Bloating Evri (2)",
-              "r": "K"
-            }
-          ],
-          "Jack|07:30": [
-            {
-              "cn": "Wild Dose Pill Box Evri (8)",
+              "cn": "Wild Dose Evri (8)",
               "r": "K"
             }
           ],
@@ -418,9 +438,39 @@
               "r": "K"
             }
           ],
+          "Tracey|08:30": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|09:00": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|09:30": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|10:00": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|10:30": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
           "Adamd|07:36": [
             {
-              "cn": "Hey Harper Multi Evri (12)",
+              "cn": "Wild Dose 2/3 LL (3)",
               "r": "K"
             }
           ],
@@ -432,7 +482,7 @@
           ],
           "Ed|08:30": [
             {
-              "cn": "SOAR Multi",
+              "cn": "SOAR Trade",
               "r": "K"
             }
           ],
@@ -468,25 +518,25 @@
           ],
           "Manleka|08:05": [
             {
-              "cn": "Wild Dose 4+ Evri (4)",
-              "r": "K"
-            }
-          ],
-          "Manleka|08:35": [
-            {
-              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri Box (8)",
               "r": "K"
             }
           ],
           "Lorraine|08:06": [
             {
-              "cn": "Wild Dose Evri (8)",
+              "cn": "Wild Dose 2/3 Bloating LL Custom (3)",
               "r": "K"
             }
           ],
           "Lorraine|08:36": [
             {
               "cn": "Shirt Company Singles",
+              "r": "K"
+            }
+          ],
+          "Claire|08:12": [
+            {
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri Custom (8)",
               "r": "K"
             }
           ],
