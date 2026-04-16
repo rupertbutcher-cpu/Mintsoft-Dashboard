@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T06:30:36.135Z",
+  "saved": "2026-04-16T06:31:23.817Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17540,6 +17540,24 @@
       "actualSecOrd": 74.1,
       "orderCount": 20,
       "packerCount": 24
+    },
+    {
+      "batchId": 8430638,
+      "reference": "2026-04-16 06-04 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-16T06:29:51.567Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 33.5,
+      "orderCount": 31,
+      "packerCount": 7
+    },
+    {
+      "batchId": 8430657,
+      "reference": "2026-04-16 06-04 - Luella Gray - Run 1",
+      "date": "2026-04-16T06:27:04.579Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 94,
+      "orderCount": 3,
+      "packerCount": 7
     }
   ],
   "packerSnaps": [
@@ -18044,7 +18062,7 @@
       "dow": 4,
       "hour": 7,
       "count": 7,
-      "ts": "2026-04-16T06:25:41.341Z",
+      "ts": "2026-04-16T06:31:20.281Z",
       "dateHour": "2026-04-16T06"
     }
   ]
