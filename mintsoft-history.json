@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T11:41:36.701Z",
+  "saved": "2026-04-16T11:42:11.163Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15857,6 +15857,15 @@
       "actualSecOrd": 26.6,
       "orderCount": 80,
       "packerCount": 22
+    },
+    {
+      "batchId": 8430754,
+      "reference": "Wild Dose 2/3 LL",
+      "date": "2026-04-16T11:26:26.137Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 35.8,
+      "orderCount": 33,
+      "packerCount": 22
     }
   ],
   "packerSnaps": [
@@ -16396,7 +16405,7 @@
       "dow": 4,
       "hour": 12,
       "count": 5,
-      "ts": "2026-04-16T11:27:05.524Z",
+      "ts": "2026-04-16T11:42:06.968Z",
       "dateHour": "2026-04-16T11"
     }
   ]
