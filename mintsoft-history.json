@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T07:08:34.862Z",
+  "saved": "2026-04-16T07:10:19.085Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15173,6 +15173,87 @@
       "actualSecOrd": 49,
       "orderCount": 6,
       "packerCount": 9
+    },
+    {
+      "batchId": 8430620,
+      "reference": "2026-04-16 05-49 - Salcura Amazon (4) - Run 1",
+      "date": "2026-04-16T07:04:07.152Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 26.4,
+      "orderCount": 10,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430627,
+      "reference": "2026-04-16 05-54 - Salcura Singles (3) - Run 1",
+      "date": "2026-04-16T06:58:21.749Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 45.9,
+      "orderCount": 26,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430630,
+      "reference": "2026-04-16 05-59 - Hey Harper Multi Evri (12) - Run 1",
+      "date": "2026-04-16T07:07:51.502Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 63,
+      "orderCount": 24,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430640,
+      "reference": "2026-04-16 06-04 - Wild Dose BOTTLE Singles Evri ND (8) - Run 1",
+      "date": "2026-04-16T07:03:14.029Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 39.8,
+      "orderCount": 11,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430663,
+      "reference": "2026-04-16 06-04 - Totter RM - Run 1",
+      "date": "2026-04-16T06:56:53.230Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 24,
+      "orderCount": 5,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430673,
+      "reference": "2026-04-16 06-09 - Wild Dose Singles Evri (2) - Run 1",
+      "date": "2026-04-16T07:07:29.702Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 23,
+      "orderCount": 6,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430681,
+      "reference": "2026-04-16 06-14 - Spacemasks Singles - Run 1",
+      "date": "2026-04-16T07:04:38.408Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 12,
+      "orderCount": 10,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430700,
+      "reference": "2026-04-16 07-04 - ST8 Supply - Run 1",
+      "date": "2026-04-16T07:07:21.568Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 79.1,
+      "orderCount": 16,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8430711,
+      "reference": "2026-04-16 07-09 - Troubadour Mujjo - Run 1",
+      "date": "2026-04-16T07:07:45.171Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 22.2,
+      "orderCount": 10,
+      "packerCount": 13
     }
   ],
   "packerSnaps": [
@@ -15683,8 +15764,8 @@
     {
       "dow": 4,
       "hour": 8,
-      "count": 12,
-      "ts": "2026-04-16T07:07:04.770Z",
+      "count": 13,
+      "ts": "2026-04-16T07:10:13.874Z",
       "dateHour": "2026-04-16T07"
     }
   ]
