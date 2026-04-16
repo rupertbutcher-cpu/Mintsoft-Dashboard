@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-16T07:37:41.299Z",
+  "saved": "2026-04-16T07:38:42.855Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -15326,6 +15326,51 @@
       "actualSecOrd": 58.5,
       "orderCount": 4,
       "packerCount": 14
+    },
+    {
+      "batchId": 8430615,
+      "reference": "2026-04-16 05-44 - Salcura Trade - Run 1",
+      "date": "2026-04-16T07:35:47.910Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 80,
+      "orderCount": 3,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8430635,
+      "reference": "2026-04-16 05-59 - Hey Harper Singles Evri (6) - Run 1",
+      "date": "2026-04-16T07:36:35.084Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 33.4,
+      "orderCount": 49,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8430642,
+      "reference": "2026-04-16 06-04 - Anicura Large Evri ND - Run 1",
+      "date": "2026-04-16T07:33:44.237Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 74.2,
+      "orderCount": 11,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8430698,
+      "reference": "2026-04-16 07-04 - &Daughter Trade - Run 1",
+      "date": "2026-04-16T07:28:00.396Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 140,
+      "orderCount": 3,
+      "packerCount": 15
+    },
+    {
+      "batchId": 8430699,
+      "reference": "2026-04-16 07-04 - Duo Singles - Run 1",
+      "date": "2026-04-16T07:29:54.731Z",
+      "dayOfWeek": 4,
+      "actualSecOrd": 61.2,
+      "orderCount": 5,
+      "packerCount": 15
     }
   ],
   "packerSnaps": [
@@ -15836,8 +15881,8 @@
     {
       "dow": 4,
       "hour": 8,
-      "count": 14,
-      "ts": "2026-04-16T07:27:31.006Z",
+      "count": 15,
+      "ts": "2026-04-16T07:38:39.568Z",
       "dateHour": "2026-04-16T07"
     }
   ]
