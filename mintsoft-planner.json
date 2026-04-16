@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-16T07:28:07.948Z",
+  "updatedAt": "2026-04-16T07:39:17.108Z",
   "rotas": {
     "2026-04-16": {
-      "savedAt": "2026-04-16T07:28:07.703Z",
+      "savedAt": "2026-04-16T07:39:16.824Z",
       "v": 2,
       "staff": [
         {
@@ -82,6 +82,142 @@
             "Packing"
           ],
           "workDays": []
+        },
+        {
+          "name": "Adamd",
+          "shiftStart": "0736",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Jemma",
+          "shiftStart": "0743",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Ed",
+          "shiftStart": "0800",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Manleka",
+          "shiftStart": "0805",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Janey",
+          "shiftStart": "0801",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Lorraine",
+          "shiftStart": "0806",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Claire",
+          "shiftStart": "0812",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Gemma",
+          "shiftStart": "0833",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
         }
       ],
       "clients": [
@@ -254,13 +390,13 @@
           ],
           "Callum|10:30": [
             {
-              "cn": "Bare Biology Trade",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
           "Callum|11:00": [
             {
-              "cn": "Bare Biology Trade",
+              "cn": "Rosalique Trade",
               "r": "K"
             }
           ],
@@ -296,25 +432,25 @@
           ],
           "Callum|15:00": [
             {
-              "cn": "Salcura Trade",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|15:30": [
             {
-              "cn": "Salcura Trade",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|16:00": [
             {
-              "cn": "Salcura Trade",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
           "Callum|16:30": [
             {
-              "cn": "Salcura Trade",
+              "cn": "Bare Biology Trade",
               "r": "K"
             }
           ],
@@ -482,55 +618,55 @@
           ],
           "Wendy|11:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|13:00": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|13:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|14:00": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|14:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|15:00": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|15:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|16:00": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
           "Wendy|16:30": [
             {
-              "cn": "Anicura Large Evri ND",
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
@@ -602,43 +738,43 @@
           ],
           "Lynn|13:30": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|14:00": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|14:30": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|15:00": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|15:30": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|16:00": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
           "Lynn|16:30": [
             {
-              "cn": "Duo Singles",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
@@ -860,73 +996,73 @@
           ],
           "Tracey|07:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|07:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|08:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|08:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|09:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|09:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|10:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|10:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|11:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
               "r": "K"
             }
           ],
           "Tracey|11:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ],
           "Tracey|13:00": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ],
           "Tracey|13:30": [
             {
-              "cn": "Bare Biology Singles RM48 (5)",
+              "cn": "Bare Biology RM48 (7)",
               "r": "K"
             }
           ],
@@ -944,25 +1080,505 @@
           ],
           "Tracey|15:00": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|15:30": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|16:00": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
             }
           ],
           "Tracey|16:30": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology Singles RM48 (5)",
+              "r": "K"
+            }
+          ],
+          "Adamd|07:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|08:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|08:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|09:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|09:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|10:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|10:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|11:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|11:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|13:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|13:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|14:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|14:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|15:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|15:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|16:06": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Adamd|16:36": [
+            {
+              "cn": "Hey Harper Multi Evri (12)",
+              "r": "K"
+            }
+          ],
+          "Ed|08:00": [
+            {
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|08:30": [
+            {
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|09:00": [
+            {
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|09:30": [
+            {
+              "cn": "Duo Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|10:00": [
+            {
+              "cn": "SOAR Multi",
+              "r": "K"
+            }
+          ],
+          "Ed|10:30": [
+            {
+              "cn": "SOAR Multi",
+              "r": "K"
+            }
+          ],
+          "Ed|11:00": [
+            {
+              "cn": "SOAR Multi",
+              "r": "K"
+            }
+          ],
+          "Ed|11:30": [
+            {
+              "cn": "SOAR Multi",
+              "r": "K"
+            }
+          ],
+          "Ed|13:00": [
+            {
+              "cn": "SOAR Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|13:30": [
+            {
+              "cn": "SOAR Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|14:00": [
+            {
+              "cn": "SOAR Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|14:30": [
+            {
+              "cn": "SOAR Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|15:00": [
+            {
+              "cn": "Shanker Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|15:30": [
+            {
+              "cn": "Shanker Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|16:00": [
+            {
+              "cn": "Shanker Singles",
+              "r": "K"
+            }
+          ],
+          "Ed|16:30": [
+            {
+              "cn": "Shanker Singles",
+              "r": "K"
+            }
+          ],
+          "Manleka|08:05": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|08:35": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|09:05": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|09:35": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|10:05": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|10:35": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|11:05": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|11:35": [
+            {
+              "cn": "Wild Dose 4+ Evri (4)",
+              "r": "K"
+            }
+          ],
+          "Manleka|13:05": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|13:35": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|14:05": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|14:35": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|15:05": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|15:35": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|16:05": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Manleka|16:35": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|08:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|08:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|09:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|09:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|10:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|10:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|11:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|11:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|13:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|13:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|14:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|14:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|15:06": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|15:36": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|16:06": [
+            {
+              "cn": "Shirt Company Singles",
+              "r": "K"
+            }
+          ],
+          "Lorraine|16:36": [
+            {
+              "cn": "Shirt Company Singles",
+              "r": "K"
+            }
+          ],
+          "Gemma|08:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|09:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|09:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|10:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|10:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|11:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|11:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|13:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|13:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|14:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|14:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|15:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|15:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|16:03": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Gemma|16:33": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
               "r": "K"
             }
           ]
