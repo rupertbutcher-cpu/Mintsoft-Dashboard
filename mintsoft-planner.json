@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-16T14:30:23.153Z",
+  "updatedAt": "2026-04-17T07:31:08.427Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -870,6 +870,395 @@
           "Alice|08:53": [
             {
               "cn": "Rampley International",
+              "r": "K"
+            }
+          ]
+        }
+      }
+    },
+    "2026-04-17": {
+      "savedAt": "2026-04-17T07:31:07.855Z",
+      "v": 2,
+      "staff": [
+        {
+          "name": "New",
+          "shiftStart": "0804",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Wendy",
+          "shiftStart": "0700",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Lorraine",
+          "shiftStart": "0818",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Janey",
+          "shiftStart": "0806",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Lynn",
+          "shiftStart": "0718",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Tracey",
+          "shiftStart": "0707",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Matt",
+          "shiftStart": "0717",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Ewan",
+          "shiftStart": "0808",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Haulandstore16",
+          "shiftStart": "0715",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Jack",
+          "shiftStart": "0714",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Manleka",
+          "shiftStart": "0808",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Yevgenia",
+          "shiftStart": "0813",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Jemma",
+          "shiftStart": "0824",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        }
+      ],
+      "clients": [
+        "Wild Dose Evri (8)",
+        "Wild Dose 2/3 LL (3)",
+        "INDI Gutbar Evri",
+        "Bare Biology RM",
+        "Wild Dose BOTTLE Singles Bloating Evri (8)",
+        "Salcura Singles (3)",
+        "Bare Biology RM48 (7)",
+        "Shirt Company Singles",
+        "Bare Biology Singles RM",
+        "Bare Biology Singles RM48 (5)",
+        "Totter Singles DX",
+        "Laura Hammett",
+        "Ripple+ Singles LL (6)",
+        "Luella Grey Trade",
+        "Bare Biology LL (2)",
+        "Wild Dose 2/3 Evri TIME (3)",
+        "Anicura Large Evri ND",
+        "Luella Gray",
+        "Wild Dose Singles Evri (2)",
+        "Shirt Company Multi",
+        "Troubadour"
+      ],
+      "roles": [
+        "Goods In",
+        "Returns",
+        "Replen",
+        "Admin",
+        "Warehousing",
+        "Reworking",
+        "Trade Orders"
+      ],
+      "alloc": {
+        "Fri": {
+          "New|08:04": [
+            {
+              "cn": "Laura Hammett",
+              "r": "K"
+            }
+          ],
+          "Wendy|07:00": [
+            {
+              "cn": "Salcura Singles (3)",
+              "r": "K"
+            }
+          ],
+          "Wendy|07:30": [
+            {
+              "cn": "Bare Biology Singles RM",
+              "r": "K"
+            }
+          ],
+          "Wendy|08:00": [
+            {
+              "cn": "Anicura Large Evri ND",
+              "r": "K"
+            }
+          ],
+          "Lorraine|08:18": [
+            {
+              "cn": "Ripple+ Singles LL (6)",
+              "r": "K"
+            }
+          ],
+          "Janey|08:06": [
+            {
+              "cn": "Wild Dose 2/3 LL (3)",
+              "r": "K"
+            }
+          ],
+          "Lynn|07:18": [
+            {
+              "cn": "Luella Grey Trade",
+              "r": "K"
+            }
+          ],
+          "Lynn|07:48": [
+            {
+              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "r": "K"
+            }
+          ],
+          "Lynn|08:18": [
+            {
+              "cn": "Luella Gray",
+              "r": "K"
+            }
+          ],
+          "Tracey|07:07": [
+            {
+              "cn": "INDI Gutbar Evri",
+              "r": "K"
+            }
+          ],
+          "Matt|07:17": [
+            {
+              "cn": "Bare Biology RM",
+              "r": "K"
+            }
+          ],
+          "Matt|07:47": [
+            {
+              "cn": "Bare Biology RM48 (7)",
+              "r": "K"
+            }
+          ],
+          "Matt|08:17": [
+            {
+              "cn": "Bare Biology Singles RM48 (5)",
+              "r": "K"
+            }
+          ],
+          "Matt|08:47": [
+            {
+              "cn": "Bare Biology LL (2)",
+              "r": "K"
+            }
+          ],
+          "Ewan|08:08": [
+            {
+              "cn": "Troubadour",
+              "r": "K"
+            }
+          ],
+          "Haulandstore16|07:15": [
+            {
+              "cn": "Totter Singles DX",
+              "r": "K"
+            }
+          ],
+          "Jack|07:14": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Jack|07:44": [
+            {
+              "cn": "Wild Dose Singles Evri (2)",
+              "r": "K"
+            }
+          ],
+          "Manleka|08:08": [
+            {
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Yevgenia|08:13": [
+            {
+              "cn": "Shirt Company Singles",
+              "r": "K"
+            }
+          ],
+          "Yevgenia|08:43": [
+            {
+              "cn": "Shirt Company Multi",
               "r": "K"
             }
           ]
