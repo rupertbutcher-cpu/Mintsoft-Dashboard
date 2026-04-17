@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T06:55:04.726Z",
+  "saved": "2026-04-17T07:11:54.024Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16208,6 +16208,33 @@
       "actualSecOrd": 65.6,
       "orderCount": 15,
       "packerCount": 5
+    },
+    {
+      "batchId": 8430952,
+      "reference": "2026-04-17 06-00 - Salcura Large Evri ND (4) - Run 2",
+      "date": "2026-04-17T06:36:04.176Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 42,
+      "orderCount": 5,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8430969,
+      "reference": "2026-04-17 06-05 - Wild Dose Evri (8) - Run 1",
+      "date": "2026-04-17T06:40:17.458Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 54,
+      "orderCount": 23,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8430979,
+      "reference": "2026-04-17 06-10 - Bare Biology RM48 (7) - Run 1",
+      "date": "2026-04-17T06:40:32.131Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 60,
+      "orderCount": 15,
+      "packerCount": 8
     }
   ],
   "packerSnaps": [
@@ -16791,6 +16818,13 @@
       "count": 5,
       "ts": "2026-04-17T06:41:25.845Z",
       "dateHour": "2026-04-17T06"
+    },
+    {
+      "dow": 5,
+      "hour": 8,
+      "count": 7,
+      "ts": "2026-04-17T07:11:49.430Z",
+      "dateHour": "2026-04-17T07"
     }
   ]
 }
