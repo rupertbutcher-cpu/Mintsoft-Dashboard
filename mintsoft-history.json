@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T07:44:12.536Z",
+  "saved": "2026-04-17T07:47:13.325Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16397,6 +16397,15 @@
       "actualSecOrd": 22,
       "orderCount": 3,
       "packerCount": 14
+    },
+    {
+      "batchId": 8430928,
+      "reference": "2026-04-17 06-00 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-17T07:39:32.283Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 30,
+      "orderCount": 28,
+      "packerCount": 16
     }
   ],
   "packerSnaps": [
@@ -16984,8 +16993,8 @@
     {
       "dow": 5,
       "hour": 8,
-      "count": 12,
-      "ts": "2026-04-17T07:37:52.028Z",
+      "count": 15,
+      "ts": "2026-04-17T07:47:09.863Z",
       "dateHour": "2026-04-17T07"
     }
   ]
