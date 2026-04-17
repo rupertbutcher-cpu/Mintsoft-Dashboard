@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T10:35:33.680Z",
+  "saved": "2026-04-17T10:51:13.414Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16847,6 +16847,78 @@
       "actualSecOrd": 34.1,
       "orderCount": 31,
       "packerCount": 22
+    },
+    {
+      "batchId": 8430912,
+      "reference": "2026-04-17 05-50 - Wild Dose Singles Bloating Evri (2) - Run 1",
+      "date": "2026-04-17T10:18:35.490Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 33.9,
+      "orderCount": 70,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430993,
+      "reference": "2026-04-17 07-00 - Kit Blake - Run 1",
+      "date": "2026-04-17T10:17:19.918Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 193.3,
+      "orderCount": 9,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431024,
+      "reference": "Wild Dose Evri",
+      "date": "2026-04-17T10:20:26.959Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 68.8,
+      "orderCount": 19,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430903,
+      "reference": "2026-04-17 05-50 - Rosalique Pre Mades Evri ND (4) - Run 1",
+      "date": "2026-04-17T10:35:19.874Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 38.2,
+      "orderCount": 53,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431016,
+      "reference": "Wild Dose BOTTLE Singles Bloating Evri",
+      "date": "2026-04-17T10:35:07.407Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 33.7,
+      "orderCount": 26,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431026,
+      "reference": "PeakFlowSpace",
+      "date": "2026-04-17T10:35:27.125Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 42.4,
+      "orderCount": 81,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431030,
+      "reference": "Bare Biology Single Tub RM",
+      "date": "2026-04-17T10:35:38.538Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 68.8,
+      "orderCount": 26,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431031,
+      "reference": "Bare Biology LL",
+      "date": "2026-04-17T10:34:00.680Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 41,
+      "orderCount": 43,
+      "packerCount": 22
     }
   ],
   "packerSnaps": [
@@ -17456,7 +17528,7 @@
       "dow": 5,
       "hour": 11,
       "count": 15,
-      "ts": "2026-04-17T10:21:30.690Z",
+      "ts": "2026-04-17T10:51:09.732Z",
       "dateHour": "2026-04-17T10"
     }
   ]
