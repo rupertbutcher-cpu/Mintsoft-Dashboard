@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T14:19:54.948Z",
+  "saved": "2026-04-17T14:29:02.188Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17756,6 +17756,96 @@
       "actualSecOrd": 24.9,
       "orderCount": 28,
       "packerCount": 22
+    },
+    {
+      "batchId": 8430894,
+      "reference": "2026-04-17 05-30 - Rosalique Trade - Run 1",
+      "date": "2026-04-17T14:21:17.881Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 69.6,
+      "orderCount": 5,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8430950,
+      "reference": "2026-04-17 06-00 - Luella Gray - Run 1",
+      "date": "2026-04-17T14:19:21.395Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 135.6,
+      "orderCount": 5,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431001,
+      "reference": "2026-04-17 07-05 - Rippl Impact Singles Evri International - Run 1",
+      "date": "2026-04-17T14:11:05.333Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 71.8,
+      "orderCount": 30,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431042,
+      "reference": "2026-04-17 11-00 - Luella Grey Trade 11am - Run 1",
+      "date": "2026-04-17T14:15:57.428Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 70.7,
+      "orderCount": 18,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431092,
+      "reference": "2026-04-17 13-15 - H&S Superclub 1pm - Run 1",
+      "date": "2026-04-17T14:20:28.546Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 137.1,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431095,
+      "reference": "2026-04-17 13-15 - Rippl Impact Singles Evri International 1pm - Run 1",
+      "date": "2026-04-17T14:19:35.750Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 56,
+      "orderCount": 3,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431100,
+      "reference": "2026-04-17 13-15 - PeakFlowSpace 1pm - Run 1",
+      "date": "2026-04-17T14:21:06.310Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 42.6,
+      "orderCount": 10,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431102,
+      "reference": "2026-04-17 13-15 - Troubadour Mujjo 1pm - Run 1",
+      "date": "2026-04-17T14:16:49.587Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 10,
+      "orderCount": 3,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431112,
+      "reference": "2026-04-17 13-20 - Troubadour 1pm - Run 1",
+      "date": "2026-04-17T14:14:00.189Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 45.4,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431153,
+      "reference": "2026-04-17 13-30 - Wild Dose Pill Box RM 1pm (8) - Run 1",
+      "date": "2026-04-17T14:26:44.915Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 46.3,
+      "orderCount": 7,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -18392,8 +18482,8 @@
     {
       "dow": 5,
       "hour": 15,
-      "count": 16,
-      "ts": "2026-04-17T14:12:00.381Z",
+      "count": 15,
+      "ts": "2026-04-17T14:28:58.178Z",
       "dateHour": "2026-04-17T14"
     }
   ]
