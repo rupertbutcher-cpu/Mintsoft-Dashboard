@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T12:06:25.935Z",
+  "saved": "2026-04-17T12:09:45.269Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17171,6 +17171,15 @@
       "actualSecOrd": 32.5,
       "orderCount": 38,
       "packerCount": 22
+    },
+    {
+      "batchId": 8431036,
+      "reference": "Bare Biology RM48",
+      "date": "2026-04-17T12:00:12.902Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 51,
+      "orderCount": 24,
+      "packerCount": 22
     }
   ],
   "packerSnaps": [
@@ -17789,6 +17798,13 @@
       "count": 7,
       "ts": "2026-04-17T11:59:07.171Z",
       "dateHour": "2026-04-17T11"
+    },
+    {
+      "dow": 5,
+      "hour": 13,
+      "count": 10,
+      "ts": "2026-04-17T12:09:41.886Z",
+      "dateHour": "2026-04-17T12"
     }
   ]
 }
