@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T08:13:11.772Z",
+  "saved": "2026-04-17T08:16:22.079Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16478,6 +16478,60 @@
       "actualSecOrd": 35,
       "orderCount": 52,
       "packerCount": 18
+    },
+    {
+      "batchId": 8430921,
+      "reference": "2026-04-17 05-55 - Hey Harper Singles Evri (6) - Run 1",
+      "date": "2026-04-17T08:06:11.759Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 29.2,
+      "orderCount": 39,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430941,
+      "reference": "2026-04-17 06-00 - Wild Dose BOTTLE Singles RM48 (8) - Run 1",
+      "date": "2026-04-17T08:12:50.227Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 40.6,
+      "orderCount": 13,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430955,
+      "reference": "2026-04-17 06-00 - Wild Dose Singles LL (2) - Run 1",
+      "date": "2026-04-17T08:11:17.715Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 18.3,
+      "orderCount": 77,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430978,
+      "reference": "2026-04-17 06-10 - INDI Singles Evri - Run 1",
+      "date": "2026-04-17T08:11:45.839Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 63,
+      "orderCount": 10,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430996,
+      "reference": "2026-04-17 07-00 - SA Wilson - Run 1",
+      "date": "2026-04-17T08:12:38.816Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 28.5,
+      "orderCount": 4,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430998,
+      "reference": "2026-04-17 07-00 - ST8 Supply - Run 1",
+      "date": "2026-04-17T08:04:44.074Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 106.5,
+      "orderCount": 8,
+      "packerCount": 22
     }
   ],
   "packerSnaps": [
@@ -17073,7 +17127,7 @@
       "dow": 5,
       "hour": 9,
       "count": 17,
-      "ts": "2026-04-17T08:11:04.040Z",
+      "ts": "2026-04-17T08:16:17.849Z",
       "dateHour": "2026-04-17T08"
     }
   ]
