@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T07:31:08.427Z",
+  "updatedAt": "2026-04-17T07:37:59.506Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T07:31:07.855Z",
+      "savedAt": "2026-04-17T07:37:59.283Z",
       "v": 2,
       "staff": [
         {
@@ -1123,7 +1123,8 @@
         "Luella Gray",
         "Wild Dose Singles Evri (2)",
         "Shirt Company Multi",
-        "Troubadour"
+        "Troubadour",
+        "INDI Multi Evri"
       ],
       "roles": [
         "Goods In",
@@ -1196,6 +1197,12 @@
               "r": "K"
             }
           ],
+          "Tracey|07:37": [
+            {
+              "cn": "INDI Multi Evri",
+              "r": "K"
+            }
+          ],
           "Matt|07:17": [
             {
               "cn": "Bare Biology RM",
@@ -1220,12 +1227,6 @@
               "r": "K"
             }
           ],
-          "Ewan|08:08": [
-            {
-              "cn": "Troubadour",
-              "r": "K"
-            }
-          ],
           "Haulandstore16|07:15": [
             {
               "cn": "Totter Singles DX",
@@ -1238,12 +1239,6 @@
               "r": "K"
             }
           ],
-          "Jack|07:44": [
-            {
-              "cn": "Wild Dose Singles Evri (2)",
-              "r": "K"
-            }
-          ],
           "Manleka|08:08": [
             {
               "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
@@ -1253,12 +1248,6 @@
           "Yevgenia|08:13": [
             {
               "cn": "Shirt Company Singles",
-              "r": "K"
-            }
-          ],
-          "Yevgenia|08:43": [
-            {
-              "cn": "Shirt Company Multi",
               "r": "K"
             }
           ]
