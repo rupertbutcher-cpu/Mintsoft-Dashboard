@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T08:55:04.512Z",
+  "saved": "2026-04-17T09:26:06.011Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16469,6 +16469,141 @@
       "actualSecOrd": 45,
       "orderCount": 6,
       "packerCount": 21
+    },
+    {
+      "batchId": 8430896,
+      "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
+      "date": "2026-04-17T08:39:47.870Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 34.3,
+      "orderCount": 65,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430897,
+      "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 2",
+      "date": "2026-04-17T08:33:34.474Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 37.9,
+      "orderCount": 47,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430919,
+      "reference": "2026-04-17 05-55 - Luella Grey Trade - Run 1",
+      "date": "2026-04-17T08:36:04.819Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 63,
+      "orderCount": 8,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430927,
+      "reference": "2026-04-17 06-00 - Rosalique RM (6) - Run 1",
+      "date": "2026-04-17T08:38:41.463Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 52.5,
+      "orderCount": 8,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430944,
+      "reference": "2026-04-17 06-00 - Wild Dose Over 6 Blister Evri (8) - Run 1",
+      "date": "2026-04-17T08:40:14.578Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 49.2,
+      "orderCount": 10,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430951,
+      "reference": "2026-04-17 06-00 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
+      "date": "2026-04-17T08:39:41.729Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 37.1,
+      "orderCount": 38,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430916,
+      "reference": "2026-04-17 05-55 - Ripple+ Multi LL (8) - Run 1",
+      "date": "2026-04-17T08:50:34.858Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 41.6,
+      "orderCount": 51,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430924,
+      "reference": "2026-04-17 05-55 - Ripple+ Evri (8) - Run 1",
+      "date": "2026-04-17T08:51:55.252Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 43.3,
+      "orderCount": 65,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8431003,
+      "reference": "2026-04-17 07-05 - &Daughter Singles - Run 1",
+      "date": "2026-04-17T08:56:03.220Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 108,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430907,
+      "reference": "2026-04-17 05-50 - Rosalique Pre Mades Evri ND (4) - Run 2",
+      "date": "2026-04-17T08:56:04.879Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 34.2,
+      "orderCount": 10,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430959,
+      "reference": "2026-04-17 06-00 - Wild Dose 4+ Evri (4) - Run 2",
+      "date": "2026-04-17T08:55:32.459Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 43.2,
+      "orderCount": 5,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430981,
+      "reference": "2026-04-17 06-15 - La Bonne Brosse Multi - Run 1",
+      "date": "2026-04-17T08:37:37.633Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 72,
+      "orderCount": 3,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430900,
+      "reference": "2026-04-17 05-45 - Anicura Amazon - Run 1",
+      "date": "2026-04-17T08:40:34.454Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 43.2,
+      "orderCount": 20,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8430923,
+      "reference": "2026-04-17 05-55 - Wild Dose 2/3 LL (3) - Run 2",
+      "date": "2026-04-17T09:10:17.027Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 31.4,
+      "orderCount": 13,
+      "packerCount": 21
+    },
+    {
+      "batchId": 8431006,
+      "reference": "2026-04-17 07-15 - Emma Shipley - Run 1",
+      "date": "2026-04-17T09:09:38.089Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 86,
+      "orderCount": 6,
+      "packerCount": 21
     }
   ],
   "packerSnaps": [
@@ -17063,9 +17198,16 @@
     {
       "dow": 5,
       "hour": 9,
-      "count": 15,
-      "ts": "2026-04-17T08:41:02.592Z",
+      "count": 11,
+      "ts": "2026-04-17T08:57:27.882Z",
       "dateHour": "2026-04-17T08"
+    },
+    {
+      "dow": 5,
+      "hour": 10,
+      "count": 11,
+      "ts": "2026-04-17T09:26:01.391Z",
+      "dateHour": "2026-04-17T09"
     }
   ]
 }
