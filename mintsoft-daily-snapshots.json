@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "saved": "2026-04-17T08:16:19.569Z",
+  "saved": "2026-04-17T08:37:00.005Z",
   "days": {
     "2026-04-16T07": {
       "date": "2026-04-16",
@@ -41927,18 +41927,18 @@
     "2026-04-17T09": {
       "date": "2026-04-17",
       "hour": "09",
-      "savedAt": "2026-04-17T08:16:18.154Z",
-      "despatched": 1031,
-      "pending": 1505,
-      "total": 2536,
-      "pct": "41%",
-      "ratePerHour": "510.0",
-      "secOrdActual": 40.787973790322575,
-      "secOrdBenchmark": 42.38434052757795,
-      "secOrdTarget": 29.057010350323385,
-      "peakPackers": 17,
-      "etaStr": "10:16",
-      "batches": 176,
+      "savedAt": "2026-04-17T08:36:59.791Z",
+      "despatched": 1355,
+      "pending": 1273,
+      "total": 2628,
+      "pct": "52%",
+      "ratePerHour": "572.6",
+      "secOrdActual": 40.84000967261903,
+      "secOrdBenchmark": 42.56096327513547,
+      "secOrdTarget": 29.21338612443937,
+      "peakPackers": 16,
+      "etaStr": "10:31",
+      "batches": 179,
       "packers": [
         {
           "name": "New",
@@ -41975,61 +41975,71 @@
         },
         {
           "name": "Aidan",
-          "orders": 20,
+          "orders": 58,
           "batches": 1,
-          "actualSecOrd": 32.627250000000004,
-          "targetSecOrd": 26.2,
-          "benchTarget": 28.16209150326797,
-          "top10Target": 26.2,
+          "actualSecOrd": 33.82177586206896,
+          "targetSecOrd": 26.200000000000003,
+          "benchTarget": 28.162091503267973,
+          "top10Target": 26.200000000000003,
           "firstSeen": "2026-04-17T08:02:35.948Z",
-          "lastSeen": "2026-04-17T08:13:28.493Z",
+          "lastSeen": "2026-04-17T08:35:17.611Z",
           "batchBreakdown": [
             {
               "id": 8430896,
               "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
               "batchType": 3,
-              "orders": 20,
-              "actualSecOrd": 32.627250000000004,
+              "orders": 58,
+              "actualSecOrd": 33.82177586206896,
               "targetSecOrd": 26.200000000000003,
               "start": "2026-04-17T08:02:35.948Z",
-              "end": "2026-04-17T08:13:28.493Z"
+              "end": "2026-04-17T08:35:17.611Z"
             }
           ]
         },
         {
           "name": "Jody",
-          "orders": 15,
+          "orders": 47,
           "batches": 1,
-          "actualSecOrd": 38.2014,
+          "actualSecOrd": 37.927617021276596,
           "targetSecOrd": 26.200000000000003,
           "benchTarget": 28.162091503267973,
           "top10Target": 26.200000000000003,
           "firstSeen": "2026-04-17T08:03:51.876Z",
-          "lastSeen": "2026-04-17T08:13:24.897Z",
+          "lastSeen": "2026-04-17T08:33:34.474Z",
           "batchBreakdown": [
             {
               "id": 8430897,
               "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 2",
               "batchType": 3,
-              "orders": 15,
-              "actualSecOrd": 38.2014,
+              "orders": 47,
+              "actualSecOrd": 37.927617021276596,
               "targetSecOrd": 26.200000000000003,
               "start": "2026-04-17T08:03:51.876Z",
-              "end": "2026-04-17T08:13:24.897Z"
+              "end": "2026-04-17T08:33:34.474Z"
             }
           ]
         },
         {
           "name": "Wendy",
-          "orders": 102,
-          "batches": 6,
-          "actualSecOrd": 52.338666666666676,
-          "targetSecOrd": 33.72701870105027,
-          "benchTarget": 39.02474184457357,
-          "top10Target": 33.72701870105026,
+          "orders": 123,
+          "batches": 7,
+          "actualSecOrd": 48.85461788617886,
+          "targetSecOrd": 32.92312842598387,
+          "benchTarget": 36.932680297153375,
+          "top10Target": 32.725567450374115,
           "firstSeen": "2026-04-17T06:00:54.887Z",
-          "lastSeen": "2026-04-17T08:13:27.402Z",
+          "lastSeen": "2026-04-17T08:35:08.825Z",
           "batchBreakdown": [
+            {
+              "id": 8430900,
+              "reference": "2026-04-17 05-45 - Anicura Amazon - Run 1",
+              "batchType": null,
+              "orders": 14,
+              "actualSecOrd": 38.324,
+              "targetSecOrd": 23.177777777777777,
+              "start": "2026-04-17T08:26:12.289Z",
+              "end": "2026-04-17T08:35:08.825Z"
+            },
             {
               "id": 8430901,
               "reference": "2026-04-17 05-45 - Salcura Amazon (4) - Run 1",
@@ -42054,11 +42064,11 @@
               "id": 8430909,
               "reference": "2026-04-17 05-50 - Anicura Singles Evri ND - Run 1",
               "batchType": null,
-              "orders": 20,
-              "actualSecOrd": 47.04795,
+              "orders": 27,
+              "actualSecOrd": 39.8147037037037,
               "targetSecOrd": 40.7,
               "start": "2026-04-17T07:57:46.443Z",
-              "end": "2026-04-17T08:13:27.402Z"
+              "end": "2026-04-17T08:24:41.092Z"
             },
             {
               "id": 8430929,
@@ -42094,24 +42104,24 @@
         },
         {
           "name": "Matt",
-          "orders": 132,
+          "orders": 167,
           "batches": 4,
-          "actualSecOrd": 41.40437121212121,
-          "targetSecOrd": 24.731031090122,
-          "benchTarget": 28.299382070292506,
-          "top10Target": 24.731031090122,
+          "actualSecOrd": 39.4470119760479,
+          "targetSecOrd": 25.038898825725173,
+          "benchTarget": 28.3682389865634,
+          "top10Target": 25.038898825725173,
           "firstSeen": "2026-04-17T06:17:58.733Z",
-          "lastSeen": "2026-04-17T08:13:25.772Z",
+          "lastSeen": "2026-04-17T08:35:55.884Z",
           "batchBreakdown": [
             {
               "id": 8430902,
               "reference": "2026-04-17 05-45 - Wild Dose Singles Bloating LL Box (2) - Run 1",
               "batchType": 2,
-              "orders": 46,
-              "actualSecOrd": 32.38141304347827,
+              "orders": 81,
+              "actualSecOrd": 32.24467901234567,
               "targetSecOrd": 26.2,
               "start": "2026-04-17T07:48:36.227Z",
-              "end": "2026-04-17T08:13:25.772Z"
+              "end": "2026-04-17T08:35:55.884Z"
             },
             {
               "id": 8430928,
@@ -42170,24 +42180,24 @@
         },
         {
           "name": "Jack",
-          "orders": 175,
+          "orders": 221,
           "batches": 10,
-          "actualSecOrd": 27.554102857142855,
-          "targetSecOrd": 26.06663669104005,
-          "benchTarget": 27.339809104713687,
-          "top10Target": 25.135200570074012,
+          "actualSecOrd": 25.322764705882356,
+          "targetSecOrd": 22.701922620782252,
+          "benchTarget": 24.724215631293934,
+          "top10Target": 22.723294996331266,
           "firstSeen": "2026-04-17T06:14:54.618Z",
-          "lastSeen": "2026-04-17T08:13:31.434Z",
+          "lastSeen": "2026-04-17T08:26:25.797Z",
           "batchBreakdown": [
             {
               "id": 8430908,
               "reference": "2026-04-17 05-50 - Wild Dose Singles Bloating LL (2) - Run 1",
               "batchType": 2,
-              "orders": 4,
-              "actualSecOrd": 14.240499999999999,
+              "orders": 50,
+              "actualSecOrd": 16.626500000000004,
               "targetSecOrd": 13.6,
               "start": "2026-04-17T08:12:34.472Z",
-              "end": "2026-04-17T08:13:31.434Z"
+              "end": "2026-04-17T08:26:25.797Z"
             },
             {
               "id": 8430946,
@@ -42205,7 +42215,7 @@
               "batchType": 2,
               "orders": 77,
               "actualSecOrd": 18.34063636363636,
-              "targetSecOrd": 21.6,
+              "targetSecOrd": 19.390434782608697,
               "start": "2026-04-17T07:47:45.486Z",
               "end": "2026-04-17T08:11:17.715Z"
             },
@@ -42283,14 +42293,14 @@
         },
         {
           "name": "Yevgenia",
-          "orders": 29,
+          "orders": 57,
           "batches": 6,
-          "actualSecOrd": 44.93627586206896,
-          "targetSecOrd": 40.61553431205189,
-          "benchTarget": 46.40015033434592,
-          "top10Target": 40.61553431205189,
+          "actualSecOrd": 46.67228070175439,
+          "targetSecOrd": 38.758259510161544,
+          "benchTarget": 42.8892405725826,
+          "top10Target": 38.758259510161544,
           "firstSeen": "2026-04-17T07:13:30.284Z",
-          "lastSeen": "2026-04-17T08:13:28.710Z",
+          "lastSeen": "2026-04-17T08:36:05.878Z",
           "batchBreakdown": [
             {
               "id": 8430913,
@@ -42316,11 +42326,11 @@
               "id": 8430924,
               "reference": "2026-04-17 05-55 - Ripple+ Evri (8) - Run 1",
               "batchType": 8,
-              "orders": 13,
-              "actualSecOrd": 39.23292307692307,
+              "orders": 41,
+              "actualSecOrd": 45.54136585365854,
               "targetSecOrd": 36.834653465346534,
               "start": "2026-04-17T08:04:58.682Z",
-              "end": "2026-04-17T08:13:28.710Z"
+              "end": "2026-04-17T08:36:05.878Z"
             },
             {
               "id": 8430983,
@@ -42356,14 +42366,14 @@
         },
         {
           "name": "Lorraine",
-          "orders": 67,
+          "orders": 87,
           "batches": 2,
-          "actualSecOrd": 32.97689552238806,
-          "targetSecOrd": 17.370746268656717,
-          "benchTarget": 24.59529353233831,
-          "top10Target": 17.370746268656717,
+          "actualSecOrd": 33.30402298850575,
+          "targetSecOrd": 20.145287356321838,
+          "benchTarget": 27.06150957854407,
+          "top10Target": 20.145287356321838,
           "firstSeen": "2026-04-17T07:18:58.722Z",
-          "lastSeen": "2026-04-17T08:13:21.118Z",
+          "lastSeen": "2026-04-17T08:35:22.760Z",
           "batchBreakdown": [
             {
               "id": 8430914,
@@ -42379,24 +42389,24 @@
               "id": 8430916,
               "reference": "2026-04-17 05-55 - Ripple+ Multi LL (8) - Run 1",
               "batchType": 8,
-              "orders": 11,
-              "actualSecOrd": 47.79236363636364,
+              "orders": 31,
+              "actualSecOrd": 39.15206451612904,
               "targetSecOrd": 29.439999999999998,
               "start": "2026-04-17T08:04:35.402Z",
-              "end": "2026-04-17T08:13:21.118Z"
+              "end": "2026-04-17T08:35:22.760Z"
             }
           ]
         },
         {
           "name": "Ed",
-          "orders": 10,
-          "batches": 2,
-          "actualSecOrd": 42.948800000000006,
-          "targetSecOrd": 28.5,
-          "benchTarget": 31.919999999999998,
-          "top10Target": 28.5,
+          "orders": 26,
+          "batches": 3,
+          "actualSecOrd": 45.01311538461539,
+          "targetSecOrd": 30.923076923076923,
+          "benchTarget": 38.27448405253283,
+          "top10Target": 30.923076923076923,
           "firstSeen": "2026-04-17T07:39:49.763Z",
-          "lastSeen": "2026-04-17T08:14:00.277Z",
+          "lastSeen": "2026-04-17T08:32:19.468Z",
           "batchBreakdown": [
             {
               "id": 8430915,
@@ -42409,27 +42419,37 @@
               "end": "2026-04-17T07:54:21.222Z"
             },
             {
+              "id": 8430934,
+              "reference": "2026-04-17 06-00 - SOAR Multi - Run 1",
+              "batchType": null,
+              "orders": 13,
+              "actualSecOrd": 52.262076923076926,
+              "targetSecOrd": 33,
+              "start": "2026-04-17T08:21:00.061Z",
+              "end": "2026-04-17T08:32:19.468Z"
+            },
+            {
               "id": 8430940,
               "reference": "2026-04-17 06-00 - SOAR Singles - Run 1",
               "batchType": null,
-              "orders": 9,
-              "actualSecOrd": 47.720888888888894,
+              "orders": 12,
+              "actualSecOrd": 40.911166666666674,
               "targetSecOrd": 30,
               "start": "2026-04-17T07:39:49.763Z",
-              "end": "2026-04-17T08:14:00.277Z"
+              "end": "2026-04-17T08:19:49.903Z"
             }
           ]
         },
         {
           "name": "Janey",
-          "orders": 62,
-          "batches": 5,
-          "actualSecOrd": 30.926741935483868,
-          "targetSecOrd": 25.408294930875577,
-          "benchTarget": 27.451931394296903,
-          "top10Target": 25.408294930875577,
+          "orders": 72,
+          "batches": 7,
+          "actualSecOrd": 31.549374999999998,
+          "targetSecOrd": 26.271031746031746,
+          "benchTarget": 28.580829811755663,
+          "top10Target": 26.271031746031746,
           "firstSeen": "2026-04-17T07:06:40.014Z",
-          "lastSeen": "2026-04-17T08:14:07.790Z",
+          "lastSeen": "2026-04-17T08:36:29.923Z",
           "batchBreakdown": [
             {
               "id": 8430917,
@@ -42475,44 +42495,64 @@
               "id": 8430980,
               "reference": "2026-04-17 06-10 - La Bonne Brosse CAIR - Run 1",
               "batchType": null,
-              "orders": 1,
+              "orders": 2,
               "actualSecOrd": null,
               "targetSecOrd": 15,
               "start": "2026-04-17T08:14:07.790Z",
-              "end": "2026-04-17T08:14:07.790Z"
+              "end": "2026-04-17T08:17:37.343Z"
+            },
+            {
+              "id": 8430981,
+              "reference": "2026-04-17 06-15 - La Bonne Brosse Multi - Run 1",
+              "batchType": null,
+              "orders": 2,
+              "actualSecOrd": null,
+              "targetSecOrd": 33,
+              "start": "2026-04-17T08:34:03.080Z",
+              "end": "2026-04-17T08:36:29.923Z"
+            },
+            {
+              "id": 8430982,
+              "reference": "2026-04-17 06-15 - La Bonne Brosse Singles - Run 1",
+              "batchType": null,
+              "orders": 7,
+              "actualSecOrd": 50.58528571428571,
+              "targetSecOrd": 33.6,
+              "start": "2026-04-17T08:21:38.608Z",
+              "end": "2026-04-17T08:27:32.705Z"
             }
           ]
         },
         {
           "name": "Lynn",
-          "orders": 71,
+          "orders": 85,
           "batches": 6,
-          "actualSecOrd": 61.01336619718308,
-          "targetSecOrd": 27.56592890677398,
-          "benchTarget": 30.00335526673555,
-          "top10Target": 27.56592890677398,
+          "actualSecOrd": 64.97399999999999,
+          "targetSecOrd": 27.981624649859945,
+          "benchTarget": 31.482855628737987,
+          "top10Target": 27.981624649859945,
           "firstSeen": "2026-04-17T06:18:46.356Z",
-          "lastSeen": "2026-04-17T08:12:48.487Z",
+          "lastSeen": "2026-04-17T08:36:04.819Z",
           "batchBreakdown": [
             {
               "id": 8430919,
               "reference": "2026-04-17 05-55 - Luella Grey Trade - Run 1",
               "batchType": null,
-              "orders": 7,
-              "actualSecOrd": 71.812,
+              "orders": 8,
+              "actualSecOrd": 62.835499999999996,
               "targetSecOrd": 6,
               "start": "2026-04-17T06:34:53.939Z",
-              "end": "2026-04-17T06:46:42.015Z"
+              "end": "2026-04-17T08:36:04.819Z"
             },
             {
               "id": 8430930,
               "reference": "2026-04-17 06-00 - Wild Dose 4+ Evri (4) - Run 1",
               "batchType": 4,
-              "orders": 12,
-              "actualSecOrd": 75.89541666666666,
+              "orders": 25,
+              "actualSecOrd": 84.06344000000001,
               "targetSecOrd": 31.942857142857143,
               "start": "2026-04-17T07:57:37.742Z",
-              "end": "2026-04-17T08:12:48.487Z"
+              "end": "2026-04-17T08:32:39.328Z"
             },
             {
               "id": 8430933,
@@ -42558,14 +42598,14 @@
         },
         {
           "name": "Claire",
-          "orders": 45,
+          "orders": 64,
           "batches": 2,
-          "actualSecOrd": 32.928422222222224,
-          "targetSecOrd": 37.05777777777777,
-          "benchTarget": 36.74954295792391,
-          "top10Target": 34.738509803921566,
+          "actualSecOrd": 44.114984375000006,
+          "targetSecOrd": 43.12863970588235,
+          "benchTarget": 45.939428021771775,
+          "top10Target": 44.00555297118847,
           "firstSeen": "2026-04-17T07:47:14.140Z",
-          "lastSeen": "2026-04-17T08:13:30.195Z",
+          "lastSeen": "2026-04-17T08:35:51.775Z",
           "batchBreakdown": [
             {
               "id": 8430921,
@@ -42573,7 +42613,7 @@
               "batchType": 6,
               "orders": 39,
               "actualSecOrd": 29.169717948717953,
-              "targetSecOrd": 33.06666666666666,
+              "targetSecOrd": 30.390588235294114,
               "start": "2026-04-17T07:47:14.140Z",
               "end": "2026-04-17T08:06:11.759Z"
             },
@@ -42581,24 +42621,24 @@
               "id": 8430926,
               "reference": "2026-04-17 05-55 - Hey Harper Multi Evri (12) - Run 1",
               "batchType": 12,
-              "orders": 6,
-              "actualSecOrd": 57.35999999999999,
+              "orders": 25,
+              "actualSecOrd": 67.42960000000001,
               "targetSecOrd": 63,
               "start": "2026-04-17T08:07:46.035Z",
-              "end": "2026-04-17T08:13:30.195Z"
+              "end": "2026-04-17T08:35:51.775Z"
             }
           ]
         },
         {
           "name": "Tracey",
-          "orders": 93,
-          "batches": 4,
-          "actualSecOrd": 54.01996774193548,
-          "targetSecOrd": 32.08494623655914,
-          "benchTarget": 33.787326532487825,
-          "top10Target": 32.08494623655914,
+          "orders": 107,
+          "batches": 7,
+          "actualSecOrd": 52.02528971962617,
+          "targetSecOrd": 31.1696261682243,
+          "benchTarget": 33.35490853902069,
+          "top10Target": 31.1696261682243,
           "firstSeen": "2026-04-17T06:07:38.233Z",
-          "lastSeen": "2026-04-17T08:11:45.839Z",
+          "lastSeen": "2026-04-17T08:36:22.095Z",
           "batchBreakdown": [
             {
               "id": 8430925,
@@ -42609,6 +42649,16 @@
               "targetSecOrd": 30.245454545454546,
               "start": "2026-04-17T06:07:38.233Z",
               "end": "2026-04-17T06:26:28.847Z"
+            },
+            {
+              "id": 8430944,
+              "reference": "2026-04-17 06-00 - Wild Dose Over 6 Blister Evri (8) - Run 1",
+              "batchType": 8,
+              "orders": 6,
+              "actualSecOrd": 43.68516666666667,
+              "targetSecOrd": 27,
+              "start": "2026-04-17T08:31:59.984Z",
+              "end": "2026-04-17T08:36:22.095Z"
             },
             {
               "id": 8430965,
@@ -42631,6 +42681,26 @@
               "end": "2026-04-17T07:51:31.928Z"
             },
             {
+              "id": 8430975,
+              "reference": "2026-04-17 06-10 - INDI RM - Run 1",
+              "batchType": null,
+              "orders": 1,
+              "actualSecOrd": null,
+              "targetSecOrd": 16,
+              "start": "2026-04-17T08:21:19.308Z",
+              "end": "2026-04-17T08:21:19.308Z"
+            },
+            {
+              "id": 8430977,
+              "reference": "2026-04-17 06-10 - INDI Multi Evri - Run 2",
+              "batchType": null,
+              "orders": 7,
+              "actualSecOrd": 40.10542857142857,
+              "targetSecOrd": 24.75,
+              "start": "2026-04-17T08:15:14.030Z",
+              "end": "2026-04-17T08:19:54.768Z"
+            },
+            {
               "id": 8430978,
               "reference": "2026-04-17 06-10 - INDI Singles Evri - Run 1",
               "batchType": null,
@@ -42643,61 +42713,71 @@
           ]
         },
         {
+          "name": "Howard",
+          "orders": 24,
+          "batches": 2,
+          "actualSecOrd": 50.74266666666667,
+          "targetSecOrd": 28.113180272108846,
+          "benchTarget": 31.61305803571429,
+          "top10Target": 28.113180272108846,
+          "firstSeen": "2026-04-17T08:02:19.065Z",
+          "lastSeen": "2026-04-17T08:35:20.713Z",
+          "batchBreakdown": [
+            {
+              "id": 8430927,
+              "reference": "2026-04-17 06-00 - Rosalique RM (6) - Run 1",
+              "batchType": 6,
+              "orders": 5,
+              "actualSecOrd": 43.8956,
+              "targetSecOrd": 25.1,
+              "start": "2026-04-17T08:31:41.235Z",
+              "end": "2026-04-17T08:35:20.713Z"
+            },
+            {
+              "id": 8430939,
+              "reference": "2026-04-17 06-00 - Rosalique Multi Evri ND (8) - Run 1",
+              "batchType": 8,
+              "orders": 19,
+              "actualSecOrd": 52.544526315789476,
+              "targetSecOrd": 28.906122448979595,
+              "start": "2026-04-17T08:02:19.065Z",
+              "end": "2026-04-17T08:27:50.894Z"
+            }
+          ]
+        },
+        {
           "name": "Paul",
-          "orders": 2,
+          "orders": 3,
           "batches": 1,
           "actualSecOrd": 0,
           "targetSecOrd": 76,
           "benchTarget": 82,
           "top10Target": 76,
           "firstSeen": "2026-04-17T07:41:22.300Z",
-          "lastSeen": "2026-04-17T07:52:47.536Z",
+          "lastSeen": "2026-04-17T08:20:29.921Z",
           "batchBreakdown": [
             {
               "id": 8430937,
               "reference": "2026-04-17 06-00 - OGT - Run 1",
               "batchType": null,
-              "orders": 2,
+              "orders": 3,
               "actualSecOrd": null,
               "targetSecOrd": 76,
               "start": "2026-04-17T07:41:22.300Z",
-              "end": "2026-04-17T07:52:47.536Z"
-            }
-          ]
-        },
-        {
-          "name": "Howard",
-          "orders": 9,
-          "batches": 1,
-          "actualSecOrd": 46.74433333333334,
-          "targetSecOrd": 28.906122448979595,
-          "benchTarget": 33.121428571428574,
-          "top10Target": 28.906122448979595,
-          "firstSeen": "2026-04-17T08:02:19.065Z",
-          "lastSeen": "2026-04-17T08:14:14.612Z",
-          "batchBreakdown": [
-            {
-              "id": 8430939,
-              "reference": "2026-04-17 06-00 - Rosalique Multi Evri ND (8) - Run 1",
-              "batchType": 8,
-              "orders": 9,
-              "actualSecOrd": 46.74433333333334,
-              "targetSecOrd": 28.906122448979595,
-              "start": "2026-04-17T08:02:19.065Z",
-              "end": "2026-04-17T08:14:14.612Z"
+              "end": "2026-04-17T08:20:29.921Z"
             }
           ]
         },
         {
           "name": "Manleka",
-          "orders": 73,
-          "batches": 2,
-          "actualSecOrd": 37.2381095890411,
-          "targetSecOrd": 24.213698630136985,
-          "benchTarget": 34.446546475620636,
-          "top10Target": 25.512761355443406,
+          "orders": 105,
+          "batches": 3,
+          "actualSecOrd": 37.06479047619048,
+          "targetSecOrd": 28.984110275689225,
+          "benchTarget": 36.000833789454475,
+          "top10Target": 28.984110275689225,
           "firstSeen": "2026-04-17T07:08:22.655Z",
-          "lastSeen": "2026-04-17T08:12:50.227Z",
+          "lastSeen": "2026-04-17T08:35:44.526Z",
           "batchBreakdown": [
             {
               "id": 8430941,
@@ -42705,9 +42785,19 @@
               "batchType": 8,
               "orders": 13,
               "actualSecOrd": 40.76015384615384,
-              "targetSecOrd": 25.2,
+              "targetSecOrd": 32.49473684210527,
               "start": "2026-04-17T08:04:00.345Z",
               "end": "2026-04-17T08:12:50.227Z"
+            },
+            {
+              "id": 8430951,
+              "reference": "2026-04-17 06-00 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
+              "batchType": 8,
+              "orders": 32,
+              "actualSecOrd": 36.669406249999994,
+              "targetSecOrd": 36.903125,
+              "start": "2026-04-17T08:16:11.105Z",
+              "end": "2026-04-17T08:35:44.526Z"
             },
             {
               "id": 8430961,
@@ -42726,7 +42816,7 @@
           "orders": 10,
           "batches": 5,
           "actualSecOrd": 11.529900000000001,
-          "targetSecOrd": 18.46,
+          "targetSecOrd": 29.860000000000003,
           "benchTarget": 43.87407407407407,
           "top10Target": 42.65714285714286,
           "firstSeen": "2026-04-17T07:57:27.955Z",
@@ -42758,7 +42848,7 @@
               "batchType": null,
               "orders": 4,
               "actualSecOrd": 28.82475,
-              "targetSecOrd": null,
+              "targetSecOrd": 28.5,
               "start": "2026-04-17T08:10:43.517Z",
               "end": "2026-04-17T08:12:38.816Z"
             },
@@ -42905,24 +42995,34 @@
         },
         {
           "name": "Caitlin",
-          "orders": 2,
-          "batches": 1,
-          "actualSecOrd": 0,
-          "targetSecOrd": 76.6,
-          "benchTarget": 85.11851851851851,
-          "top10Target": 76.6,
+          "orders": 13,
+          "batches": 2,
+          "actualSecOrd": 88.88192307692309,
+          "targetSecOrd": 44.21393323657474,
+          "benchTarget": 46.72615866136994,
+          "top10Target": 44.21393323657474,
           "firstSeen": "2026-04-17T08:10:48.924Z",
-          "lastSeen": "2026-04-17T08:13:40.788Z",
+          "lastSeen": "2026-04-17T08:36:38.200Z",
           "batchBreakdown": [
+            {
+              "id": 8431001,
+              "reference": "2026-04-17 07-05 - Rippl Impact Singles Evri International - Run 1",
+              "batchType": null,
+              "orders": 10,
+              "actualSecOrd": 74.0337,
+              "targetSecOrd": 34.49811320754717,
+              "start": "2026-04-17T08:24:17.863Z",
+              "end": "2026-04-17T08:36:38.200Z"
+            },
             {
               "id": 8431002,
               "reference": "2026-04-17 07-05 - Rippl Impact Multi Evri International - Run 1",
               "batchType": null,
-              "orders": 2,
-              "actualSecOrd": null,
+              "orders": 3,
+              "actualSecOrd": 138.376,
               "targetSecOrd": 76.6,
               "start": "2026-04-17T08:10:48.924Z",
-              "end": "2026-04-17T08:13:40.788Z"
+              "end": "2026-04-17T08:17:44.052Z"
             }
           ]
         }
@@ -43489,20 +43589,6 @@
           "batchEnd": null
         },
         {
-          "id": 8430493,
-          "reference": "2026-04-15 13-13 - Anicura Trade 1pm - Run 1",
-          "batchType": null,
-          "orderCount": 0,
-          "assignedUser": "ALL",
-          "despatched": false,
-          "targetSecOrd": null,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
-        },
-        {
           "id": 8430496,
           "reference": "2026-04-15 13-13 - Salcura Trade 1pm - Run 1",
           "batchType": null,
@@ -43814,29 +43900,29 @@
           "id": 8430896,
           "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
           "batchType": 3,
-          "orderCount": 20,
+          "orderCount": 58,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 26.200000000000003,
-          "actualSecOrd": 32.7,
-          "targetDurationMin": 8.7,
-          "actualDurationMin": 10.9,
+          "actualSecOrd": 33.8,
+          "targetDurationMin": 25.3,
+          "actualDurationMin": 32.7,
           "batchStart": "2026-04-17T08:02:35.948Z",
-          "batchEnd": "2026-04-17T08:13:28.493Z"
+          "batchEnd": "2026-04-17T08:35:17.611Z"
         },
         {
           "id": 8430897,
           "reference": "2026-04-17 05-35 - Wild Dose 2/3 Bloating LL Box (3) - Run 2",
           "batchType": 3,
-          "orderCount": 15,
+          "orderCount": 47,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 26.200000000000003,
-          "actualSecOrd": 38.4,
-          "targetDurationMin": 6.6,
-          "actualDurationMin": 9.6,
+          "actualSecOrd": 37.9,
+          "targetDurationMin": 20.5,
+          "actualDurationMin": 29.7,
           "batchStart": "2026-04-17T08:03:51.876Z",
-          "batchEnd": "2026-04-17T08:13:24.897Z"
+          "batchEnd": "2026-04-17T08:33:34.474Z"
         },
         {
           "id": 8430898,
@@ -43870,15 +43956,15 @@
           "id": 8430900,
           "reference": "2026-04-17 05-45 - Anicura Amazon - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 14,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 23.177777777777777,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 38.1,
+          "targetDurationMin": 5.4,
+          "actualDurationMin": 8.9,
+          "batchStart": "2026-04-17T08:26:12.289Z",
+          "batchEnd": "2026-04-17T08:35:08.825Z"
         },
         {
           "id": 8430901,
@@ -43898,15 +43984,15 @@
           "id": 8430902,
           "reference": "2026-04-17 05-45 - Wild Dose Singles Bloating LL Box (2) - Run 1",
           "batchType": 2,
-          "orderCount": 46,
+          "orderCount": 81,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 26.2,
-          "actualSecOrd": 32.3,
-          "targetDurationMin": 20.1,
-          "actualDurationMin": 24.8,
+          "actualSecOrd": 32.2,
+          "targetDurationMin": 35.4,
+          "actualDurationMin": 43.5,
           "batchStart": "2026-04-17T07:48:36.227Z",
-          "batchEnd": "2026-04-17T08:13:25.772Z"
+          "batchEnd": "2026-04-17T08:35:55.884Z"
         },
         {
           "id": 8430903,
@@ -43982,29 +44068,29 @@
           "id": 8430908,
           "reference": "2026-04-17 05-50 - Wild Dose Singles Bloating LL (2) - Run 1",
           "batchType": 2,
-          "orderCount": 4,
+          "orderCount": 50,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 13.6,
-          "actualSecOrd": 13.5,
-          "targetDurationMin": 0.9,
-          "actualDurationMin": 0.9,
+          "actualSecOrd": 16.7,
+          "targetDurationMin": 11.3,
+          "actualDurationMin": 13.9,
           "batchStart": "2026-04-17T08:12:34.472Z",
-          "batchEnd": "2026-04-17T08:13:31.434Z"
+          "batchEnd": "2026-04-17T08:26:25.797Z"
         },
         {
           "id": 8430909,
           "reference": "2026-04-17 05-50 - Anicura Singles Evri ND - Run 1",
           "batchType": null,
-          "orderCount": 20,
+          "orderCount": 27,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 40.7,
-          "actualSecOrd": 47.1,
-          "targetDurationMin": 13.6,
-          "actualDurationMin": 15.7,
+          "actualSecOrd": 39.8,
+          "targetDurationMin": 18.3,
+          "actualDurationMin": 17.9,
           "batchStart": "2026-04-17T07:57:46.443Z",
-          "batchEnd": "2026-04-17T08:13:27.402Z"
+          "batchEnd": "2026-04-17T08:24:41.092Z"
         },
         {
           "id": 8430910,
@@ -44094,15 +44180,15 @@
           "id": 8430916,
           "reference": "2026-04-17 05-55 - Ripple+ Multi LL (8) - Run 1",
           "batchType": 8,
-          "orderCount": 11,
+          "orderCount": 31,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 29.439999999999998,
-          "actualSecOrd": 48,
-          "targetDurationMin": 5.4,
-          "actualDurationMin": 8.8,
+          "actualSecOrd": 39.1,
+          "targetDurationMin": 15.2,
+          "actualDurationMin": 20.2,
           "batchStart": "2026-04-17T08:04:35.402Z",
-          "batchEnd": "2026-04-17T08:13:21.118Z"
+          "batchEnd": "2026-04-17T08:35:22.760Z"
         },
         {
           "id": 8430917,
@@ -44136,15 +44222,15 @@
           "id": 8430919,
           "reference": "2026-04-17 05-55 - Luella Grey Trade - Run 1",
           "batchType": null,
-          "orderCount": 7,
+          "orderCount": 8,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 6,
-          "actualSecOrd": 72,
-          "targetDurationMin": 0.7,
+          "actualSecOrd": 63,
+          "targetDurationMin": 0.8,
           "actualDurationMin": 8.4,
           "batchStart": "2026-04-17T06:34:53.939Z",
-          "batchEnd": "2026-04-17T06:46:42.015Z"
+          "batchEnd": "2026-04-17T08:36:04.819Z"
         },
         {
           "id": 8430920,
@@ -44167,9 +44253,9 @@
           "orderCount": 39,
           "assignedUser": "haulandstore6@haul-store.accessmyworkspace.com",
           "despatched": true,
-          "targetSecOrd": 33.06666666666666,
+          "targetSecOrd": 30.390588235294114,
           "actualSecOrd": 29.2,
-          "targetDurationMin": 21.5,
+          "targetDurationMin": 19.8,
           "actualDurationMin": 19,
           "batchStart": "2026-04-17T07:47:14.140Z",
           "batchEnd": "2026-04-17T08:06:11.759Z"
@@ -44206,15 +44292,15 @@
           "id": 8430924,
           "reference": "2026-04-17 05-55 - Ripple+ Evri (8) - Run 1",
           "batchType": 8,
-          "orderCount": 13,
+          "orderCount": 41,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 36.834653465346534,
-          "actualSecOrd": 39.2,
-          "targetDurationMin": 8,
-          "actualDurationMin": 8.5,
+          "actualSecOrd": 45.5,
+          "targetDurationMin": 25.2,
+          "actualDurationMin": 31.1,
           "batchStart": "2026-04-17T08:04:58.682Z",
-          "batchEnd": "2026-04-17T08:13:28.710Z"
+          "batchEnd": "2026-04-17T08:36:05.878Z"
         },
         {
           "id": 8430925,
@@ -44234,29 +44320,29 @@
           "id": 8430926,
           "reference": "2026-04-17 05-55 - Hey Harper Multi Evri (12) - Run 1",
           "batchType": 12,
-          "orderCount": 6,
+          "orderCount": 25,
           "assignedUser": "haulandstore6@haul-store.accessmyworkspace.com",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 63,
-          "actualSecOrd": 57,
-          "targetDurationMin": 6.3,
-          "actualDurationMin": 5.7,
+          "actualSecOrd": 67.4,
+          "targetDurationMin": 26.3,
+          "actualDurationMin": 28.1,
           "batchStart": "2026-04-17T08:07:46.035Z",
-          "batchEnd": "2026-04-17T08:13:30.195Z"
+          "batchEnd": "2026-04-17T08:35:51.775Z"
         },
         {
           "id": 8430927,
           "reference": "2026-04-17 06-00 - Rosalique RM (6) - Run 1",
           "batchType": 6,
-          "orderCount": 0,
+          "orderCount": 5,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 25.1,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 44.4,
+          "targetDurationMin": 2.1,
+          "actualDurationMin": 3.7,
+          "batchStart": "2026-04-17T08:31:41.235Z",
+          "batchEnd": "2026-04-17T08:35:20.713Z"
         },
         {
           "id": 8430928,
@@ -44290,15 +44376,15 @@
           "id": 8430930,
           "reference": "2026-04-17 06-00 - Wild Dose 4+ Evri (4) - Run 1",
           "batchType": 4,
-          "orderCount": 12,
+          "orderCount": 25,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 31.942857142857143,
-          "actualSecOrd": 76,
-          "targetDurationMin": 6.4,
-          "actualDurationMin": 15.2,
+          "actualSecOrd": 84,
+          "targetDurationMin": 13.3,
+          "actualDurationMin": 35,
           "batchStart": "2026-04-17T07:57:37.742Z",
-          "batchEnd": "2026-04-17T08:12:48.487Z"
+          "batchEnd": "2026-04-17T08:32:39.328Z"
         },
         {
           "id": 8430931,
@@ -44346,15 +44432,15 @@
           "id": 8430934,
           "reference": "2026-04-17 06-00 - SOAR Multi - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 13,
           "assignedUser": "haulandstore7@haul-store.accessmyworkspace.com",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 33,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 52.2,
+          "targetDurationMin": 7.2,
+          "actualDurationMin": 11.3,
+          "batchStart": "2026-04-17T08:21:00.061Z",
+          "batchEnd": "2026-04-17T08:32:19.468Z"
         },
         {
           "id": 8430935,
@@ -44388,15 +44474,15 @@
           "id": 8430937,
           "reference": "2026-04-17 06-00 - OGT - Run 1",
           "batchType": null,
-          "orderCount": 2,
+          "orderCount": 3,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 76,
           "actualSecOrd": null,
-          "targetDurationMin": 2.5,
+          "targetDurationMin": 3.8,
           "actualDurationMin": null,
           "batchStart": "2026-04-17T07:41:22.300Z",
-          "batchEnd": "2026-04-17T07:52:47.536Z"
+          "batchEnd": "2026-04-17T08:20:29.921Z"
         },
         {
           "id": 8430938,
@@ -44416,29 +44502,29 @@
           "id": 8430939,
           "reference": "2026-04-17 06-00 - Rosalique Multi Evri ND (8) - Run 1",
           "batchType": 8,
-          "orderCount": 9,
+          "orderCount": 19,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 28.906122448979595,
-          "actualSecOrd": 46.7,
-          "targetDurationMin": 4.3,
-          "actualDurationMin": 7,
+          "actualSecOrd": 52.4,
+          "targetDurationMin": 9.2,
+          "actualDurationMin": 16.6,
           "batchStart": "2026-04-17T08:02:19.065Z",
-          "batchEnd": "2026-04-17T08:14:14.612Z"
+          "batchEnd": "2026-04-17T08:27:50.894Z"
         },
         {
           "id": 8430940,
           "reference": "2026-04-17 06-00 - SOAR Singles - Run 1",
           "batchType": null,
-          "orderCount": 9,
+          "orderCount": 12,
           "assignedUser": "haulandstore7@haul-store.accessmyworkspace.com",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 30,
-          "actualSecOrd": 48,
-          "targetDurationMin": 4.5,
-          "actualDurationMin": 7.2,
+          "actualSecOrd": 41,
+          "targetDurationMin": 6,
+          "actualDurationMin": 8.2,
           "batchStart": "2026-04-17T07:39:49.763Z",
-          "batchEnd": "2026-04-17T08:14:00.277Z"
+          "batchEnd": "2026-04-17T08:19:49.903Z"
         },
         {
           "id": 8430941,
@@ -44447,9 +44533,9 @@
           "orderCount": 13,
           "assignedUser": "ALL",
           "despatched": true,
-          "targetSecOrd": 25.2,
+          "targetSecOrd": 32.49473684210527,
           "actualSecOrd": 40.6,
-          "targetDurationMin": 5.5,
+          "targetDurationMin": 7,
           "actualDurationMin": 8.8,
           "batchStart": "2026-04-17T08:04:00.345Z",
           "batchEnd": "2026-04-17T08:12:50.227Z"
@@ -44486,15 +44572,15 @@
           "id": 8430944,
           "reference": "2026-04-17 06-00 - Wild Dose Over 6 Blister Evri (8) - Run 1",
           "batchType": 8,
-          "orderCount": 0,
+          "orderCount": 6,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 27,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 44,
+          "targetDurationMin": 2.7,
+          "actualDurationMin": 4.4,
+          "batchStart": "2026-04-17T08:31:59.984Z",
+          "batchEnd": "2026-04-17T08:36:22.095Z"
         },
         {
           "id": 8430945,
@@ -44584,15 +44670,15 @@
           "id": 8430951,
           "reference": "2026-04-17 06-00 - Wild Dose BOTTLE Singles Evri (8) - Run 1",
           "batchType": 8,
-          "orderCount": 0,
+          "orderCount": 32,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 36.903125,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 36.8,
+          "targetDurationMin": 19.7,
+          "actualDurationMin": 19.6,
+          "batchStart": "2026-04-17T08:16:11.105Z",
+          "batchEnd": "2026-04-17T08:35:44.526Z"
         },
         {
           "id": 8430952,
@@ -44643,9 +44729,9 @@
           "orderCount": 77,
           "assignedUser": "ALL",
           "despatched": true,
-          "targetSecOrd": 21.6,
+          "targetSecOrd": 19.390434782608697,
           "actualSecOrd": 18.3,
-          "targetDurationMin": 27.7,
+          "targetDurationMin": 24.9,
           "actualDurationMin": 23.5,
           "batchStart": "2026-04-17T07:47:45.486Z",
           "batchEnd": "2026-04-17T08:11:17.715Z"
@@ -44906,15 +44992,15 @@
           "id": 8430975,
           "reference": "2026-04-17 06-10 - INDI RM - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 1,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 16,
           "actualSecOrd": null,
-          "targetDurationMin": null,
+          "targetDurationMin": 0.3,
           "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "batchStart": "2026-04-17T08:21:19.308Z",
+          "batchEnd": "2026-04-17T08:21:19.308Z"
         },
         {
           "id": 8430976,
@@ -44934,15 +45020,15 @@
           "id": 8430977,
           "reference": "2026-04-17 06-10 - INDI Multi Evri - Run 2",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 7,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 24.75,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 40.3,
+          "targetDurationMin": 2.9,
+          "actualDurationMin": 4.7,
+          "batchStart": "2026-04-17T08:15:14.030Z",
+          "batchEnd": "2026-04-17T08:19:54.768Z"
         },
         {
           "id": 8430978,
@@ -44976,43 +45062,43 @@
           "id": 8430980,
           "reference": "2026-04-17 06-10 - La Bonne Brosse CAIR - Run 1",
           "batchType": null,
-          "orderCount": 1,
+          "orderCount": 2,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 15,
           "actualSecOrd": null,
-          "targetDurationMin": 0.3,
-          "actualDurationMin": null,
+          "targetDurationMin": 0.5,
+          "actualDurationMin": 3.5,
           "batchStart": "2026-04-17T08:14:07.790Z",
-          "batchEnd": "2026-04-17T08:14:07.790Z"
+          "batchEnd": "2026-04-17T08:17:37.343Z"
         },
         {
           "id": 8430981,
           "reference": "2026-04-17 06-15 - La Bonne Brosse Multi - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 2,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 33,
           "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "targetDurationMin": 1.1,
+          "actualDurationMin": 2.4,
+          "batchStart": "2026-04-17T08:34:03.080Z",
+          "batchEnd": "2026-04-17T08:36:29.923Z"
         },
         {
           "id": 8430982,
           "reference": "2026-04-17 06-15 - La Bonne Brosse Singles - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 7,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 33.6,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 50.6,
+          "targetDurationMin": 3.9,
+          "actualDurationMin": 5.9,
+          "batchStart": "2026-04-17T08:21:38.608Z",
+          "batchEnd": "2026-04-17T08:27:32.705Z"
         },
         {
           "id": 8430983,
@@ -45203,9 +45289,9 @@
           "orderCount": 4,
           "assignedUser": "ALL",
           "despatched": true,
-          "targetSecOrd": null,
+          "targetSecOrd": 28.5,
           "actualSecOrd": 28.5,
-          "targetDurationMin": null,
+          "targetDurationMin": 1.9,
           "actualDurationMin": 1.9,
           "batchStart": "2026-04-17T08:10:43.517Z",
           "batchEnd": "2026-04-17T08:12:38.816Z"
@@ -45270,29 +45356,29 @@
           "id": 8431001,
           "reference": "2026-04-17 07-05 - Rippl Impact Singles Evri International - Run 1",
           "batchType": null,
-          "orderCount": 0,
+          "orderCount": 10,
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 34.49811320754717,
-          "actualSecOrd": null,
-          "targetDurationMin": null,
-          "actualDurationMin": null,
-          "batchStart": null,
-          "batchEnd": null
+          "actualSecOrd": 73.8,
+          "targetDurationMin": 5.7,
+          "actualDurationMin": 12.3,
+          "batchStart": "2026-04-17T08:24:17.863Z",
+          "batchEnd": "2026-04-17T08:36:38.200Z"
         },
         {
           "id": 8431002,
           "reference": "2026-04-17 07-05 - Rippl Impact Multi Evri International - Run 1",
           "batchType": null,
-          "orderCount": 3,
+          "orderCount": 4,
           "assignedUser": "ALL",
-          "despatched": false,
+          "despatched": true,
           "targetSecOrd": 76.6,
-          "actualSecOrd": 58,
-          "targetDurationMin": 3.8,
-          "actualDurationMin": 2.9,
+          "actualSecOrd": 103.5,
+          "targetDurationMin": 5.1,
+          "actualDurationMin": 6.9,
           "batchStart": "2026-04-17T08:04:07.821Z",
-          "batchEnd": "2026-04-17T08:13:40.788Z"
+          "batchEnd": "2026-04-17T08:17:44.052Z"
         },
         {
           "id": 8431003,
@@ -45386,6 +45472,62 @@
           "assignedUser": "ALL",
           "despatched": false,
           "targetSecOrd": 44,
+          "actualSecOrd": null,
+          "targetDurationMin": null,
+          "actualDurationMin": null,
+          "batchStart": null,
+          "batchEnd": null
+        },
+        {
+          "id": 8431010,
+          "reference": "Bare Biology Singles RM48",
+          "batchType": null,
+          "orderCount": 0,
+          "assignedUser": "ALL",
+          "despatched": false,
+          "targetSecOrd": 36.6,
+          "actualSecOrd": null,
+          "targetDurationMin": null,
+          "actualDurationMin": null,
+          "batchStart": null,
+          "batchEnd": null
+        },
+        {
+          "id": 8431011,
+          "reference": "Bare Biology RM48",
+          "batchType": null,
+          "orderCount": 0,
+          "assignedUser": "ALL",
+          "despatched": false,
+          "targetSecOrd": 53.3,
+          "actualSecOrd": null,
+          "targetDurationMin": null,
+          "actualDurationMin": null,
+          "batchStart": null,
+          "batchEnd": null
+        },
+        {
+          "id": 8431012,
+          "reference": "Bare Biology LL",
+          "batchType": null,
+          "orderCount": 0,
+          "assignedUser": "ALL",
+          "despatched": false,
+          "targetSecOrd": 22.323255813953487,
+          "actualSecOrd": null,
+          "targetDurationMin": null,
+          "actualDurationMin": null,
+          "batchStart": null,
+          "batchEnd": null
+        },
+        {
+          "id": 8431013,
+          "reference": "Bare Biology Pack of Six",
+          "batchType": null,
+          "orderCount": 0,
+          "assignedUser": "ALL",
+          "despatched": false,
+          "targetSecOrd": null,
           "actualSecOrd": null,
           "targetDurationMin": null,
           "actualDurationMin": null,
