@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T08:18:37.909Z",
+  "updatedAt": "2026-04-17T08:56:11.711Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T08:18:37.583Z",
+      "savedAt": "2026-04-17T08:56:11.520Z",
       "v": 2,
       "staff": [
         {
@@ -1557,7 +1557,8 @@
         "pc",
         "Ripple+ Multi LL Custom (8)",
         "SA Wilson",
-        "Staise Singles"
+        "Staise Singles",
+        "Bare Biology Pack of Six"
       ],
       "roles": [
         "Goods In",
@@ -1569,6 +1570,14 @@
         "Trade Orders"
       ],
       "alloc": {
+        "Mon": {
+          "New|06:30": [
+            {
+              "cn": "Wild Dose Evri (8)",
+              "r": "P"
+            }
+          ]
+        },
         "Fri": {
           "New|08:04": [
             {
@@ -1578,7 +1587,7 @@
           ],
           "Wendy|07:00": [
             {
-              "cn": "Anicura Singles Evri ND",
+              "cn": "Bare Biology Singles RM",
               "r": "K"
             }
           ],
@@ -1590,7 +1599,13 @@
           ],
           "Wendy|08:00": [
             {
-              "cn": "Bare Biology Singles RM",
+              "cn": "Anicura Singles Evri ND",
+              "r": "K"
+            }
+          ],
+          "Wendy|08:30": [
+            {
+              "cn": "Anicura Amazon",
               "r": "K"
             }
           ],
@@ -1608,25 +1623,19 @@
           ],
           "Janey|08:36": [
             {
-              "cn": "La Bonne Brosse CAIR",
+              "cn": "La Bonne Brosse Multi",
               "r": "K"
             }
           ],
           "Lynn|07:18": [
             {
-              "cn": "Wild Dose 4+ Evri (4)",
+              "cn": "Luella Gray",
               "r": "K"
             }
           ],
           "Lynn|07:48": [
             {
-              "cn": "Luella Grey Trade",
-              "r": "K"
-            }
-          ],
-          "Lynn|08:18": [
-            {
-              "cn": "Luella Gray",
+              "cn": "Wild Dose 4+ Evri (4)",
               "r": "K"
             }
           ],
@@ -1644,7 +1653,37 @@
           ],
           "Tracey|08:07": [
             {
-              "cn": "INDI Multi Evri",
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|08:37": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|09:07": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|09:37": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|10:07": [
+            {
+              "cn": "Bare Biology Pack of Six",
+              "r": "K"
+            }
+          ],
+          "Tracey|10:37": [
+            {
+              "cn": "Bare Biology Pack of Six",
               "r": "K"
             }
           ],
@@ -1684,12 +1723,6 @@
               "r": "K"
             }
           ],
-          "Jack|07:44": [
-            {
-              "cn": "Wild Dose Singles Bloating LL (2)",
-              "r": "K"
-            }
-          ],
           "Manleka|08:08": [
             {
               "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
@@ -1698,7 +1731,19 @@
           ],
           "Manleka|08:38": [
             {
-              "cn": "Wild Dose BOTTLE Singles RM48 (8)",
+              "cn": "Wild Dose Pill Box Evri (8)",
+              "r": "K"
+            }
+          ],
+          "Manleka|09:08": [
+            {
+              "cn": "Wild Dose Evri ND",
+              "r": "K"
+            }
+          ],
+          "Manleka|09:38": [
+            {
+              "cn": "Wild Dose Singles Bloating LL",
               "r": "K"
             }
           ],
@@ -1732,111 +1777,9 @@
               "r": "K"
             }
           ],
-          "Ed|09:09": [
-            {
-              "cn": "SOAR Singles",
-              "r": "K"
-            }
-          ],
           "Claire|08:47": [
             {
-              "cn": "Hey Harper Multi Evri (12)",
-              "r": "K"
-            }
-          ],
-          "Paul|08:41": [
-            {
-              "cn": "OGT",
-              "r": "K"
-            }
-          ],
-          "Petra|08:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|09:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|09:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|10:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|10:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|11:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|11:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|13:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|13:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|14:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|14:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|15:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|15:57": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|16:27": [
-            {
-              "cn": "Staise Singles",
-              "r": "K"
-            }
-          ],
-          "Petra|16:57": [
-            {
-              "cn": "Staise Singles",
+              "cn": "&Daughter Singles",
               "r": "K"
             }
           ],
@@ -1848,13 +1791,19 @@
           ],
           "Howard|09:02": [
             {
-              "cn": "Rosalique Multi Evri ND (8)",
+              "cn": "Rosalique Pre Mades Evri ND (4)",
               "r": "K"
             }
           ],
           "Caitlin|09:10": [
             {
-              "cn": "Rippl Impact Multi Evri International",
+              "cn": "Rippl Impact Singles Evri International",
+              "r": "K"
+            }
+          ],
+          "Caitlin|09:40": [
+            {
+              "cn": "Bare Biology LL",
               "r": "K"
             }
           ]
