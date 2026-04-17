@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T09:01:30.293Z",
+  "updatedAt": "2026-04-17T10:31:03.415Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T09:01:29.844Z",
+      "savedAt": "2026-04-17T10:31:03.082Z",
       "v": 2,
       "staff": [
         {
@@ -1558,7 +1558,8 @@
         "Ripple+ Multi LL Custom (8)",
         "SA Wilson",
         "Staise Singles",
-        "Bare Biology Pack of Six"
+        "Bare Biology Pack of Six",
+        "Wild Dose Evri"
       ],
       "roles": [
         "Goods In",
@@ -1605,11 +1606,17 @@
           ],
           "Wendy|08:30": [
             {
-              "cn": "Anicura Amazon",
+              "cn": "Wild Dose Singles Bloating Evri (2)",
               "r": "K"
             }
           ],
           "Lorraine|08:18": [
+            {
+              "cn": "Ripple+ Retail",
+              "r": "K"
+            }
+          ],
+          "Lorraine|08:48": [
             {
               "cn": "Ripple+ Multi LL (8)",
               "r": "K"
@@ -1621,21 +1628,9 @@
               "r": "K"
             }
           ],
-          "Janey|08:36": [
-            {
-              "cn": "La Bonne Brosse Multi",
-              "r": "K"
-            }
-          ],
           "Lynn|07:18": [
             {
               "cn": "Luella Gray",
-              "r": "K"
-            }
-          ],
-          "Lynn|07:48": [
-            {
-              "cn": "Wild Dose 4+ Evri (4)",
               "r": "K"
             }
           ],
@@ -1653,7 +1648,7 @@
           ],
           "Tracey|08:07": [
             {
-              "cn": "Bare Biology Pack of Six",
+              "cn": "Bare Biology Single Tub RM",
               "r": "K"
             }
           ],
@@ -1663,39 +1658,15 @@
               "r": "K"
             }
           ],
-          "Tracey|09:07": [
-            {
-              "cn": "Bare Biology Pack of Six",
-              "r": "K"
-            }
-          ],
-          "Tracey|09:37": [
-            {
-              "cn": "Bare Biology Pack of Six",
-              "r": "K"
-            }
-          ],
-          "Tracey|10:07": [
-            {
-              "cn": "Bare Biology Pack of Six",
-              "r": "K"
-            }
-          ],
-          "Tracey|10:37": [
-            {
-              "cn": "Bare Biology Pack of Six",
-              "r": "K"
-            }
-          ],
           "Matt|07:17": [
             {
-              "cn": "Wild Dose Singles Bloating LL Box (2)",
+              "cn": "Bare Biology RM",
               "r": "K"
             }
           ],
           "Matt|07:47": [
             {
-              "cn": "Bare Biology RM",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
@@ -1717,21 +1688,15 @@
               "r": "K"
             }
           ],
-          "Jack|07:14": [
+          "Manleka|08:08": [
             {
               "cn": "Wild Dose Evri (8)",
               "r": "K"
             }
           ],
-          "Manleka|08:08": [
-            {
-              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
-              "r": "K"
-            }
-          ],
           "Manleka|08:38": [
             {
-              "cn": "Wild Dose Pill Box Evri (8)",
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
               "r": "K"
             }
           ],
@@ -1755,12 +1720,6 @@
           ],
           "Yevgenia|08:43": [
             {
-              "cn": "Ripple+ International (10)",
-              "r": "K"
-            }
-          ],
-          "Yevgenia|09:13": [
-            {
               "cn": "Ripple+ Evri (8)",
               "r": "K"
             }
@@ -1779,13 +1738,31 @@
           ],
           "Claire|08:47": [
             {
-              "cn": "&Daughter Singles",
+              "cn": "PeakFlowSpace",
+              "r": "K"
+            }
+          ],
+          "Petra|08:57": [
+            {
+              "cn": "Kit Blake",
               "r": "K"
             }
           ],
           "Aidan|09:02": [
             {
               "cn": "Wild Dose 2/3 Bloating LL Box (3)",
+              "r": "K"
+            }
+          ],
+          "Aidan|09:32": [
+            {
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri",
+              "r": "K"
+            }
+          ],
+          "Jody|09:03": [
+            {
+              "cn": "Wild Dose BOTTLE Singles Bloating Evri Custom (8)",
               "r": "K"
             }
           ],
@@ -1797,13 +1774,43 @@
           ],
           "Caitlin|09:10": [
             {
-              "cn": "Rippl Impact Singles Evri International",
+              "cn": "Bare Biology LL",
               "r": "K"
             }
           ],
           "Caitlin|09:40": [
             {
-              "cn": "Bare Biology LL",
+              "cn": "Wild Dose Evri",
+              "r": "K"
+            }
+          ],
+          "Caitlin|10:10": [
+            {
+              "cn": "Wild Dose Evri",
+              "r": "K"
+            }
+          ],
+          "Caitlin|10:40": [
+            {
+              "cn": "Wild Dose Evri",
+              "r": "K"
+            }
+          ],
+          "Caitlin|11:10": [
+            {
+              "cn": "Wild Dose Evri",
+              "r": "K"
+            }
+          ],
+          "Caitlin|11:40": [
+            {
+              "cn": "Wild Dose Evri",
+              "r": "K"
+            }
+          ],
+          "Caitlin|13:10": [
+            {
+              "cn": "Rippl Impact Singles Evri International",
               "r": "K"
             }
           ]
