@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T07:36:43.139Z",
+  "saved": "2026-04-17T07:37:55.362Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16361,6 +16361,42 @@
       "actualSecOrd": 13.5,
       "orderCount": 4,
       "packerCount": 13
+    },
+    {
+      "batchId": 8430946,
+      "reference": "2026-04-17 06-00 - Wild Dose 2/3 Evri ND (3) - Run 1",
+      "date": "2026-04-17T07:35:59.712Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 17.7,
+      "orderCount": 20,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430963,
+      "reference": "2026-04-17 06-05 - Wild Dose Singles Evri (2) - Run 1",
+      "date": "2026-04-17T07:29:30.383Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 15.6,
+      "orderCount": 10,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430984,
+      "reference": "2026-04-17 06-30 - Shirt Company Multi - Run 1",
+      "date": "2026-04-17T07:32:33.031Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 76,
+      "orderCount": 3,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8430985,
+      "reference": "2026-04-17 06-30 - Rhinomed - Run 1",
+      "date": "2026-04-17T07:33:07.504Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 22,
+      "orderCount": 3,
+      "packerCount": 14
     }
   ],
   "packerSnaps": [
@@ -16948,8 +16984,8 @@
     {
       "dow": 5,
       "hour": 8,
-      "count": 11,
-      "ts": "2026-04-17T07:29:49.360Z",
+      "count": 12,
+      "ts": "2026-04-17T07:37:52.028Z",
       "dateHour": "2026-04-17T07"
     }
   ]
