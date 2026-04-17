@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T10:47:27.663Z",
+  "updatedAt": "2026-04-17T14:32:57.638Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T10:47:27.331Z",
+      "savedAt": "2026-04-17T14:32:57.442Z",
       "v": 2,
       "staff": [
         {
@@ -1559,7 +1559,9 @@
         "SA Wilson",
         "Staise Singles",
         "Bare Biology Pack of Six",
-        "Wild Dose Evri"
+        "Wild Dose Evri",
+        "test",
+        "La Bonne Brosse Trade 1pm"
       ],
       "roles": [
         "Goods In",
@@ -1571,14 +1573,6 @@
         "Trade Orders"
       ],
       "alloc": {
-        "Mon": {
-          "New|06:30": [
-            {
-              "cn": "Wild Dose Evri (8)",
-              "r": "P"
-            }
-          ]
-        },
         "Fri": {
           "New|08:04": [
             {
