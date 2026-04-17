@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T10:31:03.415Z",
+  "updatedAt": "2026-04-17T10:42:30.353Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T10:31:03.082Z",
+      "savedAt": "2026-04-17T10:42:30.170Z",
       "v": 2,
       "staff": [
         {
@@ -1604,12 +1604,6 @@
               "r": "K"
             }
           ],
-          "Wendy|08:30": [
-            {
-              "cn": "Wild Dose Singles Bloating Evri (2)",
-              "r": "K"
-            }
-          ],
           "Lorraine|08:18": [
             {
               "cn": "Ripple+ Retail",
@@ -1619,6 +1613,12 @@
           "Lorraine|08:48": [
             {
               "cn": "Ripple+ Multi LL (8)",
+              "r": "K"
+            }
+          ],
+          "Lorraine|09:18": [
+            {
+              "cn": "Ripple+ Evri 11am (8)",
               "r": "K"
             }
           ],
@@ -1742,12 +1742,6 @@
               "r": "K"
             }
           ],
-          "Petra|08:57": [
-            {
-              "cn": "Kit Blake",
-              "r": "K"
-            }
-          ],
           "Aidan|09:02": [
             {
               "cn": "Wild Dose 2/3 Bloating LL Box (3)",
@@ -1757,6 +1751,12 @@
           "Aidan|09:32": [
             {
               "cn": "Wild Dose BOTTLE Singles Bloating Evri",
+              "r": "K"
+            }
+          ],
+          "Aidan|10:02": [
+            {
+              "cn": "Wild Dose 2/3 Bloating LL Custom (3)",
               "r": "K"
             }
           ],
@@ -1780,37 +1780,13 @@
           ],
           "Caitlin|09:40": [
             {
-              "cn": "Wild Dose Evri",
+              "cn": "Rippl Impact Singles Evri International",
               "r": "K"
             }
           ],
           "Caitlin|10:10": [
             {
               "cn": "Wild Dose Evri",
-              "r": "K"
-            }
-          ],
-          "Caitlin|10:40": [
-            {
-              "cn": "Wild Dose Evri",
-              "r": "K"
-            }
-          ],
-          "Caitlin|11:10": [
-            {
-              "cn": "Wild Dose Evri",
-              "r": "K"
-            }
-          ],
-          "Caitlin|11:40": [
-            {
-              "cn": "Wild Dose Evri",
-              "r": "K"
-            }
-          ],
-          "Caitlin|13:10": [
-            {
-              "cn": "Rippl Impact Singles Evri International",
               "r": "K"
             }
           ]
