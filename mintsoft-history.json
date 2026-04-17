@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T14:03:15.680Z",
+  "saved": "2026-04-17T14:06:46.684Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -16885,168 +16885,6 @@
       "packerCount": 21
     },
     {
-      "batchId": 8431022,
-      "reference": "Wild Dose Evri",
-      "date": "2026-04-17T11:40:24.365Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 64.9,
-      "orderCount": 27,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431052,
-      "reference": "2026-04-17 11-30 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
-      "date": "2026-04-17T11:40:24.031Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 33.3,
-      "orderCount": 27,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431036,
-      "reference": "Bare Biology RM48",
-      "date": "2026-04-17T12:00:12.902Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 51,
-      "orderCount": 24,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431020,
-      "reference": "Wild Dose Singles Bloating LL",
-      "date": "2026-04-17T12:10:40.163Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 33.2,
-      "orderCount": 102,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431025,
-      "reference": "PeakFlowSpace",
-      "date": "2026-04-17T12:10:45.005Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 35.4,
-      "orderCount": 98,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431033,
-      "reference": "Bare Biology LL",
-      "date": "2026-04-17T12:09:12.169Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 35,
-      "orderCount": 47,
-      "packerCount": 21
-    },
-    {
-      "batchId": 8431034,
-      "reference": "Bare Biology Singles RM48",
-      "date": "2026-04-17T12:40:06.623Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 45.2,
-      "orderCount": 61,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431084,
-      "reference": "2026-04-17 13-15 - Wild Dose Singles Bloating Evri 1pm (2) - Run 1",
-      "date": "2026-04-17T12:40:15.341Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 30,
-      "orderCount": 11,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431114,
-      "reference": "2026-04-17 13-20 - Totter Singles DX 1pm - Run 1",
-      "date": "2026-04-17T12:40:39.863Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 42.8,
-      "orderCount": 15,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431129,
-      "reference": "2026-04-17 13-20 - Ripple+ Evri 1pm (8) - Run 1",
-      "date": "2026-04-17T12:40:27.171Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 29.6,
-      "orderCount": 16,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8430895,
-      "reference": "2026-04-17 05-35 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
-      "date": "2026-04-17T12:55:06.181Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 41,
-      "orderCount": 135,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431123,
-      "reference": "2026-04-17 13-20 - Salcura Singles Evri ND 1pm (3) - Run 1",
-      "date": "2026-04-17T12:55:07.295Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 47.1,
-      "orderCount": 7,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431124,
-      "reference": "2026-04-17 13-20 - Ripple+ Multi LL 1pm (8) - Run 1",
-      "date": "2026-04-17T12:55:45.394Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 58.3,
-      "orderCount": 7,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431032,
-      "reference": "Bare Biology LL",
-      "date": "2026-04-17T13:02:27.212Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 31.7,
-      "orderCount": 49,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431169,
-      "reference": "2026-04-17 14-00 - Totter DX 2pm - Run 1",
-      "date": "2026-04-17T13:11:08.721Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 61.5,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431077,
-      "reference": "2026-04-17 13-15 - Rampley DPD 1pm - Run 1",
-      "date": "2026-04-17T13:10:21.965Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 54,
-      "orderCount": 11,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431109,
-      "reference": "2026-04-17 13-20 - Anicura Singles Evri ND 1pm - Run 1",
-      "date": "2026-04-17T13:10:40.105Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 18,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431116,
-      "reference": "2026-04-17 13-20 - INDI Multi Evri 1pm - Run 1",
-      "date": "2026-04-17T13:10:43.577Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 28.5,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
       "batchId": 8430901,
       "reference": "2026-04-17 05-45 - Salcura Amazon (4) - Run 1",
       "date": "2026-04-17T06:59:26.047Z",
@@ -17227,15 +17065,6 @@
       "packerCount": 22
     },
     {
-      "batchId": 8430992,
-      "reference": "2026-04-17 07-00 - Duo Singles - Run 1",
-      "date": "2026-04-17T13:37:58.433Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 48,
-      "orderCount": 3,
-      "packerCount": 22
-    },
-    {
       "batchId": 8430996,
       "reference": "2026-04-17 07-00 - SA Wilson - Run 1",
       "date": "2026-04-17T08:12:38.816Z",
@@ -17272,6 +17101,15 @@
       "packerCount": 22
     },
     {
+      "batchId": 8431022,
+      "reference": "Wild Dose Evri",
+      "date": "2026-04-17T11:42:22.849Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 62.4,
+      "orderCount": 30,
+      "packerCount": 22
+    },
+    {
       "batchId": 8431035,
       "reference": "Bare Biology Singles RM48",
       "date": "2026-04-17T11:50:37.015Z",
@@ -17295,15 +17133,6 @@
       "date": "2026-04-17T10:53:17.266Z",
       "dayOfWeek": 5,
       "actualSecOrd": 24,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431041,
-      "reference": "2026-04-17 11-00 - Jenny Hayley Singles 11am - Run 1",
-      "date": "2026-04-17T13:20:47.003Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 103.5,
       "orderCount": 4,
       "packerCount": 22
     },
@@ -17335,111 +17164,48 @@
       "packerCount": 22
     },
     {
-      "batchId": 8431054,
-      "reference": "2026-04-17 12-05 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
-      "date": "2026-04-17T13:51:40.460Z",
+      "batchId": 8431052,
+      "reference": "2026-04-17 11-30 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
+      "date": "2026-04-17T11:45:56.031Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 38.5,
-      "orderCount": 57,
+      "actualSecOrd": 32.5,
+      "orderCount": 38,
       "packerCount": 22
     },
     {
-      "batchId": 8431055,
-      "reference": "",
-      "date": "2026-04-17T13:19:50.063Z",
+      "batchId": 8431036,
+      "reference": "Bare Biology RM48",
+      "date": "2026-04-17T12:00:12.902Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 50.6,
-      "orderCount": 7,
+      "actualSecOrd": 51,
+      "orderCount": 24,
       "packerCount": 22
     },
     {
-      "batchId": 8431060,
-      "reference": "2026-04-17 13-10 - Bare Biology Trade 1pm - Run 1",
-      "date": "2026-04-17T13:35:21.911Z",
+      "batchId": 8431020,
+      "reference": "Wild Dose Singles Bloating LL",
+      "date": "2026-04-17T12:06:41.694Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 109.5,
-      "orderCount": 4,
+      "actualSecOrd": 32.1,
+      "orderCount": 98,
       "packerCount": 22
     },
     {
-      "batchId": 8431061,
-      "reference": "2026-04-17 13-10 - Luella Grey Trade 1pm - Run 1",
-      "date": "2026-04-17T13:32:47.368Z",
+      "batchId": 8431025,
+      "reference": "PeakFlowSpace",
+      "date": "2026-04-17T12:07:16.623Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 26,
-      "orderCount": 3,
+      "actualSecOrd": 35.5,
+      "orderCount": 92,
       "packerCount": 22
     },
     {
-      "batchId": 8431064,
-      "reference": "2026-04-17 13-10 - SOAR Trade 1pm - Run 1",
-      "date": "2026-04-17T13:09:42.490Z",
+      "batchId": 8431033,
+      "reference": "Bare Biology LL",
+      "date": "2026-04-17T12:08:08.975Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 93,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431074,
-      "reference": "2026-04-17 13-15 - Hey Harper Clothing 1pm (18) - Run 1",
-      "date": "2026-04-17T13:14:33.430Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 48,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431081,
-      "reference": "2026-04-17 13-15 - Beauty The Shop Singles 1pm - Run 1",
-      "date": "2026-04-17T13:43:45.180Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 60,
-      "orderCount": 3,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431085,
-      "reference": "2026-04-17 13-15 - Hey Harper Singles RM LL 1pm (6) - Run 1",
-      "date": "2026-04-17T13:39:20.985Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 24,
-      "orderCount": 4,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431086,
-      "reference": "2026-04-17 13-15 - INDI Gutbar Evri 1pm - Run 1",
-      "date": "2026-04-17T13:17:01.944Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 23.3,
-      "orderCount": 8,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431087,
-      "reference": "2026-04-17 13-15 - Wild Dose Singles Bloating LL 1pm (2) - Run 1",
-      "date": "2026-04-17T13:52:29.199Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 31.1,
-      "orderCount": 73,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431088,
-      "reference": "2026-04-17 13-15 - Salcura Amazon 1pm (4) - Run 1",
-      "date": "2026-04-17T12:30:42.353Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 39.6,
-      "orderCount": 5,
-      "packerCount": 22
-    },
-    {
-      "batchId": 8431090,
-      "reference": "2026-04-17 13-15 - Bare Biology Single Tub RM 1pm (6) - Run 1",
-      "date": "2026-04-17T13:54:28.427Z",
-      "dayOfWeek": 5,
-      "actualSecOrd": 31.5,
-      "orderCount": 4,
+      "actualSecOrd": 36,
+      "orderCount": 44,
       "packerCount": 22
     },
     {
@@ -17497,12 +17263,12 @@
       "packerCount": 22
     },
     {
-      "batchId": 8431111,
-      "reference": "2026-04-17 13-20 - La Bonne Brosse Multi 1pm - Run 1",
-      "date": "2026-04-17T13:50:24.983Z",
+      "batchId": 8431109,
+      "reference": "2026-04-17 13-20 - Anicura Singles Evri ND 1pm - Run 1",
+      "date": "2026-04-17T13:13:54.244Z",
       "dayOfWeek": 5,
-      "actualSecOrd": 48,
-      "orderCount": 4,
+      "actualSecOrd": 29.3,
+      "orderCount": 9,
       "packerCount": 22
     },
     {
@@ -17515,12 +17281,30 @@
       "packerCount": 22
     },
     {
+      "batchId": 8431114,
+      "reference": "2026-04-17 13-20 - Totter Singles DX 1pm - Run 1",
+      "date": "2026-04-17T12:54:20.546Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 36,
+      "orderCount": 29,
+      "packerCount": 22
+    },
+    {
       "batchId": 8431115,
       "reference": "2026-04-17 13-20 - Wild Dose 2/3 Bloating LL 1pm (3) - Run 1",
       "date": "2026-04-17T12:50:30.691Z",
       "dayOfWeek": 5,
       "actualSecOrd": 15.9,
       "orderCount": 23,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431116,
+      "reference": "2026-04-17 13-20 - INDI Multi Evri 1pm - Run 1",
+      "date": "2026-04-17T13:12:48.568Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 30,
+      "orderCount": 8,
       "packerCount": 22
     },
     {
@@ -17542,6 +17326,24 @@
       "packerCount": 22
     },
     {
+      "batchId": 8431123,
+      "reference": "2026-04-17 13-20 - Salcura Singles Evri ND 1pm (3) - Run 1",
+      "date": "2026-04-17T13:05:11.065Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 39.6,
+      "orderCount": 15,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431124,
+      "reference": "2026-04-17 13-20 - Ripple+ Multi LL 1pm (8) - Run 1",
+      "date": "2026-04-17T12:56:20.853Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 54.8,
+      "orderCount": 8,
+      "packerCount": 22
+    },
+    {
       "batchId": 8431127,
       "reference": "2026-04-17 13-20 - La Bonne Brosse Singles 1pm - Run 1",
       "date": "2026-04-17T13:39:34.372Z",
@@ -17551,12 +17353,75 @@
       "packerCount": 22
     },
     {
+      "batchId": 8431129,
+      "reference": "2026-04-17 13-20 - Ripple+ Evri 1pm (8) - Run 1",
+      "date": "2026-04-17T12:41:56.692Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 31.3,
+      "orderCount": 18,
+      "packerCount": 22
+    },
+    {
       "batchId": 8431130,
       "reference": "2026-04-17 13-20 - Hey Harper Singles Evri 1pm (6) - Run 1",
       "date": "2026-04-17T13:38:16.021Z",
       "dayOfWeek": 5,
       "actualSecOrd": 32,
       "orderCount": 6,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8430895,
+      "reference": "2026-04-17 05-35 - Wild Dose BOTTLE Singles Bloating Evri Box (8) - Run 1",
+      "date": "2026-04-17T12:21:21.741Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 41.3,
+      "orderCount": 85,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431034,
+      "reference": "Bare Biology Singles RM48",
+      "date": "2026-04-17T12:21:25.362Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 43.4,
+      "orderCount": 42,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431111,
+      "reference": "2026-04-17 13-20 - La Bonne Brosse Multi 1pm - Run 1",
+      "date": "2026-04-17T13:44:14.246Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 64,
+      "orderCount": 3,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431032,
+      "reference": "Bare Biology LL",
+      "date": "2026-04-17T13:02:27.212Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 31.7,
+      "orderCount": 49,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431054,
+      "reference": "2026-04-17 12-05 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-17T13:51:40.460Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 38.5,
+      "orderCount": 57,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431088,
+      "reference": "2026-04-17 13-15 - Salcura Amazon 1pm (4) - Run 1",
+      "date": "2026-04-17T12:30:42.353Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 39.6,
+      "orderCount": 5,
       "packerCount": 22
     },
     {
@@ -17665,6 +17530,15 @@
       "dayOfWeek": 5,
       "actualSecOrd": 48,
       "orderCount": 8,
+      "packerCount": 22
+    },
+    {
+      "batchId": 8431169,
+      "reference": "2026-04-17 14-00 - Totter DX 2pm - Run 1",
+      "date": "2026-04-17T13:11:08.721Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 61.5,
+      "orderCount": 4,
       "packerCount": 22
     }
   ],
@@ -18295,8 +18169,8 @@
     {
       "dow": 5,
       "hour": 14,
-      "count": 18,
-      "ts": "2026-04-17T13:57:37.002Z",
+      "count": 16,
+      "ts": "2026-04-17T13:54:34.647Z",
       "dateHour": "2026-04-17T13"
     }
   ]
