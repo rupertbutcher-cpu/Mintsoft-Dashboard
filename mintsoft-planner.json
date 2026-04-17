@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T07:47:16.789Z",
+  "updatedAt": "2026-04-17T08:04:19.269Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T07:47:16.556Z",
+      "savedAt": "2026-04-17T08:04:19.081Z",
       "v": 2,
       "staff": [
         {
@@ -1100,6 +1100,91 @@
             "Thu",
             "Fri"
           ]
+        },
+        {
+          "name": "Callum",
+          "shiftStart": "0831",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Ed",
+          "shiftStart": "0839",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Claire",
+          "shiftStart": "0847",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Paul",
+          "shiftStart": "0841",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Petra",
+          "shiftStart": "0857",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
         }
       ],
       "clients": [
@@ -1126,7 +1211,283 @@
         "Troubadour",
         "INDI Multi Evri",
         "Lightroom",
-        "ST8 Supply"
+        "ST8 Supply",
+        "Rosalique Trade",
+        "Wild Dose 2/3 Bloating LL Box (3)",
+        "Wild Dose BOTTLE Singles Bloating Evri Box (8)",
+        "Wild Dose Trade",
+        "Salcura Trade",
+        "Wild Dose 2/3 Bloating LL (3)",
+        "Salcura Amazon (4)",
+        "Wild Dose Singles Bloating LL Box (2)",
+        "Anicura Amazon",
+        "Rosalique Pre Mades Evri ND (4)",
+        "Wild Dose Singles Bloating LL (2)",
+        "SOAR Trade",
+        "Anicura Singles Evri ND",
+        "Rosalique Gift Set (7)",
+        "Wild Dose Singles Bloating Evri (2)",
+        "Hey Harper Singles Evri (6)",
+        "Hey Harper Multi Evri (12)",
+        "Ripple+ Evri ND (8)",
+        "Anicura Small Evri ND",
+        "Ripple+ Evri (8)",
+        "Ripple+ Multi LL (8)",
+        "Bare Biology Single Tub RM (6)",
+        "Pirates Grog Yuzu",
+        "SOAR Multi",
+        "Totter RM",
+        "Wild Dose Over 6 Blister Evri (8)",
+        "Wild Dose Singles LL (2)",
+        "Wild Dose BOTTLE Singles RM48 (8)",
+        "Wild Dose Pill Box Evri (8)",
+        "Rosalique RM (6)",
+        "Salcura Large Evri ND (4)",
+        "Wild Dose BOTTLE Singles Evri (8)",
+        "SOAR Singles",
+        "Wild Dose Evri ND (8)",
+        "Wild Dose 4+ Evri (4)",
+        "Rosalique Evri (6)",
+        "OGT",
+        "Ripple+ RM (6)",
+        "Wild Dose RM (8)",
+        "Ripple+ International (10)",
+        "Spacemasks Singles",
+        "La Bonne Brosse Multi",
+        "La Bonne Brosse Singles",
+        "Duo Singles",
+        "Rampley International",
+        "PeakFlowSpace",
+        "Rippl Impact Singles Evri International",
+        "Pirates Grog",
+        "Pirates Grog Chests",
+        "Dinelli",
+        "Emma Shipley",
+        "LG",
+        "Wild Dose BOTTLE Singles Bloating Evri Custom (8)",
+        "Wild Dose 2/3 Bloating LL Custom (3)",
+        "Rosalique Pre Mades Evri ND Custom (4)",
+        "Ripple+ Evri Custom (8)",
+        "Laura Hammett 10am",
+        "Wild Dose 2/3 Bloating LL",
+        "Bare Biology Single Tub Custom (6)",
+        "Bare Biology Singles RM48 Custom (5)",
+        "Bare Biology Trade 11am",
+        "Bare Biology Single Tub 11am (6)",
+        "Bare Biology LL 11am (2)",
+        "Luella Grey Trade 11am",
+        "Beauty The Shop Singles 11am",
+        "PeakFlowSpace 11am",
+        "Ripple+ Multi LL 11am (8)",
+        "Troubadour Mujjo",
+        "Emma Shipley 11am",
+        "Ripple+ Evri 11am (8)",
+        "Bare Biology Singles RM48 11am (5)",
+        "Bare Biology RM48 11am (7)",
+        "Ripple+ Influencers",
+        "uts",
+        "Luella Grey Trade 1pm",
+        "Bare Biology Trade 1pm",
+        "Luella Gray 1pm",
+        "Jenny Hayley Singles 1pm",
+        "The Opal 1pm",
+        "Rippl Impact Singles Evri International 1pm",
+        "Hey Harper Singles RM LL 1pm (6)",
+        "Wild Dose Singles Bloating Evri 1pm (2)",
+        "Hey Harper Clothing 1pm (18)",
+        "Wild Dose Singles Bloating LL 1pm (2)",
+        "Salcura Amazon 1pm (4)",
+        "Kit Blake 1pm",
+        "&Daughter Multi 1pm",
+        "Bare Biology Single Tub RM 1pm (6)",
+        "Ovusense 1pm",
+        "Rampley DPD 1pm",
+        "PeakFlowSpace 1pm",
+        "Duo Singles 1pm",
+        "Rampley International 1pm",
+        "Anicura Amazon 1pm",
+        "Little Stardust DPD 1pm",
+        "Cuddlr RM 1pm",
+        "OGT 1pm",
+        "Beauty The Shop Singles 1pm",
+        "Little Stardust RM 1pm",
+        "Hey Harper Multi RM24 1pm (12)",
+        "SOAR Multi 1pm",
+        "Rosalique Gift Set 1pm (7)",
+        "Ripple+ Multi LL 1pm (8)",
+        "Hey Harper Singles RM24 1pm (6)",
+        "Bare Biology LL 1pm (2)",
+        "Ripple+ International 1pm (10)",
+        "Hey Harper Multi Evri 1pm (12)",
+        "SOAR Singles 1pm",
+        "Rosalique Pre Mades Evri ND 1pm (4)",
+        "Shirt Company Multi 1pm",
+        "La Bonne Brosse Singles 1pm",
+        "Anicura Singles Evri ND 1pm",
+        "Bare Biology DPD 1pm (7)",
+        "Totter Singles DX 1pm",
+        "INDI Singles Evri 1pm",
+        "Shirt Company Singles 1pm",
+        "Hey Harper Singles Evri 1pm (6)",
+        "Salcura Singles Evri ND 1pm (3)",
+        "Rosalique RM 1pm (6)",
+        "Wild Dose RM International 1pm (8)",
+        "Ripple+ Evri ND 1pm (8)",
+        "Rosalique Evri 1pm (6)",
+        "Wild Dose Over 6 Blister Evri 1pm (8)",
+        "Ripple+ Evri 1pm (8)",
+        "Bare Biology Singles RM48 1pm (5)",
+        "Rosalique Evri ND 1pm (6)",
+        "Anicura Small Evri ND 1pm",
+        "Wild Dose Singles LL 1pm (2)",
+        "Bare Biology RM48 1pm (7)",
+        "Wild Dose 2/3 Evri 1pm (3)",
+        "Wild Dose Pill Box Evri 1pm (8)",
+        "Wild Dose 2/3 LL 1pm (3)",
+        "Salcura Large Evri ND 1pm (4)",
+        "Wild Dose Pill Box Evri ND 1pm (8)",
+        "Wild Dose Evri ND 1pm (8)",
+        "Wild Dose BOTTLE Singles Bloating Evri 1pm (8)",
+        "Wild Dose BOTTLE Singles RM48 1pm (8)",
+        "Wild Dose 4+ Evri 1pm (4)",
+        "Bare Biology RM24 1pm (7)",
+        "Wild Dose Pill Box RM 1pm (8)",
+        "Anicura Large Evri ND 1pm",
+        "",
+        "Salcura Mop Up 1pm (4)",
+        "Bare Biology Pack of Six 1pm (10)",
+        "Wild Dose Evri 1pm (8)",
+        "Wild Dose RM 1pm (8)",
+        "Wild Dose Singles Evri 1pm (2)",
+        "Anicura Mop Up 1pm",
+        "Totter DX 2pm",
+        "Wild Dose Evri ND Mop Up 3pm",
+        "Totter Multi DX",
+        "Rosalique Evri ND (6)",
+        "La Bonne Brosse CAIR",
+        "INDI Gutbar Evri 1pm",
+        "Rosalique Singles Evri ND (4)",
+        "&Daughter Singles",
+        "Rosalique Multi Evri ND (8)",
+        "INDI Singles Evri",
+        "Wild Dose 2/3 Evri ND (3)",
+        "Wild Dose BOTTLE Singles Evri ND (8)",
+        "INDI RM",
+        "Bare Biology Pack of Six (10)",
+        "Energy Bytes",
+        "Rippl Impact Multi Evri International",
+        "Little Stardust RM 11am",
+        "Prana Chai 11am",
+        "&Daughter Singles 1pm",
+        "Cuddlr Singles Evri 1pm",
+        "Pico 1pm",
+        "Wild Dose Singles Bloating LL Custom (2)",
+        "Untamed Singles DPD 11am (10)",
+        "Wild Dose 2/3 Bloating LL 1pm (3)",
+        "DB",
+        "SOAR Trade 1pm",
+        "INDI Multi Evri 1pm",
+        "Hey Harper Multi RM48 1pm (12)",
+        "La Bonne Brosse Multi 1pm",
+        "Emma Shipley Cushions 1pm",
+        "Ripple+ Influencers 1pm (12)",
+        "Rosalique Singles Evri ND 1pm (4)",
+        "Emma Shipley 1pm",
+        "Wild Dose BOTTLE Singles Blocked Evri 1pm (8)",
+        "Totter RM 1pm",
+        "Troubadour 1pm",
+        "Wild Dose 2/3 RM48 (3)",
+        "Wild Dose RM International (8)",
+        "Rosalique Multi Evri ND 1pm (8)",
+        "Charlotte Simone Singles BoxA DPD",
+        "Hey Harper Clothing (18)",
+        "Untamed Singles DPD (10)",
+        "Spacemasks Yuzu",
+        "Rhinomed",
+        "Kit Blake",
+        "Jenny Hayley Singles",
+        "&Daughter Multi",
+        "Charlotte Simone Singles BoxB DPD",
+        "Charlotte Simone Singles BoxA DHL",
+        "Emma Shipley Cushions",
+        "Bare Biology LL",
+        "Ripple+ Singles LL 11am (6)",
+        "Luella Gray No Wrap 1pm",
+        "Lightroom 1pm",
+        "Charlotte Simone Singles BoxB DHL",
+        "Spacemasks Trade 1pm",
+        "str",
+        "&Daughter Singles 11am",
+        "Hey Harper Multi Evri Custom (12)",
+        "PERS Singles 1pm",
+        "Ripple+ Singles LL 1pm (6)",
+        "Wild Dose 2/3 Evri ND 1pm (3)",
+        "Wild Dose BOTTLE Singles Evri 1pm (8)",
+        "Staise Singles 11am",
+        "Untamed Singles GE 1pm (10)",
+        "Untamed Multi 1pm",
+        "SA Wilson 1pm",
+        "Untamed Singles DPD 1pm (10)",
+        "Staise Multi 1pm",
+        "Rhinomed 1pm",
+        "Dinelli 1pm",
+        "Cuddlr Multi Evri 1pm",
+        "Rampley International 11am",
+        "Fornessi 1pm",
+        "Untamed Singles GE (10)",
+        "Rampley DPD 11am",
+        "Second Skin Singles 1pm",
+        "Wild Dose LL 1pm (3)",
+        "Troubadour Trade",
+        "Rosalique Trade 1pm",
+        "INDI Trade 1pm",
+        "Charlotte Simone L2 DHL 1pm",
+        "Rippl Impact Singles Evri 1PM",
+        "Charlotte Simone Multi BoxA DPD 1pm",
+        "Prana Chai 1pm",
+        "Duo Multi",
+        "manual",
+        "&Daughter Trade",
+        "Wild Dose BOTTLE Singles Bloating Evri",
+        "Wild Dose Singles Bloating LL",
+        "Totter Multi DX 1pm",
+        "Pirates Grog Chests 2pm",
+        "&Daughter Trade 11am",
+        "&Daughter Multi 11am",
+        "dhl box b",
+        "Bare Biology Pack of Six 11am (10)",
+        "&Daughter Trade 1pm",
+        "Staise Singles 1pm",
+        "H&S Superclub 1pm",
+        "Rippl Impact Multi Evri International 1pm",
+        "INDI International 1pm",
+        "Spacemasks Singles 1pm",
+        "Pirates Grog 2pm",
+        "Bare Biology Trade",
+        "Spacemasks Trade",
+        "31st State Singles 1pm",
+        "Second Skin Multi 1pm",
+        "Ripple+ Retail",
+        "Beauty The Shop Multi 11am",
+        "La Bonne Brosse Trade",
+        "Pico",
+        "Ripple+ International",
+        "Ripple+ Evri",
+        "sr",
+        "INDI RM 1pm",
+        "Ripple+ RM 1pm (6)",
+        "Emma Shipley Yuzu (HP) 1pm",
+        "Jenny Hayley Singles 11am",
+        "Totter Yuzu",
+        "Second Skin Singles",
+        "Bare Biology Single Tub RM",
+        "Wild Dose 2/3 LL",
+        "Wild Dose Evri ND",
+        "Ripple+ Singles LL",
+        "Wild Dose LL",
+        "Ripple+ Evri ND Custom (8)",
+        "pc",
+        "Ripple+ Multi LL Custom (8)"
       ],
       "roles": [
         "Goods In",
@@ -1145,75 +1506,21 @@
               "r": "K"
             }
           ],
-          "New|08:34": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|09:04": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|09:34": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|10:04": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|10:34": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|11:04": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|11:34": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
-          "New|13:04": [
-            {
-              "cn": "Lightroom",
-              "r": "K"
-            }
-          ],
           "Wendy|07:00": [
             {
-              "cn": "Salcura Singles (3)",
+              "cn": "Anicura Singles Evri ND",
               "r": "K"
             }
           ],
           "Wendy|07:30": [
             {
-              "cn": "Bare Biology Singles RM",
+              "cn": "Salcura Singles (3)",
               "r": "K"
             }
           ],
           "Wendy|08:00": [
             {
-              "cn": "Anicura Large Evri ND",
-              "r": "K"
-            }
-          ],
-          "Lorraine|08:18": [
-            {
-              "cn": "Ripple+ Singles LL (6)",
+              "cn": "Bare Biology Singles RM",
               "r": "K"
             }
           ],
@@ -1225,13 +1532,13 @@
           ],
           "Lynn|07:18": [
             {
-              "cn": "Luella Grey Trade",
+              "cn": "Wild Dose 4+ Evri (4)",
               "r": "K"
             }
           ],
           "Lynn|07:48": [
             {
-              "cn": "Wild Dose 2/3 Evri TIME (3)",
+              "cn": "Luella Grey Trade",
               "r": "K"
             }
           ],
@@ -1243,11 +1550,17 @@
           ],
           "Tracey|07:07": [
             {
-              "cn": "INDI Gutbar Evri",
+              "cn": "INDI Singles Evri",
               "r": "K"
             }
           ],
           "Tracey|07:37": [
+            {
+              "cn": "INDI Gutbar Evri",
+              "r": "K"
+            }
+          ],
+          "Tracey|08:07": [
             {
               "cn": "INDI Multi Evri",
               "r": "K"
@@ -1255,17 +1568,23 @@
           ],
           "Matt|07:17": [
             {
-              "cn": "Bare Biology RM",
+              "cn": "Wild Dose Singles Bloating LL Box (2)",
               "r": "K"
             }
           ],
           "Matt|07:47": [
             {
-              "cn": "Bare Biology RM48 (7)",
+              "cn": "Bare Biology RM",
               "r": "K"
             }
           ],
           "Matt|08:17": [
+            {
+              "cn": "Bare Biology RM48 (7)",
+              "r": "K"
+            }
+          ],
+          "Matt|08:47": [
             {
               "cn": "Bare Biology Singles RM48 (5)",
               "r": "K"
@@ -1283,6 +1602,12 @@
               "r": "K"
             }
           ],
+          "Jack|07:44": [
+            {
+              "cn": "Wild Dose Singles LL (2)",
+              "r": "K"
+            }
+          ],
           "Manleka|08:08": [
             {
               "cn": "Wild Dose BOTTLE Singles Bloating Evri (8)",
@@ -1291,6 +1616,12 @@
           ],
           "Yevgenia|08:13": [
             {
+              "cn": "Ripple+ International (10)",
+              "r": "K"
+            }
+          ],
+          "Yevgenia|08:43": [
+            {
               "cn": "Shirt Company Singles",
               "r": "K"
             }
@@ -1298,6 +1629,42 @@
           "Jemma|08:24": [
             {
               "cn": "ST8 Supply",
+              "r": "K"
+            }
+          ],
+          "Callum|08:31": [
+            {
+              "cn": "Bare Biology Trade",
+              "r": "K"
+            }
+          ],
+          "Ed|08:39": [
+            {
+              "cn": "SOAR Trade",
+              "r": "K"
+            }
+          ],
+          "Ed|09:09": [
+            {
+              "cn": "SOAR Singles",
+              "r": "K"
+            }
+          ],
+          "Claire|08:47": [
+            {
+              "cn": "Hey Harper Singles Evri (6)",
+              "r": "K"
+            }
+          ],
+          "Paul|08:41": [
+            {
+              "cn": "OGT",
+              "r": "K"
+            }
+          ],
+          "Petra|08:57": [
+            {
+              "cn": "Rampley International",
               "r": "K"
             }
           ]
