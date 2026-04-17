@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T08:05:52.027Z",
+  "updatedAt": "2026-04-17T08:17:36.438Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T08:05:51.765Z",
+      "savedAt": "2026-04-17T08:17:36.239Z",
       "v": 2,
       "staff": [
         {
@@ -1172,6 +1172,74 @@
         {
           "name": "Petra",
           "shiftStart": "0857",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Aidan",
+          "shiftStart": "0902",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Jody",
+          "shiftStart": "0903",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Howard",
+          "shiftStart": "0902",
+          "shiftEnd": "1700",
+          "lunchStart": "1200",
+          "permittedRoles": [
+            "Picking",
+            "Packing"
+          ],
+          "workDays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ]
+        },
+        {
+          "name": "Caitlin",
+          "shiftStart": "0910",
           "shiftEnd": "1700",
           "lunchStart": "1200",
           "permittedRoles": [
@@ -1487,7 +1555,9 @@
         "Wild Dose LL",
         "Ripple+ Evri ND Custom (8)",
         "pc",
-        "Ripple+ Multi LL Custom (8)"
+        "Ripple+ Multi LL Custom (8)",
+        "SA Wilson",
+        "Staise Singles"
       ],
       "roles": [
         "Goods In",
@@ -1524,9 +1594,21 @@
               "r": "K"
             }
           ],
+          "Lorraine|08:18": [
+            {
+              "cn": "Ripple+ Multi LL (8)",
+              "r": "K"
+            }
+          ],
           "Janey|08:06": [
             {
               "cn": "Wild Dose 2/3 LL (3)",
+              "r": "K"
+            }
+          ],
+          "Janey|08:36": [
+            {
+              "cn": "La Bonne Brosse CAIR",
               "r": "K"
             }
           ],
@@ -1550,13 +1632,13 @@
           ],
           "Tracey|07:07": [
             {
-              "cn": "INDI Singles Evri",
+              "cn": "INDI Gutbar Evri",
               "r": "K"
             }
           ],
           "Tracey|07:37": [
             {
-              "cn": "INDI Gutbar Evri",
+              "cn": "INDI Singles Evri",
               "r": "K"
             }
           ],
@@ -1604,7 +1686,7 @@
           ],
           "Jack|07:44": [
             {
-              "cn": "Wild Dose Singles LL (2)",
+              "cn": "Wild Dose Singles Bloating LL (2)",
               "r": "K"
             }
           ],
@@ -1614,21 +1696,27 @@
               "r": "K"
             }
           ],
-          "Yevgenia|08:13": [
+          "Manleka|08:38": [
             {
-              "cn": "Ripple+ International (10)",
+              "cn": "Wild Dose BOTTLE Singles RM48 (8)",
               "r": "K"
             }
           ],
-          "Yevgenia|08:43": [
+          "Yevgenia|08:13": [
             {
               "cn": "Shirt Company Singles",
               "r": "K"
             }
           ],
-          "Jemma|08:24": [
+          "Yevgenia|08:43": [
             {
-              "cn": "ST8 Supply",
+              "cn": "Ripple+ International (10)",
+              "r": "K"
+            }
+          ],
+          "Yevgenia|09:13": [
+            {
+              "cn": "Ripple+ Evri (8)",
               "r": "K"
             }
           ],
@@ -1652,7 +1740,7 @@
           ],
           "Claire|08:47": [
             {
-              "cn": "Hey Harper Singles Evri (6)",
+              "cn": "Hey Harper Multi Evri (12)",
               "r": "K"
             }
           ],
@@ -1664,7 +1752,109 @@
           ],
           "Petra|08:57": [
             {
-              "cn": "Rampley International",
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|09:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|09:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|10:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|10:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|11:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|11:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|13:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|13:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|14:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|14:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|15:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|15:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|16:27": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Petra|16:57": [
+            {
+              "cn": "Staise Singles",
+              "r": "K"
+            }
+          ],
+          "Aidan|09:02": [
+            {
+              "cn": "Wild Dose 2/3 Bloating LL Box (3)",
+              "r": "K"
+            }
+          ],
+          "Howard|09:02": [
+            {
+              "cn": "Rosalique Multi Evri ND (8)",
+              "r": "K"
+            }
+          ],
+          "Caitlin|09:10": [
+            {
+              "cn": "Rippl Impact Multi Evri International",
               "r": "K"
             }
           ]
