@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T07:37:59.506Z",
+  "updatedAt": "2026-04-17T07:47:16.789Z",
   "rotas": {
     "2026-04-16": {
       "savedAt": "2026-04-16T14:30:22.899Z",
@@ -877,7 +877,7 @@
       }
     },
     "2026-04-17": {
-      "savedAt": "2026-04-17T07:37:59.283Z",
+      "savedAt": "2026-04-17T07:47:16.556Z",
       "v": 2,
       "staff": [
         {
@@ -1124,7 +1124,9 @@
         "Wild Dose Singles Evri (2)",
         "Shirt Company Multi",
         "Troubadour",
-        "INDI Multi Evri"
+        "INDI Multi Evri",
+        "Lightroom",
+        "ST8 Supply"
       ],
       "roles": [
         "Goods In",
@@ -1140,6 +1142,54 @@
           "New|08:04": [
             {
               "cn": "Laura Hammett",
+              "r": "K"
+            }
+          ],
+          "New|08:34": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|09:04": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|09:34": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|10:04": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|10:34": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|11:04": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|11:34": [
+            {
+              "cn": "Lightroom",
+              "r": "K"
+            }
+          ],
+          "New|13:04": [
+            {
+              "cn": "Lightroom",
               "r": "K"
             }
           ],
@@ -1221,12 +1271,6 @@
               "r": "K"
             }
           ],
-          "Matt|08:47": [
-            {
-              "cn": "Bare Biology LL (2)",
-              "r": "K"
-            }
-          ],
           "Haulandstore16|07:15": [
             {
               "cn": "Totter Singles DX",
@@ -1248,6 +1292,12 @@
           "Yevgenia|08:13": [
             {
               "cn": "Shirt Company Singles",
+              "r": "K"
+            }
+          ],
+          "Jemma|08:24": [
+            {
+              "cn": "ST8 Supply",
               "r": "K"
             }
           ]
