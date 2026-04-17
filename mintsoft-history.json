@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-17T14:44:32.395Z",
+  "saved": "2026-04-17T14:48:26.168Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17846,6 +17846,51 @@
       "actualSecOrd": 46.3,
       "orderCount": 7,
       "packerCount": 23
+    },
+    {
+      "batchId": 8431136,
+      "reference": "2026-04-17 13-25 - Anicura Small Evri ND 1pm - Run 1",
+      "date": "2026-04-17T14:33:08.146Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 153.4,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431154,
+      "reference": "2026-04-17 13-30 - Wild Dose Pill Box Evri ND 1pm (8) - Run 1",
+      "date": "2026-04-17T14:32:36.532Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 46.5,
+      "orderCount": 4,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431161,
+      "reference": "2026-04-17 13-35 - Salcura Mop Up 1pm (4) - Run 1",
+      "date": "2026-04-17T14:33:11.863Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 52.6,
+      "orderCount": 17,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431162,
+      "reference": "2026-04-17 13-35 - Wild Dose Evri 1pm (8) - Run 1",
+      "date": "2026-04-17T14:46:39.859Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 75.9,
+      "orderCount": 23,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431171,
+      "reference": "2026-04-17 15-05 - Wild Dose Evri ND Mop Up 3pm - Run 1",
+      "date": "2026-04-17T14:42:08.761Z",
+      "dayOfWeek": 5,
+      "actualSecOrd": 35,
+      "orderCount": 12,
+      "packerCount": 23
     }
   ],
   "packerSnaps": [
@@ -18482,8 +18527,8 @@
     {
       "dow": 5,
       "hour": 15,
-      "count": 12,
-      "ts": "2026-04-17T14:35:34.173Z",
+      "count": 9,
+      "ts": "2026-04-17T14:48:22.620Z",
       "dateHour": "2026-04-17T14"
     }
   ]
