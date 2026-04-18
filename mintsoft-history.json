@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T08:43:51.932Z",
+  "saved": "2026-04-18T08:44:45.467Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17288,6 +17288,105 @@
       "actualSecOrd": 82,
       "orderCount": 3,
       "packerCount": 23
+    },
+    {
+      "batchId": 8431173,
+      "reference": "2026-04-18 05-36 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
+      "date": "2026-04-18T07:55:23.098Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 37.4,
+      "orderCount": 78,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431184,
+      "reference": "2026-04-18 05-51 - Ripple+ International (10) - Run 1",
+      "date": "2026-04-18T08:08:56.212Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 32.7,
+      "orderCount": 20,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431189,
+      "reference": "2026-04-18 05-56 - Bare Biology Single Tub RM (6) - Run 1",
+      "date": "2026-04-18T07:58:29.264Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 41.3,
+      "orderCount": 16,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431193,
+      "reference": "2026-04-18 05-56 - Ripple+ Evri (8) - Run 1",
+      "date": "2026-04-18T07:54:43.520Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 29.3,
+      "orderCount": 70,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431194,
+      "reference": "2026-04-18 05-56 - Wild Dose 2/3 LL (3) - Run 2",
+      "date": "2026-04-18T08:07:03.104Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 42.3,
+      "orderCount": 23,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431195,
+      "reference": "2026-04-18 05-56 - Ripple+ Multi LL (8) - Run 2",
+      "date": "2026-04-18T08:41:46.697Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 34.4,
+      "orderCount": 15,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431199,
+      "reference": "2026-04-18 06-01 - Totter Singles DX - Run 1",
+      "date": "2026-04-18T08:28:03.892Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 46.8,
+      "orderCount": 40,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431201,
+      "reference": "2026-04-18 06-01 - Ripple+ RM (6) - Run 1",
+      "date": "2026-04-18T08:32:04.520Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 24,
+      "orderCount": 5,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431203,
+      "reference": "2026-04-18 06-01 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-18T08:18:11.909Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 25.2,
+      "orderCount": 35,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431214,
+      "reference": "2026-04-18 06-01 - Wild Dose 2/3 Evri TIME (3) - Run 1",
+      "date": "2026-04-18T07:42:56.774Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 47,
+      "orderCount": 37,
+      "packerCount": 6
+    },
+    {
+      "batchId": 8431225,
+      "reference": "2026-04-18 06-11 - Bare Biology RM48 (7) - Run 1",
+      "date": "2026-04-18T07:45:41.605Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 72,
+      "orderCount": 17,
+      "packerCount": 6
     }
   ],
   "packerSnaps": [
@@ -17934,6 +18033,13 @@
       "count": 1,
       "ts": "2026-04-17T15:11:40.283Z",
       "dateHour": "2026-04-17T15"
+    },
+    {
+      "dow": 6,
+      "hour": 9,
+      "count": 6,
+      "ts": "2026-04-18T08:44:40.768Z",
+      "dateHour": "2026-04-18T08"
     }
   ]
 }
