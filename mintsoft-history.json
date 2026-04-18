@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T10:58:51.915Z",
+  "saved": "2026-04-18T12:43:59.068Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17513,6 +17513,87 @@
       "actualSecOrd": 45.6,
       "orderCount": 20,
       "packerCount": 8
+    },
+    {
+      "batchId": 8431192,
+      "reference": "2026-04-18 05-56 - Wild Dose 2/3 LL (3) - Run 1",
+      "date": "2026-04-18T10:57:41.375Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 38.1,
+      "orderCount": 32,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8431237,
+      "reference": "Charlotte Simone Multis BoxB DHL",
+      "date": "2026-04-18T10:57:13.885Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 122,
+      "orderCount": 3,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8431248,
+      "reference": "2026-04-18 11-06 - Ripple+ Evri 11am (8) - Run 1",
+      "date": "2026-04-18T11:12:44.305Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 48,
+      "orderCount": 8,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8431188,
+      "reference": "2026-04-18 05-51 - Rosalique Gift Set (7) - Run 1",
+      "date": "2026-04-18T11:26:25.513Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 25.5,
+      "orderCount": 8,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431197,
+      "reference": "2026-04-18 06-01 - Wild Dose BOTTLE Singles RM48 (8) - Run 1",
+      "date": "2026-04-18T11:28:16.591Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 36,
+      "orderCount": 11,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431207,
+      "reference": "2026-04-18 06-01 - Rosalique Multi Evri ND (8) - Run 1",
+      "date": "2026-04-18T11:43:35.947Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 105,
+      "orderCount": 4,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431234,
+      "reference": "Charlotte Simone L2 DHL",
+      "date": "2026-04-18T11:41:11.897Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 116,
+      "orderCount": 3,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431205,
+      "reference": "2026-04-18 06-01 - Wild Dose 4+ Evri (4) - Run 2",
+      "date": "2026-04-18T11:57:59.432Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 50.4,
+      "orderCount": 15,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431200,
+      "reference": "2026-04-18 06-01 - Wild Dose 4+ Evri (4) - Run 1",
+      "date": "2026-04-18T12:12:48.623Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 64.7,
+      "orderCount": 14,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -18180,6 +18261,20 @@
       "count": 7,
       "ts": "2026-04-18T10:58:48.123Z",
       "dateHour": "2026-04-18T10"
+    },
+    {
+      "dow": 6,
+      "hour": 12,
+      "count": 4,
+      "ts": "2026-04-18T11:59:10.128Z",
+      "dateHour": "2026-04-18T11"
+    },
+    {
+      "dow": 6,
+      "hour": 13,
+      "count": 4,
+      "ts": "2026-04-18T12:29:19.504Z",
+      "dateHour": "2026-04-18T12"
     }
   ]
 }
