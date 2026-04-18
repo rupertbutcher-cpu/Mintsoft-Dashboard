@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T14:44:26.083Z",
+  "saved": "2026-04-18T15:00:10.447Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17648,6 +17648,51 @@
       "actualSecOrd": 50.3,
       "orderCount": 41,
       "packerCount": 9
+    },
+    {
+      "batchId": 8431182,
+      "reference": "2026-04-18 05-51 - Rosalique Pre Mades Evri ND (4) - Run 1",
+      "date": "2026-04-18T14:13:33.824Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 26.6,
+      "orderCount": 53,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431224,
+      "reference": "2026-04-18 06-06 - Wild Dose Evri (8) - Run 3",
+      "date": "2026-04-18T14:13:36.784Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 67.8,
+      "orderCount": 10,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431239,
+      "reference": "2026-04-18 10-41 - Wild Dose Singles Bloating LL Custom (2) - Run 1",
+      "date": "2026-04-18T14:00:04.105Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 42.3,
+      "orderCount": 90,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431240,
+      "reference": "2026-04-18 10-51 - Bare Biology Singles RM48 Custom (5) - Run 1",
+      "date": "2026-04-18T13:59:50.666Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 44.6,
+      "orderCount": 28,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431284,
+      "reference": "2026-04-18 13-21 - Wild Dose 2/3 Bloating LL 1pm (3) - Run 1",
+      "date": "2026-04-18T14:00:11.930Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 40.9,
+      "orderCount": 17,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -18340,9 +18385,16 @@
     {
       "dow": 6,
       "hour": 15,
-      "count": 2,
-      "ts": "2026-04-18T14:21:01.635Z",
+      "count": 3,
+      "ts": "2026-04-18T14:45:57.390Z",
       "dateHour": "2026-04-18T14"
+    },
+    {
+      "dow": 6,
+      "hour": 16,
+      "count": 5,
+      "ts": "2026-04-18T15:00:06.440Z",
+      "dateHour": "2026-04-18T15"
     }
   ]
 }
