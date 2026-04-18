@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T10:43:54.132Z",
+  "saved": "2026-04-18T10:58:51.915Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17486,6 +17486,33 @@
       "actualSecOrd": 39.6,
       "orderCount": 43,
       "packerCount": 7
+    },
+    {
+      "batchId": 8431179,
+      "reference": "2026-04-18 05-46 - Anicura Amazon - Run 1",
+      "date": "2026-04-18T10:43:08.424Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 26,
+      "orderCount": 18,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8431198,
+      "reference": "2026-04-18 06-01 - Wild Dose Singles LL (2) - Run 1",
+      "date": "2026-04-18T10:42:25.692Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 22,
+      "orderCount": 36,
+      "packerCount": 8
+    },
+    {
+      "batchId": 8431218,
+      "reference": "2026-04-18 06-01 - Wild Dose BOTTLE Singles Bloating Evri (8) - Run 2",
+      "date": "2026-04-18T10:58:18.844Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 45.6,
+      "orderCount": 20,
+      "packerCount": 8
     }
   ],
   "packerSnaps": [
@@ -18150,8 +18177,8 @@
     {
       "dow": 6,
       "hour": 11,
-      "count": 6,
-      "ts": "2026-04-18T10:43:50.244Z",
+      "count": 7,
+      "ts": "2026-04-18T10:58:48.123Z",
       "dateHour": "2026-04-18T10"
     }
   ]
