@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T12:59:40.447Z",
+  "saved": "2026-04-18T14:44:26.083Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17630,6 +17630,24 @@
       "actualSecOrd": 52.8,
       "orderCount": 34,
       "packerCount": 9
+    },
+    {
+      "batchId": 8431249,
+      "reference": "2026-04-18 11-11 - Bare Biology RM48 11am (7) - Run 1",
+      "date": "2026-04-18T13:13:23.119Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 74,
+      "orderCount": 24,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431287,
+      "reference": "2026-04-18 13-21 - Wild Dose BOTTLE Singles Bloating Evri Custom (8) - Run 1",
+      "date": "2026-04-18T13:43:52.741Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 50.3,
+      "orderCount": 41,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -18311,6 +18329,20 @@
       "count": 3,
       "ts": "2026-04-18T12:59:36.449Z",
       "dateHour": "2026-04-18T12"
+    },
+    {
+      "dow": 6,
+      "hour": 14,
+      "count": 5,
+      "ts": "2026-04-18T13:44:33.145Z",
+      "dateHour": "2026-04-18T13"
+    },
+    {
+      "dow": 6,
+      "hour": 15,
+      "count": 2,
+      "ts": "2026-04-18T14:21:01.635Z",
+      "dateHour": "2026-04-18T14"
     }
   ]
 }
