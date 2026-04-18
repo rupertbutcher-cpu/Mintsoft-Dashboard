@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-18T12:43:59.068Z",
+  "saved": "2026-04-18T12:59:40.447Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17594,6 +17594,42 @@
       "actualSecOrd": 64.7,
       "orderCount": 14,
       "packerCount": 9
+    },
+    {
+      "batchId": 8431235,
+      "reference": "Charlotte Simone L2 DPD",
+      "date": "2026-04-18T12:12:58.120Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 142,
+      "orderCount": 3,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431238,
+      "reference": "2026-04-18 10-41 - Bare Biology Single Tub Custom (6) - Run 1",
+      "date": "2026-04-18T12:28:40.044Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 46.5,
+      "orderCount": 28,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431209,
+      "reference": "2026-04-18 06-01 - Wild Dose Evri ND (8) - Run 1",
+      "date": "2026-04-18T12:43:10.416Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 60,
+      "orderCount": 11,
+      "packerCount": 9
+    },
+    {
+      "batchId": 8431228,
+      "reference": "2026-04-18 09-01 - Wild Dose 2/3 Bloating LL Custom (3) - Run 1",
+      "date": "2026-04-18T12:42:20.577Z",
+      "dayOfWeek": 6,
+      "actualSecOrd": 52.8,
+      "orderCount": 34,
+      "packerCount": 9
     }
   ],
   "packerSnaps": [
@@ -18272,8 +18308,8 @@
     {
       "dow": 6,
       "hour": 13,
-      "count": 4,
-      "ts": "2026-04-18T12:29:19.504Z",
+      "count": 3,
+      "ts": "2026-04-18T12:59:36.449Z",
       "dateHour": "2026-04-18T12"
     }
   ]
