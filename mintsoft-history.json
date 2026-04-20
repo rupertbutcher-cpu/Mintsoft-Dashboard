@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-20T06:55:58.428Z",
+  "saved": "2026-04-20T07:28:43.653Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17297,6 +17297,105 @@
       "actualSecOrd": 36.5,
       "orderCount": 23,
       "packerCount": 10
+    },
+    {
+      "batchId": 8431353,
+      "reference": "2026-04-20 05-58 - Bare Biology Single Tub RM (6) - Run 2",
+      "date": "2026-04-20T06:41:11.585Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 47.8,
+      "orderCount": 27,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8431366,
+      "reference": "2026-04-20 05-58 - Ripple+ Multi LL (8) - Run 4",
+      "date": "2026-04-20T06:40:03.703Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 31.5,
+      "orderCount": 4,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8431390,
+      "reference": "2026-04-20 06-03 - Salcura Large Evri ND (4) - Run 3",
+      "date": "2026-04-20T06:41:36.174Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 49.8,
+      "orderCount": 10,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8431462,
+      "reference": "2026-04-20 06-13 - Bare Biology RM48 (7) - Run 2",
+      "date": "2026-04-20T06:41:23.604Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 52.6,
+      "orderCount": 22,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8431337,
+      "reference": "2026-04-20 05-53 - Hey Harper Clothing (18) - Run 1",
+      "date": "2026-04-20T06:55:03.365Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 70.5,
+      "orderCount": 12,
+      "packerCount": 11
+    },
+    {
+      "batchId": 8431349,
+      "reference": "2026-04-20 05-58 - Hey Harper Multi Evri (12) - Run 1",
+      "date": "2026-04-20T06:56:30.836Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 37.5,
+      "orderCount": 24,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8431401,
+      "reference": "2026-04-20 06-03 - Bare Biology LL (2) - Run 1",
+      "date": "2026-04-20T06:56:25.309Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 30,
+      "orderCount": 36,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8431458,
+      "reference": "2026-04-20 06-13 - Bare Biology RM48 (7) - Run 1",
+      "date": "2026-04-20T07:11:20.360Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 51.5,
+      "orderCount": 24,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8431481,
+      "reference": "ST8 Supply",
+      "date": "2026-04-20T07:11:19.885Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 66.2,
+      "orderCount": 35,
+      "packerCount": 13
+    },
+    {
+      "batchId": 8431388,
+      "reference": "2026-04-20 06-03 - Salcura Large Evri ND (4) - Run 2",
+      "date": "2026-04-20T07:10:03.641Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 69.5,
+      "orderCount": 12,
+      "packerCount": 14
+    },
+    {
+      "batchId": 8431324,
+      "reference": "2026-04-20 05-38 - Wild Dose 2/3 Bloating LL Box (3) - Run 3",
+      "date": "2026-04-20T07:17:12.681Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 32.7,
+      "orderCount": 78,
+      "packerCount": 14
     }
   ],
   "packerSnaps": [
@@ -17947,9 +18046,16 @@
     {
       "dow": 1,
       "hour": 7,
-      "count": 9,
-      "ts": "2026-04-20T06:43:52.124Z",
+      "count": 10,
+      "ts": "2026-04-20T06:59:32.946Z",
       "dateHour": "2026-04-20T06"
+    },
+    {
+      "dow": 1,
+      "hour": 8,
+      "count": 11,
+      "ts": "2026-04-20T07:28:39.414Z",
+      "dateHour": "2026-04-20T07"
     }
   ]
 }
