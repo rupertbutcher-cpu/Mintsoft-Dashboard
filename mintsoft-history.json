@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-20T09:16:21.627Z",
+  "saved": "2026-04-20T09:20:26.419Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17540,6 +17540,204 @@
       "actualSecOrd": 65.3,
       "orderCount": 9,
       "packerCount": 22
+    },
+    {
+      "batchId": 8431320,
+      "reference": "2026-04-20 05-38 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
+      "date": "2026-04-20T09:03:42.552Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 34.6,
+      "orderCount": 76,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431347,
+      "reference": "2026-04-20 05-53 - Salcura Singles (3) - Run 1",
+      "date": "2026-04-20T08:27:34.996Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 46.4,
+      "orderCount": 41,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431361,
+      "reference": "2026-04-20 05-58 - Ripple+ Multi LL (8) - Run 2",
+      "date": "2026-04-20T08:29:19.328Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 44.7,
+      "orderCount": 46,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431367,
+      "reference": "2026-04-20 05-58 - Hey Harper Singles Evri (6) - Run 2",
+      "date": "2026-04-20T08:58:20.155Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 19.1,
+      "orderCount": 50,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431368,
+      "reference": "2026-04-20 05-58 - Ripple+ Evri (8) - Run 3",
+      "date": "2026-04-20T08:56:19.824Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 39.5,
+      "orderCount": 43,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431378,
+      "reference": "2026-04-20 06-03 - OGT - Run 1",
+      "date": "2026-04-20T08:30:15.175Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 112.8,
+      "orderCount": 5,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431397,
+      "reference": "2026-04-20 06-03 - Pirates Grog - Run 1",
+      "date": "2026-04-20T09:10:35.202Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 63.8,
+      "orderCount": 19,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431407,
+      "reference": "2026-04-20 06-03 - Wild Dose Singles LL (2) - Run 2",
+      "date": "2026-04-20T08:32:22.181Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 27.9,
+      "orderCount": 52,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431409,
+      "reference": "2026-04-20 06-03 - SOAR Multi - Run 2",
+      "date": "2026-04-20T08:55:02.569Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 63.7,
+      "orderCount": 18,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431410,
+      "reference": "2026-04-20 06-03 - SOAR Singles - Run 1",
+      "date": "2026-04-20T09:16:41.784Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 43.2,
+      "orderCount": 26,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431419,
+      "reference": "2026-04-20 06-03 - Bare Biology LL (2) - Run 2",
+      "date": "2026-04-20T08:47:53.052Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 29.2,
+      "orderCount": 50,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431427,
+      "reference": "2026-04-20 06-03 - Wild Dose BOTTLE Singles Evri (8) - Run 2",
+      "date": "2026-04-20T08:54:42.116Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 34.1,
+      "orderCount": 56,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431439,
+      "reference": "2026-04-20 06-08 - INDI Gutbar Evri - Run 1",
+      "date": "2026-04-20T08:33:55.522Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 45.2,
+      "orderCount": 56,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431445,
+      "reference": "2026-04-20 06-08 - Wild Dose Evri (8) - Run 3",
+      "date": "2026-04-20T08:47:08.869Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 73.4,
+      "orderCount": 30,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431465,
+      "reference": "2026-04-20 06-13 - Bare Biology RM48 (7) - Run 3",
+      "date": "2026-04-20T08:51:18.245Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 53.8,
+      "orderCount": 26,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431474,
+      "reference": "2026-04-20 06-33 - Shirt Company Singles - Run 1",
+      "date": "2026-04-20T09:02:29.422Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 75.1,
+      "orderCount": 41,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431475,
+      "reference": "2026-04-20 06-33 - Rhinomed - Run 1",
+      "date": "2026-04-20T07:54:41.875Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 11.3,
+      "orderCount": 9,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431492,
+      "reference": "2026-04-20 07-03 - Shanker Singles - Run 1",
+      "date": "2026-04-20T08:30:01.821Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 30,
+      "orderCount": 3,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431493,
+      "reference": "2026-04-20 07-03 - Staying Relevant - Run 1",
+      "date": "2026-04-20T08:27:16.160Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 102,
+      "orderCount": 4,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431507,
+      "reference": "2026-04-20 07-08 - &Daughter Multi - Run 1",
+      "date": "2026-04-20T07:49:44.749Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 130.5,
+      "orderCount": 4,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431509,
+      "reference": "2026-04-20 07-08 - &Daughter Singles - Run 1",
+      "date": "2026-04-20T08:01:09.225Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 103.5,
+      "orderCount": 4,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431521,
+      "reference": "2026-04-20 07-18 - Emma Shipley - Run 1",
+      "date": "2026-04-20T09:14:20.646Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 88.3,
+      "orderCount": 25,
+      "packerCount": 25
     }
   ],
   "packerSnaps": [
@@ -18207,6 +18405,13 @@
       "count": 18,
       "ts": "2026-04-20T08:28:13.695Z",
       "dateHour": "2026-04-20T08"
+    },
+    {
+      "dow": 1,
+      "hour": 10,
+      "count": 18,
+      "ts": "2026-04-20T09:20:21.794Z",
+      "dateHour": "2026-04-20T09"
     }
   ]
 }
