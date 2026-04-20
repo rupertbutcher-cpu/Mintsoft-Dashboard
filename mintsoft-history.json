@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-20T09:23:31.788Z",
+  "saved": "2026-04-20T09:27:11.424Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17738,6 +17738,24 @@
       "actualSecOrd": 88.3,
       "orderCount": 25,
       "packerCount": 25
+    },
+    {
+      "batchId": 8431358,
+      "reference": "2026-04-20 05-58 - Ripple+ Multi LL (8) - Run 1",
+      "date": "2026-04-20T09:22:14.625Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 40.9,
+      "orderCount": 42,
+      "packerCount": 25
+    },
+    {
+      "batchId": 8431372,
+      "reference": "2026-04-20 05-58 - Wild Dose 2/3 LL (3) - Run 5",
+      "date": "2026-04-20T09:21:03.436Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 30.8,
+      "orderCount": 53,
+      "packerCount": 25
     }
   ],
   "packerSnaps": [
@@ -18409,8 +18427,8 @@
     {
       "dow": 1,
       "hour": 10,
-      "count": 18,
-      "ts": "2026-04-20T09:20:21.794Z",
+      "count": 20,
+      "ts": "2026-04-20T09:27:06.255Z",
       "dateHour": "2026-04-20T09"
     }
   ]
