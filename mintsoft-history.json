@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "saved": "2026-04-20T09:41:11.316Z",
+  "saved": "2026-04-20T09:42:12.646Z",
   "batches": [
     {
       "batchId": 8425402,
@@ -17542,76 +17542,76 @@
       "packerCount": 22
     },
     {
-      "batchId": 8431320,
-      "reference": "2026-04-20 05-38 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
-      "date": "2026-04-20T09:03:42.552Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 34.6,
-      "orderCount": 76,
-      "packerCount": 25
-    },
-    {
       "batchId": 8431347,
       "reference": "2026-04-20 05-53 - Salcura Singles (3) - Run 1",
-      "date": "2026-04-20T08:27:34.996Z",
+      "date": "2026-04-20T08:22:15.837Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 46.4,
-      "orderCount": 41,
-      "packerCount": 25
+      "actualSecOrd": 47.6,
+      "orderCount": 40,
+      "packerCount": 23
     },
     {
       "batchId": 8431361,
       "reference": "2026-04-20 05-58 - Ripple+ Multi LL (8) - Run 2",
-      "date": "2026-04-20T08:29:19.328Z",
+      "date": "2026-04-20T08:25:25.836Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 44.7,
-      "orderCount": 46,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431367,
-      "reference": "2026-04-20 05-58 - Hey Harper Singles Evri (6) - Run 2",
-      "date": "2026-04-20T08:58:20.155Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 19.1,
-      "orderCount": 50,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431368,
-      "reference": "2026-04-20 05-58 - Ripple+ Evri (8) - Run 3",
-      "date": "2026-04-20T08:56:19.824Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 39.5,
-      "orderCount": 43,
-      "packerCount": 25
+      "actualSecOrd": 45.6,
+      "orderCount": 40,
+      "packerCount": 23
     },
     {
       "batchId": 8431378,
       "reference": "2026-04-20 06-03 - OGT - Run 1",
-      "date": "2026-04-20T08:30:15.175Z",
+      "date": "2026-04-20T08:25:03.517Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 112.8,
-      "orderCount": 5,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431397,
-      "reference": "2026-04-20 06-03 - Pirates Grog - Run 1",
-      "date": "2026-04-20T09:10:35.202Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 63.8,
-      "orderCount": 19,
-      "packerCount": 25
+      "actualSecOrd": 84,
+      "orderCount": 3,
+      "packerCount": 23
     },
     {
       "batchId": 8431407,
       "reference": "2026-04-20 06-03 - Wild Dose Singles LL (2) - Run 2",
-      "date": "2026-04-20T08:32:22.181Z",
+      "date": "2026-04-20T08:26:06.207Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 27.9,
-      "orderCount": 52,
-      "packerCount": 25
+      "actualSecOrd": 28.4,
+      "orderCount": 38,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431419,
+      "reference": "2026-04-20 06-03 - Bare Biology LL (2) - Run 2",
+      "date": "2026-04-20T08:26:06.519Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 21.4,
+      "orderCount": 7,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431445,
+      "reference": "2026-04-20 06-08 - Wild Dose Evri (8) - Run 3",
+      "date": "2026-04-20T08:24:14.204Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 64,
+      "orderCount": 18,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431465,
+      "reference": "2026-04-20 06-13 - Bare Biology RM48 (7) - Run 3",
+      "date": "2026-04-20T08:26:46.018Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 45,
+      "orderCount": 8,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431493,
+      "reference": "2026-04-20 07-03 - Staying Relevant - Run 1",
+      "date": "2026-04-20T08:26:22.621Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 118,
+      "orderCount": 3,
+      "packerCount": 23
     },
     {
       "batchId": 8431409,
@@ -17620,25 +17620,7 @@
       "dayOfWeek": 1,
       "actualSecOrd": 63.7,
       "orderCount": 18,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431410,
-      "reference": "2026-04-20 06-03 - SOAR Singles - Run 1",
-      "date": "2026-04-20T09:16:41.784Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 43.2,
-      "orderCount": 26,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431419,
-      "reference": "2026-04-20 06-03 - Bare Biology LL (2) - Run 2",
-      "date": "2026-04-20T08:47:53.052Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 29.2,
-      "orderCount": 50,
-      "packerCount": 25
+      "packerCount": 23
     },
     {
       "batchId": 8431427,
@@ -17647,7 +17629,7 @@
       "dayOfWeek": 1,
       "actualSecOrd": 34.1,
       "orderCount": 56,
-      "packerCount": 25
+      "packerCount": 23
     },
     {
       "batchId": 8431439,
@@ -17656,106 +17638,79 @@
       "dayOfWeek": 1,
       "actualSecOrd": 45.2,
       "orderCount": 56,
-      "packerCount": 25
+      "packerCount": 23
     },
     {
-      "batchId": 8431445,
-      "reference": "2026-04-20 06-08 - Wild Dose Evri (8) - Run 3",
-      "date": "2026-04-20T08:47:08.869Z",
+      "batchId": 8431367,
+      "reference": "2026-04-20 05-58 - Hey Harper Singles Evri (6) - Run 2",
+      "date": "2026-04-20T08:55:28.194Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 73.4,
-      "orderCount": 30,
-      "packerCount": 25
+      "actualSecOrd": 18.6,
+      "orderCount": 42,
+      "packerCount": 22
     },
     {
-      "batchId": 8431465,
-      "reference": "2026-04-20 06-13 - Bare Biology RM48 (7) - Run 3",
-      "date": "2026-04-20T08:51:18.245Z",
+      "batchId": 8431368,
+      "reference": "2026-04-20 05-58 - Ripple+ Evri (8) - Run 3",
+      "date": "2026-04-20T08:55:28.898Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 53.8,
-      "orderCount": 26,
-      "packerCount": 25
+      "actualSecOrd": 40.1,
+      "orderCount": 41,
+      "packerCount": 22
     },
     {
       "batchId": 8431474,
       "reference": "2026-04-20 06-33 - Shirt Company Singles - Run 1",
-      "date": "2026-04-20T09:02:29.422Z",
+      "date": "2026-04-20T08:56:55.883Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 75.1,
-      "orderCount": 41,
-      "packerCount": 25
+      "actualSecOrd": 76.3,
+      "orderCount": 36,
+      "packerCount": 22
     },
     {
-      "batchId": 8431475,
-      "reference": "2026-04-20 06-33 - Rhinomed - Run 1",
-      "date": "2026-04-20T07:54:41.875Z",
+      "batchId": 8431320,
+      "reference": "2026-04-20 05-38 - Wild Dose 2/3 Bloating LL Box (3) - Run 1",
+      "date": "2026-04-20T09:03:42.552Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 11.3,
-      "orderCount": 9,
-      "packerCount": 25
+      "actualSecOrd": 34.6,
+      "orderCount": 76,
+      "packerCount": 22
     },
     {
-      "batchId": 8431492,
-      "reference": "2026-04-20 07-03 - Shanker Singles - Run 1",
-      "date": "2026-04-20T08:30:01.821Z",
+      "batchId": 8431397,
+      "reference": "2026-04-20 06-03 - Pirates Grog - Run 1",
+      "date": "2026-04-20T09:10:35.202Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 30,
-      "orderCount": 3,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431493,
-      "reference": "2026-04-20 07-03 - Staying Relevant - Run 1",
-      "date": "2026-04-20T08:27:16.160Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 102,
-      "orderCount": 4,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431507,
-      "reference": "2026-04-20 07-08 - &Daughter Multi - Run 1",
-      "date": "2026-04-20T07:49:44.749Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 130.5,
-      "orderCount": 4,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431509,
-      "reference": "2026-04-20 07-08 - &Daughter Singles - Run 1",
-      "date": "2026-04-20T08:01:09.225Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 103.5,
-      "orderCount": 4,
-      "packerCount": 25
-    },
-    {
-      "batchId": 8431521,
-      "reference": "2026-04-20 07-18 - Emma Shipley - Run 1",
-      "date": "2026-04-20T09:14:20.646Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 88.3,
-      "orderCount": 25,
-      "packerCount": 25
+      "actualSecOrd": 63.8,
+      "orderCount": 19,
+      "packerCount": 22
     },
     {
       "batchId": 8431358,
       "reference": "2026-04-20 05-58 - Ripple+ Multi LL (8) - Run 1",
-      "date": "2026-04-20T09:22:14.625Z",
+      "date": "2026-04-20T08:59:45.406Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 40.9,
-      "orderCount": 42,
-      "packerCount": 25
+      "actualSecOrd": 42.3,
+      "orderCount": 37,
+      "packerCount": 23
     },
     {
-      "batchId": 8431372,
-      "reference": "2026-04-20 05-58 - Wild Dose 2/3 LL (3) - Run 5",
-      "date": "2026-04-20T09:21:03.436Z",
+      "batchId": 8431410,
+      "reference": "2026-04-20 06-03 - SOAR Singles - Run 1",
+      "date": "2026-04-20T09:10:59.251Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 30.8,
-      "orderCount": 53,
-      "packerCount": 25
+      "actualSecOrd": 36.9,
+      "orderCount": 21,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431521,
+      "reference": "2026-04-20 07-18 - Emma Shipley - Run 1",
+      "date": "2026-04-20T09:11:29.257Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 84.8,
+      "orderCount": 24,
+      "packerCount": 23
     },
     {
       "batchId": 8431360,
@@ -17764,7 +17719,7 @@
       "dayOfWeek": 1,
       "actualSecOrd": 100.8,
       "orderCount": 5,
-      "packerCount": 26
+      "packerCount": 23
     },
     {
       "batchId": 8431369,
@@ -17773,82 +17728,211 @@
       "dayOfWeek": 1,
       "actualSecOrd": 23.2,
       "orderCount": 22,
-      "packerCount": 26
+      "packerCount": 23
     },
     {
-      "batchId": 8431416,
-      "reference": "2026-04-20 06-03 - Wild Dose 2/3 RM48 (3) - Run 1",
-      "date": "2026-04-20T09:31:26.120Z",
+      "batchId": 8431372,
+      "reference": "2026-04-20 05-58 - Wild Dose 2/3 LL (3) - Run 5",
+      "date": "2026-04-20T09:21:03.436Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 26,
-      "orderCount": 3,
-      "packerCount": 26
+      "actualSecOrd": 30.8,
+      "orderCount": 53,
+      "packerCount": 23
+    },
+    {
+      "batchId": 8431373,
+      "reference": "2026-04-20 05-58 - Wild Dose 2/3 LL (3) - Run 6",
+      "date": "2026-04-20T09:25:15.324Z",
+      "dayOfWeek": 1,
+      "actualSecOrd": 21,
+      "orderCount": 4,
+      "packerCount": 25
     },
     {
       "batchId": 8431421,
       "reference": "2026-04-20 06-03 - Ripple+ RM (6) - Run 1",
-      "date": "2026-04-20T09:28:35.833Z",
+      "date": "2026-04-20T09:25:39.753Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 29.3,
-      "orderCount": 9,
-      "packerCount": 26
+      "actualSecOrd": 28,
+      "orderCount": 3,
+      "packerCount": 25
     },
     {
       "batchId": 8431429,
       "reference": "2026-04-20 06-03 - Wild Dose BOTTLE Singles Evri (8) - Run 3",
-      "date": "2026-04-20T09:31:50.185Z",
+      "date": "2026-04-20T09:25:41.702Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 33,
-      "orderCount": 30,
-      "packerCount": 26
+      "actualSecOrd": 32.5,
+      "orderCount": 19,
+      "packerCount": 25
     },
     {
       "batchId": 8431450,
       "reference": "2026-04-20 06-08 - Wild Dose Evri (8) - Run 6",
-      "date": "2026-04-20T09:38:15.298Z",
+      "date": "2026-04-20T09:25:36.362Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 79,
-      "orderCount": 30,
-      "packerCount": 26
+      "actualSecOrd": 73.4,
+      "orderCount": 22,
+      "packerCount": 25
     },
     {
       "batchId": 8431452,
       "reference": "2026-04-20 06-08 - Bare Biology Singles RM48 (5) - Run 3",
-      "date": "2026-04-20T09:34:44.039Z",
+      "date": "2026-04-20T09:19:37.334Z",
       "dayOfWeek": 1,
-      "actualSecOrd": 34.9,
-      "orderCount": 43,
-      "packerCount": 26
-    },
-    {
-      "batchId": 8431480,
-      "reference": "2026-04-20 06-58 - Pirates Grog Chests - Run 1",
-      "date": "2026-04-20T09:33:23.978Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 54,
-      "orderCount": 5,
-      "packerCount": 26
-    },
-    {
-      "batchId": 8431498,
-      "reference": "2026-04-20 07-03 - Natroceutics - Run 1",
-      "date": "2026-04-20T09:38:04.110Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 36,
-      "orderCount": 3,
-      "packerCount": 26
-    },
-    {
-      "batchId": 8431503,
-      "reference": "2026-04-20 07-03 - Lightroom - Run 1",
-      "date": "2026-04-20T09:35:29.453Z",
-      "dayOfWeek": 1,
-      "actualSecOrd": 94,
-      "orderCount": 3,
-      "packerCount": 26
+      "actualSecOrd": 36.4,
+      "orderCount": 34,
+      "packerCount": 25
     }
   ],
   "packerSnaps": [
+    {
+      "dow": 4,
+      "hour": 11,
+      "count": 12,
+      "ts": "2026-04-09T10:55:32.029Z",
+      "dateHour": "2026-04-09T10"
+    },
+    {
+      "dow": 4,
+      "hour": 12,
+      "count": 6,
+      "ts": "2026-04-09T11:46:44.895Z",
+      "dateHour": "2026-04-09T11"
+    },
+    {
+      "dow": 4,
+      "hour": 13,
+      "count": 7,
+      "ts": "2026-04-09T12:47:15.717Z",
+      "dateHour": "2026-04-09T12"
+    },
+    {
+      "dow": 4,
+      "hour": 14,
+      "count": 9,
+      "ts": "2026-04-09T13:47:00.801Z",
+      "dateHour": "2026-04-09T13"
+    },
+    {
+      "dow": 4,
+      "hour": 15,
+      "count": 7,
+      "ts": "2026-04-09T14:58:26.524Z",
+      "dateHour": "2026-04-09T14"
+    },
+    {
+      "dow": 4,
+      "hour": 16,
+      "count": 3,
+      "ts": "2026-04-09T15:12:27.368Z",
+      "dateHour": "2026-04-09T15"
+    },
+    {
+      "dow": 5,
+      "hour": 7,
+      "count": 8,
+      "ts": "2026-04-10T06:57:52.657Z",
+      "dateHour": "2026-04-10T06"
+    },
+    {
+      "dow": 5,
+      "hour": 8,
+      "count": 12,
+      "ts": "2026-04-10T07:57:45.498Z",
+      "dateHour": "2026-04-10T07"
+    },
+    {
+      "dow": 5,
+      "hour": 9,
+      "count": 14,
+      "ts": "2026-04-10T08:57:48.425Z",
+      "dateHour": "2026-04-10T08"
+    },
+    {
+      "dow": 5,
+      "hour": 10,
+      "count": 12,
+      "ts": "2026-04-10T09:57:44.914Z",
+      "dateHour": "2026-04-10T09"
+    },
+    {
+      "dow": 5,
+      "hour": 11,
+      "count": 7,
+      "ts": "2026-04-10T10:57:49.332Z",
+      "dateHour": "2026-04-10T10"
+    },
+    {
+      "dow": 5,
+      "hour": 12,
+      "count": 1,
+      "ts": "2026-04-10T11:51:23.506Z",
+      "dateHour": "2026-04-10T11"
+    },
+    {
+      "dow": 5,
+      "hour": 13,
+      "count": 5,
+      "ts": "2026-04-10T12:51:52.595Z",
+      "dateHour": "2026-04-10T12"
+    },
+    {
+      "dow": 5,
+      "hour": 14,
+      "count": 7,
+      "ts": "2026-04-10T13:51:45.627Z",
+      "dateHour": "2026-04-10T13"
+    },
+    {
+      "dow": 5,
+      "hour": 15,
+      "count": 4,
+      "ts": "2026-04-10T14:51:36.457Z",
+      "dateHour": "2026-04-10T14"
+    },
+    {
+      "dow": 5,
+      "hour": 16,
+      "count": 1,
+      "ts": "2026-04-10T15:51:52.228Z",
+      "dateHour": "2026-04-10T15"
+    },
+    {
+      "dow": 1,
+      "hour": 7,
+      "count": 11,
+      "ts": "2026-04-13T06:52:49.692Z",
+      "dateHour": "2026-04-13T06"
+    },
+    {
+      "dow": 1,
+      "hour": 8,
+      "count": 17,
+      "ts": "2026-04-13T07:53:07.947Z",
+      "dateHour": "2026-04-13T07"
+    },
+    {
+      "dow": 1,
+      "hour": 9,
+      "count": 18,
+      "ts": "2026-04-13T08:08:25.959Z",
+      "dateHour": "2026-04-13T08"
+    },
+    {
+      "dow": 4,
+      "hour": 7,
+      "count": 8,
+      "ts": "2026-04-09T06:51:52.867Z",
+      "dateHour": "2026-04-09T06"
+    },
+    {
+      "dow": 4,
+      "hour": 8,
+      "count": 10,
+      "ts": "2026-04-09T07:52:29.453Z",
+      "dateHour": "2026-04-09T07"
+    },
     {
       "dow": 4,
       "hour": 8,
@@ -17914,178 +17998,17 @@
     },
     {
       "dow": 4,
-      "hour": 7,
-      "count": 8,
-      "ts": "2026-04-09T06:51:30.102Z",
-      "dateHour": "2026-04-09T06"
-    },
-    {
-      "dow": 4,
-      "hour": 8,
-      "count": 10,
-      "ts": "2026-04-09T07:51:02.916Z",
-      "dateHour": "2026-04-09T07"
-    },
-    {
-      "dow": 4,
       "hour": 9,
-      "count": 15,
-      "ts": "2026-04-09T08:53:50.595Z",
+      "count": 16,
+      "ts": "2026-04-09T08:46:09.451Z",
       "dateHour": "2026-04-09T08"
     },
     {
       "dow": 4,
       "hour": 10,
-      "count": 12,
-      "ts": "2026-04-09T09:19:49.043Z",
+      "count": 11,
+      "ts": "2026-04-09T09:55:10.565Z",
       "dateHour": "2026-04-09T09"
-    },
-    {
-      "dow": 4,
-      "hour": 11,
-      "count": 11,
-      "ts": "2026-04-09T10:55:19.938Z",
-      "dateHour": "2026-04-09T10"
-    },
-    {
-      "dow": 4,
-      "hour": 12,
-      "count": 6,
-      "ts": "2026-04-09T11:55:06.609Z",
-      "dateHour": "2026-04-09T11"
-    },
-    {
-      "dow": 4,
-      "hour": 13,
-      "count": 8,
-      "ts": "2026-04-09T12:55:33.020Z",
-      "dateHour": "2026-04-09T12"
-    },
-    {
-      "dow": 4,
-      "hour": 14,
-      "count": 10,
-      "ts": "2026-04-09T13:56:00.186Z",
-      "dateHour": "2026-04-09T13"
-    },
-    {
-      "dow": 4,
-      "hour": 15,
-      "count": 7,
-      "ts": "2026-04-09T14:49:13.949Z",
-      "dateHour": "2026-04-09T14"
-    },
-    {
-      "dow": 5,
-      "hour": 7,
-      "count": 5,
-      "ts": "2026-04-10T06:53:35.616Z",
-      "dateHour": "2026-04-10T06"
-    },
-    {
-      "dow": 5,
-      "hour": 8,
-      "count": 11,
-      "ts": "2026-04-10T07:38:29.541Z",
-      "dateHour": "2026-04-10T07"
-    },
-    {
-      "dow": 5,
-      "hour": 9,
-      "count": 18,
-      "ts": "2026-04-10T08:45:22.215Z",
-      "dateHour": "2026-04-10T08"
-    },
-    {
-      "dow": 5,
-      "hour": 10,
-      "count": 12,
-      "ts": "2026-04-10T09:55:31.028Z",
-      "dateHour": "2026-04-10T09"
-    },
-    {
-      "dow": 5,
-      "hour": 11,
-      "count": 11,
-      "ts": "2026-04-10T10:24:47.378Z",
-      "dateHour": "2026-04-10T10"
-    },
-    {
-      "dow": 3,
-      "hour": 8,
-      "count": 11,
-      "ts": "2026-04-15T07:21:22.286Z",
-      "dateHour": "2026-04-15T07"
-    },
-    {
-      "dow": 4,
-      "hour": 16,
-      "count": 3,
-      "ts": "2026-04-09T15:12:27.368Z",
-      "dateHour": "2026-04-09T15"
-    },
-    {
-      "dow": 5,
-      "hour": 12,
-      "count": 1,
-      "ts": "2026-04-10T11:51:23.506Z",
-      "dateHour": "2026-04-10T11"
-    },
-    {
-      "dow": 5,
-      "hour": 13,
-      "count": 5,
-      "ts": "2026-04-10T12:51:52.595Z",
-      "dateHour": "2026-04-10T12"
-    },
-    {
-      "dow": 5,
-      "hour": 14,
-      "count": 7,
-      "ts": "2026-04-10T13:51:45.627Z",
-      "dateHour": "2026-04-10T13"
-    },
-    {
-      "dow": 5,
-      "hour": 15,
-      "count": 4,
-      "ts": "2026-04-10T14:51:36.457Z",
-      "dateHour": "2026-04-10T14"
-    },
-    {
-      "dow": 5,
-      "hour": 16,
-      "count": 1,
-      "ts": "2026-04-10T15:51:52.228Z",
-      "dateHour": "2026-04-10T15"
-    },
-    {
-      "dow": 1,
-      "hour": 7,
-      "count": 11,
-      "ts": "2026-04-13T06:52:49.692Z",
-      "dateHour": "2026-04-13T06"
-    },
-    {
-      "dow": 1,
-      "hour": 8,
-      "count": 17,
-      "ts": "2026-04-13T07:53:07.947Z",
-      "dateHour": "2026-04-13T07"
-    },
-    {
-      "dow": 1,
-      "hour": 9,
-      "count": 18,
-      "ts": "2026-04-13T08:08:25.959Z",
-      "dateHour": "2026-04-13T08"
-    },
-    {
-      "dow": 3,
-      "hour": 9,
-      "count": 16,
-      "ts": "2026-04-15T08:31:53.793Z",
-      "dateHour": "2026-04-15T08"
     },
     {
       "dow": 6,
@@ -18292,37 +18215,51 @@
     },
     {
       "dow": 3,
+      "hour": 8,
+      "count": 11,
+      "ts": "2026-04-15T07:24:49.087Z",
+      "dateHour": "2026-04-15T07"
+    },
+    {
+      "dow": 3,
+      "hour": 9,
+      "count": 12,
+      "ts": "2026-04-15T08:52:53.700Z",
+      "dateHour": "2026-04-15T08"
+    },
+    {
+      "dow": 3,
       "hour": 10,
-      "count": 14,
-      "ts": "2026-04-15T09:53:02.057Z",
+      "count": 13,
+      "ts": "2026-04-15T09:52:38.613Z",
       "dateHour": "2026-04-15T09"
     },
     {
       "dow": 3,
       "hour": 11,
       "count": 11,
-      "ts": "2026-04-15T10:53:42.412Z",
+      "ts": "2026-04-15T10:53:08.927Z",
       "dateHour": "2026-04-15T10"
     },
     {
       "dow": 3,
       "hour": 12,
-      "count": 8,
-      "ts": "2026-04-15T11:47:04.873Z",
+      "count": 7,
+      "ts": "2026-04-15T11:50:44.544Z",
       "dateHour": "2026-04-15T11"
     },
     {
       "dow": 3,
       "hour": 13,
-      "count": 7,
-      "ts": "2026-04-15T12:57:25.399Z",
+      "count": 6,
+      "ts": "2026-04-15T12:51:43.207Z",
       "dateHour": "2026-04-15T12"
     },
     {
       "dow": 3,
       "hour": 14,
-      "count": 14,
-      "ts": "2026-04-15T13:52:32.990Z",
+      "count": 16,
+      "ts": "2026-04-15T13:36:40.388Z",
       "dateHour": "2026-04-15T13"
     },
     {
@@ -18350,71 +18287,64 @@
       "dow": 4,
       "hour": 7,
       "count": 9,
-      "ts": "2026-04-16T06:52:02.700Z",
+      "ts": "2026-04-16T06:55:48.401Z",
       "dateHour": "2026-04-16T06"
     },
     {
       "dow": 4,
       "hour": 8,
       "count": 13,
-      "ts": "2026-04-16T07:56:36.562Z",
+      "ts": "2026-04-16T07:55:34.511Z",
       "dateHour": "2026-04-16T07"
     },
     {
       "dow": 4,
       "hour": 9,
       "count": 14,
-      "ts": "2026-04-16T08:56:39.990Z",
+      "ts": "2026-04-16T08:55:44.321Z",
       "dateHour": "2026-04-16T08"
     },
     {
       "dow": 4,
       "hour": 10,
       "count": 9,
-      "ts": "2026-04-16T09:56:49.540Z",
+      "ts": "2026-04-16T09:55:38.110Z",
       "dateHour": "2026-04-16T09"
     },
     {
       "dow": 4,
       "hour": 11,
-      "count": 10,
-      "ts": "2026-04-16T10:57:32.032Z",
+      "count": 11,
+      "ts": "2026-04-16T10:55:50.359Z",
       "dateHour": "2026-04-16T10"
     },
     {
       "dow": 4,
       "hour": 12,
       "count": 3,
-      "ts": "2026-04-16T11:56:58.418Z",
+      "ts": "2026-04-16T11:55:54.825Z",
       "dateHour": "2026-04-16T11"
     },
     {
       "dow": 4,
       "hour": 13,
-      "count": 6,
-      "ts": "2026-04-16T12:57:52.935Z",
+      "count": 5,
+      "ts": "2026-04-16T12:56:02.875Z",
       "dateHour": "2026-04-16T12"
     },
     {
       "dow": 4,
       "hour": 14,
-      "count": 14,
-      "ts": "2026-04-16T13:56:57.503Z",
+      "count": 12,
+      "ts": "2026-04-16T13:55:40.399Z",
       "dateHour": "2026-04-16T13"
     },
     {
       "dow": 4,
       "hour": 15,
-      "count": 5,
-      "ts": "2026-04-16T14:58:41.912Z",
+      "count": 8,
+      "ts": "2026-04-16T14:56:02.269Z",
       "dateHour": "2026-04-16T14"
-    },
-    {
-      "dow": 5,
-      "hour": 7,
-      "count": 5,
-      "ts": "2026-04-17T06:59:42.455Z",
-      "dateHour": "2026-04-17T06"
     },
     {
       "dow": 4,
@@ -18432,65 +18362,72 @@
     },
     {
       "dow": 5,
+      "hour": 7,
+      "count": 5,
+      "ts": "2026-04-17T06:41:25.845Z",
+      "dateHour": "2026-04-17T06"
+    },
+    {
+      "dow": 5,
       "hour": 8,
-      "count": 15,
-      "ts": "2026-04-17T07:56:32.471Z",
+      "count": 13,
+      "ts": "2026-04-17T07:57:15.730Z",
       "dateHour": "2026-04-17T07"
     },
     {
       "dow": 5,
       "hour": 9,
-      "count": 14,
-      "ts": "2026-04-17T08:51:37.690Z",
+      "count": 11,
+      "ts": "2026-04-17T08:57:27.882Z",
       "dateHour": "2026-04-17T08"
     },
     {
       "dow": 5,
       "hour": 10,
       "count": 14,
-      "ts": "2026-04-17T09:51:36.103Z",
+      "ts": "2026-04-17T09:56:08.743Z",
       "dateHour": "2026-04-17T09"
     },
     {
       "dow": 5,
       "hour": 11,
-      "count": 16,
-      "ts": "2026-04-17T10:59:30.599Z",
+      "count": 15,
+      "ts": "2026-04-17T10:55:53.936Z",
       "dateHour": "2026-04-17T10"
     },
     {
       "dow": 5,
       "hour": 12,
       "count": 7,
-      "ts": "2026-04-17T11:59:07.171Z",
+      "ts": "2026-04-17T11:56:02.401Z",
       "dateHour": "2026-04-17T11"
     },
     {
       "dow": 5,
       "hour": 13,
       "count": 10,
-      "ts": "2026-04-17T12:09:41.886Z",
+      "ts": "2026-04-17T12:57:05.237Z",
       "dateHour": "2026-04-17T12"
     },
     {
       "dow": 5,
       "hour": 14,
-      "count": 18,
-      "ts": "2026-04-17T13:57:37.002Z",
+      "count": 10,
+      "ts": "2026-04-17T13:56:40.726Z",
       "dateHour": "2026-04-17T13"
     },
     {
       "dow": 5,
       "hour": 15,
-      "count": 9,
-      "ts": "2026-04-17T14:48:22.620Z",
+      "count": 6,
+      "ts": "2026-04-17T14:56:50.400Z",
       "dateHour": "2026-04-17T14"
     },
     {
       "dow": 5,
       "hour": 16,
-      "count": 5,
-      "ts": "2026-04-17T15:03:16.885Z",
+      "count": 1,
+      "ts": "2026-04-17T15:11:40.283Z",
       "dateHour": "2026-04-17T15"
     },
     {
@@ -18510,15 +18447,15 @@
     {
       "dow": 1,
       "hour": 9,
-      "count": 18,
-      "ts": "2026-04-20T08:28:13.695Z",
+      "count": 20,
+      "ts": "2026-04-20T08:58:36.181Z",
       "dateHour": "2026-04-20T08"
     },
     {
       "dow": 1,
       "hour": 10,
-      "count": 21,
-      "ts": "2026-04-20T09:41:06.893Z",
+      "count": 19,
+      "ts": "2026-04-20T09:42:08.560Z",
       "dateHour": "2026-04-20T09"
     }
   ]
